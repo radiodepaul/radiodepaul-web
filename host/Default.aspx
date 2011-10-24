@@ -47,8 +47,8 @@
 			<nav>
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
-				<a style="border-top:solid 1px #000" href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/shows/" >Shows</a>
+				<a href="/hosts/" >Hosts</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
@@ -99,6 +99,7 @@
 	</div>
 <%Server.Execute("/includes/global_javascripts.aspx");%>
 <script type="text/javascript" src="/js/jquery.url.js"></script>
+<script type="text/javascript" src="host.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript">
 $(window).load(function() {

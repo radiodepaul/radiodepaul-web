@@ -44,7 +44,7 @@
 				<a class="selected" href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/hosts/" >Hosts</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>

@@ -13,12 +13,12 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body id="djPage">
 	<div id="categories">
 		<a href="" ><span>Jim Sandherr</span></a>
 		<a href="" ><span>Jake Padilla</span></a>
 		<a href="" ><span>Esmeralda Leon</span></a>
-		<a href="/djs/cking/" ><span>Courtney King</span></a>
+		<a class="selected" href="" ><span>Courtney King</span></a>
 		<a href="" ><span>Jon Schatz</span></a>
 		<a href="" ><span>Eddie Sayago</span></a>
 		<a href="" ><span>Chris Dubiel</span></a>
@@ -48,7 +48,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a href="/shows/" >Shows</a>
-				<a class="selected" href="/djs/" >DJs</a>
+				<a href="/hosts/" >Hosts</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
@@ -57,7 +57,7 @@
 		</header>
 		<div id="main">
 		<div id="content">
-		
+			
 		</div>
 		<div id="sidebar">
 			<div id="nowPlaying" class="sidebarBox">
@@ -96,26 +96,10 @@
 				<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
 			</div>
 		</div>
-		<!--1<footer>
-			<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
-			<div id="friends">
-				<p>Friends of Radio DePaul</p>
-				<ul>
-					<li><a href="">Good Day DePaul</a></li>
-					<li><a href="">DePaul Activities Board</a></li>
-					<li><a href="">The DePaulia</a></li>
-				</ul>
-			</div>
-		</footer> -->
 	</div>
-	
-<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="/js/jqclock_201.js"></script>
-<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<%Server.Execute("/includes/global_javascripts.aspx");%>
+<script type="text/javascript" src="/js/jquery.url.js"></script>
+<script type="text/javascript" src="show.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript">
 $(window).load(function() {

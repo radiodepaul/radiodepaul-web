@@ -1,5 +1,7 @@
-showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?q={'quarter':'AQ2011'}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
+showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?q={'quarter':'AQ2011'}s={'start_hour': 1, 'start_minute': 1}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
+peopleGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/people?apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
 showsParse= $.parseJSON(showsGet);
+peopleParse= $.parseJSON(peopleGet);
 
 $.each(showsParse, function(i, show) {
 	var start_ampm, end_ampm = "";
@@ -28,12 +30,12 @@ $.each(showsParse, function(i, show) {
 	
 	
 	var html = '<li>\
-			<img src="/img/shows/' + show.image + '" alt="" />\
+			<img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/small/image.jpg"/>\
 			<div class="time">\
 				<p class="scheduleBar startTime">' + show.start_hour + ':' + show.start_minute + start_ampm + '</p>\
 				<p class="scheduleBar endTime">' + end_hour + ':' + end_minute + end_ampm + '</p>\
 			</div>\
-			<p class="showName">' + show.name + '<span> | </span>' + show.genre + '<a href="">Show Page</a></p>\
+			<p class="showName">' + show.name + '<span> | </span>' + show.genre + '<a href="/show/?id=' + show._id.$oid + '">Show Page</a>\
 			<p class="showDJs">with ' + show.hosts + '</p>\
 			<p class="showBio">' + show.short_description + '</p>\
 		</li>'

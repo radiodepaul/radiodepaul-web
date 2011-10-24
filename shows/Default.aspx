@@ -103,6 +103,7 @@
 	</footer>
 <%Server.Execute("/includes/global_javascripts.aspx");%>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="shows.js"></script>
 <script type="text/javascript">
 $(window).load(function() {
     $('#slider').nivoSlider();

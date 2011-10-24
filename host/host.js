@@ -25,26 +25,7 @@ var html = '<h2 id="name">' + host.fname + ' ' + host.lname + '</h2> \
 			</div>\
 			<div id="bio">\
 				<div class="bar">Bio</div>\
-			</div>\
+				<p>' + host.bio + '</p>\
+			</div>'
 
-$('<h2>' + host.fname + ' ' + host.lname + '</h2>').appendTo('#content');
-
-
-<div id="name">
-<div class="contentLeft">
-	<div class="bar"><p>Photo</p></div>
-</div>
-<div class="contentRight">
-	<div id="stats">
-		<div class="bar"><p>Stats</p></div>
-		<p>Major: </p>
-		<p>Class: </p>
-		<p>Age: </p>
-	</div>
-	<div id="shows">
-		<div class="bar"><p>Shows</p></div>
-	</div>
-</div>
-<div id="bio">
-	<div class="bar"><p>Bio</p></div>
-</div>
+$(html).appendTo('#content');
