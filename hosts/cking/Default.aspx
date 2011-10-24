@@ -115,17 +115,6 @@
 				<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
 			</div>
 		</div>
-		<!--1<footer>
-			<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
-			<div id="friends">
-				<p>Friends of Radio DePaul</p>
-				<ul>
-					<li><a href="">Good Day DePaul</a></li>
-					<li><a href="">DePaul Activities Board</a></li>
-					<li><a href="">The DePaulia</a></li>
-				</ul>
-			</div>
-		</footer> -->
 	</div>
 	
 <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>

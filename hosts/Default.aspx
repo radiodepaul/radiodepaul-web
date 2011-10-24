@@ -3,23 +3,23 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
-	<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
-	<link href='http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Tenor+Sans&v2' rel='stylesheet' type='text/css' />
+	<%Server.Execute("/includes/global_stylesheets.aspx");%>
 	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/themes/pascal/pascal.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/themes/orman/orman.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  	<link rel="stylesheet" href="/css/themes/pascal/pascal.css" type="text/css" media="screen" />
+  	<link rel="stylesheet" href="/css/themes/orman/orman.css" type="text/css" media="screen" />
+  	<link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
+	<%Server.Execute("/includes/global_typekit.aspx");%>
 </head>
 <body>
 	<div id="categories">
-		<a href="" ><span>All Shows</span></a>
-		<a href="" ><span>News</span></a>
-		<a href="" ><span>Sports</span></a>
-		<a href="" ><span>Music</span></a>
-		<a href="" ><span>Talk</span></a>
+		<a href="" ><span>Jim Sandherr</span></a>
+		<a href="" ><span>Jake Padilla</span></a>
+		<a href="" ><span>Esmeralda Leon</span></a>
+		<a href="/djs/cking/" ><span>Courtney King</span></a>
+		<a href="" ><span>Jon Schatz</span></a>
+		<a href="" ><span>Eddie Sayago</span></a>
+		<a href="" ><span>Chris Dubiel</span></a>
+		<a href="" ><span>Andrew Rodriguez</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
@@ -40,26 +40,24 @@
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 
 			</ul>
-			<h1 id="title">Shows</h1>
+			<h1 id="title">DJs</h1>
 			<nav>
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
-				<a class="selected" href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/shows/" >Shows</a>
+				<a class="selected" href="/hosts/" >Hosts</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
-				<a href="#" onClick="return playerPopUp('/player.aspx')">Listen Now</a>
+				<a href="/" >Listen Now</a>
 			</nav>
 		</header>
 		<div id="main">
 			<div id="content">
-				<div class="bar"><p>News</p></div>
-				<div class="bar"><p>Sports</p></div>
-				<div class="bar"><p>Music</p></div>
-				<div class="bar"><p>Talk</p></div>
+				<p>Show Name:</p>
+				<p></p>
 			</div>
-		<div id="sidebar">
+			<div id="sidebar">
 			<div id="nowPlaying" class="sidebarBox">
 				<div class="bar"><p>Now Playing</p></div>
 				<img src="/img/djs/chris.jpg" />
@@ -102,8 +100,9 @@
 		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
 	</footer>
 <%Server.Execute("/includes/global_javascripts.aspx");%>
+
+<script type="text/javascript" src="hosts.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript" src="shows.js"></script>
 <script type="text/javascript">
 $(window).load(function() {
     $('#slider').nivoSlider();

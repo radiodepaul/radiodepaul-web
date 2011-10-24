@@ -13,13 +13,16 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body id="djPage">
 	<div id="categories">
-		<a href="" ><span>All Shows</span></a>
-		<a href="" ><span>News</span></a>
-		<a href="" ><span>Sports</span></a>
-		<a href="" ><span>Music</span></a>
-		<a href="" ><span>Talk</span></a>
+		<a href="" ><span>Jim Sandherr</span></a>
+		<a href="" ><span>Jake Padilla</span></a>
+		<a href="" ><span>Esmeralda Leon</span></a>
+		<a class="selected" href="" ><span>Courtney King</span></a>
+		<a href="" ><span>Jon Schatz</span></a>
+		<a href="" ><span>Eddie Sayago</span></a>
+		<a href="" ><span>Chris Dubiel</span></a>
+		<a href="" ><span>Andrew Rodriguez</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
@@ -40,25 +43,22 @@
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 
 			</ul>
-			<h1 id="title">Shows</h1>
+			<h1 id="title">DJs</h1>
 			<nav>
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
-				<a class="selected" href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/shows/" >Shows</a>
+				<a href="/hosts/" >Hosts</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
-				<a href="#" onClick="return playerPopUp('/player.aspx')">Listen Now</a>
+				<a href="/" >Listen Now</a>
 			</nav>
 		</header>
 		<div id="main">
-			<div id="content">
-				<div class="bar"><p>News</p></div>
-				<div class="bar"><p>Sports</p></div>
-				<div class="bar"><p>Music</p></div>
-				<div class="bar"><p>Talk</p></div>
-			</div>
+		<div id="content">
+			
+		</div>
 		<div id="sidebar">
 			<div id="nowPlaying" class="sidebarBox">
 				<div class="bar"><p>Now Playing</p></div>
@@ -96,14 +96,11 @@
 				<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
 			</div>
 		</div>
-		</div>
 	</div>
-	<footer>
-		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
-	</footer>
 <%Server.Execute("/includes/global_javascripts.aspx");%>
+<script type="text/javascript" src="/js/jquery.url.js"></script>
+<script type="text/javascript" src="show.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript" src="shows.js"></script>
 <script type="text/javascript">
 $(window).load(function() {
     $('#slider').nivoSlider();
