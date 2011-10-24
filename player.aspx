@@ -49,7 +49,7 @@
 <%--Google Analytics--%>
 <%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%--Google Analytics END--%>
-<%Server.Execute("/includes/global_javascripts.aspx");%>
+<%Server.Execute("/includes/global_javascripts.aspx")%>
 <%-- Coda Slider Code --%>
 <script type="text/javascript" src="/js/navSwitchplayer.js"></script>	
 <%-- Coda Slider Code END --%>

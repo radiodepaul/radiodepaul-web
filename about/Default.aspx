@@ -46,7 +46,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/staff/" >Staff</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a class="selected" href="/about/" >About</a>
@@ -94,7 +94,7 @@
 	<footer>
 		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
 	</footer>
-<%Server.Execute("/includes/global_javascripts.aspx");%>
+<%Server.Execute("/includes/global_javascripts.aspx")%>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="/js/about.js"></script>

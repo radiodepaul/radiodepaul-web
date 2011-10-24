@@ -48,7 +48,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a href="/shows/" >Shows</a>
-				<a href="/hosts/" >Hosts</a>
+				<a href="/staff/" >Staff</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
@@ -97,7 +97,7 @@
 			</div>
 		</div>
 	</div>
-<%Server.Execute("/includes/global_javascripts.aspx");%>
+<%Server.Execute("/includes/global_javascripts.aspx")%>
 <script type="text/javascript" src="/js/jquery.url.js"></script>
 <script type="text/javascript" src="host.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>

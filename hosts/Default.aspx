@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
-	<%Server.Execute("/includes/global_stylesheets.aspx");%>
+	<%Server.Execute("/includes/global_stylesheets.aspx")%>
 	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
   	<link rel="stylesheet" href="/css/themes/pascal/pascal.css" type="text/css" media="screen" />
   	<link rel="stylesheet" href="/css/themes/orman/orman.css" type="text/css" media="screen" />
   	<link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
-	<%Server.Execute("/includes/global_typekit.aspx");%>
+	<%Server.Execute("/includes/global_typekit.aspx")%>
 </head>
 <body>
 	<div id="categories">
@@ -99,7 +99,7 @@
 	<footer>
 		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
 	</footer>
-<%Server.Execute("/includes/global_javascripts.aspx");%>
+<%Server.Execute("/includes/global_javascripts.aspx")%>
 
 <script type="text/javascript" src="hosts.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>

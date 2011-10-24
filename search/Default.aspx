@@ -32,6 +32,6 @@
   </head>
   <body>
     <div id="searchcontrol">Loading...</div>
-<%Server.Execute("/includes/global_javascripts.aspx");%>
+<%Server.Execute("/includes/global_javascripts.aspx")%>
   </body>
 </html>

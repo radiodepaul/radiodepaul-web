@@ -48,7 +48,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a style="border-top:solid 1px #000" href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/staff/" >Staff</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
