@@ -46,13 +46,12 @@
                    <embed src="http://widget.meebo.com/mm.swf?hSrJxxCkSb" type="application/x-shockwave-flash" wmode="transparent" width="340" height="230">
                    </embed></object>
            </div>
-    
 <%--Google Analytics--%>
 <%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%--Google Analytics END--%>
-</body>
-</html>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<%Server.Execute("/includes/global_javascripts.aspx");%>
 <%-- Coda Slider Code --%>
 <script type="text/javascript" src="/js/navSwitchplayer.js"></script>	
 <%-- Coda Slider Code END --%>
+</body>
+</html>

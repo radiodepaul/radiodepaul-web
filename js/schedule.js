@@ -1,4 +1,4 @@
-showsGet= $.ajax("https://mongolab.com/api/1/databases/heroku_app1004657/collections/shows?q={'quarter':'AQ2011'}&apiKey=4e71643d737d6347d407d755&q=", {async: false}).responseText;
+showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?q={'quarter':'AQ2011'}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
 showsParse= $.parseJSON(showsGet);
 
 $.each(showsParse, function(i, show) {
@@ -35,7 +35,7 @@ $.each(showsParse, function(i, show) {
 			</div>\
 			<p class="showName">' + show.name + '<span> | </span>' + show.genre + '<a href="">Show Page</a></p>\
 			<p class="showDJs">with ' + show.hosts + '</p>\
-			<p class="showBio">' + show.description + '</p>\
+			<p class="showBio">' + show.short_description + '</p>\
 		</li>'
 	
 	if (show.monday === true) { $(html).appendTo('#monday ul'); }
