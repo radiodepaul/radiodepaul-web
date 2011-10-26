@@ -45,7 +45,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a class="selected" href="/shows/" >Shows</a>
-				<a href="/staff/" >Staff</a>
+				<a href="/people/" >Staff</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
@@ -54,14 +54,10 @@
 		</header>
 		<div id="main">
 			<div id="content">
-				<div class="bar"><p>News</p></div>
-				<div class="bar"><p>Sports</p></div>
-				<div class="bar"><p>Music</p></div>
-				<div class="bar"><p>Talk</p></div>
 			</div>
 		<div id="sidebar">
 			<div id="nowPlaying" class="sidebarBox">
-				<div class="bar"><p>Now Playing</p></div>
+				<div class="bar">On-Air Now</div>
 				<img src="/img/djs/chris.jpg" />
 				<div class="showInfo">
 					<p class="showName">Mondays with Madison</p>
@@ -71,16 +67,16 @@
 				</div>
 			</div>
 				<div class="sidebarBox">
-					<div class="bar"><p>Contact Us</p></div>
-					<div class="smallBar"><p>Station Phone</p></div>
+					<div class="bar">Contact Us</div>
+					<div class="smallBar">Station Phone</div>
 					<p>(773) 325-7308</p>
-					<div class="smallBar"><p>Station Fax</p></div>
+					<div class="smallBar">Station Fax</div>
 					<p>(773) 325-4133</p>
-					<div class="smallBar"><p>Mailing Address</p></div>
+					<div class="smallBar">Mailing Address</div>
 					<p>Radio DePaul<br/>2250 N. Sheffield Avenue Suite 317<br/>Box #640 <br/>Chicago, IL 60614</p>
 				</div>
 			<div class="sidebarBox">
-				<div class="bar"><p>Coming Up Next</p></div>
+				<div class="bar">Coming Up Next</div>
 				<ul>
 					<li><p>6:30pm - Monday's with Madison</p></li>
 					<li><p>9:00pm - DJ PWhelbs</p></li>
@@ -88,11 +84,11 @@
 				</ul>
 			</div>
 			<div class="sidebarBox">
-				<div class="bar"><p>Friends Of The Station</p></div>
+				<div class="bar">Friends Of The Station</div>
 				<img class="bannerAd" src="/img/schubas.png" alt="" />
 			</div>
 			<div class="sidebarBox">
-				<div class="bar"><p>Do You Like Us?</p></div>
+				<div class="bar">Do You Like Us?</div>
 				<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
 			</div>
 		</div>
@@ -101,7 +97,13 @@
 	<footer>
 		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
 	</footer>
-<%Server.Execute("/includes/global_javascripts.aspx")%>
+<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="/js/jqclock_201.js"></script>
+<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="shows.js"></script>
 <script type="text/javascript">

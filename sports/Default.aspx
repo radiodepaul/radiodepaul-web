@@ -44,7 +44,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a href="/shows/" >Shows</a>
-				<a href="/staff/" >Staff</a>
+				<a href="/people/" >Staff</a>
 				<a class="selected" href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a href="/about/" >About</a>
@@ -53,18 +53,12 @@
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%">
-			<div id="featured" style="height:450px;">
-			<div class="slider-wrapper theme-default">
-				<div class="ribbon"></div>
-				<div id="slider" class="nivoSlider">
-					<img src="/img/slider/sports1_big.jpg" alt="" title="Men's Basketball" />
-					<img src="/img/slider/sports2_big.jpg" alt="" />
-					<img src="/img/slider/sports3_big.jpg" alt="" title="#htmlcaption" />
+			<div id="featured" style="width:100%">
+				<div class="slider-wrapper theme-default">
+					<div class="ribbon"></div>
+					<div id="slider" class="nivoSlider">
+					</div>
 				</div>
-				<div id="htmlcaption" class="nivo-html-caption">
-					<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
-				</div>
-			</div>
 			</div>
 			<div class="contentLeft">
 				<div class="bar"><p>Men's Soccer</p></div>
@@ -93,10 +87,19 @@
 			</div>
 		</div>
 	</div>
+	</div>
 	<footer>
 		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
 	</footer>
-<%Server.Execute("/includes/global_javascripts.aspx")%>
+<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="/js/jqclock_201.js"></script>
+<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
+<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript">
 $(window).load(function() {
@@ -105,10 +108,10 @@ $(window).load(function() {
 	animSpeed: 500, // Slide transition speed
 	pauseTime: 6000, // How long each slide will show
 	directionNav: true, // Next & Prev navigation
-	directionNavHide: true, // Only show on hover
-	keyboardNav: true, // Use left & right arrows
+	controlNavThumbs: true, // Use thumbnails for Control Nav
+	controlNavThumbsFromRel: true, // Use image rel for thumbs
 	pauseOnHover: true, // Stop animation while hovering
-	captionOpacity: 0.8, // Universal caption opacity
+	captionOpacity: 0.0, // Universal caption opacity
 	prevText: 'Prev', // Prev directionNav text
 	nextText: 'Next', // Next directionNav text	
 	});

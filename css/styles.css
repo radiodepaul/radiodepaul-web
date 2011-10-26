@@ -488,7 +488,7 @@ nav a:last-child {
 	position:absolute;
 	right:0;
 	text-align:center;
-	width:336px;
+	width:320px;
 	font-size:20px;
 }
 nav a.selected {
@@ -554,7 +554,7 @@ header h1 {
 	height:300px;
 	width:610px;
 	position:relative;
-	padding:0 20px;
+	/*padding:0 20px;*/
 }
 #featured img {
 	display:block;
@@ -567,7 +567,10 @@ header h1 {
 	display:inline;
 	position:relative;
 	float:left;
-	padding:10px 0;
+	padding:10px;
+}
+#content p,h1,h2,h3,h4 {
+	text-indent:5px;
 }
 .contentLeft, .contentRight {
 	width:314px;
@@ -589,6 +592,7 @@ header h1 {
 	right:0;
 	display:inline;
 	padding-top:5px;
+	padding-left:20px;
 	background-color:#e9e9e3;
 }
 #events li p:first-child, #news li p:first-child {
@@ -625,17 +629,18 @@ div.bar {
 	margin-bottom:4px;
 	background-color:#5e87a8;
 	font-weight:bold;
+	text-indent:5px;
 }
 div.smallBar {
 	width:100%;
 	padding:6px 0;
 	margin-bottom:4px;
 	border-bottom:1px solid #000;
-	color:#000;
 	font-weight:bold;
+	text-indent:5px;
 }
-div p {
-	margin-left:5px;
+div.smallBar:hover {
+	background-color:#5e87a8;
 }
 .sidebarBox {
 	min-height:140px;
@@ -917,3 +922,9 @@ ul#gallery li img {
 body#sports #content div.bar {
 	margin-top:10px;
 }
+
+.manager {width:400px;height:100px;background-color:#fff;border:dotted 1px #444;margin:10px;padding:5px;opacity:.8;float:left}
+.manager_name {font-size:18px}
+.manager_stat {}
+#mission_statment {clear:both}
+
