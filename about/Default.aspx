@@ -46,7 +46,7 @@
 				<a href="/" >Home</a>
 				<a href="/schedule/" >Schedule</a>
 				<a href="/shows/" >Shows</a>
-				<a href="/djs/" >DJs</a>
+				<a href="/people/" >Staff</a>
 				<a href="/sports/" >Sports</a>
 				<a href="/photos/" >Photos</a>
 				<a class="selected" href="/about/" >About</a>
@@ -55,7 +55,7 @@
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%">
-			<div id="featured" style="height:450px;">
+			<!--<div id="featured" style="height:450px;">
 			<div class="slider-wrapper theme-default">
 				<div class="ribbon"></div>
 				<div id="slider" class="nivoSlider">
@@ -67,15 +67,17 @@
 					<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
 				</div>
 			</div>
-			</div>
+			</div>-->
 				<div id="staff">
 					<h2>Staff</h2>
 				</div>
-				<h2>Mission Statement</h2>
-                <p>Act as an educational and practical training ground for those students who are interested in pursuing radio as a career.</p>
-                <p>Entertain and Inform our audience through innovative and consistent music and non-music programming.</p>
-                <p>Serve the DePaul community by promoting University services, events, and activities.</p>
-                <p>Work cooperatively with other campus groups and organizations to promote and support a varied and exciting collegiate experience for students.</p>
+				<div id="mission_statment">
+					<h2>Mission Statement</h2>
+                	<p>Act as an educational and practical training ground for those students who are interested in pursuing radio as a career.</p>
+                	<p>Entertain and Inform our audience through innovative and consistent music and non-music programming.</p>
+                	<p>Serve the DePaul community by promoting University services, events, and activities.</p>
+                	<p>Work cooperatively with other campus groups and organizations to promote and support a varied and exciting collegiate experience for students.</p>
+				</div>
 				<h2>Join Radio DePaul</h2>
 				<h3>Eligibility for Participation</h3>
                 <p>Only full-time students in good academic standing (2.5 GPA or higher) at DePaul are eligible for FULL membership in Radio DePaul.</p>
@@ -94,10 +96,16 @@
 	<footer>
 		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
 	</footer>
-<%Server.Execute("/includes/global_javascripts.aspx");%>
+<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="/js/jqclock_201.js"></script>
+<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
-<script type="text/javascript" src="/js/about.js"></script>
+<script type="text/javascript" src="about.js"></script>
 <script type="text/javascript">
 $(window).load(function() {
     $('#slider').nivoSlider();
