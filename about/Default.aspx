@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<style>.slides_container img {width:600px; }</style>
 </head>
 <body>
 	<a class="banner" href="http://radio.depaul.edu/">
@@ -50,7 +51,6 @@
 			<div id="featured" style="width:700px;">
 				<div id="slides">
 					<div class="slides_container">
-						<a href="http://www.flickr.com/photos/aftab/3152515428/" title="Save my love for loneliness | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="600" height="300" alt="Slide 7"></a>
 					</div>
 					<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
 					<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
@@ -58,27 +58,27 @@
 				<img src="/img/slides/example-frame.png" width="739" height="341" alt="Example Frame" id="frame" />
 			</div>
 				<div id="staff">
-					<h2>Staff</h2>
+					<div class="bar">Staff</div>
 				</div>
 				<div id="mission_statment">
-					<h2>Mission Statement</h2>
+					<div class="bar">Mission Statement</div>
                 	<p>Act as an educational and practical training ground for those students who are interested in pursuing radio as a career.</p>
                 	<p>Entertain and Inform our audience through innovative and consistent music and non-music programming.</p>
                 	<p>Serve the DePaul community by promoting University services, events, and activities.</p>
                 	<p>Work cooperatively with other campus groups and organizations to promote and support a varied and exciting collegiate experience for students.</p>
 				</div>
-				<h2>Join Radio DePaul</h2>
-				<h3>Eligibility for Participation</h3>
+				<div class="bar">Join Radio DePaul</div>
+				<div class="smallBar">Eligibility for Participation</div>
                 <p>Only full-time students in good academic standing (2.5 GPA or higher) at DePaul are eligible for FULL membership in Radio DePaul.</p>
                 <p>University faculty members, staff and members of the community also shall be eligible for ASSOCIATE membership through petition to the Student Advisory Committee.</p>
                 <p>Membership constitutes active participation in the organization.</p>
                 <p>Radio DePaul shall not discriminate against any person on the basis of race, color, sex, sexual preference, disabilities, national origin, religious affiliation, or beliefs.</p>
-           		<h3>Rights and Privileges of Membership</h3>
+           		<div class="smallBar">Rights and Privileges of Membership</div>
                	<p>The number of persons who may be members of Radio DePaul may be limited depending on the availability of on or off-air positions.</p>
                	<p>Only FULL members of the organization shall be eligible to hold management positions.</p>
-				<h2>Advertise With Us</h2>
-				<h2>FAQs</h2>
-				<h2>Awards &amp; Recognition</h2>
+				<!--<div class="smallBar">Advertise With Us</div>
+				<div class="smallBar">FAQs</div>-->
+				<div class="bar">Awards &amp; Recognition</div>
 				<div id="awards">
 					<div id="awards_2011">
 						<div class="bar">2011</div>
@@ -117,7 +117,7 @@
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
-<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
+<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627638190531&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="about.js"></script>
 <script type="text/javascript" src="/js/navSwitch.js"></script>

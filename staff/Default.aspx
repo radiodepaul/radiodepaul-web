@@ -44,12 +44,15 @@
 		</header>
 		<div id="main">
 			<div id="content">
+				<div id="staff_list">
+					<div class="bar">Fall 2011</div>
+				</div>
 			</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" src="people.js"></script>
+<script type="text/javascript" src="staff.js"></script>
 </body>
 </html>

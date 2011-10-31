@@ -5,5 +5,5 @@ $.each(showsParse, function(i, show) {
 	
 	var html = '<a href="/show/?id=' + show._id.$oid + '"><div class="smallBar">' + show.name + '</div></a>';
 	
-	$(html).appendTo('#content');
+	$(html).appendTo('#shows');
 });
