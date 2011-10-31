@@ -76,12 +76,12 @@ nav {
     height:30px;
     border-bottom:dotted 1px #000;
     text-transform:uppercase;
-    line-height:20px;
+    line-height:30px;
+	margin-top:10px;
 }
 nav a:link, nav a:visited {
-    border-right:dotted 1px #000
     float:left;
-    padding:10px 30px;
+    padding:10px 24px;
     font-family:futura-pt, sans-serif;
     text-decoration:none;
     color:#000;
