@@ -40,7 +40,7 @@
 
 			</ul>
 			<h1 id="title" style="font-size:36px">The Student Voice of the Blue Demons</h1>
-			<% Server.Execute("/includes/nav.aspx"); %>
+			<% Server.Execute("/includes/nav.aspx") %>
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%">

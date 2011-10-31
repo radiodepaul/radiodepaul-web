@@ -44,13 +44,13 @@
 
 			</ul>
 			<h1 id="title">DJs</h1>
-			<% Server.Execute("/includes/nav.aspx"); %>="/" >Listen Now</a>
+			<% Server.Execute("/includes/nav.aspx") %>="/" >Listen Now</a>
 			</nav>
 		</header>
 		<div id="main">
 			<div id="content">
 			</div>
-			<% Server.Execute("/includes/sidebar.aspx"); %>
+			<% Server.Execute("/includes/sidebar.aspx") %>
 		</div>
 	</div>
 	<footer>

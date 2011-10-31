@@ -41,7 +41,7 @@
 
 			</ul>
 			<h1 id="title">Shows</h1>
-			<% Server.Execute("/includes/nav.aspx"); %>
+			<% Server.Execute("/includes/nav.aspx") %>
 		</header>
 		<div id="main">
 			<div id="content">
