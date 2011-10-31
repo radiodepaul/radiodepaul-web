@@ -12,11 +12,14 @@
 		<div class="sidebarBox">
 			<div class="bar">Contact Us</div>
 			<div class="smallBar">Station Phone</div>
-			<p>(773) 325-7308</p>
+			<span>(773) 325-7308</span>
 			<div class="smallBar">Station Fax</div>
-			<p>(773) 325-4133</p>
+			<span>(773) 325-4133</span>
 			<div class="smallBar">Mailing Address</div>
-			<p>Radio DePaul<br/>2250 N. Sheffield Avenue Suite 317<br/>Box #640 <br/>Chicago, IL 60614</p>
+			<span>Radio DePaul</span><br />
+			<span>2250 N. Sheffield Avenue Suite 317</span><br />
+			<span>Box #640</span><br />
+			<span>Chicago, IL 60614</span>
 		</div>
 	<!--<div class="sidebarBox">
 		<div class="bar">Coming Up Next</div>
@@ -32,6 +35,6 @@
 	</div>
 	<div class="sidebarBox">
 		<div class="bar">Do You Like Us?</div>
-		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
+		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" height="290" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
 	</div>
 </div>

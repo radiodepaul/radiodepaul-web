@@ -6,8 +6,7 @@
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
-	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -50,11 +49,14 @@
 		<div id="main">
 		<div id="content">
 			<div id="featured">
-				<div class="slider-wrapper theme-default">
-					<div class="ribbon"></div>
-					<div id="slider" class="nivoSlider">
+				<div id="slides">
+					<div class="slides_container">
+						<a href="http://www.flickr.com/photos/aftab/3152515428/" title="Save my love for loneliness | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="600" height="300" alt="Slide 7"></a>
 					</div>
+					<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+					<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
 				</div>
+				<img src="/img/slides/example-frame.png" width="739" height="341" alt="Example Frame" id="frame" />
 			</div>
 			<div class="contentLeft">
 				<div class="bar">Radio DePaul News</div>
@@ -78,25 +80,21 @@
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
 	<%Server.Execute("/includes/globalJavascript.aspx");%>
+<script type="text/javascript" src="news.js"></script>
+<script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+<script src="/js/slides.min.jquery.js"></script>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
-<script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript" src="news.js"></script>
-<script type="text/javascript">
-$(window).load(function() {
-    $('#slider').nivoSlider({
-	effect: 'fade', // Specify sets like: 'fold,fade,sliceDown'
-	animSpeed: 500, // Slide transition speed
-	pauseTime: 6000, // How long each slide will show
-	directionNav: true, // Next & Prev navigation
-	controlNavThumbs: true, // Use thumbnails for Control Nav
-	controlNavThumbsFromRel: true, // Use image rel for thumbs
-	pauseOnHover: true, // Stop animation while hovering
-	captionOpacity: 0.0, // Universal caption opacity
-	prevText: 'Prev', // Prev directionNav text
-	nextText: 'Next', // Next directionNav text	
+<script type="text/javascript" language="javascript">
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: '/slides/img/loading.gif',
+			play: 5000,
+			pause: 2500,
+			hoverPause: true,
+		});
 	});
-});
 </script>
 </body>
 </html>
