@@ -17,7 +17,9 @@ var html = '<div class="contentLeft" style="width:475px">\
 			</div>\
 		<div class="contentRight" style="width:475px">\
 			<div class="bar">Description</div><p>' + show.description + '</p></div>\
-		</div>'
+			<div class="bar">Facebook</div>\
+			<div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="292" data-show-faces="true" data-border-color="#999" data-stream="false" data-header="false"></div>\
+		</div>';
 
 $(html).appendTo('#content');
 $('#title').prepend(show.name);

@@ -27,7 +27,6 @@ var html = '<li>\
 				<p>' + event.start + ' - ' + event.end + '</p>\
 				<p>' + event.location + '</p>\
 				<p>' + event.description + '</p>\
-				<a href="/station_events/event/?id=' + event._id.$oid + '">Read more &rarr;</a>\
 			</li>'
 			$(html).appendTo('#events');
 });

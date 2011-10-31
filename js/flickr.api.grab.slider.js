@@ -23,8 +23,8 @@ function jsonFlickrApi(rsp) {
   rsp.photoset.owner + "/" + photo.id;
   
   //s +=  '<li><a href="' + p_url + '">' + '<img alt="'+ photo.title + '"src="' + t_url + '"/>' + '</a><p>Untitled</p><p>2007</p></li>';
-
-  $('div#slider').append('<img src="' + b_url + '" alt="something" title="' + photo.title + '" rel="' + t_url + '" />');
+http://www.flickr.com/photos/radiodepaul/6195446169/
+  $('div.slides_container').append('<a target="_blank" title="' + photo.title + '" href="' + p_url + '"><img src="' + b_url + '" alt="' + photo.title + '" title="' + photo.title + '" rel="' + t_url + '" /></a>');
 
  }
 }

@@ -87,6 +87,7 @@ nav a:link, nav a:visited {
 }
 nav a{border-top:solid 4px #000;}
 nav a:hover{border-top:solid 4px #4289a9;}
+nav a.selected{border-top:solid 4px #4289a9;}
 nav a{-webkit-transition:border-top .4s ease-out;}
 div.bar {
 	width:340px;
@@ -94,6 +95,7 @@ div.bar {
 }
 .panel {
     text-align: center;
+	float:left;
 }
 #player img {
 
