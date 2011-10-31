@@ -14,6 +14,10 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
+	<a class="banner" href="http://radio.depaul.edu/">
+	  <span>Something Goes Here!</span>
+	  <span>Another Thing Goes Here!</span>
+	</a>
 	<div id="categories">
 		<a href="javascript:$.scrollTo($('#staff'))"><span>Staff</span></a>
 		<a href="" ><span>Mission Statement</span></a>
@@ -90,6 +94,38 @@
 				<h2>Advertise With Us</h2>
 				<h2>FAQs</h2>
 				<h2>Awards &amp; Recognition</h2>
+				<div id="awards">
+					<div id="awards_2011">
+						<div class="bar">2011</div>
+							<div class="awards_iba smallBar">Illinois Broadcasters Association</div>
+							<div class="awards_ibs smallBar">Illinois Broadcasters System</div>
+							<div class="awards_cbi smallBar">College Broadcasters, Inc.</div>
+							<div class="awards_aeo smallBar">American Eagle Outfitters/Filter Magazine</div>
+							<div class="awards_crd smallBar">College Radio Day</div>
+					</div>
+					<div id="awards_2010">
+						<div class="bar">2010</div>
+							<div class="awards_ibs smallBar">Illinois Broadcasters System</div>
+							<div class="awards_thp smallBar">The Huffington Post</div>
+							<div class="awards_cn smallBar">Conversations Newsletter</div>
+					</div>
+					<div id="awards_2009">
+						<div class="bar">2009</div>
+							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+					</div>
+					<div id="awards_2008">
+						<div class="bar">2008</div>
+							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+					</div>
+					<div id="awards_2007">
+						<div class="bar">2007</div>
+							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+					</div>
+					<div id="awards_2006">
+						<div class="bar">2006</div>
+							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+					</div>
+				</div>
 		</div>
 	</div>
 	</div>
@@ -106,6 +142,7 @@
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="about.js"></script>
+<script type="text/javascript" src="/js/navSwitch.js"></script>
 <script type="text/javascript">
 $(window).load(function() {
     $('#slider').nivoSlider();

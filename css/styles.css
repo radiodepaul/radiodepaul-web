@@ -630,6 +630,7 @@ div.bar {
 	background-color:#5e87a8;
 	font-weight:bold;
 	text-indent:5px;
+	clear:both;
 }
 div.smallBar {
 	width:100%;
@@ -638,9 +639,7 @@ div.smallBar {
 	border-bottom:1px solid #000;
 	font-weight:bold;
 	text-indent:5px;
-}
-div.smallBar:hover {
-	background-color:#5e87a8;
+	clear:both;
 }
 .sidebarBox {
 	min-height:140px;
@@ -923,8 +922,95 @@ body#sports #content div.bar {
 	margin-top:10px;
 }
 
-.manager {width:400px;height:100px;background-color:#fff;border:dotted 1px #444;margin:10px;padding:5px;opacity:.8;float:left}
-.manager_name {font-size:18px}
+.box {
+	width:400px;
+	position:relative;
+	height:100px;
+	background-color:#fff;
+	border:dotted 1px #444;
+	margin:10px;
+	padding:5px;
+	opacity:.8;
+	float:left;
+	overflow:hidden;
+}
+.manager_name, .award_category {font-size:18px; font-weight:bold;}
 .manager_stat {}
 #mission_statment {clear:both}
 
+.banner {
+  	left: -65px;
+  	height: 30px;
+  	top: 40px;
+  	position: absolute;
+  	text-decoration: none;
+  	width: 250px;
+  	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+	-o-transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+	transform:rotate(-45deg)
+}
+.banner span {
+    background: #000;
+    color: white;
+    font-size: 14px;
+    left: 0;
+    padding: 5px 0;
+    position: absolute;
+    text-align: center;
+    width: 250px;
+    -moz-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+	-o-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+	box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+    -moz-transition-property:opacity;
+	-webkit-transition-property:opacity;
+	-o-transition-property:opacity;
+	transition-property:opacity;
+	-moz-transition-duration:1s;
+	-webkit-transition-duration:1s;
+	-o-transition-duration:1s;
+	transition-duration:1s
+}
+.banner span:last-child {
+      /* this is the backside */
+      background: red;
+      opacity: 0;
+}
+.banner:hover span:first-child {
+      opacity: 0;
+}
+.banner:hover span:last-child {
+      opacity: 1;
+}
+.box_banner { background-color:#000;width:160px;height:15px;right:-35px;top:36px;position:absolute;
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	transform:rotate(45deg) 
+}
+.box_banner span {
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    left: 0;
+    padding: 5px 0;
+    position: absolute;
+    text-align: center;
+    width: 160px;
+	height:15px;
+    -moz-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+	-o-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+	box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
+    -moz-transition-property:opacity;
+	-webkit-transition-property:opacity;
+	-o-transition-property:opacity;
+	transition-property:opacity;
+	-moz-transition-duration:1s;
+	-webkit-transition-duration:1s;
+	-o-transition-duration:1s;
+	transition-duration:1s;
+}
