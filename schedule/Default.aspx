@@ -46,7 +46,7 @@
 
 			</ul>
 			<h1 id="title">Schedule</h1>
-			<% Server.Execute("/includes/nav.aspx"); %>
+			<% Server.Execute("/includes/nav.aspx") %>
 		</header>
 		<div id="main">
 		<div id="content">
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 		</div>
-		<% Server.Execute("/includes/sidebar.aspx"); %>
+		<% Server.Execute("/includes/sidebar.aspx") %>
 		</div>
 	</div>
 	<footer>

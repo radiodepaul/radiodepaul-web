@@ -44,12 +44,12 @@
 
 			</ul>
 			<h1 id="title">DJs</h1>
-			<% Server.Execute("/includes/nav.aspx"); %>
+			<% Server.Execute("/includes/nav.aspx") %>
 		</header>
 		<div id="main">
 			<div id="content">
 			</div>
-			<% Server.Execute("/includes/sidebar.aspx"); %>
+			<% Server.Execute("/includes/sidebar.aspx") %>
 		</div>
 	</div>
 <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
