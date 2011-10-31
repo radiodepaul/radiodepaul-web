@@ -46,16 +46,7 @@
 
 			</ul>
 			<h1 id="title">About</h1>
-			<nav>
-				<a href="/" >Home</a>
-				<a href="/schedule/" >Schedule</a>
-				<a href="/shows/" >Shows</a>
-				<a href="/people/" >Staff</a>
-				<a href="/sports/" >Sports</a>
-				<a href="/photos/" >Photos</a>
-				<a class="selected" href="/about/" >About</a>
-				<a href="#" onClick="return playerPopUp('/player.aspx')">Listen Now</a>
-			</nav>
+			<% Server.Execute("/includes/nav.aspx"); %>
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%">
