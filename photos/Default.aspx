@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="categories">
-		<a href="" ><span>All Albums</span></a>
+		<!--<a href="" ><span>All Albums</span></a>-->
 		<a href="radiodepaul_2010_2011/" ><span>Radio DePaul 2010-2011</span></a>
 		<a href="visiting_dignitaries/" ><span>Visiting Dignitaries</span></a>
 		<a href="awards_recognition/" ><span>Awards &amp; Recognition</span></a>

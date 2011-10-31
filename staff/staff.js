@@ -5,5 +5,5 @@ $.each(peopleParse, function(i, person) {
 	
 	var html = '<a href="/person/?id=' + person._id.$oid + '"><div class="smallBar">' + person.fname + ' ' + person.lname + '</div></a>'
 	
-	$(html).appendTo('#content');
+	$(html).appendTo('#staff_list');
 });

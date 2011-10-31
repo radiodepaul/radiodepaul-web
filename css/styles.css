@@ -768,20 +768,30 @@ footer p {
 }
 #schedule h1 {
 	font-size:24px;
-	margin-left:10px;
 	padding:5px 0;
 	width:100%;
 	border-bottom:1px solid #000;
 	font-weight:bold;
+	text-indent:5px;
 }
 #schedule ul {
 	width:100%;
+}
+#schedule, #shows, #staff_list {
+	background-color:#F6F2F5;
+	border:1px solid #999;
+	min-height:140px;
+	width:100%;
+	-o-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 }
 #schedule ul li {
 	width:100%;
 	position:relative;
 	height:110px;
-	border-bottom:4px solid #000;
+	border-bottom:2px solid #999;
 }
 #schedule ul li img {
 	height:80px;
@@ -819,6 +829,7 @@ footer p {
 	position:absolute;
 	border-bottom:1px dotted #000;
 	font-weight:bold;
+	text-indent:5px;
 }
 #schedule ul li p.showName span {
 	font-weight:normal;
@@ -845,7 +856,7 @@ footer p {
 	font-weight:normal;
 }
 #schedule ul li a:hover {
-	border-left:6px solid #000;
+	border-left:2px solid #888;
 }
 #schedule ul li p.showBio {
 	position:absolute;
@@ -859,7 +870,7 @@ p.scheduleBar {
 	width:100%;
 	color:#F2F2F2;
 	padding:5px;
-	background-color:#474348;
+	background-color:#cf671c;
 }
 #djPage #content img {
 	height:200px;

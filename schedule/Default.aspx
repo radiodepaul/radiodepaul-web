@@ -45,7 +45,7 @@
 		<div id="main">
 		<div id="content">
 			<div id="schedule">
-				<div class="smallBar"><p>Fall 2011</p></div>
+				<div class="bar">Fall 2011</div>
 				<div class="day" id="monday">
 					<h1>Monday</h1>
 					<ul>
