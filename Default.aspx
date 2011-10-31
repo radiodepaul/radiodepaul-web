@@ -1,9 +1,11 @@
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="/Default.aspx.cs" Inherits="_Default" %>
+<%@ Import Namespace="System.IO" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
-	<% Server.Execute("/includes/globalCSS.aspx") %>
+	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
@@ -43,7 +45,7 @@
 
 			</ul>
 			<h1 class="tk-futura-pt" id="title">Home</h1>
-			<% Server.Execute("/includes/nav.aspx") %>
+			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
 		<div id="content">
@@ -71,11 +73,11 @@
 				</div>
 			</div>
 		</div>
-			<% Server.Execute("/includes/sidebar.aspx") %>
+			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>
-	<% Server.Execute("/includes/footer.aspx") %>
-	<% Server.Execute("/includes/globalJavascript.aspx") %>
+	<%Server.Execute("/includes/footer.aspx");%>
+	<%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>

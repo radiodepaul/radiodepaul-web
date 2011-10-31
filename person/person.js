@@ -1,25 +1,24 @@
-hostId = $.url().param('id');
+personId = $.url().param('id');
 
-console.log(hostId);
+staffGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collections/people/" + personId + "?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
 
-hostGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collections/people/" + hostId + "?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-
-host = $.parseJSON(hostGet);
+person = $.parseJSON(staffGet);
 
 
-var html = '<h2 id="name">' + host.fname + ' ' + host.lname + '</h2> \
+var html = '<h2 id="name">' + person.fname + ' ' + person.lname + '</h2> \
 			<div class="contentLeft">\
 					<div id="stats"> \
 						<div class="bar"><p>Stats</p></div>\
-						<p>Major: ' + host.major + '</p>\
-						<p>Class: ' + host.class_year + '</p>\
+						<p>Major: ' + person.major + '</p>\
+						<p>Class: ' + person.class_year + '</p>\
 						<p>Age: </p>\
-						<p>Email: ' + host.email + '</p>\
+						<p>Email: ' + person.email + '</p>\
 					</div>\
 			</div>\
 			<div class="contentRight">\
 				<div class="bar">Bio</div>\
-				<p>' + host.bio + '</p>\
+				<p>' + person.bio + '</p>\
 			</div>'
 
 $(html).appendTo('#content');
+$('#title').prepend(person.name);
