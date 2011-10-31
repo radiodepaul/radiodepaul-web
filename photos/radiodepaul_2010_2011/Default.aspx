@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html><%@ Page Language="C#" AutoEventWireup="true"  CodeFile="/Default.aspx.cs" Inherits="_Default" %>
+<%@ Import Namespace="System.IO" %>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
-	<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
-	<link href='http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Tenor+Sans&v2' rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/themes/pascal/pascal.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/themes/orman/orman.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
+	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -59,70 +54,10 @@
 		<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.js"></script>
 		</ul>
 		</div>
-		<div id="sidebar">
-			<div id="nowPlaying" class="sidebarBox">
-				<div class="bar"><p>Now Playing</p></div>
-				<img src="/img/djs/chris.jpg" />
-				<div class="showInfo">
-					<p class="showName">Mondays with Madison</p>
-					<p class="showDJs">with Dan Peterson</p>
-					<a href="">Show Page</a>
-					<p class="showGenre">Digital/Rock/Rap</p>
-				</div>
-			</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Coming Up Next</p></div>
-				<ul>
-					<li><p>6:30pm - Monday's with Madison</p></li>
-					<li><p>9:00pm - DJ PWhelbs</p></li>
-					<li><p>11:00pm - Campus Connection</p></li>
-				</ul>
-			</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Friends Of The Station</p></div>
-				<img src="/img/schubas.png" alt="" />
-			</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Do You Like Us?</p></div>
-				<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="" stream="false" header="false"></fb:like-box>
-			</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Contact Us</p></div>
-				<div class="smallBar"><p>Station Phone</p></div>
-				<p>(773) 325-7308</p>
-				<div class="smallBar"><p>Station Fax</p></div>
-				<p>(773) 325-4133</p>
-				<div class="smallBar"><p>Mailing Address</p></div>
-				<p>Radio DePaul<br/>2250 N. Sheffield Avenue Suite 317<br/>Box #640 <br/>Chicago, IL 60614</p>
-			</div>
-		</div>
-		<!--1<footer>
-			<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
-			<div id="friends">
-				<p>Friends of Radio DePaul</p>
-				<ul>
-					<li><a href="">Good Day DePaul</a></li>
-					<li><a href="">DePaul Activities Board</a></li>
-					<li><a href="">The DePaulia</a></li>
-				</ul>
-			</div>
-		</footer> -->
+		<%Server.Execute("/includes/sidebar.aspx");%>
 	</div>
-	
-<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="/js/jqclock_201.js"></script>
-<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
-<script type="text/javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript">
-$(window).load(function() {
-    $('#slider').nivoSlider();
-});
-</script>
+	<%Server.Execute("/includes/footer.aspx");%>
+<%Server.Execute("/includes/globalJavascript.aspx");%>	
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627556017792&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 </body>
 </html>

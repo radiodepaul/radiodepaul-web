@@ -5,12 +5,8 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
-	<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
-	<link href='http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Tenor+Sans&v2' rel='stylesheet' type='text/css' />
+	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/themes/pascal/pascal.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/themes/orman/orman.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -40,7 +36,7 @@
 
 			</ul>
 			<h1 id="title" style="font-size:36px">The Student Voice of the Blue Demons</h1>
-			<% Server.Execute("/includes/nav.aspx") %>
+			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%">
@@ -79,16 +75,8 @@
 		</div>
 	</div>
 	</div>
-	<footer>
-		<p>Radio DePaul is the official student-run radio station of DePaul University in the heart of Chicago, IL. We strive to bring experience to our staff and quality music and talk shows to our listeners.</p>
-	</footer>
-<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="/js/jqclock_201.js"></script>
-<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+	<%Server.Execute("/includes/footer.aspx");%>
+<%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.nivo.slider.pack.js"></script>

@@ -1,5 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="/Default.aspx.cs" Inherits="_Default" %>
+<%@ Import Namespace="System.IO" %>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>My Google API Application</title>
     <script src="https://www.google.com/jsapi?key=ABQIAAAAAXA4G1GiQWKcMQHKrU3q2BRFhQfDf-azs6UHSomr7pQ8redAkBTMxNqv6hiWMlD-9kDSv0otlJamSA" type="text/javascript"></script>
@@ -32,12 +34,7 @@
   </head>
   <body>
     <div id="searchcontrol">Loading...</div>
-<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="/js/jqclock_201.js"></script>
-<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+	<%Server.Execute("/includes/footer.aspx");%>
+<%Server.Execute("/includes/globalJavascript.aspx");%>
   </body>
 </html>
