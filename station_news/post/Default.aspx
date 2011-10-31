@@ -44,57 +44,12 @@
 
 			</ul>
 			<h1 id="title">DJs</h1>
-			<nav>
-				<a href="/" >Home</a>
-				<a href="/schedule/" >Schedule</a>
-				<a href="/shows/" >Shows</a>
-				<a href="/people/" >Staff</a>
-				<a href="/sports/" >Sports</a>
-				<a href="/photos/" >Photos</a>
-				<a href="/about/" >About</a>
-				<a href="/" >Listen Now</a>
-			</nav>
+			<% Server.Execute("/includes/nav.aspx"); %>
 		</header>
 		<div id="main">
-		<div id="content">
-			
-		</div>
-		<div id="sidebar">
-			<div id="nowPlaying" class="sidebarBox">
-				<div class="bar"><p>Now Playing</p></div>
-				<img src="/img/djs/chris.jpg" />
-				<div class="showInfo">
-					<p class="showName">Mondays with Madison</p>
-					<p class="showDJs">with Dan Peterson</p>
-					<a href="">Show Page</a>
-					<p class="showGenre">Digital/Rock/Rap</p>
-				</div>
+			<div id="content">
 			</div>
-				<div class="sidebarBox">
-					<div class="bar"><p>Contact Us</p></div>
-					<div class="smallBar"><p>Station Phone</p></div>
-					<p>(773) 325-7308</p>
-					<div class="smallBar"><p>Station Fax</p></div>
-					<p>(773) 325-4133</p>
-					<div class="smallBar"><p>Mailing Address</p></div>
-					<p>Radio DePaul<br/>2250 N. Sheffield Avenue Suite 317<br/>Box #640 <br/>Chicago, IL 60614</p>
-				</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Coming Up Next</p></div>
-				<ul>
-					<li><p>6:30pm - Monday's with Madison</p></li>
-					<li><p>9:00pm - DJ PWhelbs</p></li>
-					<li><p>11:00pm - Campus Connection</p></li>
-				</ul>
-			</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Friends Of The Station</p></div>
-				<img class="bannerAd" src="/img/schubas.png" alt="" />
-			</div>
-			<div class="sidebarBox">
-				<div class="bar"><p>Do You Like Us?</p></div>
-				<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
-			</div>
+			<% Server.Execute("/includes/sidebar.aspx"); %>
 		</div>
 	</div>
 <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>

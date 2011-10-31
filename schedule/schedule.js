@@ -30,7 +30,6 @@ $.each(showsParse, function(i, show) {
 	
 	
 	var html = '<li>\
-			<img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/small/image.jpg"/>\
 			<div class="time">\
 				<p class="scheduleBar startTime">' + show.start_hour + ':' + show.start_minute + start_ampm + '</p>\
 				<p class="scheduleBar endTime">' + end_hour + ':' + end_minute + end_ampm + '</p>\

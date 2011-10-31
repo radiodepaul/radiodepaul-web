@@ -13,12 +13,12 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body id="djPage">
+<body>
 	<div id="categories">
 		<a href="" ><span>Jim Sandherr</span></a>
 		<a href="" ><span>Jake Padilla</span></a>
 		<a href="" ><span>Esmeralda Leon</span></a>
-		<a class="selected" href="" ><span>Courtney King</span></a>
+		<a href="" ><span>Courtney King</span></a>
 		<a href="" ><span>Jon Schatz</span></a>
 		<a href="" ><span>Eddie Sayago</span></a>
 		<a href="" ><span>Chris Dubiel</span></a>
@@ -43,17 +43,8 @@
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 
 			</ul>
-			<h1 id="title">DJs</h1>
-			<nav>
-				<a href="/" >Home</a>
-				<a href="/schedule/" >Schedule</a>
-				<a href="/shows/" >Shows</a>
-				<a href="/people/" >Staff</a>
-				<a href="/sports/" >Sports</a>
-				<a href="/photos/" >Photos</a>
-				<a href="/about/" >About</a>
-				<a href="/" >Listen Now</a>
-			</nav>
+			<h1 id="title"></h1>
+			<% Server.Execute("/includes/nav.aspx"); %>
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%">
