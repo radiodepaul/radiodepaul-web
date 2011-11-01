@@ -117,7 +117,7 @@
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
-<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627638190531&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
+<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157628024483658&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="about.js"></script>
 <script type="text/javascript" src="/js/navSwitch.js"></script>

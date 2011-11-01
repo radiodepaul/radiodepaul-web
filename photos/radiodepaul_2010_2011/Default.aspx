@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="categories">
-		<a href="" ><span>All Albums</span></a>
+		<!--<a href="" ><span>All Albums</span></a>-->
 		<a href="../radiodepaul_2010_2011/" ><span>Radio DePaul 2010-2011</span></a>
 		<a href="../visiting_dignitaries/" ><span>Visiting Dignitaries</span></a>
 		<a href="../awards_recognition/" ><span>Awards &amp; Recognition</span></a>
@@ -37,16 +37,7 @@
 
 			</ul>
 			<h1 id="title">Radio DePaul 2010-2011</h1>
-			<nav>
-				<a href="/" >Home</a>
-				<a href="/schedule/" >Schedule</a>
-				<a href="/shows/" >Shows</a>
-				<a href="/people/" >Staff</a>
-				<a href="/sports/" >Sports</a>
-				<a class="selected" href="/photos/" >Photos</a>
-				<a href="/about/" >About</a>
-				<a href="#" onClick="return playerPopUp('/player.aspx')">Listen Now</a>
-			</nav>
+			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
 		<div id="content">
