@@ -7,7 +7,7 @@ person = $.parseJSON(staffGet);
 
 var html = '<h2 id="name">' + person.fname + ' ' + person.lname + '</h2> \
 					<div class="left contentBox"> \
-						<div class="bar"><p>Stats</p></div>\
+						<div class="bar">Stats</div>\
 						<p>Major: ' + person.major + '</p>\
 						<p>Class: ' + person.class_year + '</p>\
 						<p>Age: </p>\
