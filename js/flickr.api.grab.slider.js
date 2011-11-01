@@ -24,7 +24,7 @@ function jsonFlickrApi(rsp) {
   
   //s +=  '<li><a href="' + p_url + '">' + '<img alt="'+ photo.title + '"src="' + t_url + '"/>' + '</a><p>Untitled</p><p>2007</p></li>';
 http://www.flickr.com/photos/radiodepaul/6195446169/
-  $('div.slides_container').append('<a target="_blank" title="' + photo.title + '" href="' + p_url + '"><img src="' + b_url + '" alt="' + photo.title + '" title="' + photo.title + '" rel="' + t_url + '" /></a>');
+  $('div.slides_container').append('<a title="' + photo.title + '" href="' + b_url + '" class="fancybox" rel="gallery" ><img src="' + b_url + '" alt="' + photo.title + '" title="' + photo.title + '" width="600px "/></a>');
 
  }
 }

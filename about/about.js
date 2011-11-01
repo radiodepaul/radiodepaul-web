@@ -30,7 +30,6 @@ $.each(awardsParse, function(i, award) {
 				<div class="award_prize">' + award.prize + '</div>\
 				<div class="award_recipient">' + award.recipient + '</div>\
 				</div>';
-	console.log('#awards #awards_' + award.year + ' #awards_' + award.association_code);	
 	var location = '#awards_' + award.year +' .awards_' + award.association_code;
 	$(html).insertAfter(location);
 	
