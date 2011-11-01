@@ -124,6 +124,7 @@
 				'hideOnContentClick' : true,
 				'titlePosition' : 'inside',
 			});
+			$('div.caption p').append(' | Courtesy of DePaul Athletics');
 	});
 </script>
 </body>
