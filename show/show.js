@@ -9,7 +9,7 @@ var html = '<div class="left contentBox">\
 				<div class="bar">Stats</div>\
 				<ul>\
 					<li>Genre: ' + show.genre + '</li>\
-					<li>Hosts: ' + show.hosts + '</li>\
+					<li>Hosts: ' + show.host + '</li>\
 					<li>Email: <a href="mailto:' + show.show_email + '">' + show.show_email + '</a></li>\
 					<li><a href="http://twitter.com/' + show.twitter_username + '">Twitter</a></li>\
 					<li><a href="' + show.facebook_page_username + '">Facebook</a></li>\
