@@ -84,7 +84,7 @@
 	$(function(){
 		$('#slides').slides({
 			preload: true,
-			preloadImage: '/slides/img/loading.gif',
+			preloadImage: '/img/slides/loading.gif',
 			play: 5000,
 			pause: 2500,
 			hoverPause: true,

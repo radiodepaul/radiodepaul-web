@@ -9,3 +9,4 @@ var html = '<div class="bar">' + news_post.headline + ' by ' + news_post.author 
 			</div>'
 
 $(html).appendTo('#content');
+document.title =  document.title + ' | ' + news_post.headline;

@@ -24,5 +24,8 @@ var html = '<h2 id="name">' + person.fname + ' ' + person.lname + '</h2> \
 				<p>' + person.bio + '</p>\
 			</div>';
 
+var name = person.fname + ' ' + person.lname;
+
 $(html).appendTo('#content');
-$('#title').prepend(person.name);
+$('#title').prepend(name);
+document.title = document.title + ' | ' + name;
