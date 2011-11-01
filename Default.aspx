@@ -58,21 +58,16 @@
 				</div>
 				<img src="/img/slides/example-frame.png" width="739" height="341" alt="Example Frame" id="frame" />
 			</div>
-			<div class="contentLeft">
+			<div class="left contentBox">
 				<div class="bar">Radio DePaul News</div>
-				<div>
-					<ul id="news">
-						<!-- NEWS_POSTS GO HERE -->
-					</ul>
-				</div>
+				<ul id="news">
+				<!-- NEWS_POSTS GO HERE -->
+				</ul>
 			</div>
-			<div class="contentRight">
-				<div id="events">
-					<div class="bar">Coming Up</div>
-					<ul id="events">
-					
-					</ul>
-				</div>
+			<div class="right contentBox">
+				<div class="bar">Coming Up</div>
+				<ul id="events">
+				</ul>
 			</div>
 		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>

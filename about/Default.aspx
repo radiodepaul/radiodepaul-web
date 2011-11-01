@@ -83,32 +83,32 @@
 					<div id="awards_2011">
 						<div class="bar">2011</div>
 							<div class="awards_iba smallBar">Illinois Broadcasters Association</div>
-							<div class="awards_ibs smallBar">Illinois Broadcasters System</div>
+							<div class="awards_ibs smallBar">Intercollegiate Broadcasters System</div>
 							<div class="awards_cbi smallBar">College Broadcasters, Inc.</div>
 							<div class="awards_aeo smallBar">American Eagle Outfitters/Filter Magazine</div>
 							<div class="awards_crd smallBar">College Radio Day</div>
 					</div>
 					<div id="awards_2010">
 						<div class="bar">2010</div>
-							<div class="awards_ibs smallBar">Illinois Broadcasters System</div>
+							<div class="awards_ibs smallBar">Intercollegiate Broadcasters System</div>
 							<div class="awards_thp smallBar">The Huffington Post</div>
 							<div class="awards_cn smallBar">Conversations Newsletter</div>
 					</div>
 					<div id="awards_2009">
 						<div class="bar">2009</div>
-							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+							<div class="awards_cbi smallBar">College Broadcasters, Inc</div>
 					</div>
 					<div id="awards_2008">
 						<div class="bar">2008</div>
-							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+							<div class="awards_cbi smallBar">College Broadcasters, Inc</div>
 					</div>
 					<div id="awards_2007">
 						<div class="bar">2007</div>
-							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+							<div class="awards_cbi smallBar">College Broadcasters, Inc</div>
 					</div>
 					<div id="awards_2006">
 						<div class="bar">2006</div>
-							<div class="awards_cbi smallBar">Illinois Broadcasters System</div>
+							<div class="awards_cbi smallBar">College Broadcasters, Inc</div>
 					</div>
 				</div>
 		</div>
