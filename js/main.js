@@ -10,47 +10,6 @@ $.simpleWeather({
         $("#weather").html('<p>'+error+'</p>');
     }
 });
-$("ul#gallery li a").fancybox({
-	'transitionIn'	:	'elastic',
-	'transitionOut'	:	'elastic',
-	'speedIn'		:	200, 
-	'speedOut'		:	200, 
-	'overlayShow'	:	false,
-	'hideOnContentClick': true
-});
-$(function() {
-
-	/* This is basic - uses default settings */
-	
-	//$("a#single_image").fancybox();
-	
-	/* Using custom settings */
-	
-	/*$("a#inline").fancybox({
-		'hideOnContentClick': true
-	});
-
-	*/
-	
-	/* Apply fancybox to multiple items */
-	
-	$("ul#gallery li a").fancybox({
-		'transitionIn'	:	'elastic',
-		'transitionOut'	:	'elastic',
-		'speedIn'		:	200, 
-		'speedOut'		:	200, 
-		'overlayShow'	:	false,
-		'hideOnContentClick': true
-	});
-	$("body#portfolio_item div#left_column a").fancybox({
-		'transitionIn'	:	'elastic',
-		'transitionOut'	:	'elastic',
-		'speedIn'		:	200, 
-		'speedOut'		:	200, 
-		'overlayShow'	:	false,
-		'hideOnContentClick': true
-	});
-});
 
 function playerPopUp(url){newwindow=window.open(url,'name','height=300,width=360,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');}
 function podcastPlayerPopUp(url) { newwindow = window.open(url, 'name', 'height=340,width=500,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no'); }

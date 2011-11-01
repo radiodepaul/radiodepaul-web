@@ -51,7 +51,6 @@
 			<div id="featured">
 				<div id="slides">
 					<div class="slides_container">
-						<a href="http://www.flickr.com/photos/aftab/3152515428/" title="Save my love for loneliness | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="600" height="300" alt="Slide 7"></a>
 					</div>
 					<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
 					<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
@@ -76,7 +75,6 @@
 	<%Server.Execute("/includes/footer.aspx");%>
 	<%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" src="news.js"></script>
-<script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
@@ -89,6 +87,13 @@
 			pause: 2500,
 			hoverPause: true,
 		});
+		$("a.fancybox").fancybox({
+				'transitionIn'	:	'elastic',
+				'transitionOut'	:	'elastic',
+				'speedIn'		:	600, 
+				'speedOut'		:	200, 
+				'overlayShow'	:	false
+			});
 	});
 </script>
 </body>

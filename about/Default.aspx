@@ -127,11 +127,18 @@
 	$(function(){
 		$('#slides').slides({
 			preload: true,
-			preloadImage: '/slides/img/loading.gif',
+			preloadImage: '/img/slides/loading.gif',
 			play: 5000,
 			pause: 2500,
 			hoverPause: true,
 		});
+		$("a.fancybox").fancybox({
+				'transitionIn'	:	'elastic',
+				'transitionOut'	:	'elastic',
+				'speedIn'		:	600, 
+				'speedOut'		:	200, 
+				'overlayShow'	:	false
+			});
 	});
 </script>
 </body>
