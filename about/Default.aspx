@@ -6,10 +6,9 @@
 	<meta charset="utf-8" />
 	<title>Radio DePaul | About</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
-	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/slides_full.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<style>.slides_container img {width:600px; }</style>
 </head>
 <body>
 	<a class="banner" href="http://radio.depaul.edu/">
@@ -48,14 +47,14 @@
 		</header>
 		<div id="main">
 		<div id="content" style="width:100%;">
-			<div id="featured" style="width:700px;">
+			<div id="featured">
 				<div id="slides">
 					<div class="slides_container">
 					</div>
 					<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
 					<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
 				</div>
-				<img src="/img/slides/example-frame.png" width="739" height="341" alt="Example Frame" id="frame" />
+				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 			</div>
 				<div id="staff">
 					<div class="bar">Staff</div>
@@ -116,7 +115,7 @@
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
+<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider_full.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157628024483658&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="about.js"></script>
@@ -131,13 +130,38 @@
 			play: 5000,
 			pause: 2500,
 			hoverPause: true,
+			animationStart: function(current){
+								$('.caption').animate({
+									bottom:-35
+								},100);
+								if (window.console && console.log) {
+									// example return of current slide number
+									console.log('animationStart on slide: ', current);
+								};
+							},
+							animationComplete: function(current){
+								$('.caption').animate({
+									bottom:0
+								},200);
+								if (window.console && console.log) {
+									// example return of current slide number
+									console.log('animationComplete on slide: ', current);
+								};
+							},
+							slidesLoaded: function() {
+								$('.caption').animate({
+									bottom:0
+								},200);
+							},
 		});
 		$("a.fancybox").fancybox({
 				'transitionIn'	:	'elastic',
 				'transitionOut'	:	'elastic',
 				'speedIn'		:	600, 
 				'speedOut'		:	200, 
-				'overlayShow'	:	false
+				'overlayShow'	:	true,
+				'hideOnContentClick' : true,
+				'titlePosition' : 'inside',
 			});
 	});
 </script>
