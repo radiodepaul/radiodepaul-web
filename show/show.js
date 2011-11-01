@@ -16,11 +16,11 @@ var html = '<div class="left contentBox">\
 				</ul>\
 			</div>\
 		<div class="right contentBox">\
-			<div class="bar">Facebook></div>\
+			<div class="bar">Facebook</div>\
 			<div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460px" data-show-faces="true" data-border-color="#999" data-stream="false" data-header="false"></div>\
 		</div>\
 		<div class="contentBox clear">\
-			<div class="bar">Description></div>\
+			<div class="bar">Description</div>\
 			<p>' + show.description + '</p>\
 		</div>\
 		<div class="clear" id="disqus_thread"></div>';
