@@ -40,12 +40,13 @@
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
-		<div id="content">
-		<ul id="gallery">
-		<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.js"></script>
-		</ul>
-		</div>
+			<div id="content">
+				<ul id="gallery">
+				<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.js"></script>
+				</ul>
+			</div>
 		<%Server.Execute("/includes/sidebar.aspx");%>
+		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>	

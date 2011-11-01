@@ -27,5 +27,5 @@ var html = '<div class="left contentBox">\
 
 $(html).appendTo('#content');
 $('#title').prepend(show.name);
-
+document.title =  document.title + ' | ' + show.name;
 //<div class="bar">Photo</div><img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/medium/image.jpg"/>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Radio DePaul</title>
+	<title>Radio DePaul | Schedule</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>

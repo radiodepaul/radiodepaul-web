@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Radio DePaul Player</title>
+    <title>Radio DePaul | Player</title>
     <link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
     <meta name="description" content="Desktop Player for Radio DePaul" />
     <meta http-equiv="Content-Script-Type" content="text/javascript">

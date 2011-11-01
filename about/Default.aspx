@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Radio DePaul</title>
+	<title>Radio DePaul | About</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>

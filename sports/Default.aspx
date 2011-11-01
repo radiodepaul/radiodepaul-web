@@ -4,11 +4,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Radio DePaul</title>
+	<title>Radio DePaul | Sports</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="/css/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -50,15 +48,17 @@
 				</div>
 				<img src="/img/slides/example-frame.png" width="739" height="341" alt="Example Frame" id="frame" />
 			</div>
-			<div class="contentLeft">
-				<div class="bar"><p>Men's Soccer</p></div>
+			<div class="left contentBox">
+				<div class="bar">Men's Soccer</div>
 				<ul>
 					<li>MS- at Loyola - Wednesday 9/14 (7P)</li>
 					<li>MS- vs. Seton Hall - Saturday 9/24 (1P)</li>
 					<li>MS- vs. Rutgers - Saturday 10/15 (1P)</li>
 					<li>MS- vs. Syracuse - Saturday 10/29 (1P)</li>
 				</ul>
-				<div class="bar"><p>Volleyball</p></div>
+			</div>
+			<div class="right contentBox">
+				<div class="bar">Volleyball</div>
 				<ul>
 					<li>V-  vs. Georgetown - Sunday 9/25 (2P)</li>
 					<li>V-  vs. Notre Dame - Friday 10/14 (7P)</li>
@@ -66,8 +66,8 @@
 					<li>V-  vs. Seton Hall - Sunday 11/6 (2P)</li>
 				</ul>
 			</div>
-			<div class="contentRight">
-				<div class="bar"><p>Women's Soccer</p></div>
+			<div class="left contentBox clear">
+				<div class="bar">Women's Soccer</div>
 				<ul>
 					<li>WS- vs. Minnesota - Sunday 9/11 (Noon)</li>
 					<li>WS- vs. Cincinnati - Friday 9/16 (4P)</li>
@@ -81,14 +81,14 @@
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
-<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
+<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627899861179&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
 <script type="text/javascript" language="javascript">
 	$(function(){
 		$('#slides').slides({
 			preload: true,
-			preloadImage: '/slides/img/loading.gif',
+			preloadImage: '/img/slides/loading.gif',
 			play: 5000,
 			pause: 2500,
 			hoverPause: true,
