@@ -35,7 +35,7 @@ $.each(showsParse, function(i, show) {
 				<p class="scheduleBar endTime">' + end_hour + ':' + end_minute + end_ampm + '</p>\
 			</div>\
 			<p class="showName"><a href="/show/?id=' + show._id.$oid + '">' + show.name + '</a><span> | ' + show.genre + '</span></p>\
-			<p class="showDJs">with ' + show.hosts + '</p>\
+			<p class="showDJs">with ' + show.host + '</p>\
 			<p class="showBio">' + show.short_description + '</p>\
 		</li>'
 	
