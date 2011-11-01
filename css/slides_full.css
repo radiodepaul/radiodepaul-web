@@ -8,10 +8,10 @@
 #frame {
 	position:absolute;
 	z-index:0;
-	width:1140px;
-	height:557px;
-	top:-6px;
-	left:-114px;
+	width:1170px;
+	height:580px;
+	top:0px;
+	left:-120px;
 }
 
 /*
@@ -20,8 +20,8 @@
 
 #slides {
 	position:absolute;
-	top:15px;
-	left:6px;
+	top:30px;
+	left:14px;
 	z-index:100;
 }
 .slides_container div.slide {
@@ -68,7 +68,7 @@
 
 #slides .next,#slides .prev {
 	position:absolute;
-	top:127px;
+	top:227px;
 	left:-24px;
 	width:24px;
 	height:43px;
@@ -85,7 +85,7 @@
 */
 
 .pagination {
-	margin:26px auto 0;
+	margin:36px auto 0;
 	width:100px;
 }
 
@@ -148,5 +148,5 @@
 */
 #featured {
 	width:900px;
-	height:520px;
+	height:550px;
 }
