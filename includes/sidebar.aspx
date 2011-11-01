@@ -9,7 +9,7 @@
 			<p class="showGenre">Digital/Rock/Rap</p>
 		</div>
 	</div> -->
-		<div class="sidebarBox">
+		<div class="contentBox">
 			<div class="bar">Contact Us</div>
 			<div class="smallBar">Station Phone</div>
 			<span>(773) 325-7308</span>
@@ -29,11 +29,11 @@
 			<li><p>11:00pm - Campus Connection</p></li>
 		</ul>
 	</div>-->
-	<div class="sidebarBox">
+	<div class="contentBox">
 		<div class="bar">Friends Of The Station</div>
-		<img class="bannerAd" src="/img/schubas.png" alt="" />
+		<img src="/img/schubas.png" alt="" />
 	</div>
-	<div class="sidebarBox">
+	<div class="contentBox">
 		<div class="bar">Do You Like Us?</div>
 		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" height="290" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
 	</div>

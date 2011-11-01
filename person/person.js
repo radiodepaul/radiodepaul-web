@@ -6,8 +6,7 @@ person = $.parseJSON(staffGet);
 
 
 var html = '<h2 id="name">' + person.fname + ' ' + person.lname + '</h2> \
-			<div class="contentLeft">\
-					<div id="stats"> \
+					<div class="left contentBox"> \
 						<div class="bar"><p>Stats</p></div>\
 						<p>Major: ' + person.major + '</p>\
 						<p>Class: ' + person.class_year + '</p>\
@@ -15,10 +14,15 @@ var html = '<h2 id="name">' + person.fname + ' ' + person.lname + '</h2> \
 						<p>Email: ' + person.email + '</p>\
 					</div>\
 			</div>\
-			<div class="contentRight">\
+				<div class="right contentBox">\
 				<div class="bar">Bio</div>\
 				<p>' + person.bio + '</p>\
-			</div>'
+				</div>\
+			</div>\
+			<div class="contentBox clear">\
+				<div class="bar">Bio</div>\
+				<p>' + person.bio + '</p>\
+			</div>';
 
 $(html).appendTo('#content');
 $('#title').prepend(person.name);

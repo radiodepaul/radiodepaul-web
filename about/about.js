@@ -20,8 +20,8 @@ $.each(awardsParse, function(i, award) {
 	
 	var banner_color = ''
 	
-	if (award.winner_finalist == 'Finalist') {
-			banner_color = ' style="background-color:#333;"'
+	if (award.winner_finalist == 'Winner') {
+			banner_color = ' style="background-color:#000;"'
 		}
 	
 	var html = '<div class="box">\

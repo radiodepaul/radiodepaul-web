@@ -571,23 +571,24 @@ header h1 {
 	padding:10px;
 }
 .contentLeft, .contentRight {
-	background-color:#F6F2F5;
-	border:1px solid #999;
 	width:300px;
-	display:inline;
-	-moz-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
-	-webkit-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
-	-o-box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
-	box-shadow:rgba(0, 0, 0, 0.2) 1px 1px 10px;
-	clear:both;
 }
 .contentLeft {
-	position:absolute;
-	left:4px;
+	float:left;
 }
 .contentRight {
-	position:absolute;
-	right:4px;
+	float:right;
+}
+.left {
+	float:left;
+	width:300px;
+}
+.right {
+	float:right;
+	width:300px;
+}
+.clear {
+	clear:both;
 }
 #sidebar {
 	border-top:solid 8px #000;
@@ -599,27 +600,24 @@ header h1 {
 	padding-left:20px;
 	background-color:#e9e9e3;
 }
-#events li p, #news li p {
-	text-indent:0px;
-	margin-left:2px;
-}
 #events li p:first-child, #news li p:first-child {
 	font-weight:bold;
 }
 #news li, #events li  {
-	padding-bottom:20px;
-	border-bottom:1px solid #000;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #999;
 	list-style:none;
 }
 #news a, #events a {
-	position:absolute;
-	right:5px;
-	text-decoration:none;
-	font-size:14px;
+	position:relative;
+	left:200px;
 }
 #news a:hover, #events a:hover  {
 	text-decoration:underline;
+	color:#5e87a8;
 }
+
 div.bar {
 	width:100%;
 	font-size:16px;
@@ -640,26 +638,20 @@ div.smallBar {
 	text-indent:5px;
 	clear:both;
 }
-.sidebarBox {
+.contentBox {
 	background-color:#F6F2F5;
-	border:1px solid #999;
-	min-height:140px;
-	width:100%;
 	-o-box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	-moz-box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
-	box-shadow: 0 3px 4px rgba(0,0,0,.5); 
+	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
+	border:1px solid #999;
 }
-.sidebarBox span {
-	margin-left:5px;
+.contentBox p, .contentBox span, .contentBox li {
+	margin-left:2px;
 }
-.sidebarBox img.bannerAd {
-	border:4px solid #34332e;
-	border-left:6px solid #34332e;
-}
-#sidebar li {
-	margin-bottom:4px;
+.contentBox img {
+	text-align:center;;
 }
 img.ad {
 	height:100px;
@@ -721,10 +713,11 @@ footer {
 	clear:both;
 }
 footer p {
-	width:400px;
-	font-size:14px;
-	line-height:16px;
-	border-radius:3px;
+	width:800px;
+	font-size:22px;
+	line-height:24px;
+	text-align:center;
+	margin:60px auto 0 auto;
 }
 #social {
 	position:absolute;
@@ -849,14 +842,10 @@ footer p {
 	line-height:30px;
 }
 #schedule ul li a {
-	margin-left:10px;
-	border-right:1px dotted #000;
-	border-left:1px dotted #000;
-	padding:6px;
-	font-weight:normal;
+	font-size:16px;
 }
 #schedule ul li a:hover {
-	border-left:2px solid #888;
+	color:#5e87a8;
 }
 #schedule ul li p.showBio {
 	position:absolute;
@@ -878,20 +867,13 @@ p.scheduleBar {
 	padding:4px;
 }
 #stats {
-	width:320px;
-	position:absolute;
-	right:0;
+	width:100%;
 }
 #stats span {
 	width:100px;
 }
 #stats h2 {
 	font-size:20px;
-}
-#djPage #bio {
-	position:absolute;
-	top:250px;
-	width:100%;
 }
 #djPage #shows {
 	position:absolute;
@@ -967,7 +949,7 @@ body#sports #content div.bar {
 	transform:rotate(-45deg)
 }
 .banner span {
-    background: #000;
+    background: #333;
     color: white;
     font-size: 14px;
     left: 0;
@@ -1007,7 +989,7 @@ body#sports #content div.bar {
 	transform:rotate(45deg) 
 }
 .box_banner span {
-    background: #000;
+    background: #333;
     color: #fff;
     font-size: 14px;
     left: 0;
