@@ -55,7 +55,7 @@
 					<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
 					<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
 				</div>
-				<img src="/img/slides/example-frame.png" width="739" height="341" alt="Example Frame" id="frame" />
+				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 			</div>
 			<div class="left contentBox">
 				<div class="bar">Radio DePaul News</div>
@@ -86,13 +86,38 @@
 			play: 5000,
 			pause: 2500,
 			hoverPause: true,
+			animationStart: function(current){
+								$('.caption').animate({
+									bottom:-35
+								},100);
+								if (window.console && console.log) {
+									// example return of current slide number
+									console.log('animationStart on slide: ', current);
+								};
+							},
+							animationComplete: function(current){
+								$('.caption').animate({
+									bottom:0
+								},200);
+								if (window.console && console.log) {
+									// example return of current slide number
+									console.log('animationComplete on slide: ', current);
+								};
+							},
+							slidesLoaded: function() {
+								$('.caption').animate({
+									bottom:0
+								},200);
+							},
 		});
 		$("a.fancybox").fancybox({
 				'transitionIn'	:	'elastic',
 				'transitionOut'	:	'elastic',
 				'speedIn'		:	600, 
 				'speedOut'		:	200, 
-				'overlayShow'	:	false
+				'overlayShow'	:	true,
+				'hideOnContentClick' : true,
+				'titlePosition' : 'inside',
 			});
 	});
 </script>
