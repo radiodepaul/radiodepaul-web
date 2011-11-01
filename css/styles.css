@@ -581,11 +581,11 @@ header h1 {
 }
 .left {
 	float:left;
-	width:300px;
+	width:48%;
 }
 .right {
 	float:right;
-	width:300px;
+	width:48%;
 }
 .clear {
 	clear:both;
