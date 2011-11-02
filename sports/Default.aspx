@@ -34,7 +34,7 @@
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 
 			</ul>
-			<h1 id="title" style="font-size:36px">The Student Voice of the Blue Demons</h1>
+			<h1 id="title">The Student Voice</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
@@ -48,31 +48,39 @@
 				</div>
 				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 			</div>
+			<div class="right contentBox">
+				<div class="bar">Events</div>
+				<ul id="events">
+				</ul>
+			</div>
 			<div class="left contentBox">
 				<div class="bar">Men's Soccer</div>
-				<ul>
-					<li>MS- at Loyola - Wednesday 9/14 (7P)</li>
-					<li>MS- vs. Seton Hall - Saturday 9/24 (1P)</li>
-					<li>MS- vs. Rutgers - Saturday 10/15 (1P)</li>
-					<li>MS- vs. Syracuse - Saturday 10/29 (1P)</li>
+				<ul id="msoccer">
 				</ul>
 			</div>
 			<div class="right contentBox">
-				<div class="bar">Volleyball</div>
-				<ul>
-					<li>V-  vs. Georgetown - Sunday 9/25 (2P)</li>
-					<li>V-  vs. Notre Dame - Friday 10/14 (7P)</li>
-					<li>V-  vs. Rutgers - Saturday 11/5 (2P)</li>
-					<li>V-  vs. Seton Hall - Sunday 11/6 (2P)</li>
+				<div class="bar">Women's Soccer</div>
+				<ul id="wsoccer">
 				</ul>
 			</div>
-			<div class="left contentBox clear">
-				<div class="bar">Women's Soccer</div>
-				<ul>
-					<li>WS- vs. Minnesota - Sunday 9/11 (Noon)</li>
-					<li>WS- vs. Cincinnati - Friday 9/16 (4P)</li>
-					<li>WS- vs. UCONN - Sunday 10/2 (1P)</li>
-					<li>WS- vs. Georgetown - Sunday 10/16 (1P)</li>
+			<div class="left contentBox">
+				<div class="bar">Men's Basketball</div>
+				<ul id="mbasketball">
+				</ul>
+			</div>
+			<div class="right contentBox">
+				<div class="bar">Women's Basketball</div>
+				<ul id="wbasketball">
+				</ul>
+			</div>
+			<div class="left contentBox">
+				<div class="bar">Volleyball</div>
+				<ul id="volleyball">
+				</ul>
+			</div>
+			<div class="right contentBox">
+				<div class="bar">Softball</div>
+				<ul id="softball">
 				</ul>
 			</div>
 		</div>
@@ -84,6 +92,7 @@
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627899861179&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
+<script src="sports.js"></script>
 <script type="text/javascript" language="javascript">
 	$(function(){
 		$('#slides').slides({
