@@ -1,4 +1,4 @@
-sportsScheduleItemsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/sports_schedule_items?q={'quarter': 'AQ2011'}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
+sportsScheduleItemsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/sports_schedule_items?apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
 sportsScheduleItemsParse= $.parseJSON(sportsScheduleItemsGet);
 
 $.each(sportsScheduleItemsParse, function(i, sportsScheduleItem) {
