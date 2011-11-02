@@ -88,15 +88,6 @@
 				$(html).appendTo('#schedule'); }
 			});
 			
-			var html = 
-			<li>
-                <p class = "title"><% Response.Write(show.titleName); %></p>
-                <p class='dj'> with <% Response.Write(show.djName); %></p>
-                <p class='genre'><% Response.Write(show.genreName); %></p>
-                <p class='time'><% Response.Write(show.start.ToString("h:mmtt").Replace("PM", "pm").Replace("AM", "am") + " - " + show.end.ToString("h:mmtt").Replace("PM", "pm").Replace("AM", "am")); %></p>
-            </li>
-			
-			
 			</script>
 		</section>
 		<section id = "contact">
