@@ -26,15 +26,15 @@ if (person.influences != '') {
 	influences = '<div class="right contentBox"><div class="bar">Influences</div><p>' + person.influences + '</p></div>';
 }
 if ( person.twitter_username != '' ) {
-	twitter = '<a href="http://twitter.com/' + person.twitter_username + '"><img src="/img/social/twitter.png" /></a>';
-} else { twitter = '<a href="http://twitter.com/radiodepaul"><img src="/img/social/twitter.png" /></a>'; }
+	twitter = '<a href="http://twitter.com/' + person.twitter_username + '" target="_blank"><img src="/img/social/twitter.png" /></a>';
+} else { twitter = '<a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a>'; }
 
 if ( person.facebook_username != '' ) {
-	facebook = '<a href="http://facebook.com/' + person.facebook_username + '"><img src="/img/social/facebook.png" /></a>';
-} else { facebook = '<a href="http://facebook.com/radiodepaul"><img src="/img/social/facebook.png" /></a>'; }
+	facebook = '<a href="http://facebook.com/' + person.facebook_username + '" target="_blank"><img src="/img/social/facebook.png" /></a>';
+} else { facebook = '<a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a>'; }
 
 if ( person.linkedin_username != '' ) {
-	linkedin = '<a href="http://linkedin.com/' + person.linkedin_username + '"><img src="/img/social/linkedin.png" /></a>';
+	linkedin = '<a href="http://linkedin.com/' + person.linkedin_username + '" target="_blank"><img src="/img/social/linkedin.png" /></a>';
 }
 
 if ( person.email != '' ) {
@@ -47,7 +47,7 @@ if (person.bio != '') {
 	bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + person.bio + '</p></div>';
 }
 
-var html = social + name + stats + bio;	
+var html = social + name + stats + influences + bio;	
 
 $(html).appendTo('#content');
 document.title = document.title + ' | ' + full_name;
