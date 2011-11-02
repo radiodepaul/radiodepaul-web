@@ -48,12 +48,15 @@
 				</div>
 				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 			</div>
+			<div class="left contentBox">
+				<div class="bar">Something Else?</div>
+			</div>
 			<div class="right contentBox">
 				<div class="bar">Events</div>
 				<ul id="events">
 				</ul>
 			</div>
-			<div class="left contentBox">
+			<div class="left contentBox clear">
 				<div class="bar">Men's Soccer</div>
 				<ul id="msoccer">
 				</ul>
@@ -63,7 +66,7 @@
 				<ul id="wsoccer">
 				</ul>
 			</div>
-			<div class="left contentBox">
+			<div class="left contentBox clear">
 				<div class="bar">Men's Basketball</div>
 				<ul id="mbasketball">
 				</ul>
@@ -73,7 +76,7 @@
 				<ul id="wbasketball">
 				</ul>
 			</div>
-			<div class="left contentBox">
+			<div class="left contentBox clear">
 				<div class="bar">Volleyball</div>
 				<ul id="volleyball">
 				</ul>
