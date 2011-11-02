@@ -6,7 +6,9 @@ person = $.parseJSON(staffGet);
 
 var full_name = person.fname + ' ' + person.lname;
 
-var twitter = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "";
+var twitter = "", name = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "";
+
+name = '<h2 id="name">' + full_name + '</h2>'
 
 if ( person.major && person.hometown != '' ) {
 	if (person.major != '') {
@@ -20,7 +22,9 @@ if ( person.major && person.hometown != '' ) {
 	}
 	stats = '<div class="left contentBox"><div class="bar">Stats</div>' + major + hometown + class_year + '</div>';
 }
-
+if (person.influences != '') {
+	influences = '<div class="right contentBox"><div class="bar">Influences</div><p>' + person.influences + '</p></div>';
+}
 if ( person.twitter_username != '' ) {
 	twitter = '<a href="http://twitter.com/' + person.twitter_username + '"><img src="/img/social/twitter.png" /></a>';
 } else { twitter = '<a href="http://twitter.com/radiodepaul"><img src="/img/social/twitter.png" /></a>'; }
@@ -30,19 +34,20 @@ if ( person.facebook_username != '' ) {
 } else { facebook = '<a href="http://facebook.com/radiodepaul"><img src="/img/social/facebook.png" /></a>'; }
 
 if ( person.linkedin_username != '' ) {
-	linkedin = '<a href="http://linkedin.com/in/' + person.linkedin_username + '"><img src="/img/social/linkedin.png" /></a>';
+	linkedin = '<a href="http://linkedin.com/' + person.linkedin_username + '"><img src="/img/social/linkedin.png" /></a>';
 }
 
 if ( person.email != '' ) {
 	email = '<a href="mailto:' + person.email + '"><img src="/img/social/mail.png" /></a>';
 }
 
-social = twitter + facebook + linkedin + email;
+social = '<span id="personSocial">' + twitter + facebook + linkedin + email + '</span>';
+
 if (person.bio != '') {
 	bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + person.bio + '</p></div>';
 }
-var html = '<span id="personSocial">' + social + '</span>\
-			<h2 id="name">' + full_name + '</h2>' + stats + bio;
+
+var html = social + name + stats + bio;	
 
 $(html).appendTo('#content');
 document.title = document.title + ' | ' + full_name;
