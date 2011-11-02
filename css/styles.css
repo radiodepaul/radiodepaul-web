@@ -871,8 +871,9 @@ p.scheduleBar {
 	margin-right:40px;
 	float:right;
 }
-#personName {
+#name {
 	font-size:28px;
+	font-weight:bold;
 }
 #stats h2 {
 	font-size:20px;

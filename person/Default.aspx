@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body id="djPage">
+<body>
 	<div id="categories">
 		<a href="" ><span>Jim Sandherr</span></a>
 		<a href="" ><span>Jake Padilla</span></a>
@@ -39,7 +39,7 @@
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 
 			</ul>
-			<h1 id="title"></h1>
+			<h1 id="title">Staff</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
