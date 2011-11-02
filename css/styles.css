@@ -874,6 +874,7 @@ p.scheduleBar {
 #name {
 	font-size:28px;
 	font-weight:bold;
+	height:40px;
 }
 #stats h2 {
 	font-size:20px;
