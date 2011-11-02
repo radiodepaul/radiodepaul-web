@@ -5,7 +5,8 @@ showsGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collect
 show = $.parseJSON(showsGet);
 
 
-var html = '<div class="left contentBox">\
+var html = '<h2 id="name">' + show.name + '</h2>\
+			<div class="left contentBox">\
 				<div class="bar">Stats</div>\
 				<ul>\
 					<li>Genre: ' + show.genre + '</li>\
@@ -26,6 +27,5 @@ var html = '<div class="left contentBox">\
 		<div class="clear" id="disqus_thread"></div>';
 
 $(html).appendTo('#content');
-$('#title').prepend(show.name);
 document.title =  document.title + ' | ' + show.name;
 //<div class="bar">Photo</div><img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/medium/image.jpg"/>

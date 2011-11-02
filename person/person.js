@@ -6,15 +6,18 @@ person = $.parseJSON(staffGet);
 
 var full_name = person.fname + ' ' + person.lname;
 
-var twitter = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", stats = '', social = '';
+var twitter = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = '', social = '';
 if (person.major && person.hometown != '') {
 	if (person.major != '') {
 		major = '<p>Major: ' + person.major + '</p>';
 	}
 	if (person.hometown != '') {
-		hometown = '<p>Major: ' + person.hometown + '</p>';
+		hometown = '<p>Hometown: ' + person.hometown + '</p>';
 	}
-	stats = '<div class="left contentBox"><div class="bar">Stats</div>' + major + hometown + '</div>';
+	if (person.class_year != '') {
+		class_year = '<p>Class Year: ' + person.class_year + '</p>';
+	}
+	stats = '<div class="left contentBox"><div class="bar">Stats</div>' + major + hometown + class_year + '</div>';
 }
 if (person.twitter_username && person.facebook_username && person.linkin_username && person.email != '') {
 	if (person.twitter_username != '') {
@@ -38,8 +41,7 @@ if (person.bio != '') {
 	bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + person.bio + '</p></div>';
 }
 var html = '<span id="personSocial">' + social + '</span>\
-			<h2 id="personName">' + full_name + '</h2>' + stats + bio;
+			<h2 id="name">' + full_name + '</h2>' + stats + bio;
 
 $(html).appendTo('#content');
-$('#title').prepend(name);
 document.title = document.title + ' | ' + full_name;

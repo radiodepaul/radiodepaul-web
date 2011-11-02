@@ -47,7 +47,7 @@
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 
 			</ul>
-			<h1 id="title"></h1>
+			<h1 id="title">Shows</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
