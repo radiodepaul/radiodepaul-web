@@ -11,14 +11,6 @@
 </head>
 <body>
 	<div id="categories">
-		<a href="" ><span>Jim Sandherr</span></a>
-		<a href="" ><span>Jake Padilla</span></a>
-		<a href="" ><span>Esmeralda Leon</span></a>
-		<a href="/djs/cking/" ><span>Courtney King</span></a>
-		<a href="" ><span>Jon Schatz</span></a>
-		<a href="" ><span>Eddie Sayago</span></a>
-		<a href="" ><span>Chris Dubiel</span></a>
-		<a href="" ><span>Andrew Rodriguez</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>

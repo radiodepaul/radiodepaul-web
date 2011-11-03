@@ -12,8 +12,7 @@
 </head>
 <body id="sports">
 	<div id="categories">
-		<a class="selected" href="" ><span>Broadcast Schedule</span></a>
-		<a href="" ><span>Recordings</span></a>
+
 	</div>
 	<div id="page">
 		<div id="clock"></div>

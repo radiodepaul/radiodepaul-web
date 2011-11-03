@@ -12,10 +12,6 @@
 <body>
 	<div id="categories">
 		<a href="" ><span>All Shows</span></a>
-		<a href="" ><span>News</span></a>
-		<a href="" ><span>Sports</span></a>
-		<a href="" ><span>Music</span></a>
-		<a href="" ><span>Talk</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
