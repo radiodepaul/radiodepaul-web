@@ -35,6 +35,6 @@
 	</div>
 	<div class="contentBox">
 		<div class="bar">Do You Like Us?</div>
-		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" height="290" show_faces="true" border_color="#e9e9e3" stream="false" header="false"></fb:like-box>
+		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="300" height="290" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box>
 	</div>
 </div>
