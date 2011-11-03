@@ -13,8 +13,8 @@
 </head>
 <body>
 	<a class="banner" href="http://radio.depaul.edu/">
-	  <span>Something Goes Here!</span>
-	  <span>Another Thing Goes Here!</span>
+	  <span>Work With Us</span>
+	  <span>Radio DePaul Application!</span>
 	</a>
 	<div id="categories">
 	</div>
@@ -22,13 +22,6 @@
 		<div id="clock"></div>
 		<div id="weather"></div>
 		<div id="superBar"><a href="">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></div>
-		<div id="search">
-			<form id="search" method="post" action="">
-				<fieldset>
-					<input type="text" name="search" placeholder="Search" class="required">
-				</fieldset>
-			</form>
-		</div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">

@@ -7,3 +7,9 @@ $.each(peopleParse, function(i, person) {
 	
 	$(html).appendTo('#staff_list');
 });
+
+for (var i=0; i < 6; i++) {
+	var randomNum = Math.ceil( Math.random()* peopleParse.length);
+	html = '<a href="/person/?id=' + peopleParse[randomNum]._id.$oid + '"><span>' + peopleParse[randomNum].fname + ' ' + peopleParse[randomNum].fname + '</span></a>'
+	$(html).appendTo('#categories');
+};
