@@ -4,7 +4,7 @@ showsGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collect
 
 show = $.parseJSON(showsGet);
 
-var twitter = "", name = "", facebook = "", email = "", description = "", stats = "", social = "", facebook_fanbox = "";
+var twitter = "", name = "", facebook = "", show_email = "", description = "", stats = "", social = "", facebook_fanbox = "";
 
 name = '<h2 id="name">' + show.name + '</h2>'
 
@@ -26,11 +26,11 @@ if ( show.facebook_page_username != '' ) {
 	facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460" height="270" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"></div></div>';
 } else { facebook = '<a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a>'; }
 
-if ( show.email != '' ) {
-	email = '<a href="mailto:' + show.email + '"><img src="/img/social/mail.png" /></a>';
+if ( show.show_email != '' ) {
+	show_email = '<a href="mailto:' + show.show_email + '"><img src="/img/social/mail.png" /></a>';
 }
 
-social = '<span id="personshowSocial">' + twitter + facebook + email + '</span>';
+social = '<span id="personshowSocial">' + twitter + facebook + show_email + '</span>';
 
 if (show.description != '') {
 	description = '<div class="left contentBox"><div class="bar">Description</div><p>' + show.description + '</p></div>';
