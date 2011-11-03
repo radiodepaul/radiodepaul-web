@@ -4,27 +4,39 @@ showsGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collect
 
 show = $.parseJSON(showsGet);
 
+var twitter = "", name = "", facebook = "", email = "", description = "", stats = "", social = "", facebook_fanbox = "";
 
-var html = '<h2 id="name">' + show.name + '</h2>\
-			<div class="left contentBox">\
-				<div class="bar">Stats</div>\
-				<ul>\
-					<li>Genre: ' + show.genre + '</li>\
-					<li>Hosts: ' + show.host + '</li>\
-					<li>Email: <a href="mailto:' + show.show_email + '">' + show.show_email + '</a></li>\
-					<li><a href="http://twitter.com/' + show.twitter_username + '">Twitter</a></li>\
-					<li><a href="' + show.facebook_page_username + '">Facebook</a></li>\
-				</ul>\
-			</div>\
-		<div class="right contentBox">\
-			<div class="bar">Facebook</div>\
-			<div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460px" data-show-faces="true" data-border-color="#999" data-stream="false" data-header="false"></div>\
-		</div>\
-		<div class="contentBox clear">\
-			<div class="bar">Description</div>\
-			<p>' + show.description + '</p>\
-		</div>\
-		<div class="clear" id="disqus_thread"></div>';
+name = '<h2 id="name">' + show.name + '</h2>'
+
+if ( show.genre && show.host != '' ) {
+	if (show.genre != '') {
+		genre = '<p>Genre: ' + show.genre + '</p>';
+	}
+	if (show.host != '') {
+		host = '<p>Host(s): ' + show.host + '</p>';
+	}
+	stats = '<div class="left contentBox"><div class="bar">Stats</div>' + genre + host + '</div>';
+}
+if ( show.twitter_username != '' ) {
+	twitter = '<a href="http://twitter.com/' + show.twitter_username + '" target="_blank"><img src="/img/social/twitter.png" /></a>';
+} else { twitter = '<a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a>'; }
+
+if ( show.facebook_page_username != '' ) {
+	facebook = '<a href="http://facebook.com/' + show.facebook_page_username + '" target="_blank"><img src="/img/social/facebook.png" /></a>';
+	facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460px" data-show-faces="true" data-border-color="#999" data-stream="false" data-header="false"></div></div>';
+} else { facebook = '<a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a>'; }
+
+if ( show.email != '' ) {
+	email = '<a href="mailto:' + show.email + '"><img src="/img/social/mail.png" /></a>';
+}
+
+social = '<span id="personshowSocial">' + twitter + facebook + email + '</span>';
+
+if (show.description != '') {
+	description = '<div class="contentBox clear"><div class="bar">Description</div><p>' + show.description + '</p></div>';
+}
+
+var html = social + name + stats + facebook_fanbox + description;	
 
 $(html).appendTo('#content');
 document.title =  document.title + ' | ' + show.name;
