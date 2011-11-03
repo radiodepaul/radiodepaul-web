@@ -10,6 +10,6 @@ $.each(peopleParse, function(i, person) {
 
 for (var i=0; i < 6; i++) {
 	var randomNum = Math.ceil( Math.random()* peopleParse.length);
-	html = '<a href="/person/?id=' + peopleParse[randomNum]._id.$oid + '"><span>' + peopleParse[randomNum].fname + ' ' + peopleParse[randomNum].fname + '</span></a>'
+	html = '<a href="/person/?id=' + peopleParse[randomNum]._id.$oid + '"><span>' + peopleParse[randomNum].fname + ' ' + peopleParse[randomNum].lname + '</span></a>'
 	$(html).appendTo('#categories');
 };
