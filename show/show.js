@@ -23,7 +23,7 @@ if ( show.twitter_username != '' ) {
 
 if ( show.facebook_page_username != '' ) {
 	facebook = '<a href="http://facebook.com/' + show.facebook_page_username + '" target="_blank"><img src="/img/social/facebook.png" /></a>';
-	facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460px" data-show-faces="true" data-border-color="#999" data-stream="false" data-header="false"></div></div>';
+	facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460" height="270" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"></div></div>';
 } else { facebook = '<a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a>'; }
 
 if ( show.email != '' ) {
@@ -33,7 +33,7 @@ if ( show.email != '' ) {
 social = '<span id="personshowSocial">' + twitter + facebook + email + '</span>';
 
 if (show.description != '') {
-	description = '<div class="contentBox clear"><div class="bar">Description</div><p>' + show.description + '</p></div>';
+	description = '<div class="left contentBox"><div class="bar">Description</div><p>' + show.description + '</p></div>';
 }
 
 var html = social + name + stats + facebook_fanbox + description;	

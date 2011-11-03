@@ -57,16 +57,6 @@
 				</ul>
 			</div>
 			<div class="left contentBox clear">
-				<div class="bar">Men's Soccer</div>
-				<ul id="msoccer">
-				</ul>
-			</div>
-			<div class="right contentBox">
-				<div class="bar">Women's Soccer</div>
-				<ul id="wsoccer">
-				</ul>
-			</div>
-			<div class="left contentBox clear">
 				<div class="bar">Men's Basketball</div>
 				<ul id="mbasketball">
 				</ul>
@@ -74,6 +64,16 @@
 			<div class="right contentBox">
 				<div class="bar">Women's Basketball</div>
 				<ul id="wbasketball">
+				</ul>
+			</div>
+			<div class="left contentBox clear">
+				<div class="bar">Men's Soccer</div>
+				<ul id="msoccer">
+				</ul>
+			</div>
+			<div class="right contentBox">
+				<div class="bar">Women's Soccer</div>
+				<ul id="wsoccer">
 				</ul>
 			</div>
 			<div class="left contentBox clear">
