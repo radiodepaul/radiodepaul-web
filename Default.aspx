@@ -17,13 +17,6 @@
 	  <span>Another Thing Goes Here!</span>
 	</a>
 	<div id="categories">
-		<a href="" ><span>HAL 2010</span></a>
-		<a href="" ><span>Mondays with Madison</span></a>
-		<a href="" ><span>Live News at Noon</span></a>
-		<a href="" ><span>Husllen</span></a>
-		<a href="" ><span>Dannibal Lector</span></a>
-		<a href="" ><span>The K &amp; T Show</span></a>
-		<a href="" ><span>The Campus Curmudgeon</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>

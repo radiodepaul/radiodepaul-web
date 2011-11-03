@@ -30,3 +30,13 @@ var html = '<li>\
 			</li>'
 			$(html).appendTo('#events');
 });
+
+showsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
+
+showsParse = $.parseJSON(showsGet);
+
+for (var i=0; i < 6; i++) {
+	var randomNum = Math.ceil( Math.random()* showsParse.length);
+	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>'
+	$(html).appendTo('#categories');
+};
