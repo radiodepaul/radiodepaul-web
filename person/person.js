@@ -41,7 +41,7 @@ if ( person.email != '' ) {
 	email = '<a href="mailto:' + person.email + '"><img src="/img/social/mail.png" /></a>';
 }
 
-social = '<span id="personSocial">' + twitter + facebook + linkedin + email + '</span>';
+social = '<span id="personshowSocial">' + twitter + facebook + linkedin + email + '</span>';
 
 if (person.bio != '') {
 	bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + person.bio + '</p></div>';
