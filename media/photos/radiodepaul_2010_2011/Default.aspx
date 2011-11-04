@@ -20,35 +20,44 @@
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
-		<div id="superBar"><p><a href="">College of Communication</a> | <a href="">DePaul University</a></p></div>
-		<div id="search">
-			<form id="search" method="post" action="">
-				<fieldset>
-					<input type="text" name="search" placeholder="Search" class="required">
-				</fieldset>
-			</form>
-		</div>
+		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">
 				<li id="twitter"><a href="https://twitter.com/radiodepauldjs" class="twitter-follow-button" data-show-count="false"></a></li>
 				<li id="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://radio.depaul.edu/" send="false" width="390" show_faces="false" font=""></fb:like></li>
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
-
 			</ul>
-			<h1 id="title">Timeless</h1>
+			<h1 id="title">Station Photos</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
-		<div id="content">
-		<ul id="gallery">
-		<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.js"></script>
-		</ul>
+			<div id="content">
+				<div class="contentBox">
+					<div class="bar">Radio DePaul 2010 - 2011</div>
+					<ul id="gallery">
+						<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.js"></script>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
-		<%Server.Execute("/includes/sidebar.aspx");%>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>	
-<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627555308552&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
+<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627556017792&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
+<script>
+$("a.fancybox").fancybox({
+		'transitionIn'	:	'fade',
+		'transitionOut'	:	'fade',
+		'speedIn'		:	600, 
+		'speedOut'		:	600, 
+		'overlayShow'	:	true,
+		'hideOnContentClick' : true,
+		'titlePosition' : 'inside',
+		'height' : '95%',
+	});
+</script>
 </body>
 </html>

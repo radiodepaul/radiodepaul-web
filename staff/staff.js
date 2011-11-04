@@ -3,7 +3,7 @@ peopleParse= $.parseJSON(peopleGet);
 
 $.each(peopleParse, function(i, person) {
 	
-	var html = '<a href="/person/?id=' + person._id.$oid + '"><div class="smallBar">' + person.fname + ' ' + person.lname + '</div></a>'
+	var html = '<div class="smallBar"><a href="/person/?id=' + person._id.$oid + '">' + person.fname + ' ' + person.lname + '</a></div>'
 	
 	$(html).appendTo('#staff_list');
 });

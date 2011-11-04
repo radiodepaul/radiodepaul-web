@@ -11,5 +11,5 @@ $.simpleWeather({
     }
 });
 
-function playerPopUp(url){newwindow=window.open(url,'name','height=300,width=360,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');}
+function playerPopUp(url){newwindow=window.open(url,'name','height=371,width=600,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');}
 function podcastPlayerPopUp(url) { newwindow = window.open(url, 'name', 'height=340,width=500,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no'); }

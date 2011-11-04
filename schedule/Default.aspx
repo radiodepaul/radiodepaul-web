@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="categories">
-		<a class="selected" id="all" onclick="showAllSections()"><span>Full Schedule</span></a>
+		<a id="all" onclick="showAllSections()"><span>Full Schedule</span></a>
 		<a onclick="navSelect()" title="monday"><span>Monday</span></a>
 		<a onclick="navSelect()" title="tuesday"><span>Tuesday</span></a>
 		<a onclick="navSelect()" title="wednesday"><span>Wednesday</span></a>
@@ -23,14 +23,7 @@
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
-		<div id="superBar"><p><a href="">College of Communication</a> | <a href="">DePaul University</a></p></div>
-		<div id="search">
-			<form id="search" method="post" action="">
-				<fieldset>
-					<input type="text" name="search" placeholder="Search" class="required">
-				</fieldset>
-			</form>
-		</div>
+		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">
@@ -46,42 +39,42 @@
 		<div id="content">
 			<div id="schedule">
 				<div class="bar">Fall 2011</div>
-				<div class="day" id="monday">
+				<div class="panel" id="monday">
 					<h1>Monday</h1>
 					<ul>
 					</ul>
 				</div>
-				<div class="day" id="tuesday">
+				<div class="panel" id="tuesday">
 					<h1>Tuesday</h1>
 					<ul>
 
 					</ul>
 				</div>
-				<div class="day" id="wednesday">
+				<div class="panel" id="wednesday">
 					<h1>Wednesday</h1>
 					<ul>
 
 					</ul>
 				</div>
-				<div class="day" id="thursday">
+				<div class="panel" id="thursday">
 					<h1>Thursday</h1>
 					<ul>
 
 					</ul>
 				</div>
-				<div class="day" id="friday">
+				<div class="panel" id="friday">
 					<h1>Friday</h1>
 					<ul>
 
 					</ul>
 				</div>
-				<div class="day" id="saturday">
+				<div class="panel" id="saturday">
 					<h1>Saturday</h1>
 					<ul>
 
 					</ul>
 				</div>
-				<div class="day" id="sunday">
+				<div class="panel" id="sunday">
 					<h1>Sunday</h1>
 					<ul>
 
@@ -96,5 +89,10 @@
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" src="/js/navSwitch.js"></script>
 <script type="text/javascript" src="schedule.js"></script>
+<script>
+	var d = new Date();
+	var weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+	navSelectN(weekday[d.getDay()]);
+</script>
 </body>
 </html>

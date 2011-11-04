@@ -15,6 +15,10 @@ function jsonFlickrApi(rsp) {
   ".static.flickr.com/" + photo.server + "/" + 
   photo.id + "_" + photo.secret + "_" + "t.jpg";
 
+  z_url = "http://farm" + photo.farm + 
+  ".static.flickr.com/" + photo.server + "/" + 
+  photo.id + "_" + photo.secret + "_" + "z.jpg";
+	
   b_url = "http://farm" + photo.farm + 
   ".static.flickr.com/" + photo.server + "/" + 
   photo.id + "_" + photo.secret + "_" + "b.jpg";
@@ -24,7 +28,7 @@ function jsonFlickrApi(rsp) {
   
   //s +=  '<li><a href="' + p_url + '">' + '<img alt="'+ photo.title + '"src="' + t_url + '"/>' + '</a><p>Untitled</p><p>2007</p></li>';
 http://www.flickr.com/photos/radiodepaul/6195446169/
-  $('div.slides_container').append('<div class="slide"><a title="' + photo.title + '" href="' + b_url + '" class="fancybox" rel="gallery" ><img src="' + b_url + '" alt="' + photo.title + '" title="' + photo.title + '" width="600px "/></a><div class="caption"><p>' + photo.title + '</p></div></div>');
+  $('div.slides_container').append('<div class="slide"><a title="' + photo.title + '" href="' + b_url + '" class="fancybox" rel="gallery" ><img src="' + z_url + '" alt="' + photo.title + '" title="' + photo.title + '" width="600px "/></a><div class="caption"><p>' + photo.title + '</p></div></div>');
 
  }
 }

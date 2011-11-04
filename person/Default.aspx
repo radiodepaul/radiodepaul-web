@@ -11,26 +11,12 @@
 </head>
 <body>
 	<div id="categories">
-		<a href="" ><span>Jim Sandherr</span></a>
-		<a href="" ><span>Jake Padilla</span></a>
-		<a href="" ><span>Esmeralda Leon</span></a>
-		<a href="" ><span>Courtney King</span></a>
-		<a href="" ><span>Jon Schatz</span></a>
-		<a href="" ><span>Eddie Sayago</span></a>
-		<a href="" ><span>Chris Dubiel</span></a>
-		<a href="" ><span>Andrew Rodriguez</span></a>
+
 	</div>
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
-		<div id="superBar"><p><a href="">College of Communication</a> | <a href="">DePaul University</a></p></div>
-		<div id="search">
-			<form id="search" method="post" action="">
-				<fieldset>
-					<input type="text" name="search" placeholder="Search" class="required">
-				</fieldset>
-			</form>
-		</div>
+		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">

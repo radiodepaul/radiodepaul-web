@@ -40,16 +40,16 @@ public partial class _Default : System.Web.UI.Page
         // code to spit out random image in directory
         /*
         string pageRoot = "/";
-        string path = Server.MapPath(pageRoot + "random_images/");
+        string path = Server.MapPath(pageRoot + "/img/random_images/");
         string[] files = Directory.GetFiles(path);
         Random r = new Random();
         FileInfo fi = new FileInfo(files[r.Next(0, files.Length)]);
-        return pageRoot + "random_images/" + fi.Name;
+        return pageRoot + "/img/random_images/" + fi.Name;
         */
 
         // read random line from file
         //string promosDbFilePath = Server.MapPath("/radio_depaul/trunk/random_images/promos.txt");
-        string promosDbFilePath = Server.MapPath("/random_images/promos.txt");
+        string promosDbFilePath = Server.MapPath("/img/random_images/promos.txt");
         int promosDbNumLines = CountLinesInFile(promosDbFilePath);
         Random r = new Random();
         int promosDbFileLine = r.Next(0, promosDbNumLines);

@@ -8,7 +8,7 @@ function clearAllNavElements() {
 		});
 }
 function clearAllSections() {
-	$('.day').hide();
+	$('.panel').hide();
 }
 function navSelect() {
 	clearAllNavElements();
@@ -16,6 +16,7 @@ function navSelect() {
     $(this).addClass('selected'); 
 	navItem = $(this).attr('title');
 	$('#' + navItem).show();
+	scroll(0,0);
 	//rightColumnHeight = $('#' + navItem).outerHeight();
 	//$('#wrapper').css("height", rightColumnHeight);
 }
@@ -24,13 +25,10 @@ function navSelectN(n) {
 	clearAllSections();
     $('a[title="' + n +'"]').addClass('selected'); 
 	$('#' + n).show();
+	scroll(0,0);
 	//rightColumnHeight = $('#' + navItem).outerHeight();
 	//$('#wrapper').css("height", rightColumnHeight);
 }
 function showAllSections() {
-	$('.day').show();
+	$('.panel').show();
 }
-
-var d = new Date();
-var weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
-navSelectN(weekday[d.getDay()]);

@@ -4,9 +4,16 @@ newsPostGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/coll
 
 news_post = $.parseJSON(newsPostGet);
 
-var html = '<div class="bar">' + news_post.headline + ' by ' + news_post.author + ' // ' + news_post.created_at.$date + '</div>\
+date = news_post.created_at.$date;
+var parts = date.match(/(\d+)/g);
+// new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+date = new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
+date = date.toDateString();
+
+
+var html = '<div class="bar">' + news_post.headline + ' by ' + news_post.author + ' // ' + date + '</div>\
 				<p>' + news_post.content + '</p>\
 			</div>'
 
-$(html).appendTo('#content');
+$(html).appendTo('#post');
 document.title =  document.title + ' | ' + news_post.headline;

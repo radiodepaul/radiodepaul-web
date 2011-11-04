@@ -12,23 +12,22 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<a class="banner" href="http://radio.depaul.edu/">
-	  <span>Work With Us</span>
-	  <span>Radio DePaul Application!</span>
+	<a class="banner fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0">
+	  <span>Work For Us</span>
+	  <span>Apply Now</span>
 	</a>
 	<div id="categories">
 	</div>
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
-		<div id="superBar"><a href="">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></div>
+		<div id="superBar"><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">
 				<li id="twitter"><a href="https://twitter.com/radiodepauldjs" class="twitter-follow-button" data-show-count="false"></a></li>
 				<li id="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://radio.depaul.edu/" send="false" width="390" show_faces="false" font=""></fb:like></li>
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
-
 			</ul>
 			<h1 class="tk-futura-pt" id="title">Home</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
@@ -45,7 +44,7 @@
 				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 			</div>
 			<div class="left contentBox">
-				<div class="bar">Radio DePaul News</div>
+				<div class="bar"><a href="/station_news/">Radio DePaul News</a></div>
 				<ul id="news">
 				<!-- NEWS_POSTS GO HERE -->
 				</ul>
@@ -55,6 +54,10 @@
 				<ul id="events">
 				</ul>
 			</div>
+			<div class="contentBox clear">
+				<div class="bar"><a href="http://www.depauliaonline.com/">The DePaulia</a> Feed</div>
+					<div id="depaulia_feed"></div>
+			</div>
 		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
@@ -63,6 +66,36 @@
 	<%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" src="news.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
+<script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>
+<script type="text/javascript">
+	google.load("feeds", "1");
+	function feedLoaded(result) {
+	  if (!result.error) {
+	
+		$.each(result.feed.entries, function(i, item) {
+
+		var html = '<li>\
+						<a href="' + item.link + '"><p>' + item.title + '</p></a>\
+						<p>' + item.contentSnippet + '</p>\
+					</li>'
+					$(html).appendTo('#depaulia_feed');
+		});
+		
+		}
+	}
+
+
+	function OnLoad() {
+		// Create a feed instance that will grab Digg's feed.
+		var feed = new google.feeds.Feed("http://www.depauliaonline.com/se/the-depaulia-rss-1.2124399");
+	
+
+		// Calling load sends the request off.  It requires a callback function.
+		feed.load(feedLoaded);
+	}
+
+	google.setOnLoadCallback(OnLoad);
+</script>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" language="javascript">
@@ -98,13 +131,14 @@
 							},
 		});
 		$("a.fancybox").fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
+				'transitionIn'	:	'fade',
+				'transitionOut'	:	'fade',
 				'speedIn'		:	600, 
-				'speedOut'		:	200, 
+				'speedOut'		:	600, 
 				'overlayShow'	:	true,
 				'hideOnContentClick' : true,
 				'titlePosition' : 'inside',
+				'height' : '95%',
 			});
 	});
 </script>

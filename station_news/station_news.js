@@ -3,8 +3,10 @@ newsPostsParse= $.parseJSON(newsPostsGet);
 
 $.each(newsPostsParse, function(i, news_post) {
 	
-	var html = '<a href="/station_news/post/?id=' + news_post._id.$oid + '">' + news_post.headline + '</a>\
-				<p>' + news_post.introduction + '</p>'
+	var html = '<li>\
+					<a href="/station_news/post/?id=' + news_post._id.$oid + '"><p>' + news_post.headline + '</p></a>\
+					<p>' + news_post.introduction + '</p>\
+				</li>';
 			
-	$(html).appendTo('#content');
+	$(html).appendTo('#news_posts');
 });
