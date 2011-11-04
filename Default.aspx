@@ -63,6 +63,7 @@
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
+	<%Server.Execute("/includes/googleAnalytics.aspx");%>
 	<%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" src="news.js"></script>
 <script src="/js/slides.min.jquery.js"></script>

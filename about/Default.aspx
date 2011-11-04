@@ -114,6 +114,7 @@
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
+	<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157628024483658&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
