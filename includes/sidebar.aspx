@@ -1,3 +1,4 @@
+<%@ Language="C#" AutoEventWireup="true"  CodeFile="../Default.aspx.cs" Inherits="_Default" %>
 <div id="sidebar">
 	<!--<div id="nowPlaying" class="sidebarBox">
 		<div class="bar">On-Air Now</div>
@@ -27,7 +28,12 @@
 	</div>-->
 	<div class="contentBox">
 		<div class="bar">Friends Of The Station</div>
-		<img src="/img/schubas.png" alt="" />
+		<% Hashtable imgAndPromoUrlHash = chooseImage(); %>
+	    <a href="
+	      <% Response.Write(imgAndPromoUrlHash["promoUrl"]); %>">
+	      <img id="friend" src="
+	      <% Response.Write(imgAndPromoUrlHash["imagePath"]); %>" alt="promo" />
+	    </a>
 	</div>
 	<div class="contentBox">
 		<div class="bar">Do You Like Us?</div>

@@ -12,7 +12,7 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<a class="banner" href="http://radio.depaul.edu/">
+	<a class="banner fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0">
 	  <span>Work For Us</span>
 	  <span>Apply Now</span>
 	</a>
@@ -28,7 +28,6 @@
 				<li id="twitter"><a href="https://twitter.com/radiodepauldjs" class="twitter-follow-button" data-show-count="false"></a></li>
 				<li id="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://radio.depaul.edu/" send="false" width="390" show_faces="false" font=""></fb:like></li>
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
-
 			</ul>
 			<h1 class="tk-futura-pt" id="title">Home</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
@@ -132,13 +131,14 @@
 							},
 		});
 		$("a.fancybox").fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
+				'transitionIn'	:	'fade',
+				'transitionOut'	:	'fade',
 				'speedIn'		:	600, 
-				'speedOut'		:	200, 
+				'speedOut'		:	600, 
 				'overlayShow'	:	true,
 				'hideOnContentClick' : true,
 				'titlePosition' : 'inside',
+				'height' : '95%',
 			});
 	});
 </script>

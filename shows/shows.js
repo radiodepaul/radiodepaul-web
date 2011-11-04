@@ -3,7 +3,7 @@ showsParse= $.parseJSON(showsGet);
 
 $.each(showsParse, function(i, show) {
 	
-	var html = '<a href="/show/?id=' + show._id.$oid + '"><div class="smallBar">' + show.name + '</div></a>';
+	var html = '<div class="smallBar"><a href="/show/?id=' + show._id.$oid + '">' + show.name + '</a></div>';
 	
 	$(html).appendTo('#shows');
 });

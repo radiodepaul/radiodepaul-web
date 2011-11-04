@@ -24,6 +24,6 @@ function jsonFlickrApi(rsp) {
   
   //s +=  '<li><a href="' + p_url + '">' + '<img alt="'+ photo.title + '"src="' + t_url + '"/>' + '</a><p>Untitled</p><p>2007</p></li>';
 
-  $('ul#gallery').append('<li><a rel="photography" href="' + b_url + '">' + '<image alt="' + photo.title + '" src=' + t_url + ' />' + '</a><p>' + photo.title + '</p></li>');
+  $('ul#gallery').append('<li><a class="fancybox" rel="station_photos" href="' + b_url + '">' + '<image alt="' + photo.title + '" src=' + t_url + ' />' + '</a><p>' + photo.title + '</p></li>');
  }
 }

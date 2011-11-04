@@ -11,29 +11,20 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<a class="banner" href="http://radio.depaul.edu/">
-	  <span>Something Goes Here!</span>
-	  <span>Another Thing Goes Here!</span>
+	<a class="banner" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0">
+	  <span>Work For Us</span>
+	  <span>Apply Now</span>
 	</a>
 	<div id="categories">
-		<a href="javascript:$.scrollTo($('#staff'))"><span>Staff</span></a>
-		<a href="" ><span>Mission Statement</span></a>
-		<a href="" ><span>Join Radio DePaul</span></a>
-		<a href="" ><span>Advertise With Us</span></a>
-		<a href="" ><span>Awards &amp; Recognition</span></a>
-		<a href="" ><span>FAQs</span></a>
+		<a onclick="navSelect()" title="staff"><span>Staff</span></a>
+		<a onclick="navSelect()" title="mission_statement"><span>Mission Statement</span></a>
+		<a onclick="navSelect()" title="join"><span>Join Radio DePaul</span></a>
+		<a onclick="navSelect()" title="awards"><span>Awards &amp; Recognition</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
 		<div id="superBar"><p><a href="">College of Communication</a> | <a href="">DePaul University</a></p></div>
-		<div id="search">
-			<form id="search" method="post" action="">
-				<fieldset>
-					<input type="text" name="search" placeholder="Search" class="required">
-				</fieldset>
-			</form>
-		</div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">
@@ -46,37 +37,45 @@
 		</header>
 		<div id="main">
 			<div id="content">
-				<div id="featured">
-					<div id="slides">
-						<div class="slides_container"></div>
-						<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-						<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+				<div class="panel" id="staff">
+					<div id="featured">
+						<div id="slides">
+							<div class="slides_container"></div>
+							<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+							<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+						</div>
+						<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 					</div>
-					<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
+					<div class="contentBox" id="staffMembers">
+						<div class="bar">Staff</div>
+						<div class="clear"></div>
+					</div>
 				</div>
-				<div class="contentBox" id="staff">
-					<div class="bar">Staff</div>
-					<div class="clear"></div>
-				</div>
-				<div class="contentBox" id="mission_statment">
+				<div class="panel contentBox" id="mission_statement">
 					<div class="bar">Mission Statement</div>
-                	<p>Act as an educational and practical training ground for those students who are interested in pursuing radio as a career.</p>
-                	<p>Entertain and Inform our audience through innovative and consistent music and non-music programming.</p>
-                	<p>Serve the DePaul community by promoting University services, events, and activities.</p>
-                	<p>Work cooperatively with other campus groups and organizations to promote and support a varied and exciting collegiate experience for students.</p>
+					<ul>
+  	              		<li>Act as an educational and practical training ground for those students who are interested in pursuing radio as a career.</li>
+	                	<li>Entertain and Inform our audience through innovative and consistent music and non-music programming.</li>
+	                	<li>Serve the DePaul community by promoting University services, events, and activities.</li>
+                		<li>Work cooperatively with other campus groups and organizations to promote and support a varied and exciting collegiate experience for students.</li>
+					</ul>
 				</div>
-				<div class="contentBox" id="join">
+				<div class="panel contentBox" id="join">
 					<div class="bar">Join Radio DePaul</div>
 					<div class="smallBar">Eligibility for Participation</div>
-                		<p>Only full-time students in good academic standing (2.5 GPA or higher) at DePaul are eligible for FULL membership in Radio DePaul.</p>
-                	   	<p>University faculty members, staff and members of the community also shall be eligible for ASSOCIATE membership through petition to the Student Advisory Committee.</p>
-               	   	    <p>Membership constitutes active participation in the organization.</p>
-               	   	    <p>Radio DePaul shall not discriminate against any person on the basis of race, color, sex, sexual preference, disabilities, national origin, religious affiliation, or beliefs.</p>
-           			<div class="smallBar">Rights and Privileges of Membership</div>
-               			<p>The number of persons who may be members of Radio DePaul may be limited depending on the availability of on or off-air positions.</p>
-               			<p>Only FULL members of the organization shall be eligible to hold management positions.</p>
+					<ul>
+                		<li>Only full-time students in good academic standing (2.5 GPA or higher) at DePaul are eligible for FULL membership in Radio DePaul.</li>
+                	   	<li>University faculty members, staff and members of the community also shall be eligible for ASSOCIATE membership through petition to the Student Advisory Committee.</li>
+               	   	    <li>Membership constitutes active participation in the organization.</li>
+               	   	    <li>Radio DePaul shall not discriminate against any person on the basis of race, color, sex, sexual preference, disabilities, national origin, religious affiliation, or beliefs.</li>
+           			</ul>
+					<div class="smallBar">Rights and Privileges of Membership</div>
+					<ul>
+               			<li>The number of persons who may be members of Radio DePaul may be limited depending on the availability of on or off-air positions.</li>
+               			<li>Only FULL members of the organization shall be eligible to hold management positions.</li>
+					</ul>
 				</div>
-				<div class="contentBox" id="awards">
+				<div class="panel contentBox" id="awards">
 					<div class="bar">Awards &amp; Recognition</div>
 					<div id="awards_2011">
 						<div class="bar">2011</div>
@@ -156,15 +155,18 @@
 							},
 		});
 		$("a.fancybox").fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
+				'transitionIn'	:	'fade',
+				'transitionOut'	:	'fade',
 				'speedIn'		:	600, 
-				'speedOut'		:	200, 
+				'speedOut'		:	600, 
 				'overlayShow'	:	true,
 				'hideOnContentClick' : true,
 				'titlePosition' : 'inside',
+				'height' : '95%',
 			});
 	});
+	clearAllSections();
+	navSelectN('staff');
 </script>
 </body>
 </html>

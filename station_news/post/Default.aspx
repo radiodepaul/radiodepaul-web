@@ -44,6 +44,8 @@
 		</header>
 		<div id="main">
 			<div id="content">
+				<div class="contentBox" id="post">
+				</div>
 			</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
