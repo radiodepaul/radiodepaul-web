@@ -28,7 +28,7 @@
 			</div>
 			<div class="right contentBox bottom">
 				<div class="bar">Contact Us</div>
-				<ul><li><p>Station Phone</p><p>(773) 325-7308</p></li></ul>
+				<ul><li><p>Studio Line</p><p>(773) 325-7341</p></li></ul>
 			</div>
 			<div class="left contentBox bottom">
 				<div class="bar">Radio DePaul News</div>
