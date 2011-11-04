@@ -18,3 +18,4 @@ $('a[title="' + current + '"]').addClass('selected');
 var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
 var padding = $('header').height();
 $('#main').css('min-height', y-padding);
+$('html').css('html', 'background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9e9e3), to(#dadad0));background: -webkit-linear-gradient(top, #e9e9e3, #dadad0);background: -moz-linear-gradient(top, #e9e9e3, #dadad0);background: -ms-linear-gradient(top, #e9e9e3, #dadad0);background: -o-linear-gradient(top, #e9e9e3, #dadad0);');

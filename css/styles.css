@@ -361,21 +361,6 @@
 html {
 	/* fallback */
 	background-color: #e9e9e3;
-
-	/* Safari 4-5, Chrome 1-9 */
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9e9e3), to(#dadad0));
-
-	/* Safari 5.1, Chrome 10+ */
-	background: -webkit-linear-gradient(top, #e9e9e3, #dadad0);
-
-	/* Firefox 3.6+ */
-	background: -moz-linear-gradient(top, #e9e9e3, #dadad0);
-
-	/* IE 10 */
-	background: -ms-linear-gradient(top, #e9e9e3, #dadad0);
-
-	/* Opera 11.10+ */
-	background: -o-linear-gradient(top, #e9e9e3, #dadad0);
 }
 body {
 	position:relative;
