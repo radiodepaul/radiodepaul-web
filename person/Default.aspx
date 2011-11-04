@@ -9,9 +9,8 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body title="staff">
 	<div id="categories">
-
 	</div>
 	<div id="page">
 		<div id="clock"></div>

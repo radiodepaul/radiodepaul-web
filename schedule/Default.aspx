@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body title="schedule">
 	<div id="categories">
 		<a id="all" onclick="showAllSections()"><span>Full Schedule</span></a>
 		<a onclick="navSelect()" title="monday"><span>Monday</span></a>

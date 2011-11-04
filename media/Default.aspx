@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body title="media">
 	<div id="categories">
 		<!--<a href="" ><span>All Albums</span></a>-->
 		<a href="photos/radiodepaul_2010_2011/" ><span>Radio DePaul 2010-2011</span></a>
