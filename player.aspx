@@ -14,9 +14,9 @@
 <body>
 		<header>
 			<nav>                                     
-				<a title="player" href="#">Player</a>
-				<a title="webcam" href="#">Webcam</a>
-				<a title="chat" href="#">Chat</a>
+				<a title="player" href="">Player</a>
+				<a title="webcam" href="">Webcam</a>
+				<a title="chat" href="" >Chat</a>
 			</nav>     
 		</header>                    
 <div id="content">
@@ -38,6 +38,7 @@
           <div class="panel" id="webcam">
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Webcam</div>
+					<div style="text-align:center;">
 					<script language="javascript">
 					if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
 					document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" CODEBASE=\"http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0\">");
@@ -46,12 +47,13 @@
 					document.write("</OBJECT>");
 					} else {
 					theDate = new Date();
-					var output = "<img SRC=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240&";
+					var output = "<img style='text-align:center;' src=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240&";
 					output += theDate.getTime();
-					output += "\" width=578 height=270 />";
+					output += "\" width=240 height=270 />";
 					document.write(output);
 					}
 					</script>
+					</div>
 				</div>
           </div>
            <div class="panel" id="chat">
