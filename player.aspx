@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Radio DePaul | Player</title>
-    <link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
+    <title>Radio DePaul | Player</title> 
+<link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
     <meta name="description" content="Desktop Player for Radio DePaul" />
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <script type="text/javascript" src="/js/iphoneredirect.js"></script>
@@ -20,7 +20,7 @@
 			</nav>     
 		</header>                    
 	           
-        <div class="panel" id="player">
+        <div class="panel">
 			<script src="http://player.wavepanel.net/embed/basic/64c829446c484becd92959d9b08a8fab7c2f9c67"></script>	
 			<img src="/img/logo.png" />                        	
 		</div>

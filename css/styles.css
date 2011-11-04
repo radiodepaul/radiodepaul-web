@@ -415,7 +415,6 @@ a, a:link, a:visited {
 	left:112px;
 	top:0;
 	width:970px;
-	line-height:25px;
 	-webkit-border-bottom-left-radius: 4px;
 	-moz-border-radius-bottomleft: 4px;
 	border-bottom-left-radius: 4px;
@@ -425,6 +424,7 @@ a, a:link, a:visited {
 	position:absolute;
 	left:5px;
 	font-size:14px;
+	line-height:25px;
 }
 #superBar a {
 	color:#F2F2F2;

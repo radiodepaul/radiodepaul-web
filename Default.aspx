@@ -21,7 +21,7 @@
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
-		<div id="superBar"><a href="">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></div>
+		<div id="superBar"><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">
