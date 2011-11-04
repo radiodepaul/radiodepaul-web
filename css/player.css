@@ -159,6 +159,14 @@ div.smallBar a:hover {
 	margin-bottom:10px;
 	border:1px solid #999;
 }
+.contentBox a:link, .contentBox a:visited  {
+	text-decoration:none;
+	color:#5e87a8;
+}
+.contentBox a:hover  {
+	text-decoration:underline;
+	color:#cf671c;
+}
 .left {
 	float:left;
 	width:68%;

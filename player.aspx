@@ -14,9 +14,9 @@
 <body>
 		<header>
 			<nav>                                     
-				<a title="player" href="">Player</a>
-				<a title="webcam" href="">Webcam</a>
-				<a title="chat" href="" >Chat</a>
+				<a title="player" href="#">Player</a>
+				<a title="webcam" href="#">Webcam</a>
+				<a title="chat" href="#" >Chat</a>
 			</nav>     
 		</header>                    
 <div id="content">
@@ -84,7 +84,7 @@ newsPostsParse = $.parseJSON(newsPostsGet);
 for (var i = 0; i < 1; i++) {
 	var news_post = newsPostsParse[i];
 	var html = '<li>\
-	<a href="/station_news/post/?id=' + news_post._id.$oid + '"><p>' + news_post.headline + '</p></a>\
+	<a href="/station_news/post/?id=' + news_post._id.$oid + '" target="_blank"><p>' + news_post.headline + '</p></a>\
 	<p>' + news_post.introduction + '</p>\
 	</li>'
 	$(html).appendTo('#news');
