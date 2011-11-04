@@ -54,6 +54,7 @@
 		</header>
 		<div id="main">
 			<div id="content" style="width:100%">
+				<div id="disqus_thread"></div>
 			</div>
 		</div>
 	</div>
