@@ -39,20 +39,22 @@
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Webcam</div>
 					<div style="text-align:center;">
-					<script language="javascript">
-					if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
-					document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" CODEBASE=\"http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0\">");
-					document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
-					document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240\">");
-					document.write("</OBJECT>");
-					} else {
-					theDate = new Date();
-					var output = "<img style='text-align:center;' src=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240&";
-					output += theDate.getTime();
-					output += "\" width=240 height=270 />";
-					document.write(output);
-					}
-					</script>
+						<script language="JavaScript">
+						<!--//hide script
+						  if ((navigator.appName == "Microsoft Internet Explorer")&&(navigator.platform != "MacPPC")&&(navigator.platform != "Mac68k")) {
+						                document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" WIDTH=\"640\" HEIGHT=\"480\" CODEBASE=\"/AxisCamControl.cab\">");
+						                document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
+						                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480\">");
+						                document.write("</OBJECT>");
+						  } else {
+						    theDate = new Date();
+						        var output = "<img height=301 SRC=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480&";
+						    output += theDate.getTime()
+						    output += "\" ALT=\"Loading...\">";
+						    document.write(output);
+						  }
+						//end hide -->
+						</script>
 					</div>
 				</div>
           </div>
