@@ -23,8 +23,8 @@
 				<li id='liHome' onclick='navSelected()' class='selected'></li>
 				<li id='liListen' onclick='navSelected()'></li>
 				<li id='liWatch' onclick='navSelected()'></li>
-				<li id='liSchedule' onclick='navSelected()'></li>
-				<li id='liContact' onclick='navSelected()'></li>
+				<!--<li id='liSchedule' onclick='navSelected()'></li>-->
+				<!--<li id='liContact' onclick='navSelected()'></li>-->
 			</ul>
 		</nav>
 		<section id="home">
@@ -97,8 +97,6 @@
 		</section>
 	</body>
 </html>
-<!-- <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script> -->
 <script type="text/javascript" src="bookmark_bubble.js"></script>
 <script type="text/javascript" src="bookmark_bubble_control.js"></script>
 <script type="text/javascript" charset="utf-8">
