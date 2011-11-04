@@ -17,4 +17,4 @@ current = $('body').attr('title');
 $('a[title="' + current + '"]').addClass('selected');
 var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
 var padding = $('header').height();
-$('#page').css('min-height', y-padding);
+$('#main').css('min-height', y-padding);
