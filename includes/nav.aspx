@@ -6,5 +6,5 @@
 	<a href="/sports/" >Sports</a>
 	<a href="/media/" >Media</a>
 	<a href="/about/" >About</a>
-	<a href="#" onClick="return playerPopUp('/player.aspx')">Listen Now</a>
+	<a href="" onClick="return playerPopUp('/player.aspx')">Listen Now</a>
 </nav>
