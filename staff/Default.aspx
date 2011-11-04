@@ -9,20 +9,13 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body title="staff">
 	<div id="categories">
 	</div>
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
-		<div id="search">
-			<form id="search" method="post" action="">
-				<fieldset>
-					<input type="text" name="search" placeholder="Search" class="required">
-				</fieldset>
-			</form>
-		</div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
 			<ul id="social">

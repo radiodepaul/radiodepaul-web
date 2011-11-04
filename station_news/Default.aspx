@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body title="station_news">
 	<div id="categories">
 		<a href="" ><span>Jim Sandherr</span></a>
 		<a href="" ><span>Jake Padilla</span></a>
