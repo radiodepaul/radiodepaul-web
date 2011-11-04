@@ -1,5 +1,5 @@
-/img/random_images/promotion.jpg	http://www.band-tees.com/	Band Shirts
 /img/random_images/schubas.jpg	http://www.schubas.com/	Schubas Tavern
 /img/random_images/lincolnhall.jpg	http://www.lincolnhallchicago.com/	Lincoln Hall
 /img/random_images/reckless.jpg	http://www.reckless.com/	Reckless Records
 /img/random_images/826chicago.jpg	http://www.826chi.org/	826 Chicago
+/img/random_images/crowdnoize.jpg	http://crowdnoize.com/	CrowdNoize
