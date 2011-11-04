@@ -49,7 +49,7 @@ public partial class _Default : System.Web.UI.Page
 
         // read random line from file
         //string promosDbFilePath = Server.MapPath("/radio_depaul/trunk/random_images/promos.txt");
-        string promosDbFilePath = Server.MapPath("/img/random_images/promos.txt");
+        string promosDbFilePath = Server.MapPath("/img/random_images/promos_dup.txt");
         int promosDbNumLines = CountLinesInFile(promosDbFilePath);
         Random r = new Random();
         int promosDbFileLine = r.Next(0, promosDbNumLines);
