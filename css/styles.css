@@ -751,6 +751,9 @@ footer div#affiliations ul li {
 #studentMedia {
 	width:400px;
 }
+#disqus_thread {
+	padding:0 10px;
+}
 footer .bar {
 	text-align:center;
 	text-indent:none;
