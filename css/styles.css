@@ -485,10 +485,8 @@ nav a:hover{border-top:solid 4px #4289a9;border-bottom:none;}
 nav a{ -webkit-transition:border-top .4s ease-out;}
 nav a:last-child {
 	border-right:none;
-	position:absolute;
-	right:0;
 	text-align:center;
-	width:332px;
+	width:320px;
 	font-size:20px;
 }
 nav a.selected {
