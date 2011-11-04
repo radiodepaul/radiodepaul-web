@@ -36,7 +36,7 @@ if (show.description != '') {
 	description = '<div class="left contentBox"><div class="bar">Description</div><p>' + show.description + '</p></div>';
 }
 
-var html = social + name + stats + facebook_fanbox + description + '<div id="disqus_thread" class="contentBox clear"></div>';
+var html = social + name + stats + facebook_fanbox + description + '<div id="disqus_thread" class="contentBox clear"><div class="bar">Comment</div></div>';
 
 $(html).appendTo('#content');
 document.title =  document.title + ' | ' + show.name;
