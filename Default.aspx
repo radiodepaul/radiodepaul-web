@@ -8,6 +8,8 @@
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="/css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
+	<script type="text/javascript" src="/js/iphoneredirect.js" language="javascript"></script>
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -72,29 +74,21 @@
 	google.load("feeds", "1");
 	function feedLoaded(result) {
 	  if (!result.error) {
-	
+		
 		$.each(result.feed.entries, function(i, item) {
-
 		var html = '<li>\
 						<a href="' + item.link + '"><p>' + item.title + '</p></a>\
 						<p>' + item.contentSnippet + '</p>\
 					</li>'
 					$(html).appendTo('#depaulia_feed');
 		});
-		
 		}
 	}
-
-
 	function OnLoad() {
-		// Create a feed instance that will grab Digg's feed.
 		var feed = new google.feeds.Feed("http://www.depauliaonline.com/se/the-depaulia-rss-1.2124399");
-	
 
-		// Calling load sends the request off.  It requires a callback function.
 		feed.load(feedLoaded);
 	}
-
 	google.setOnLoadCallback(OnLoad);
 </script>
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
