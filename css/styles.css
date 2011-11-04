@@ -464,13 +464,13 @@ nav {
 	height:30px;
 	left:140px;
 	top:70px;
-	
 	padding-bottom:10px;
 	text-transform:uppercase;
 	line-height:24px;
 	width:830px;
 }
 nav a:link, nav a:visited {
+	color:#000;
 	border-top:solid 4px #000;
 	border-right:dotted 1px #000;
 	float:left;
@@ -564,7 +564,7 @@ header h1 {
 	background-color:#e9e9e3;
 	border-top:solid 8px #000;
 	min-height:800px;
-	width:614px;
+	width:674px;
 	display:inline;
 	position:relative;
 	float:left;
@@ -592,7 +592,7 @@ header h1 {
 }
 #sidebar {
 	border-top:solid 8px #000;
-	width:310px;
+	width:250px;
 	position:absolute;
 	right:0;
 	display:inline;
@@ -600,24 +600,21 @@ header h1 {
 	padding-left:20px;
 	background-color:#e9e9e3;
 }
-#events li p:first-child, #news li p:first-child {
+.contentBox li p:first-child {
 	font-weight:bold;
 }
-#news li, #events li  {
-	margin-bottom:10px;
-	padding-bottom:10px;
+.contentBox li, .contentBox span {
+	margin-top:10px;
 	border-bottom:1px solid #999;
 	list-style:none;
+	font-size:16px;
+	padding: 0 4px 10px 4px;
+	line-height:20px;
 }
-#news a, #events a {
-	position:relative;
-	left:200px;
-}
-#news a:hover, #events a:hover  {
+.contentBox a:hover  {
 	text-decoration:underline;
 	color:#5e87a8;
 }
-
 div.bar {
 	width:100%;
 	font-size:16px;
@@ -628,6 +625,14 @@ div.bar {
 	font-weight:bold;
 	text-indent:5px;
 	clear:both;
+}
+div.bar a:link, a:visited {
+	color:#F2F2F2;
+	font-size:16px;
+}
+div.bar a:hover {
+	color:#cf671c;
+	text-decoration:none;
 }
 div.smallBar {
 	width:100%;
@@ -646,9 +651,6 @@ div.smallBar {
 	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
 	border:1px solid #999;
-}
-.contentBox p, .contentBox span, .contentBox li {
-	margin-left:2px;
 }
 .contentBox img {
 	text-align:center;;
@@ -920,7 +922,6 @@ ul#gallery li img {
 	font-size:20px;
 }
 .box {
-	width:400px;
 	position:relative;
 	height:100px;
 	background-color:#fff;
@@ -928,11 +929,12 @@ ul#gallery li img {
 	margin:10px;
 	padding:5px;
 	opacity:.8;
-	float:left;
 	overflow:hidden;
+	float:left;
+	width:280px;
 }
-.manager_name, .award_category {font-size:18px; font-weight:bold;}
-.manager_stat {}
+.manager_name, .award_category {font-size:16px; font-weight:bold;width:180px}
+.manager_stat, .award_prize, .award_recipient { width:180px;}
 #mission_statment {clear:both}
 
 .banner {
@@ -949,6 +951,7 @@ ul#gallery li img {
 	transform:rotate(-45deg)
 }
 .banner span {
+	opacity:.8;
     background: #5E87A8;
     color: white;
     font-size: 14px;
@@ -981,7 +984,7 @@ ul#gallery li img {
 .banner:hover span:last-child {
       opacity: 1;
 }
-.box_banner { background-color:#000;width:160px;height:15px;right:-35px;top:36px;position:absolute;
+.box_banner { opacity:.9;background-color:#000;width:160px;height:15px;right:-35px;top:36px;position:absolute;
 	-moz-transform:rotate(45deg);
 	-webkit-transform:rotate(45deg);
 	-o-transform:rotate(45deg);

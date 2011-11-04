@@ -10,19 +10,15 @@ $.each(managersParse, function(i, manager) {
 				</div>';
 				
 	$(html).appendTo('#staff');
-	
 });
+$('<div class="clear"></div>').appendTo('#staff');
 // <li>' + manager.office_hours + '</li>\
 awardsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/awards?s={'category' : -1 }&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
 awardsParse= $.parseJSON(awardsGet);
 
 $.each(awardsParse, function(i, award) {
-	
-	var banner_color = ''
-	
-	if (award.winner_finalist == 'Winner') {
-			banner_color = ' style="background-color:#000;"'
-		}
+	var banner_color = '';
+	if ( award.winner_finalist == 'Winner' ) { banner_color = ' style="background-color:#000;"' };
 	
 	var html = '<div class="box">\
 				<div class="box_banner"><span' + banner_color + '>' + award.winner_finalist + '</span></div>\
@@ -32,5 +28,4 @@ $.each(awardsParse, function(i, award) {
 				</div>';
 	var location = '#awards_' + award.year +' .awards_' + award.association_code;
 	$(html).insertAfter(location);
-	
 });

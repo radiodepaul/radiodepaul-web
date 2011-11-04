@@ -6,13 +6,12 @@
 	<meta charset="utf-8" />
 	<title>Radio DePaul | Sports</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
-	<link rel="stylesheet" href="/css/slides_full.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body id="sports">
 	<div id="categories">
-
 	</div>
 	<div id="page">
 		<div id="clock"></div>
@@ -31,13 +30,12 @@
 				<li id="twitter"><a href="https://twitter.com/radiodepauldjs" class="twitter-follow-button" data-show-count="false"></a></li>
 				<li id="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://radio.depaul.edu/" send="false" width="390" show_faces="false" font=""></fb:like></li>
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
-
 			</ul>
 			<h1 id="title">The Student Voice</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
-		<div id="content" style="width:100%">
+		<div id="content">
 			<div id="featured">
 				<div id="slides">
 					<div class="slides_container">
@@ -48,7 +46,8 @@
 				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 			</div>
 			<div class="left contentBox">
-				<div class="bar">Something Else?</div>
+				<div class="bar">DePaul Athletics Feed</div>
+				<ul id="athletics_feed"></ul>
 			</div>
 			<div class="right contentBox">
 				<div class="bar">Events</div>
@@ -86,15 +85,46 @@
 				</ul>
 			</div>
 		</div>
+		<%Server.Execute("/includes/sidebar.aspx");%>
 	</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider_full.js"></script>
+<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627899861179&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
 <script src="sports.js"></script>
+<script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>
+<script type="text/javascript">
+	google.load("feeds", "1");
+	function feedLoaded(result) {
+		if (!result.error) {
+	
+			for (var i = 0; i < 2; i++) {
+		
+				var item = result.feed.entries[i];
+				var html = '<li>\
+								<a href="' + item.link + '"><p>' + item.title + '</p></a>\
+								<p>' + item.contentSnippet + '</p>\
+							</li>';
+				$(html).appendTo('#athletics_feed');
+			}
+		}
+	}
+
+
+	function OnLoad() {
+		// Create a feed instance that will grab Digg's feed.
+		var feed = new google.feeds.Feed("http://www.depaulbluedemons.com/headline-rss.xml");
+	
+
+		// Calling load sends the request off.  It requires a callback function.
+		feed.load(feedLoaded);
+	}
+
+	google.setOnLoadCallback(OnLoad);
+</script>
 <script type="text/javascript" language="javascript">
 	$(function(){
 		$('#slides').slides({

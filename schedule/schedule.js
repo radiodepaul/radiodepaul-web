@@ -4,34 +4,26 @@ showsParse= $.parseJSON(showsGet);
 peopleParse= $.parseJSON(peopleGet);
 
 $.each(showsParse, function(i, show) {
-	var start_ampm, end_ampm = "";
-
-	var end_hour = show.start_hour;
-	var end_minute = show.start_minute;
+	var start_ampm = "", end_ampm = "";
+	var start_hour = show.start_hour, start_minute = show.start_minute, end_hour = show.end_hour, end_minute = show.end_minute;
 	
-	if (show.start_hour < 12) { start_ampm = "am";} else { start_ampm = "pm";}
-	
-	end_minute += show.duration_min;
-	while (end_minute >= 60) {
-		end_minute -= 60;
-		end_hour += 1;
-	}
-	
+	if (start_hour < 12) { start_ampm = "am";} else { start_ampm = "pm";}
 	if (end_hour < 12) { end_ampm = "am";} else { end_ampm = "pm"; }
-	if (end_hour > 23) { end_hour -= 23; end_ampm = "am"; }
 
-	if (show.start_hour === 0) { show.start_hour = 12; }
-	if (show.start_hour > 12) { show.start_hour -= 12; }
+	if (start_hour == 0) { start_hour = 12; }
+	if (end_hour == 0) { end_hour = 12; }
+	
+	if (start_hour > 12) { start_hour -= 12; }
 	if (end_hour > 12) { end_hour -= 12; }
 	
-	if (show.start_minute === 0) { show.start_minute = "00"; }	
+	if (start_minute === 0) { start_minute = "00"; }	
 	if (end_minute === 0) { end_minute = "00"; }
 	
 	
 	
 	var html = '<li>\
 			<div class="time">\
-				<p class="scheduleBar startTime">' + show.start_hour + ':' + show.start_minute + start_ampm + '</p>\
+				<p class="scheduleBar startTime">' + start_hour + ':' + start_minute + start_ampm + '</p>\
 				<p class="scheduleBar endTime">' + end_hour + ':' + end_minute + end_ampm + '</p>\
 			</div>\
 			<p class="showName"><a href="/show/?id=' + show._id.$oid + '">' + show.name + '</a><span> | ' + show.genre + '</span></p>\
