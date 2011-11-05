@@ -12,6 +12,8 @@
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
 		<link rel="stylesheet" href="html5reset.css" type="text/css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
+		<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
 	</head>
 	<body onload='pageLoaded()'>
@@ -21,7 +23,7 @@
 		<nav>
 			<ul id='navList'>
 				<li id='liHome' onclick='navSelected()' class='selected'></li>
-				<li id='liListen' onclick='navSelected()'></li>
+				<li id='liListen' onclick='goToStreamHigh()'></li>
 				<li id='liWatch' onclick='navSelected()'></li>
 				<!--<li id='liSchedule' onclick='navSelected()'></li>-->
 				<!--<li id='liContact' onclick='navSelected()'></li>-->
@@ -29,8 +31,7 @@
 		</nav>
 		<section id="home">
 			<h1>Chicago's College Connection</h1>
-            <div id="weather"><script type="text/javascript" src="http://www.showmyweather.com/weather_widget.php?type=js&country=us&state=Illinois&city=Chicago&smallicon=1&current=1&forecast=0&background_color=&color=fff&width=100%&padding=1&font_size=11&font_family=Verdana&showicons=0&measure=F"></script></div>
-            <div id="logo" onclick="goToStreamHigh()"><img src="radioDePaulLogo.jpg" alt="" /><p>Click the logo to listen!</p></div>
+            <div id="logo" onclick="goToStreamHigh()"><img src="../img/logo.png" alt="" /><p>Click the logo to listen!</p></div>
 		</section>
         <section id="listen">
             <h1>Listen Live!</h1>
@@ -39,7 +40,7 @@
                 </ul>
         </section>
 		<section id = "watch">
-			<h1>Watch</h1>
+			<h1>Webcam</h1>
 			<div id="webcam"></div>
 		</section>
 		<section id = "schedule">
