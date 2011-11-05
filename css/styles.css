@@ -898,9 +898,39 @@ p.scheduleBar {
 #stats span {
 	width:100px;
 }
-#personshowSocial {
-	margin-right:40px;
-	float:right;
+ul#personshowSocial {
+	margin: 0; padding: 0;
+	list-style: none;
+	float: right;
+}
+ul#personshowSocial li {
+	float: left;
+	margin: 0; padding: 0 5px;
+}
+ul#personshowSocial a {
+	float: left;
+	display: block;
+	height: 49px; /*--Specify height of navigation--*/
+	text-indent: -99999px; /*--Shoot the text off the page--*/
+	background-position: left top;
+	width: 49px;
+}
+/*--CSS Sprites - Hover State--*/
+ul#personshowSocial a:hover {
+	background-position: left bottom;
+}
+/*--Assign an image and width to each link--*/
+ul#personshowSocial li.twitter a {
+	background-image: url(/img/social/twitter.png);
+}
+ul#personshowSocial li.facebook a {
+	background-image: url(/img/social/facebook.png);
+}
+ul#personshowSocial li.email a {
+	background-image: url(/img/social/mail.png);
+}
+ul#personshowSocial li.linkedin a {
+	background-image: url(/img/social/linkedin.png);
 }
 #name {
 	font-size:28px;

@@ -39,9 +39,11 @@ nav ul li {
 	width: 106px;
 	height: 100%;
 	-webkit-box-sizing: border-box;
-	
 	background-repeat: no-repeat;
 	background-position: center center;
+}
+nav ul li:last-child {
+	border-right:none;
 }
 nav ul li:nth-child(1n+2) {
 	border-left-width: 0px;

@@ -18,19 +18,19 @@ if ( show.genre && show.host != '' ) {
 	stats = '<div class="left contentBox"><div class="bar">Stats</div>' + genre + host + '</div>';
 }
 if ( show.twitter_username != '' ) {
-	twitter = '<a href="http://twitter.com/' + show.twitter_username + '" target="_blank"><img src="/img/social/twitter.png" /></a>';
-} else { twitter = '<a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a>'; }
+	twitter = '<li class="twitter"><a href="http://twitter.com/' + show.twitter_username + '" target="_blank"><img src="/img/social/twitter.png" /></a></li>';
+} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a></li>'; }
 
 if ( show.facebook_page_username != '' ) {
-	facebook = '<a href="http://facebook.com/' + show.facebook_page_username + '" target="_blank"><img src="/img/social/facebook.png" /></a>';
+	facebook = '<li class="facebook"><a href="http://facebook.com/' + show.facebook_page_username + '" target="_blank"></a></li>';
 	facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460" height="270" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"></div></div>';
-} else { facebook = '<a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a>'; }
+} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>'; }
 
 if ( show.show_email != '' ) {
-	show_email = '<a href="mailto:' + show.show_email + '"><img src="/img/social/mail.png" /></a>';
+	show_email = '<li class="email"><a href="mailto:' + show.show_email + '"><img src="/img/social/mail.png" /></a></li>';
 }
 
-social = '<span id="personshowSocial">' + twitter + facebook + show_email + '</span>';
+social = '<ul id="personshowSocial">' + twitter + facebook + show_email + '</ul>';
 
 if (show.description != '') {
 	description = '<div class="left contentBox"><div class="bar">Description</div><p>' + show.description + '</p></div>';
