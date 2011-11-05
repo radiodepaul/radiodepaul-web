@@ -26,22 +26,22 @@ if (person.influences != '') {
 	influences = '<div class="right contentBox"><div class="bar">Influences</div><p>' + person.influences + '</p></div>';
 }
 if ( person.twitter_username != '' ) {
-	twitter = '<a href="http://twitter.com/' + person.twitter_username + '" target="_blank"><img src="/img/social/twitter.png" /></a>';
-} else { twitter = '<a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a>'; }
+	twitter = '<li class="twitter"><a href="http://twitter.com/' + person.twitter_username + '" target="_blank"></a></li>';
+} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
 if ( person.facebook_username != '' ) {
-	facebook = '<a href="http://facebook.com/' + person.facebook_username + '" target="_blank"><img src="/img/social/facebook.png" /></a>';
-} else { facebook = '<a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a>'; }
+	facebook = '<li class="facebook"><a href="http://facebook.com/' + person.facebook_username + '" target="_blank"></a></li>';
+} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"></a></li>'; }
 
 if ( person.linkedin_username != '' ) {
-	linkedin = '<a href="http://linkedin.com/' + person.linkedin_username + '" target="_blank"><img src="/img/social/linkedin.png" /></a>';
+	linkedin = '<li class="linkedin"><a href="http://linkedin.com/' + person.linkedin_username + '" target="_blank"></a></li>';
 }
 
 if ( person.email != '' ) {
-	email = '<a href="mailto:' + person.email + '"><img src="/img/social/mail.png" /></a>';
+	email = '<li class="email"><a href="mailto:' + person.email + '"></a></li>';
 }
 
-social = '<span id="personshowSocial">' + twitter + facebook + linkedin + email + '</span>';
+social = '<ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul>';
 
 if (person.bio != '') {
 	bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + person.bio + '</p></div>';
