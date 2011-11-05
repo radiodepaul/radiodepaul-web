@@ -77,7 +77,7 @@
 		
 		$.each(result.feed.entries, function(i, item) {
 		var html = '<li>\
-						<a href="' + item.link + '"><p>' + item.title + '</p></a>\
+						<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
 						<p>' + item.contentSnippet + '</p>\
 					</li>'
 					$(html).appendTo('#depaulia_feed');
