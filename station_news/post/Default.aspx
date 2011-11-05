@@ -13,14 +13,6 @@
 </head>
 <body title="station_news">
 	<div id="categories">
-		<a href="" ><span>Jim Sandherr</span></a>
-		<a href="" ><span>Jake Padilla</span></a>
-		<a href="" ><span>Esmeralda Leon</span></a>
-		<a href="" ><span>Courtney King</span></a>
-		<a href="" ><span>Jon Schatz</span></a>
-		<a href="" ><span>Eddie Sayago</span></a>
-		<a href="" ><span>Chris Dubiel</span></a>
-		<a href="" ><span>Andrew Rodriguez</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
@@ -39,9 +31,8 @@
 		</header>
 		<div id="main">
 			<div id="content">
-				<div class="contentBox" id="post">
-				</div>
 			</div>
+		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>
