@@ -52,7 +52,6 @@ nav ul li:nth-child(1n+2) {
 }
 li.selected {
 	border-top:solid 4px #4289a9;
-	background-position: 50% 40%;
 }
 #liHome.selected {
 	background-image: url('shared/images/icons/icons/53-house.png');
