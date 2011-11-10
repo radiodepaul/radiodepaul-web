@@ -22,7 +22,7 @@
 	<div id="content">
         <div class="panel" id="player">
 			<div class="contentBox">
-				<div class="bar">You're Listing to Radio DePaul</div>
+				<div class="bar">You're Listening to Radio DePaul</div>
 				<img src="/img/logo.png" />   
 				<script src="http://player.wavepanel.net/embed/basic/64c829446c484becd92959d9b08a8fab7c2f9c67"></script>
 			</div>
