@@ -742,7 +742,7 @@ footer div#affiliations ul li {
 #studentMedia {
 	width:400px;
 }
-#disqus_thread {
+.dsq-widget {
 	padding:0 10px;
 }
 footer .bar {

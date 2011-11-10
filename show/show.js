@@ -38,8 +38,9 @@ if ( show != null ) {
 		description = '<div class="left contentBox clearLeft"><div class="bar">Description</div><p>' + show.description + '</p></div>';
 	}
 
-	var html = social + name + stats + facebook_fanbox + description + '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread"></div></div>';
+	var html = social + name + stats + facebook_fanbox + description + '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread" class="dsq-widget"></div></div>';
 }
+var disqus_title = document.title;
 $(html).appendTo('#content');
 
 //<div class="bar">Photo</div><img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/medium/image.jpg"/>
