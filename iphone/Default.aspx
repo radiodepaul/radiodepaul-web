@@ -14,7 +14,6 @@
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
 		<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        
 	</head>
 	<body onload='pageLoaded()'>
 		<header>
@@ -39,11 +38,11 @@
                     <li onclick="goToStreamHigh()"><p>High Quality Stream</p><img src="shared/images/up_arrow.jpg" alt=""/></li>
                 </ul>
         </section>
-		<section id = "watch">
+		<section id="watch">
 			<h1>Webcam</h1>
 			<div id="webcam"></div>
 		</section>
-		<section id = "schedule">
+		<section id="schedule">
 			<h1>Today's Schedule:</h1>
 			<script type="text/javascript">
 			var d = new Date();
@@ -91,13 +90,15 @@
 			
 			</script>
 		</section>
-		<section id = "contact">
+		<section id="contact">
 			<h1>Contact</h1>
 			<ul>
             </ul>
 		</section>
+		<footer><a href="/?s=full">Switch to Full Site</a></footer>
 	</body>
 </html>
+<script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="bookmark_bubble.js"></script>
 <script type="text/javascript" src="bookmark_bubble_control.js"></script>
 <script type="text/javascript" charset="utf-8">

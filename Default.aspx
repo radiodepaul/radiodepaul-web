@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="/css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	<script type="text/javascript" src="/js/iphoneredirect.js" language="javascript"></script>
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -69,8 +68,10 @@
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
-	<%Server.Execute("/includes/googleAnalytics.aspx");%>
-	<%Server.Execute("/includes/globalJavascript.aspx");%>
+<%Server.Execute("/includes/googleAnalytics.aspx");%>
+<%Server.Execute("/includes/globalJavascript.aspx");%>
+<script type="text/javascript" src="/js/jquery.url.js"></script>
+<script type="text/javascript" src="/js/iphoneredirect.js" language="javascript"></script>
 <script type="text/javascript" src="news.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
 <script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>

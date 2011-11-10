@@ -34,8 +34,10 @@ showsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collecti
 
 showsParse = $.parseJSON(showsGet);
 
+var displayed = new Array();
 for (var i=0; i < 6; i++) {
 	var randomNum = Math.ceil( Math.random()* (showsParse.length - 1) );
+	displayed.push(randomNum);
 	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>';
 	$(html).appendTo('#categories');
 }
