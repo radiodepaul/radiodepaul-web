@@ -11,7 +11,7 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
 		<link rel="stylesheet" href="html5reset.css" type="text/css" media="screen" charset="utf-8" />
-		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="style.css?v=001" type="text/css" media="screen" charset="utf-8" />
 		<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
