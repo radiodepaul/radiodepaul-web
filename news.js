@@ -4,11 +4,11 @@ newsPostsParse = $.parseJSON(newsPostsGet);
 
 $.each(newsPostsParse, function(i, news_post) {
 	
-var html = '<li>\
+	var html = '<li>\
 				<a href="/station_news/post/?id=' + news_post._id.$oid + '"><p>' + news_post.headline + '</p></a>\
 				<p>' + news_post.introduction + '</p>\
-			</li>'
-			$(html).appendTo('#news');
+				</li>';
+	$(html).appendTo('#news');
 });
 
 
@@ -26,7 +26,7 @@ var html = '<li>\
 				<p>' + event.start + ' - ' + event.end + '</p>\
 				<p>' + event.location + '</p>\
 				<p>' + event.description + '</p>\
-			</li>'
+			</li>';
 			$(html).appendTo('#events');
 });
 
@@ -36,6 +36,6 @@ showsParse = $.parseJSON(showsGet);
 
 for (var i=0; i < 6; i++) {
 	var randomNum = Math.ceil( Math.random()* showsParse.length);
-	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>'
+	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>';
 	$(html).appendTo('#categories');
-};
+}
