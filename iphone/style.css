@@ -243,6 +243,7 @@ footer {
 	bottom:0;
 	padding:4px 0;
 	background-color:#34332e;
+	z-index:99999;
 }
 footer a:link, footer a:visited {
 	color:#fff;
