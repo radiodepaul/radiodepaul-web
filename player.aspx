@@ -38,20 +38,19 @@
           <div class="panel" id="webcam">
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Webcam</div>
-					<div style="text-align:center;">
+					<div style="text-align:center;width:578px;height:270px;overflow:hidden;">
 						<script language="javascript">
                             if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
                                 ;
                                 document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" CODEBASE=\"http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0\">");
                                 document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
-                                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240\">");
+                                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480\">");
                                 document.write("</OBJECT>");
                             } else {
-                                ;
                                 theDate = new Date();
-                                var output = "<img SRC=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240&";
+                                var output = "<img src=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480&";
                                 output += theDate.getTime();
-                                output += "\">";
+                                output += "\" height=270 />";
                                 document.write(output);
                             };
                         </script>
@@ -61,10 +60,7 @@
            <div class="panel" id="chat">
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Chat</div>
-					<object width="578" height="270">
-					<param name="movie" value="somefilename.swf">
-					<!-- Beginning of meebo me widget code. Want to talk with visitors on your page? Go to http://www.meebome.com/ and get your widget! --> <object width="578" height="270" ><param name="movie" value="http://widget.meebo.com/mm.swf?hSrJxxCkSb"/><embed src="http://widget.meebo.com/mm.swf?hSrJxxCkSb" type="application/x-shockwave-flash" width="578" height="270"></embed></object>
-					</embed></object>
+					<object width="578" height="270"><param name="movie" value="http://widget.meebo.com/mm.swf?hSrJxxCkSb"/><embed src="http://widget.meebo.com/mm.swf?hSrJxxCkSb" type="application/x-shockwave-flash" width="578" height="270"></embed></object>
 				</div>
            </div>
 	</div>
