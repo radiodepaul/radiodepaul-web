@@ -617,13 +617,12 @@ div.bar {
 	text-indent:5px;
 	clear:both;
 }
-div.bar a:link, a:visited {
+div.bar a:link, div.bar a:visited {
 	color:#F2F2F2;
 	font-size:16px;
 }
 div.bar a:hover {
-	color:#cf671c;
-	text-decoration:none;
+	text-decoration:underline;
 }
 div.smallBar {
 	width:100%;
