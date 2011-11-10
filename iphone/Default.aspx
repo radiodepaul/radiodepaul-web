@@ -11,7 +11,7 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
 		<link rel="stylesheet" href="html5reset.css" type="text/css" media="screen" charset="utf-8" />
-		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="style.css?v=001" type="text/css" media="screen" charset="utf-8" />
 		<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
@@ -51,70 +51,11 @@
             </ul>
 		</section>
 		<footer><a href="/?s=full">Switch to Full Site</a></footer>
-	</body>
-</html>
+		
+<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="nav.js"></script>
 <script type="text/javascript" src="bookmark_bubble.js"></script>
 <script type="text/javascript" src="bookmark_bubble_control.js"></script>
-<script type="text/javascript" charset="utf-8">
-	function pageLoaded() {
-		switchToSectionWithId('home');
-	}
-	function goToStreamLow(url) {
-		window.location = "/radiodepaul64kbps.m3u";
-	}
-	function goToStreamHigh(url) {
-		window.location = "/radiodepaul128kbps.m3u";
-	}
-	function getWebcam() {
-		document.getElementById('webcam').innerHTML = "<img src='http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240' alt='' />";
-	}
-	function navSelected() {
-		clearAllNavItems();
-
-		var navItem = event.target;
-		navItem.setAttribute('class', 'selected');
-
-		switch (navItem.id) {
-		    case 'liHome':
-		        switchToSectionWithId('home');
-		        break;
-		    case 'liListen':
-		        switchToSectionWithId('listen');
-		        break;
-		    case 'liWatch':
-		        switchToSectionWithId('watch');
-		        getWebcam();
-		        break;
-		    case 'liSchedule':
-		        switchToSectionWithId('schedule');
-		        break;
-		    case 'liContact':
-		        switchToSectionWithId('contact');
-		        break;
-		}
-	}
-	function clearAllNavItems() {
-		var navList = document.getElementById('navList');
-
-		for (var i = 0; i < navList.children.length; i++) {
-		    var li = navList.children[i];
-		    li.setAttribute('class', '');
-		}
-	}
-	function switchToSectionWithId(sectionId) {
-		hideAllSections();
-		showSectionWithId(sectionId);
-	}
-	function hideAllSections() {
-		var sections = document.getElementsByTagName('section');
-		for (var i = 0; i < sections.length; i++) {
-		    var section = sections[i];
-		    section.setAttribute('class', '');
-		}
-	}
-	function showSectionWithId(sectionId) {
-		var section = document.getElementById(sectionId);
-		section.setAttribute('class', 'selected');
-	}
-</script>
+</body>
+</html>
