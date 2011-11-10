@@ -31,7 +31,7 @@
 				<li id="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://radio.depaul.edu/" send="false" width="390" show_faces="false" font=""></fb:like></li>
 				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
 			</ul>
-			<h1 class="tk-futura-pt" id="title">Home</h1>
+			<h1 class="tk-futura-pt" id="title">Chicago's College Connection</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
