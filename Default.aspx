@@ -60,6 +60,10 @@
 				<div class="bar"><a href="http://www.depauliaonline.com/">The DePaulia</a> Feed</div>
 					<div id="depaulia_feed"></div>
 			</div>
+			<div class="contentBox clear">
+				<div class="bar">Recent Comments</div>
+				<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=24&excerpt_length=200"></script></div>
+			</div>
 		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
