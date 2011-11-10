@@ -21,9 +21,9 @@
 		</header>
 		<nav>
 			<ul id='navList'>
-				<li id='liHome' onclick='navSelected()' class='selected'></li>
-				<li id='liListen' onclick='goToStreamHigh()'></li>
-				<li id='liWatch' onclick='navSelected()'></li>
+				<li href="" id='liHome' onclick='navSelected()' class='selected'></li>
+				<li href="" id='liListen' onclick='goToStreamHigh()'></li>
+				<li href="" id='liWatch' onclick='navSelected()'></li>
 				<!--<li id='liSchedule' onclick='navSelected()'></li>-->
 				<!--<li id='liContact' onclick='navSelected()'></li>-->
 			</ul>
@@ -44,51 +44,6 @@
 		</section>
 		<section id="schedule">
 			<h1>Today's Schedule:</h1>
-			<script type="text/javascript">
-			var d = new Date();
-			var weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
-			showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?q={'quarter':'AQ2011','"weekday[d.getDay()]"':true}&s={'start_hour': 1, 'start_minute': 1}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
-			showsParse= $.parseJSON(showsGet);
-			
-			$.each(showsParse, function(i, show) {
-				var start_ampm, end_ampm = "";
-
-				var end_hour = show.start_hour;
-				var end_minute = show.start_minute;
-
-				if (show.start_hour < 12) { start_ampm = "am";} else { start_ampm = "pm";}
-
-				end_minute += show.duration_min;
-				while (end_minute >= 60) {
-					end_minute -= 60;
-					end_hour += 1;
-				}
-
-				if (end_hour < 12) { end_ampm = "am";} else { end_ampm = "pm"; }
-				if (end_hour > 23) { end_hour -= 23; end_ampm = "am"; }
-
-				if (show.start_hour === 0) { show.start_hour = 12; }
-				if (show.start_hour > 12) { show.start_hour -= 12; }
-				if (end_hour > 12) { end_hour -= 12; }
-
-				if (show.start_minute === 0) { show.start_minute = "00"; }	
-				if (end_minute === 0) { end_minute = "00"; }
-
-
-
-				var html = '<li>\
-						<li>\
-							<p class="time">' + show.start_hour + ':' + show.start_minute + start_ampm + ' - ' + end_hour + ':' + end_minute + end_ampm + '</p>\
-						</div>\
-						<p class = "title">' + show.name + '</p>\
-						<p class="dj">with ' + show.hosts + '</p>\
-						<p class="genre">' + show.genre + '</p>\
-					</li>'
-
-				$(html).appendTo('#schedule'); }
-			});
-			
-			</script>
 		</section>
 		<section id="contact">
 			<h1>Contact</h1>
