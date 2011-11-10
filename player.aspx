@@ -12,19 +12,19 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-		<header>
-			<nav>                                     
-				<a title="player" href="#">Player</a>
-				<a title="webcam" href="#">Webcam</a>
-				<a title="chat" href="#" >Chat</a>
-			</nav>     
-		</header>                    
-<div id="content">
+	<header>
+		<nav>                                     
+			<a title="player" href="#">Player</a>
+			<a title="webcam" href="#">Webcam</a>
+			<a title="chat" href="#" >Chat</a>
+		</nav>     
+	</header>                    
+	<div id="content">
         <div class="panel" id="player">
 			<div class="contentBox">
 				<div class="bar">You're Listing to Radio DePaul</div>
 				<img src="/img/logo.png" />   
-				<script src="http://player.wavepanel.net/embed/basic/64c829446c484becd92959d9b08a8fab7c2f9c67"></script>                     	
+				<script src="http://player.wavepanel.net/embed/basic/64c829446c484becd92959d9b08a8fab7c2f9c67"></script>
 			</div>
 			<div class="right contentBox bottom">
 				<div class="bar">Contact Us</div>
@@ -39,22 +39,22 @@
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Webcam</div>
 					<div style="text-align:center;">
-						<script language="JavaScript">
-						<!--//hide script
-						  if ((navigator.appName == "Microsoft Internet Explorer")&&(navigator.platform != "MacPPC")&&(navigator.platform != "Mac68k")) {
-						                document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" WIDTH=\"640\" HEIGHT=\"480\" CODEBASE=\"/AxisCamControl.cab\">");
-						                document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
-						                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480\">");
-						                document.write("</OBJECT>");
-						  } else {
-						    theDate = new Date();
-						        var output = "<img height=301 SRC=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480&";
-						    output += theDate.getTime()
-						    output += "\" ALT=\"Loading...\">";
-						    document.write(output);
-						  }
-						//end hide -->
-						</script>
+						<script language="javascript">
+                            if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
+                                ;
+                                document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" CODEBASE=\"http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0\">");
+                                document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
+                                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240\">");
+                                document.write("</OBJECT>");
+                            } else {
+                                ;
+                                theDate = new Date();
+                                var output = "<img SRC=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=320x240&";
+                                output += theDate.getTime();
+                                output += "\">";
+                                document.write(output);
+                            };
+                        </script>
 					</div>
 				</div>
           </div>
@@ -63,12 +63,11 @@
 					<div class="bar">Radio DePaul Chat</div>
 					<object width="578" height="270">
 					<param name="movie" value="somefilename.swf">
-					<embed src="http://widget.meebo.com/mm.swf?hSrJxxCkSb" type="application/x-shockwave-flash" wmode="transparent" width="580" height="301">
+					<!-- Beginning of meebo me widget code. Want to talk with visitors on your page? Go to http://www.meebome.com/ and get your widget! --> <object width="578" height="270" ><param name="movie" value="http://widget.meebo.com/mm.swf?hSrJxxCkSb"/><embed src="http://widget.meebo.com/mm.swf?hSrJxxCkSb" type="application/x-shockwave-flash" width="578" height="270"></embed></object>
 					</embed></object>
 				</div>
            </div>
-
-</div>
+	</div>
 <%--Google Analytics--%>
 <%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%--Google Analytics END--%>

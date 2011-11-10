@@ -35,7 +35,7 @@ if ( show != null ) {
 	social = '<ul id="personshowSocial">' + twitter + facebook + show_email + '</ul>';
 
 	if (show.description != '') {
-		description = '<div class="left contentBox"><div class="bar">Description</div><p>' + show.description + '</p></div>';
+		description = '<div class="left contentBox clearLeft"><div class="bar">Description</div><p>' + show.description + '</p></div>';
 	}
 
 	var html = social + name + stats + facebook_fanbox + description + '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread"></div></div>';
