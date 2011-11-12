@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
     <meta name="description" content="Desktop Player for Radio DePaul" />
     <meta http-equiv="Content-Script-Type" content="text/javascript">
-    <script type="text/javascript" src="/js/iphoneredirect.js"></script>
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -38,23 +37,7 @@
           <div class="panel" id="webcam">
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Webcam</div>
-					<div style="text-align:center;width:578px;height:270px;overflow:hidden;">
-						<script language="javascript">
-                            if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
-                                ;
-                                document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" CODEBASE=\"http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0\">");
-                                document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
-                                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480\">");
-                                document.write("</OBJECT>");
-                            } else {
-                                theDate = new Date();
-                                var output = "<img src=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480&";
-                                output += theDate.getTime();
-                                output += "\" height=270 />";
-                                document.write(output);
-                            };
-                        </script>
-					</div>
+					<div id="webcam_embed" style="text-align:center;width:578px;height:270px;overflow:hidden;"></div>
 				</div>
           </div>
            <div class="panel" id="chat">
