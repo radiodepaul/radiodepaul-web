@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
     <meta name="description" content="Desktop Player for Radio DePaul" />
     <meta http-equiv="Content-Script-Type" content="text/javascript">
-    <script type="text/javascript" src="/js/iphoneredirect.js"></script>
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -38,23 +37,7 @@
           <div class="panel" id="webcam">
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Webcam</div>
-					<div style="text-align:center;width:578px;height:270px;overflow:hidden;">
-						<script language="javascript">
-                            if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
-                                ;
-                                document.write("<OBJECT ID=\"AxisCamControl\" CLASSID=\"CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3\" CODEBASE=\"http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0\">");
-                                document.write("<PARAM NAME=DisplaySoundPanel VALUE=0>");
-                                document.write("<PARAM NAME=URL VALUE=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480\">");
-                                document.write("</OBJECT>");
-                            } else {
-                                theDate = new Date();
-                                var output = "<img src=\"http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480&";
-                                output += theDate.getTime();
-                                output += "\" height=270 />";
-                                document.write(output);
-                            };
-                        </script>
-					</div>
+					<div id="webcam_embed" style="text-align:center;width:578px;height:270px;overflow:hidden;"></div>
 				</div>
           </div>
            <div class="panel" id="chat">
@@ -74,18 +57,6 @@
 <script type="text/javascript" src="/js/jqclock_201.js"></script>
 <script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/navSwitchplayer.js"></script>	
-<script type="text/javascript">
-newsPostsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-newsPostsParse = $.parseJSON(newsPostsGet);
-for (var i = 0; i < 1; i++) {
-	var news_post = newsPostsParse[i];
-	var html = '<li>\
-	<a href="/station_news/post/?id=' + news_post._id.$oid + '" target="_blank"><p>' + news_post.headline + '</p></a>\
-	<p>' + news_post.introduction + '</p>\
-	</li>'
-	$(html).appendTo('#news');
-};
-</script>
+<script type="text/javascript" src="/js/navSwitchplayer.js?v=001"></script>	
 </body>
 </html>
