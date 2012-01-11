@@ -1,8 +1,7 @@
-showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?q={'quarter':'AQ2011'}&s={'start_hour': 1, 'start_minute': 1}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
-peopleGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/people?apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
+$('#schedule div.bar').activity({segments: 8, steps: 4, width: 2, align: 'right', valign: 'top', space: 0, length: 3, color: '#0b0b0b', speed: 1.5, padding: 5});
+showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?q={'quarter':'WQ2012'}&s={'start_hour': 1, 'start_minute': 1}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
 showsParse= $.parseJSON(showsGet);
-peopleParse= $.parseJSON(peopleGet);
-
+var mon_html = '', tue_html = '', wed_html = '', thur_html = '', fri_html = '', sat_html = '', sun_html = '';
 $.each(showsParse, function(i, show) {
 	var start_ampm = "", end_ampm = "";
 	var start_hour = show.start_hour, start_minute = show.start_minute, end_hour = show.end_hour, end_minute = show.end_minute;
@@ -17,9 +16,7 @@ $.each(showsParse, function(i, show) {
 	if (end_hour > 12) { end_hour -= 12; }
 	
 	if (start_minute === 0) { start_minute = "00"; }	
-	if (end_minute === 0) { end_minute = "00"; }
-	
-	
+	if (end_minute === 0) { end_minute = "00"; }	
 	
 	var html = '<li>\
 			<div class="time">\
@@ -31,17 +28,25 @@ $.each(showsParse, function(i, show) {
 			<p class="showBio">' + show.short_description + '</p>\
 		</li>'
 	
-	if (show.monday === true) { $(html).appendTo('#monday ul'); }
+	if (show.monday === true) { mon_html += html; }
 		
-	if (show.tuesday === true) { $(html).appendTo('#tuesday ul'); }
+	if (show.tuesday === true) { tue_html += html; }
 		
-	if (show.wednesday === true) { $(html).appendTo('#wednesday ul'); }
+	if (show.wednesday === true) { wed_html += html; }
 		
-	if (show.thursday === true) { $(html).appendTo('#thursday ul'); }
+	if (show.thursday === true) { thur_html += html; }
 		
-	if (show.friday === true) { $(html).appendTo('#friday ul'); }
+	if (show.friday === true) { fri_html += html; }
 		
-	if (show.saturday === true) { $(html).appendTo('#saturday ul'); }
+	if (show.saturday === true) { sat_html += html; }
 		
-	if (show.sunday === true) { $(html).appendTo('#sunday ul'); }
+	if (show.sunday === true) { sun_html += html; }
 });
+$(mon_html).appendTo('#monday ul');
+$(tue_html).appendTo('#tuesday ul');
+$(wed_html).appendTo('#wednesday ul');
+$(thur_html).appendTo('#thursday ul');
+$(fri_html).appendTo('#friday ul');
+$(sat_html).appendTo('#saturday ul');
+$(sun_html).appendTo('#sunday ul');
+$('#schedule div.bar').activity(false);
