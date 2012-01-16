@@ -5,7 +5,7 @@ $.each(managersParse, function(i, manager) {
 	var html = '<div class="box">\
 					<a href="/person/?id=' + manager._id.$oid + '"><p>' + manager.fname + ' ' + manager.lname + '</p></a>\
 					<p>' + manager.manager_position + '</p>\
-					<p>' + manager.manager_email + '</p>\
+					<p><a href="mailto:"' + manager.manager_email + '">' + manager.manager_email + '</a></p>\
 					<p>' + manager.manager_phone + '</p>\
 				</div>';
 				

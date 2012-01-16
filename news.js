@@ -1,5 +1,8 @@
-newsPostsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
+$('#news').closest('div').activity({segments: 8, steps: 4, width: 2, align: 'right', valign: 'top', space: 0, length: 3, color: '#0b0b0b', speed: 1.5, padding: 5});
+$('#events').closest('div').activity({segments: 8, steps: 4, width: 2, align: 'right', valign: 'top', space: 0, length: 3, color: '#0b0b0b', speed: 1.5, padding: 5});
+$('#depaulia_feed').closest('div').activity({segments: 8, steps: 4, width: 2, align: 'right', valign: 'top', space: 0, length: 3, color: '#0b0b0b', speed: 1.5, padding: 5});
 
+newsPostsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
 newsPostsParse = $.parseJSON(newsPostsGet);
 
 $.each(newsPostsParse, function(i, news_post) {
@@ -10,13 +13,9 @@ $.each(newsPostsParse, function(i, news_post) {
 				</li>';
 	$(html).appendTo('#news');
 });
-
-
-
-//<div class="bar">Photo</div><img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/medium/image.jpg"/>
+$('#news').closest('div').activity(false);
 
 stationEventsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/station_events?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-
 stationEventsParse = $.parseJSON(stationEventsGet);
 
 $.each(stationEventsParse, function(i, event) {
@@ -29,9 +28,9 @@ var html = '<li>\
 			</li>';
 			$(html).appendTo('#events');
 });
+$('#events').closest('div').activity(false);
 
 showsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-
 showsParse = $.parseJSON(showsGet);
 
 var displayed = new Array();
@@ -41,3 +40,24 @@ for (var i=0; i < 6; i++) {
 	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>';
 	$(html).appendTo('#categories');
 }
+
+google.load("feeds", "1");
+function feedLoaded(result) {
+  if (!result.error) {
+		var html = "";
+		$.each(result.feed.entries, function(i, item) {
+			html += '<li>\
+					<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
+					<p>' + item.contentSnippet + '</p>\
+					</li>'
+		});
+		$(html).appendTo('#depaulia_feed');
+		$('#depaulia_feed').closest('div').activity(false);
+	}
+}
+function OnLoad() {
+	var feed = new google.feeds.Feed("http://www.depauliaonline.com/se/the-depaulia-rss-1.2124399");
+
+	feed.load(feedLoaded);
+}
+google.setOnLoadCallback(OnLoad);

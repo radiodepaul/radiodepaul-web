@@ -482,17 +482,20 @@ nav a:link, nav a:visited {
 	font-size:14px;
 }
 nav a{border-top:solid 4px #000;}
-nav a:hover{border-top:solid 4px #4289a9;border-bottom:none;}
+nav a:hover, nav a:last-child:hover{color:#5e87a8;border-top:solid 4px #4289a9;}
 nav a{ -webkit-transition:border-top .4s ease-out;}
 nav a:last-child {
 	border-right:none;
 	text-align:center;
 	width:290px;
 	font-size:18px;
+	color:#fff;
+	background-color:#5e87a8;
 }
 nav a.selected {
 	border-top:solid 4px #4289a9;
 	border-bottom:none;
+	color:#5e87a8;
 }
 header h1 {
 	left:140px;
@@ -614,6 +617,9 @@ header h1 {
 	text-decoration:underline;
 	color:#5e87a8;
 }
+.photoBox {
+	text-align:center;
+}
 div.bar {
 	width:100%;
 	font-size:16px;
@@ -630,21 +636,30 @@ div.bar a:link, div.bar a:visited {
 	font-size:16px;
 }
 div.bar a:hover {
-	text-decoration:underline;
+	color:#CF671C;
+	text-decoration:none;
 }
 div.smallBar {
 	width:100%;
-	padding:10px 0;
+	padding:4px 0;
 	border-bottom:1px solid #000;
 	font-weight:bold;
-	text-indent:5px;
+	text-indent:2px;
 	clear:both;
 }
-div.smallBar a:link, a:visited {
+div.smallBar a:link, div.smallBar a:visited {
 	color:#000;
 }
 div.smallBar a:hover {
 	color:#5e87a8;
+}
+a:link.big, a:visited.big {
+	background-color:none;
+	color:#000;
+}
+a:hover.big div {
+	background-color:#5e87a8;
+	color:#fff;
 }
 .contentBox {
 	background-color:#F6F2F5;
@@ -718,7 +733,7 @@ footer a:link, footer a:visited {
 	color:#F2F2F2;
 }
 footer a:hover {
-	text-decoration:underline;
+	color:#CF671C;
 }
 footer #desc {
 	width:400px;
@@ -1007,6 +1022,7 @@ ul#gallery li img {
 
 .box p { width:180px;}
 .box p:first-child {font-weight:bold}
+.box a:link, a:visited, a:hover {text-decoration:none}
 
 #mission_statment {clear:both}
 

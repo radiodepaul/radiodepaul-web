@@ -1,15 +1,29 @@
-peopleGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/people?s={'fname' : 1}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
-peopleParse= $.parseJSON(peopleGet);
-
-$.each(peopleParse, function(i, person) {
-	
-	var html = '<div class="smallBar"><a href="/person/?id=' + person._id.$oid + '">' + person.fname + ' ' + person.lname + '</a></div>'
-	
-	$(html).appendTo('#staff_list');
+$(document).ready(function(){
+	var html = "";
+	$.ajax({
+		url: "http://localhost:3000/people.js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			$.fn.sort = function() {  
+	    		return this.pushStack( [].sort.apply( this, arguments ), []);  
+			};  
+			function sortName(a,b) {  
+	     		if (a.name == b.name) {
+	       			return 0;
+	     		}
+	     		return a.name> b.name ? 1 : -1;  
+	 		};  
+	  		function sortNameDesc(a,b) {  
+	     		return sortName(b,a) * -1;  
+	 		};
+			var sorted = $(data).sort(sortNameDesc);
+			for (var i = 0; i < sorted.length; i++) {
+				html += '<a class="big" href="/person/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  ' + sorted[i]['name'] + '</div></a>';
+			}
+			$(html).appendTo('#staff_list');
+		}
+	});
 });
-
-for (var i=0; i < 6; i++) {
-	var randomNum = Math.ceil( Math.random()* peopleParse.length);
-	html = '<a href="/person/?id=' + peopleParse[randomNum]._id.$oid + '"><span>' + peopleParse[randomNum].fname + ' ' + peopleParse[randomNum].lname + '</span></a>'
-	$(html).appendTo('#categories');
-};

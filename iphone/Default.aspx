@@ -21,10 +21,10 @@
 		</header>
 		<nav>
 			<ul id='navList'>
-				<li href="" id='liHome' onclick='navSelected()' class='selected'></li>
-				<li href="" id='liListen' onclick='goToStreamHigh()'></li>
-				<li href="" id='liWatch' onclick='navSelected()'></li>
-				<!--<li id='liSchedule' onclick='navSelected()'></li>-->
+				<li id='liHome' onclick='navSelected()' class='selected'></li>
+				<li id='liListen' onclick='goToStreamHigh()'></li>
+				<li id='liWatch' onclick='navSelected()'></li>
+				<li id='liSchedule' onclick='navSelected()'></li>
 				<!--<li id='liContact' onclick='navSelected()'></li>-->
 			</ul>
 		</nav>
@@ -43,7 +43,44 @@
 			<div id="webcam"></div>
 		</section>
 		<section id="schedule">
-			<h1>Today's Schedule:</h1>
+			<div id="schedule_list">
+				<div id="monday">
+					<h1>Monday</h1>
+					<ul>
+					</ul>
+				</div>
+				<div id="tuesday">
+					<h1>Tuesday</h1>
+					<ul>
+					</ul>
+				</div>
+				<div id="wednesday">
+					<h1>Wednesday</h1>
+					<ul>
+					</ul>
+				</div>
+				<div id="thursday">
+					<h1>Thursday</h1>
+					<ul>
+					</ul>
+				</div>
+				<div id="friday">
+					<h1>Friday</h1>
+					<ul>
+					</ul>
+				</div>
+				<div id="saturday">
+					<h1>Saturday</h1>
+					<ul>
+
+					</ul>
+				</div>
+				<div id="sunday">
+					<h1>Sunday</h1>
+					<ul>
+					</ul>
+				</div>
+			</div>
 		</section>
 		<section id="contact">
 			<h1>Contact</h1>
