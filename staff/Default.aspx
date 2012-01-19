@@ -32,7 +32,7 @@
 		<div id="main">
 			<div id="content">
 				<div id="staff_list">
-					<div class="bar">Fall 2011</div>
+					<div class="bar">Radio DePaul Staff</div>
 				</div>
 			</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>

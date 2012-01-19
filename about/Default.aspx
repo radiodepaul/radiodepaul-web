@@ -39,19 +39,16 @@
 		</header>
 		<div id="main">
 			<div id="content">
-					<div id="featured">
-						<div id="slides">
-							<div class="slides_container"></div>
-							<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-							<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
-						</div>
-						<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
+				<div id="featured">
+					<div id="slides">
+						<div class="slides_container"></div>
+						<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+						<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
 					</div>
-				<div class="panel" id="staff_list">
-					<div class="contentBox" id="staffMembers">
-						<div class="bar">Staff</div>
-						<div class="clear"></div>
-					</div>
+					<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
+				</div>
+				<div class="panel ContentBox" id="staff_list">
+					<div class="bar">Staff</div>
 				</div>
 				<div class="panel contentBox" id="mission_statement">
 					<div class="bar">Mission Statement</div>
