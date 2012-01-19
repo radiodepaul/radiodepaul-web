@@ -24,14 +24,13 @@ nav ul {
 	height: 100%;
 	width: 100%;
 	margin: 0 auto;
-	margin-left:1px;
 }
 nav ul li {
 	display: inline-block;
 	border-right:dotted 1px #000;
 	border-top:solid 4px #000;
 	float: left;
-	width: 106px;
+	width: 80px;
 	height: 100%;
 	-webkit-box-sizing: border-box;
 	background-repeat: no-repeat;
@@ -150,7 +149,7 @@ section.selected {
 	z-index: 100;
 	opacity: 1;
 }
-section#home ul.tweets li, section#schedule ul li {
+section#home ul.tweets li, section#schedule_list ul li {
 	min-height: 56px;
 	min-width: 320px;
 	-webkit-box-sizing: border-box;
@@ -166,7 +165,7 @@ section#home ul.tweets li img.user-image {
 	width: 48px;
 	height: 48px;
 }
-section#home ul.tweets li:nth-child(even), section#schedule ul li:nth-child(even), section#contact ul li:nth-child(even) {
+section#home ul.tweets li:nth-child(even), section#schedule_list ul li:nth-child(even), section#contact ul li:nth-child(even) {
 	background-image:  -webkit-gradient(
 		linear, 
 		0% 0%, 
@@ -183,14 +182,14 @@ section#home ul.tweets li img, section#contact ul li img  {
 section#home ul.tweets li span.username {
 	display: block;
 }
-section#schedule ul li p.title {
+section#schedule_list ul li p.title {
 	font-weight:bold;
 	font-size:14px;
 }
-section#schedule ul li p.dj, section#schedule ul li p.genre {
+section#schedule_list ul li p.dj, section#schedule_list ul li p.genre {
 	font-size:12px;
 }
-section#schedule ul li p.time {
+section#schedule_list ul li p.time {
 	float:right;
 	font-weight:bold;
 	font-size:14px;
@@ -236,6 +235,7 @@ section#watch {
 	height:240px;
 }
 footer {
+	display:none;
 	width:100%;
 	color:#F2F2F2;
 	text-align:center;
@@ -248,4 +248,120 @@ footer {
 footer a:link, footer a:visited {
 	color:#fff;
 	text-decoration:none;
+}
+div.bar {
+	width:100%;
+	font-size:16px;
+	color:#F2F2F2;
+	padding:5px 0;
+	margin-bottom:4px;
+	background-color:#5e87a8;
+	font-weight:bold;
+	text-indent:5px;
+	clear:both;
+}
+div.bar a:link, div.bar a:visited {
+	color:#F2F2F2;
+	font-size:16px;
+}
+#schedule_list h1 {
+	font-size:14px;
+	padding:5px 0;
+	width:100%;
+	border-bottom:1px solid #000;
+	font-weight:bold;
+	text-indent:5px;
+}
+#schedule_list ul {
+	width:100%;
+}
+#schedule_list, #shows, #staff_list {
+	background-color:#F6F2F5;
+	border:1px solid #999;
+	min-height:140px;
+	width:100%;
+	-o-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	box-shadow: 0 3px 4px rgba(0,0,0,.5);
+}
+#schedule_list ul li {
+	width:98%;
+	margin:0 auto;
+	position:relative;
+	height:110px;
+	border-bottom:2px solid #999;
+}
+#schedule_list ul li img {
+	height:80px;
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+#schedule_list ul li p {
+	font-size:12px;
+}
+#schedule_list ul li div.time {
+	width:60px;
+}
+#schedule_list ul li p.startTime {
+	top:45px;
+	width:60px;
+	left:0;
+	position:absolute;
+	text-align:center;
+}
+#schedule_list ul li p.endTime {
+	bottom:15px;
+	width:60px;
+	left:0;
+	position:absolute;
+	text-align:center;
+}
+#schedule_list ul li p.showName {
+	top:4px;
+	line-height:12px;
+	font-size:14px;
+	left:0;
+	position:absolute;
+	font-weight:bold;
+}
+#schedule_list ul li p.showGenre {
+	top:16px;
+	line-height:12px;
+	font-size:12px;
+	left:0;
+	position:absolute;
+}
+#schedule_list ul li a:link, #schedule_list ul li a:visited {
+	color:#000;
+	text-decoration:none;
+}
+#schedule_list ul li p.showName span {
+	font-weight:normal;
+	font-size:12px;
+}
+#schedule_list ul li p.showDJs {
+	top:30px;
+	left:80px;
+	position:absolute;
+}
+#schedule_list ul li a {
+	font-size:16px;
+}
+#schedule_list ul li a:hover {
+	color:#5e87a8;
+}
+#schedule_list ul li p.showBio {
+	position:absolute;
+	left:80px;
+	bottom:10px;
+	font-size:12px;
+	line-height:11px;
+}
+p.scheduleBar {
+	width:100%;
+	color:#F2F2F2;
+	padding:5px;
+	background-color:#cf671c;
 }

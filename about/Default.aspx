@@ -18,7 +18,7 @@
 	  <span>Apply Now</span>
 	</a>
 	<div id="categories">
-		<a onclick="navSelect()" title="staff"><span>Staff</span></a>
+		<a onclick="navSelect()" title="staff_list"><span>Staff</span></a>
 		<a onclick="navSelect()" title="mission_statement"><span>Mission Statement</span></a>
 		<a onclick="navSelect()" title="join"><span>Join Radio DePaul</span></a>
 		<a onclick="navSelect()" title="awards"><span>Awards &amp; Recognition</span></a>
@@ -39,7 +39,6 @@
 		</header>
 		<div id="main">
 			<div id="content">
-				<div class="panel" id="staff">
 					<div id="featured">
 						<div id="slides">
 							<div class="slides_container"></div>
@@ -48,6 +47,7 @@
 						</div>
 						<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 					</div>
+				<div class="panel" id="staff_list">
 					<div class="contentBox" id="staffMembers">
 						<div class="bar">Staff</div>
 						<div class="clear"></div>
@@ -169,7 +169,7 @@
 			});
 	});
 	clearAllSections();
-	navSelectN('staff');
+	navSelectN('staff_list');
 </script>
 </body>
 </html>

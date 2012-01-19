@@ -1,9 +1,29 @@
-showsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?s={'name': 1}&apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
-showsParse= $.parseJSON(showsGet);
-
-$.each(showsParse, function(i, show) {
-	
-	var html = '<div class="smallBar"><a href="/show/?id=' + show._id.$oid + '">' + show.name + '</a></div>';
-	
-	$(html).appendTo('#shows');
+$(document).ready(function(){
+	var html = "";
+	$.ajax({
+		url: "http://radiodepaul.herokuapp.com/shows.js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			$.fn.sort = function() {  
+	    		return this.pushStack( [].sort.apply( this, arguments ), []);  
+			};  
+			function sortTitle(a,b) {  
+	     		if (a.title == b.title) {
+	       			return 0;
+	     		}
+	     		return a.title> b.title ? 1 : -1;  
+	 		};  
+	  		function sortTitleDesc(a,b) {  
+	     		return sortTitle(b,a) * -1;  
+	 		};
+			var sorted = $(data).sort(sortTitleDesc);
+			for (var i = 0; i < sorted.length; i++) {
+				html += '<a class="big" href="/show/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  ' + sorted[i]['title'] + '</div></a>';
+			}
+			$(html).appendTo('#shows');
+		}
+	});
 });

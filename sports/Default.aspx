@@ -90,39 +90,12 @@
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627899861179&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
-<script src="sports.js"></script>
 <script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>
-<script type="text/javascript">
-	google.load("feeds", "1");
-	function feedLoaded(result) {
-		if (!result.error) {
-	
-			for (var i = 0; i < 2; i++) {
-		
-				var item = result.feed.entries[i];
-				var html = '<li>\
-								<a href="' + item.link + '"><p>' + item.title + '</p></a>\
-								<p>' + item.contentSnippet + '</p>\
-							</li>';
-				$(html).appendTo('#athletics_feed');
-			}
-		}
-	}
-
-
-	function OnLoad() {
-		var feed = new google.feeds.Feed("http://www.depaulbluedemons.com/headline-rss.xml");
-	
-		feed.load(feedLoaded);
-	}
-
-	google.setOnLoadCallback(OnLoad);
-</script>
+<script src="sports.js"></script>
 <script type="text/javascript" language="javascript">
 	$(function(){
 		$('#slides').slides({
 			preload: true,
-			preloadImage: '/img/slides/loading.gif',
 			play: 5000,
 			pause: 2500,
 			hoverPause: true,

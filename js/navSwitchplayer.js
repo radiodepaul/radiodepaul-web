@@ -11,7 +11,7 @@ function generateWebcam() {
 	    </object>';
 	} else {
 	    theDate = new Date();
-	    webcam_output = '<img src="http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480&' + theDate.getTime() + '" height=270 />';
+	    webcam_output = '<img src="http://140.192.109.189/axis-cgi/mjpg/video.cgi?resolution=640x480&' + theDate.getTime() + '" height=270 />';
 	}
 	return webcam_output;
 }

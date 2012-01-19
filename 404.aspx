@@ -34,7 +34,7 @@
 		</header>
 		<div id="main">
 		<div id="content">
-			<p>Sorry. That page you requested cannot be found.</p>
+			<p>Sorry. The page you requested cannot be found.</p>
 		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
