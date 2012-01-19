@@ -1,3 +1,4 @@
+$('#staff_list').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
 $(document).ready(function(){
 	var html = "";
 	$.ajax({
@@ -29,8 +30,9 @@ $(document).ready(function(){
 							<p>' + sorted[i]['phone'] + '</p>\
 							</div>';
 			}
-			$(html).appendTo('#staffMembers');
-			$('<div class="clear"></div>').appendTo('#staffMembers');
+			$(html).appendTo('#staff_list');
+			$('<div class="clear"></div>').appendTo('#staff_list');
+			$('#staff_list').activity(false);
 		}
 	});
 });

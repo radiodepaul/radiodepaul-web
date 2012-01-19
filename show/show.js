@@ -1,3 +1,4 @@
+$('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
 $(document).ready(function(){
 	var showId = $.url().param('id');
 	$.ajax({
@@ -9,7 +10,7 @@ $(document).ready(function(){
 		success: function(data) {
 			if ( data != null ) {
 				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>'
-				var photo = "", twitter = "", name = "", facebook = "", email = "", description = "", stats = "", social = "", facebook_fanbox = "", genre = "", hosts = "";
+				var photo = "", twitter = "", name = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "";
 				var disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread" class="dsq-widget"></div></div>'
 				
 				name = '<h2 id="name">' + data['title'] + '</h2>';
@@ -27,6 +28,13 @@ $(document).ready(function(){
 						}
 						 hosts += '</ul></div>';
 					}
+					if (data['scheduled_slots'] != '') {
+						slots = '<div class="contentBox left"><div class="bar">Scheduled At:</div><ul>'
+						for (var i = 0; i < data['scheduled_slots'].length; i++) {
+								slots += '<li>' + data['scheduled_slots'][i] + '</li>';
+						}
+						 slots += '</ul></div>';
+					}
 					stats = '<div class="right contentBox"><div class="bar">Stats</div>' + genre + '</div>';
 				}
 				if ( data['twitter'] != '' ) {
@@ -35,7 +43,7 @@ $(document).ready(function(){
 
 				if ( data['facebook'] != '' ) {
 					facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
-					facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + data['facebook'] + '" data-width="460" height="270" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"></div></div>';
+					facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="460" height="270" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
 				} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>'; }
 
 				if ( data['email'] != '' ) {
@@ -45,11 +53,12 @@ $(document).ready(function(){
 				social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
 				if (data['long_description'] != '') {
-					description = '<div class="contentBox clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
+					description = '<div class="contentBox left"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
 				}
 
-				html = name + photo + social + stats + hosts + facebook_fanbox + description + disqus_embed;	
+				html = name + photo + social + stats + hosts + facebook_fanbox + description + slots + disqus_embed;	
 				$(html).appendTo('#content');
+				$('#content').activity(false);
 			}
 		}
 		

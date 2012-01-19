@@ -1,3 +1,4 @@
+$('#shows').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
 $(document).ready(function(){
 	var html = "";
 	$.ajax({
@@ -24,6 +25,7 @@ $(document).ready(function(){
 				html += '<a class="big" href="/show/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  ' + sorted[i]['title'] + '</div></a>';
 			}
 			$(html).appendTo('#shows');
+			$('#shows').activity(false);
 		}
 	});
 });

@@ -6,7 +6,6 @@
 	<title>Radio DePaul | Media</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -61,12 +60,10 @@
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" src="/js/swfobject.js"></script>
 <script type="text/javascript">
-
     var params = { allowScriptAccess: "always" };
     var atts = { id: "myytplayer" };
     swfobject.embedSWF("http://www.youtube.com/e/vbbgtoTs-fM?version=3&autohide=1&enablejsapi=1&modestbranding=1&playerapiid=ytplayer&rel=0&showinfo=0&theme=light",
                        "ytapiplayer", "660", "356", "8", null, null, params, atts);
-
   </script>
 </body>
 </html>
