@@ -1,55 +1,70 @@
-showId = $.url().param('id');
+$(document).ready(function(){
+	var showId = $.url().param('id');
+	$.ajax({
+		url: "http://radiodepaul.herokuapp.com/shows/" + showId + ".js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			if ( data != null ) {
+				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>'
+				var photo = "", twitter = "", name = "", facebook = "", email = "", description = "", stats = "", social = "", facebook_fanbox = "", genre = "", hosts = "";
+				var disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread" class="dsq-widget"></div></div>'
+				
+				name = '<h2 id="name">' + data['title'] + '</h2>';
+				
+				photo = '<div class="left contentBox photoBox"><div class="bar">Photo</div><img src = "' + data['photo_medium'] + '" alt = "Photo for ' + data['title'] + '" /></div>';
+				
+				if ( data['genre'] != '' ) {
+					if (data['genre'] != '') {
+						genre = '<p>Genre: ' + data['genre'] + '</p>';
+					}
+					if (data['hosts'] != '') {
+						hosts = '<div class="contentBox right"><div class="bar">Hosted By:</div><ul>'
+						for (var i = 0; i < data['hosts'].length; i++) {
+								hosts += '<li><a href="/person/?id=' + data['hosts'][i][1] + '"><img src="' + data['hosts'][i][2] + '" />' + data['hosts'][i][0] + '</a></li>';
+						}
+						 hosts += '</ul></div>';
+					}
+					stats = '<div class="right contentBox"><div class="bar">Stats</div>' + genre + '</div>';
+				}
+				if ( data['twitter'] != '' ) {
+					twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"><img src="/img/social/twitter.png" /></a></li>';
+				} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a></li>'; }
 
-showsGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows/" + showId + "?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
+				if ( data['facebook'] != '' ) {
+					facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
+					facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + data['facebook'] + '" data-width="460" height="270" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"></div></div>';
+				} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>'; }
 
-show = $.parseJSON(showsGet);
-var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>'
-if ( show != null ) {
-	var twitter = "", name = "", facebook = "", show_email = "", description = "", stats = "", social = "", facebook_fanbox = "";
+				if ( data['email'] != '' ) {
+					email = '<li class="email"><a href="mailto:' + data['email'] + '"><img src="/img/social/mail.png" /></a></li>';
+				}
 
-	name = '<h2 id="name">' + show.name + '</h2>'
-	document.title =  document.title + ' | ' + show.name;
+				social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
-	if ( show.genre && show.host != '' ) {
-		if (show.genre != '') {
-			genre = '<p>Genre: ' + show.genre + '</p>';
+				if (data['long_description'] != '') {
+					description = '<div class="contentBox clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
+				}
+
+				html = name + photo + social + stats + hosts + facebook_fanbox + description + disqus_embed;	
+				$(html).appendTo('#content');
+			}
 		}
-		if (show.host != '') {
-			host = '<p>Host(s): ' + show.host + '</p>';
-		}
-		stats = '<div class="left contentBox"><div class="bar">Stats</div>' + genre + host + '</div>';
-	}
-	if ( show.twitter_username != '' ) {
-		twitter = '<li class="twitter"><a href="http://twitter.com/' + show.twitter_username + '" target="_blank"><img src="/img/social/twitter.png" /></a></li>';
-	} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a></li>'; }
+		
+	});
+	var disqus_title = document.title;
+});
 
-	if ( show.facebook_page_username != '' ) {
-		facebook = '<li class="facebook"><a href="http://facebook.com/' + show.facebook_page_username + '" target="_blank"></a></li>';
-		facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div class="fb-like-box" data-href="http://www.facebook.com/' + show.facebook_page_username + '" data-width="460" height="270" data-show-faces="true" data-border-color="#fff" data-stream="false" data-header="false"></div></div>';
-	} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>'; }
-
-	if ( show.show_email != '' ) {
-		show_email = '<li class="email"><a href="mailto:' + show.show_email + '"><img src="/img/social/mail.png" /></a></li>';
-	}
-
-	social = '<ul id="personshowSocial">' + twitter + facebook + show_email + '</ul>';
-
-	if (show.description != '') {
-		description = '<div class="left contentBox clearLeft"><div class="bar">Description</div><p>' + show.description + '</p></div>';
-	}
-
-	var html = social + name + stats + facebook_fanbox + description + '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread" class="dsq-widget"></div></div>';
-}
-var disqus_title = document.title;
-$(html).appendTo('#content');
 
 //<div class="bar">Photo</div><img src="http://radiodepaulapp.heroku.com/image/shows/' + show._id.$oid  + '/medium/image.jpg"/>
-showsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
+//showsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
 
-showsParse = $.parseJSON(showsGet);
+//showsParse = $.parseJSON(showsGet);
 
-for (var i=0; i < 6; i++) {
-	var randomNum = Math.ceil( Math.random()* showsParse.length);
-	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>'
-	$(html).appendTo('#categories');
-};
+//for (var i=0; i < 6; i++) {
+//	var randomNum = Math.ceil( Math.random()* showsParse.length);
+//	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>'
+//	$(html).appendTo('#categories');
+//};

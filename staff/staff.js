@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	var html = "";
 	$.ajax({
-		url: "http://localhost:3000/people.js",
+		url: "http://radiodepaul.herokuapp.com/people.js",
 		dataType: "jsonp",
 		type: "GET",
 		processData: false,

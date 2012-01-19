@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	personId = $.url().param('id');
-	var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>'
 	$.ajax({
-		url: "http://localhost:3000/people/" + personId + ".js",
+		url: "http://radiodepaul.herokuapp.com/people/" + personId + ".js",
 		dataType: "jsonp",
 		type: "GET",
 		processData: false,
@@ -11,8 +10,8 @@ $(document).ready(function(){
 			if ( data != null ) {
 
 				document.title = document.title + ' | ' + data['name'];
-
-				var twitter = "", name = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "";
+				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>'
+				var twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "";
 
 				name = '<h2 id="name">' + data['name'] + '</h2>';
 				
@@ -29,6 +28,13 @@ $(document).ready(function(){
 						class_year = '<p>Class Year: ' + data['class_year'] + '</p>';
 					}
 					stats = '<div class="right contentBox"><div class="bar">Stats</div>' + major + hometown + class_year + '</div>';
+				}
+				if (data['shows'] != '') {
+					shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>'
+					for (var i = 0; i < data['shows'].length; i++) {
+							shows += '<li><a href="/show/?id=' + data['shows'][i][1] + '"><img src="' + data['shows'][i][2] + '" />' + data['shows'][i][0] + '</a></li>';
+					}
+					 shows += '</div>';
 				}
 				if (data['influences'] != '') {
 					influences = '<div class="right contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
@@ -49,16 +55,17 @@ $(document).ready(function(){
 					email = '<li class="email"><a href="mailto:' + data['email'] + '"></a></li>';
 				}
 
-				social = '<ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul>';
+				social = '<div class="right contentBox"><div class="bar">Follow ' + data['name'] + '</div><ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul></div>';
 
 				if (data['bio'] != '') {
 					bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
 				}
 
-				html = social + name + photo + stats + influences + bio;	
+				html = name + photo + social + stats + shows + influences + bio;	
+				
+				$(html).appendTo('#content');
 			}
 
-			$(html).appendTo('#content');
 		}
 	});
 });

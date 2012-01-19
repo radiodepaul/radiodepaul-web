@@ -39,7 +39,6 @@
 		</header>
 		<div id="main">
 			<div id="content">
-				<div class="panel" id="staff_list">
 					<div id="featured">
 						<div id="slides">
 							<div class="slides_container"></div>
@@ -48,6 +47,7 @@
 						</div>
 						<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
 					</div>
+				<div class="panel" id="staff_list">
 					<div class="contentBox" id="staffMembers">
 						<div class="bar">Staff</div>
 						<div class="clear"></div>

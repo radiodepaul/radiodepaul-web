@@ -926,11 +926,11 @@ p.scheduleBar {
 ul#personshowSocial {
 	margin: 0; padding: 0;
 	list-style: none;
-	float: right;
 }
 ul#personshowSocial li {
 	float: left;
 	margin: 0; padding: 0 5px;
+	border:none;
 }
 ul#personshowSocial a {
 	float: left;
