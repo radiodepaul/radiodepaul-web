@@ -1,4 +1,56 @@
-$('#schedule div.bar').activity({segments: 8, steps: 4, width: 2, align: 'right', valign: 'top', space: 0, length: 3, color: '#0b0b0b', speed: 1.5, padding: 5});
+$('#schedule').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
+$(document).ready(function(){
+	$.ajax({
+		url: "http://radiodepaul.herokuapp.com/shows.js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			var mon_html = '', tue_html = '', wed_html = '', thur_html = '', fri_html = '', sat_html = '', sun_html = '';
+			
+			$.fn.sort = function() {  
+	    		return this.pushStack( [].sort.apply( this, arguments ), []);  
+			};  
+			function sortTitle(a,b) {  
+	     		if (a.title == b.title) {
+	       			return 0;
+	     		}
+	     		return a.title> b.title ? 1 : -1;  
+	 		};  
+	  		function sortTitleDesc(a,b) {  
+	     		return sortTitle(b,a) * -1;  
+	 		};
+			var sorted = $(data).sort(sortTitleDesc);
+			
+			for (var i = 0; i < sorted.length; i++) {
+				var hosts = "";
+				if ( sorted[i]['hosts'].length != 0 ) {
+					hosts = " with "
+				}
+				for (var j = 0; j < sorted[i]['hosts'].length; j++) {
+					if ( j != sorted[i]['hosts'].length - 1 ) {
+						hosts += sorted[i]['hosts'][j]['name'] + ', ';
+					} else { hosts += sorted[i]['hosts'][j]['name']; }
+				}
+				
+				var html = '<li>\
+						<div class="time">\
+							<p class="scheduleBar startTime">' + sorted[i]['start_time'] + '</p>\
+							<p class="scheduleBar endTime">' + sorted[i]['end_time'] + '</p>\
+						</div>\
+						<p class="showName"><a href="/show/?id=' + sorted[i]['id'] + '">' + sorted[i]['title'] + '</a><span> | ' + sorted[i]['genre'] + '</span></p>\
+						<p class="showDJs">with ' + hosts + '</p>\
+						<p class="showBio">' + sorted[i]['short_description'] + '</p>\
+					</li>'
+				$(html).appendTo('#monday ul');
+			}
+			$(html).appendTo('#shows');
+			$('#shows').activity(false);
+		}
+	});
+});
+
 var mon_html = '', tue_html = '', wed_html = '', thur_html = '', fri_html = '', sat_html = '', sun_html = '';
 $(document).ready(function(){
 	var html = "";

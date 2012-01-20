@@ -26,7 +26,7 @@ $(document).ready(function(){
 							<img style="float:right;height:75px;" src="' + sorted[i]['photo'] + '" />\
 							<a href="/person/?id=' + sorted[i]['id'] + '"><p>' + sorted[i]['name'] + '</p></a>\
 							<p>' + sorted[i]['position'] + '</p>\
-							<p><a href="mailto:"' + sorted[i]['email'] + '">' + sorted[i]['email'] + '</a></p>\
+							<p><a href="mailto:' + sorted[i]['email'] + '">' + sorted[i]['email'] + '</a></p>\
 							<p>' + sorted[i]['phone'] + '</p>\
 							</div>';
 			}

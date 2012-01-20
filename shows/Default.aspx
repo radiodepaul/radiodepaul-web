@@ -33,7 +33,7 @@
 		<div id="main">
 			<div id="content">
 				<div id="shows">
-					<div class="bar">Fall 2011</div>
+					<div class="bar">Winter 2012</div>
 				</div>
 			</div>
 		<%Server.Execute("/includes/sidebar.aspx");%>

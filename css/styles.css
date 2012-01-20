@@ -601,11 +601,10 @@ header h1 {
 	font-weight:bold;
 }
 .contentBox li {
-	margin-top:10px;
 	border-bottom:1px solid #999;
 	list-style:none;
 	font-size:16px;
-	padding: 0 4px 10px 4px;
+	padding: 4px 10px;
 	line-height:20px;
 }
 .contentBox p {
@@ -624,8 +623,7 @@ div.bar {
 	width:100%;
 	font-size:16px;
 	color:#F2F2F2;
-	padding:5px 0;
-	margin-bottom:4px;
+	padding:6px 0;
 	background-color:#5e87a8;
 	font-weight:bold;
 	text-indent:5px;
@@ -643,9 +641,11 @@ div.smallBar {
 	width:100%;
 	padding:4px 0;
 	border-bottom:1px solid #000;
-	font-weight:bold;
 	text-indent:2px;
 	clear:both;
+}
+div.smallBar span {
+	font-weight:bold;
 }
 div.smallBar a:link, div.smallBar a:visited {
 	color:#000;
@@ -653,11 +653,11 @@ div.smallBar a:link, div.smallBar a:visited {
 div.smallBar a:hover {
 	color:#5e87a8;
 }
-a:link.big, a:visited.big {
+a:link.big div, a:visited.big div, a:link.big li, a:visited.big li {
 	background-color:none;
 	color:#000;
 }
-a:hover.big div {
+a:hover.big div, a:hover.big li {
 	background-color:#5e87a8;
 	color:#fff;
 }

@@ -17,21 +17,21 @@ $(document).ready(function(){
 				
 				photo = '<div class="left contentBox photoBox"><div class="bar">Photo</div><img src = "' + data['photo_medium'] + '" alt = "Photo for ' + data['title'] + '" /></div>';
 				
-				if ( data['genre'] != '' ) {
+				if ( data['genre'] != null ) {
 					if (data['genre'] != '') {
 						genre = '<p>Genre: ' + data['genre'] + '</p>';
 					}
 					if (data['hosts'] != '') {
 						hosts = '<div class="contentBox right"><div class="bar">Hosted By:</div><ul>'
 						for (var i = 0; i < data['hosts'].length; i++) {
-								hosts += '<li><a href="/person/?id=' + data['hosts'][i][1] + '"><img src="' + data['hosts'][i][2] + '" />' + data['hosts'][i][0] + '</a></li>';
+								hosts += '<a class="big" href="/person/?id=' + data['hosts'][i]['id'] + '"><li><img src="' + data['hosts'][i]['photo_thumb'] + '" />' + data['hosts'][i]['name'] + '</li></a>';
 						}
 						 hosts += '</ul></div>';
 					}
 					if (data['scheduled_slots'] != '') {
 						slots = '<div class="contentBox left"><div class="bar">Scheduled At:</div><ul>'
 						for (var i = 0; i < data['scheduled_slots'].length; i++) {
-								slots += '<li>' + data['scheduled_slots'][i] + '</li>';
+								slots += '<li>' + data['scheduled_slots'][i]['slot'] + '</li>';
 						}
 						 slots += '</ul></div>';
 					}
@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 				if ( data['facebook'] != '' ) {
 					facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
-					facebook_fanbox = '<div class="right contentBox"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="460" height="270" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
+					facebook_fanbox = '<div class="right contentBox" style="height:300px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="460" height="262" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
 				} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>'; }
 
 				if ( data['email'] != '' ) {
@@ -56,7 +56,7 @@ $(document).ready(function(){
 					description = '<div class="contentBox left"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
 				}
 
-				html = name + photo + social + stats + hosts + facebook_fanbox + description + slots + disqus_embed;	
+				html = name + photo + social + stats + hosts + facebook_fanbox +  slots + description + disqus_embed;	
 				$(html).appendTo('#content');
 				$('#content').activity(false);
 			}
