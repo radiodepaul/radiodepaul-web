@@ -18,18 +18,18 @@ $(document).ready(function(){
 				photo = '<div class="left contentBox photoBox"><div class="bar">Photo</div><img src = "' + data['photo_medium'] + '" alt = "Photo for ' + data['title'] + '" /></div>';
 				
 				if ( data['genre'] != null ) {
-					if (data['genre'] != '') {
+					if (data['genre'] != null) {
 						genre = '<p>Genre: ' + data['genre'] + '</p>';
 					}
-					if (data['hosts'] != '') {
+					if (data['hosts'] != null) {
 						hosts = '<div class="contentBox right"><div class="bar">Hosted By:</div><ul>'
 						for (var i = 0; i < data['hosts'].length; i++) {
 								hosts += '<a class="big" href="/person/?id=' + data['hosts'][i]['id'] + '"><li><img src="' + data['hosts'][i]['photo_thumb'] + '" />' + data['hosts'][i]['name'] + '</li></a>';
 						}
 						 hosts += '</ul></div>';
 					}
-					if (data['scheduled_slots'] != '') {
-						slots = '<div class="contentBox left"><div class="bar">Scheduled At:</div><ul>'
+					if (data['scheduled_slots'] != null) {
+						slots = '<div class="contentBox right"><div class="bar">Scheduled At:</div><ul>'
 						for (var i = 0; i < data['scheduled_slots'].length; i++) {
 								slots += '<li>' + data['scheduled_slots'][i]['slot'] + '</li>';
 						}
@@ -37,26 +37,29 @@ $(document).ready(function(){
 					}
 					stats = '<div class="right contentBox"><div class="bar">Stats</div>' + genre + '</div>';
 				}
-				if ( data['twitter'] != '' ) {
+				if ( data['twitter'] != null ) {
 					twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"><img src="/img/social/twitter.png" /></a></li>';
-				} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"><img src="/img/social/twitter.png" /></a></li>'; }
+				} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepauldjs" target="_blank"><img src="/img/social/twitter.png" /></a></li>'; }
 
-				if ( data['facebook'] != '' ) {
+				if ( data['facebook'] != null ) {
 					facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
 					facebook_fanbox = '<div class="right contentBox" style="height:300px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="460" height="262" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
-				} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>'; }
+				} else { 
+					facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>';
+					facebook_fanbox = '<div class="right contentBox" style="height:300px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="460" height="262" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
+					}
 
-				if ( data['email'] != '' ) {
+				if ( data['email'] != null ) {
 					email = '<li class="email"><a href="mailto:' + data['email'] + '"><img src="/img/social/mail.png" /></a></li>';
 				}
 
 				social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
-				if (data['long_description'] != '') {
+				if (data['long_description'] != null) {
 					description = '<div class="contentBox left"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
 				}
 
-				html = name + photo + social + stats + hosts + facebook_fanbox +  slots + description + disqus_embed;	
+				html = name + photo + social + stats + hosts + slots + description + facebook_fanbox + disqus_embed;	
 				$(html).appendTo('#content');
 				$('#content').activity(false);
 			}

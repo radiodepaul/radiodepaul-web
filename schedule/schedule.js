@@ -43,7 +43,8 @@ $(document).ready(function(){
 						<p class="showDJs">with ' + hosts + '</p>\
 						<p class="showBio">' + sorted[i]['short_description'] + '</p>\
 					</li>'
-				$(html).appendTo('#monday ul');
+				for ( var i = 0; sorted[i]['days'])
+				$(html).appendTo('#' +  + ' ul');
 			}
 			$(html).appendTo('#shows');
 			$('#shows').activity(false);

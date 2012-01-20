@@ -600,7 +600,7 @@ header h1 {
 .contentBox li p:first-child {
 	font-weight:bold;
 }
-.contentBox li {
+.contentBox li p {
 	border-bottom:1px solid #999;
 	list-style:none;
 	font-size:16px;
