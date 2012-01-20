@@ -17,47 +17,47 @@ $(document).ready(function(){
 				
 				photo = '<div class="left contentBox photoBox"><div class="bar">Photo</div><img src = "' + data['photo_medium'] + '" alt = "Photo of ' + data['name'] + '" /></div>';
 
-				if ( data['major'] && data['hometown'] && data['class_year'] != '' ) {
-					if (data['major'] != '') {
+				if ( data['major'] && data['hometown'] && data['class_year'] != null ) {
+					if (data['major'] != null) {
 						major = '<p>Major: ' + data['major'] + '</p>';
 					}
-					if (data['hometown'] != '') {
+					if (data['hometown'] != null) {
 						hometown = '<p>Hometown: ' + data['hometown'] + '</p>';
 					}
-					if (data['class_year'] != '') {
+					if (data['class_year'] != null) {
 						class_year = '<p>Class Year: ' + data['class_year'] + '</p>';
 					}
 					stats = '<div class="right contentBox"><div class="bar">Stats</div>' + major + hometown + class_year + '</div>';
 				}
-				if (data['shows'] != '') {
+				if (data['shows'] != null) {
 					shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>'
 					for (var i = 0; i < data['shows'].length; i++) {
 							shows += '<li><a href="/show/?id=' + data['shows'][i][1] + '"><img src="' + data['shows'][i][2] + '" />' + data['shows'][i][0] + '</a></li>';
 					}
 					 shows += '</div>';
 				}
-				if (data['influences'] != '') {
+				if (data['influences'] != null) {
 					influences = '<div class="right contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
 				}
-				if ( data['twitter'] != '' ) {
+				if ( data['twitter'] != null ) {
 					twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
 				} else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
-				if ( data['facebook'] != '' ) {
+				if ( data['facebook'] != null ) {
 					facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
 				} else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"></a></li>'; }
 
-				if ( data['linkedin'] != '' ) {
+				if ( data['linkedin'] != null ) {
 					linkedin = '<li class="linkedin"><a href="http://linkedin.com/' + data['linkedin'] + '" target="_blank"></a></li>';
 				}
 
-				if ( data['email'] != '' ) {
+				if ( data['email'] != null ) {
 					email = '<li class="email"><a href="mailto:' + data['email'] + '"></a></li>';
 				}
 
 				social = '<div class="right contentBox"><div class="bar">Follow ' + data['name'] + '</div><ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul></div>';
 
-				if (data['bio'] != '') {
+				if (data['bio'] != null) {
 					bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
 				}
 
