@@ -22,7 +22,7 @@ $(document).ready(function(){
 	 		};
 			var sorted = $(data).sort(sortNameDesc);
 			for (var i = 0; i < sorted.length; i++) {
-				html += '<a class="big" href="/person/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  ' + sorted[i]['name'] + '</div></a>';
+				html += '<a class="big" href="/person/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  <span>' + sorted[i]['name'] + '</span></div></a>';
 			}
 			$(html).appendTo('#staff_list');
 			$('#staff_list').activity(false);
