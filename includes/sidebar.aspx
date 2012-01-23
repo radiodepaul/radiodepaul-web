@@ -18,7 +18,7 @@
 	    </a>
 	</div>
 	<div class="contentBox">
-		<div class="bar">Do You Like Us?</div>
+		<div class="bar">Become A Fan!</div>
 		<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="240" height="228" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box>
 	</div>
 </div>

@@ -601,7 +601,6 @@ header h1 {
 	font-weight:bold;
 }
 .contentBox li p {
-	border-bottom:1px solid #999;
 	list-style:none;
 	font-size:16px;
 	padding: 4px 10px;
@@ -653,7 +652,6 @@ div.bar a:hover {
 div.smallBar {
 	width:100%;
 	padding:4px 0;
-	border-bottom:1px solid #000;
 	text-indent:2px;
 	clear:both;
 }
@@ -669,6 +667,8 @@ div.smallBar a:hover {
 a:link.big div, a:visited.big div, a:link.big li, a:visited.big li {
 	background-color:none;
 	color:#000;
+	font-size:18px;
+	height:50px;
 }
 a:hover.big div, a:hover.big li {
 	background-color:#5e87a8;

@@ -1,3 +1,5 @@
+$('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
+var disqus_title = "", disqus_url = "", disqus_identifier = "", disqus_shortname = "radiodepaul";
 $(document).ready(function(){
 	personId = $.url().param('id');
 	$.ajax({
@@ -8,10 +10,19 @@ $(document).ready(function(){
 		contentType: "application/json",
 		success: function(data) {
 			if ( data != null ) {
+				
+				document.title = 'Radio DePaul | ' + data['name'];
+			
+			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			    
+				disqus_title = 'Radio DePaul | ' + data['name'];
+				disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'];
+				disqus_identifier = disqus_title;
+				var disqus_developer = 1; // developer mode is on
 
-				document.title = document.title + ' | ' + data['name'];
 				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>'
 				var twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "";
+				var disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread" class="dsq-widget"></div></div>'
 
 				name = '<h2 id="name">' + data['name'] + '</h2>';
 				
@@ -21,25 +32,25 @@ $(document).ready(function(){
 
 				if ( data['major'] && data['hometown'] && data['class_year'] != null ) {
 					if (data['major'] != null) {
-						major = '<p>Major: ' + data['major'] + '</p>';
+						major = '<li><p>Major</p><p>' + data['major'] + '</p></li>';
 					}
 					if (data['hometown'] != null) {
-						hometown = '<p>Hometown: ' + data['hometown'] + '</p>';
+						hometown = '<li><p>Hometown</p><p>' + data['hometown'] + '</p></li>';
 					}
 					if (data['class_year'] != null) {
-						class_year = '<p>Class Year: ' + data['class_year'] + '</p>';
+						class_year = '<li><p>Class Year</p><p>' + data['class_year'] + '</p></li>';
 					}
-					stats = '<div class="right contentBox"><div class="bar">Stats</div>' + major + hometown + class_year + '</div>';
+					stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>' + major + hometown + class_year + '<ul></div>';
 				}
 				if (data['shows'] != null) {
 					shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>'
 					for (var i = 0; i < data['shows'].length; i++) {
-							shows += '<a class="big" href="/show/?id=' + data['shows'][i]['show_id'] + '"><li><img src="' + data['shows'][i]['show_photo_thumb'] + '" />' + data['shows'][i]['show_title'] + '</li></a>';
+							shows += '<a href="/show/?id=' + data['shows'][i]['show_id'] + '"><li style="height:50px;background: url(' + data['shows'][i]['show_photo_thumb'] + ') top right no-repeat;"><p>' + data['shows'][i]['show_title'] + '</p></li></a>';
 					}
 					 shows += '</div>';
 				}
 				if (data['influences'] != null) {
-					influences = '<div class="right contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
+					influences = '<div class="clear contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
 				}
 				if ( data['twitter'] != null ) {
 					twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
@@ -63,9 +74,10 @@ $(document).ready(function(){
 					bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
 				}
 
-				html = name + photo + social + stats + shows + influences + bio;	
+				html = name + photo + social + stats + shows + influences + bio + disqus_embed;	
 				
 				$(html).appendTo('#content');
+				$('#content').activity(false);
 			}
 
 		}
