@@ -39,8 +39,9 @@
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
-			<div id="content" style="width:100%">
+			<div id="content">
 			</div>
+			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
@@ -51,15 +52,12 @@
 <script type="text/javascript" src="/js/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="show.js"></script>
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'radiodepaul'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+	(function () {
+	        var s = document.createElement('script'); s.async = true;
+	        s.type = 'text/javascript';
+	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	    }());
 </script>
 </body>
 </html>
