@@ -617,7 +617,19 @@ header h1 {
 	color:#5e87a8;
 }
 .photoBox {
+	width:300px;
+	height:300px;
 	text-align:center;
+	border: 2px solid #5e87a8;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -khtml-border-radius: 30px;
+    -webkit-border-radius: 30px;
+	-o-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	box-shadow: 0 3px 4px rgba(0,0,0,.5);
+	margin-bottom:10px;
 }
 div.bar {
 	width:100%;
@@ -632,6 +644,7 @@ div.bar {
 div.bar a:link, div.bar a:visited {
 	color:#F2F2F2;
 	font-size:16px;
+	border-bottom:;
 }
 div.bar a:hover {
 	color:#CF671C;
@@ -668,7 +681,6 @@ a:hover.big div, a:hover.big li {
 	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
-	border:1px solid #999;
 }
 img#friend {
 	width:248px;

@@ -5,6 +5,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
+	<link rel="stylesheet" type="text/css" href="/css/blue.monday/jplayer.blue.monday.css" />
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
 	
@@ -46,6 +47,8 @@
 	<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" src="/js/jquery.url.js"></script>
+<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/js/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="show.js"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
