@@ -15,7 +15,9 @@ $(document).ready(function(){
 
 				name = '<h2 id="name">' + data['name'] + '</h2>';
 				
-				photo = '<div class="left contentBox photoBox"><div class="bar">Photo</div><img src = "' + data['photo_medium'] + '" alt = "Photo of ' + data['name'] + '" /></div>';
+				var photo_url = "'" + data['photo_medium'] + "'";
+				
+				photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
 
 				if ( data['major'] && data['hometown'] && data['class_year'] != null ) {
 					if (data['major'] != null) {
@@ -32,7 +34,7 @@ $(document).ready(function(){
 				if (data['shows'] != null) {
 					shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>'
 					for (var i = 0; i < data['shows'].length; i++) {
-							shows += '<li><a href="/show/?id=' + data['shows'][i][1] + '"><img src="' + data['shows'][i][2] + '" />' + data['shows'][i][0] + '</a></li>';
+							shows += '<a class="big" href="/show/?id=' + data['shows'][i]['show_id'] + '"><li><img src="' + data['shows'][i]['show_photo_thumb'] + '" />' + data['shows'][i]['show_title'] + '</li></a>';
 					}
 					 shows += '</div>';
 				}
