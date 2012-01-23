@@ -29,11 +29,6 @@
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
-			<ul id="social">
-				<li id="twitter"><a href="https://twitter.com/radiodepauldjs" class="twitter-follow-button" data-show-count="false"></a></li>
-				<li id="facebook"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://radio.depaul.edu/" send="false" width="390" show_faces="false" font=""></fb:like></li>
-				<li id="googleplus"><g:plusone size="medium" href="http://radio.depaul.edu/"></g:plusone></li>
-			</ul>
 			<h1 id="title">About</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>

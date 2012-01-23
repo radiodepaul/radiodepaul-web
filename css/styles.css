@@ -793,13 +793,9 @@ footer .bar {
 	top:40px;
 }
 #social li {
-	float:left;
-	width:64px;
-	overflow:hidden;
+	display:inline;
 }
 #social li#facebook{
-	width:56px;
-	overflow:hidden;
 }
 .jqclock {
 	position:absolute;
@@ -1021,7 +1017,6 @@ ul#gallery li img {
 }
 .box {
 	position:relative;
-	height:100px;
 	background-color:#fff;
 	border:dotted 1px #444;
 	margin:10px;
@@ -1029,7 +1024,7 @@ ul#gallery li img {
 	opacity:.8;
 	overflow:hidden;
 	float:left;
-	width:280px;
+	width:290px;
 }
 
 .box p { width:180px;}
