@@ -18,7 +18,6 @@ $(document).ready(function(){
 				disqus_title = 'Radio DePaul | ' + data['name'];
 				disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'];
 				disqus_identifier = disqus_title;
-				var disqus_developer = 1; // developer mode is on
 
 				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>'
 				var twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "";
