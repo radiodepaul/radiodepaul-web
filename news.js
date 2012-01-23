@@ -30,16 +30,32 @@ var html = '<li>\
 });
 $('#events').closest('div').activity(false);
 
-showsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/shows?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-showsParse = $.parseJSON(showsGet);
-
-var displayed = new Array();
-for (var i=0; i < 6; i++) {
-	var randomNum = Math.ceil( Math.random()* (showsParse.length - 1) );
-	displayed.push(randomNum);
-	html = '<a href="/show/?id=' + showsParse[randomNum]._id.$oid + '"><span>' + showsParse[randomNum].name + '</span></a>';
-	$(html).appendTo('#categories');
-}
+$(document).ready(function(){
+	$.ajax({
+		url: "http://radiodepaul.herokuapp.com/shows.js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			var html = "";
+			var displayed = new Array();
+			for (var i=0; i < 6; i++) {
+				var duplicate = false;
+				var randomNum = Math.ceil( Math.random()* (data.length - 1) );
+				for (var j = 0; j < displayed.length; j++) {
+					if (displayed[j] == randumNum) {
+						duplicate = true;
+					}
+				}
+				if (duplicate == false) {
+					html += '<a href="/show/?id=' + data[randomNum]['id'] + '"><span>' + data[randomNum]['title'] + '</span></a>';
+				}
+			}
+			$(html).appendTo('#categories');
+		}
+	});
+});
 
 google.load("feeds", "1");
 function feedLoaded(result) {

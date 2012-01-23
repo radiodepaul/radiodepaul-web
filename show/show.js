@@ -36,7 +36,7 @@ $(document).ready(function(){
 					}
 					
 					if (data['hosts'] != null) {
-						hosts = '<div class="contentBox right"><div class="bar">Hosted By:</div><ul>'
+						hosts = '<div class="contentBox right"><div class="bar">Hosted By</div><ul>'
 						for (var i = 0; i < data['hosts'].length; i++) {
 								hosts += '<a href="/person/?id=' + data['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data['hosts'][i]['name'] + '</p></li></a>';
 						}

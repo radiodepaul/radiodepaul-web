@@ -23,11 +23,11 @@ $(document).ready(function(){
 			var sorted = $(data).sort(sortNameDesc);
 			for (var i = 0; i < sorted.length; i++) {
 				html += '<div class="box">\
-							<img style="float:right;height:75px;" src="' + sorted[i]['photo'] + '" />\
 							<a href="/person/?id=' + sorted[i]['id'] + '"><p>' + sorted[i]['name'] + '</p></a>\
 							<p>' + sorted[i]['position'] + '</p>\
 							<p><a href="mailto:' + sorted[i]['email'] + '">' + sorted[i]['email'] + '</a></p>\
 							<p>' + sorted[i]['phone'] + '</p>\
+							<img style="width:290px;" src="' + sorted[i]['photo'] + '" />\
 							</div>';
 			}
 			$(html).appendTo('#staff_list');
