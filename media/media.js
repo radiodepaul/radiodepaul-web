@@ -23,11 +23,13 @@ $(document).ready(function(){
 	 		};
 			var sorted = $(data).sort(sortTitleDesc);
 			for (var i = 0; i < sorted.length; i++) {
-				var x = {};
-				x['title'] = sorted[i]['title'];
-				x['artist'] = sorted[i]['contributors'];
-				x['mp3'] = sorted[i]['file_url']
-				get_playlist.push(x)
+				if ( sorted[i]['type'] == 'station' ) {
+					var x = {};
+					x['title'] = sorted[i]['title'];
+					x['artist'] = sorted[i]['contributors'];
+					x['mp3'] = sorted[i]['file_url']
+					get_playlist.push(x)
+				}
 			}
 			
 			var myPlaylist = new jPlayerPlaylist({

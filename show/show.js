@@ -15,8 +15,8 @@ $(document).ready(function(){
 				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 				    
 					disqus_title = 'Radio DePaul | ' + data['title'];
+					disqus_identifier = 'Radio DePaul | ' + data['title'];
 					disqus_url = 'http://radio.depaul.edu/show/?id=' + data['id'];
-					disqus_identifier = disqus_title;
 				
 					var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>'
 					var photo = "", twitter = "", podcasts = "", name = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "";
@@ -31,7 +31,7 @@ $(document).ready(function(){
 					stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>';
 				
 					if (data['genre'] != null) {
-						genre = '<li><p>Genres:</p><p>' + data['genre'] + '</p></li>';
+						genre = '<li><p>Genre</p><p>' + data['genre'] + '</p></li>';
 					}
 					
 					if (data['hosts'] != null) {
@@ -156,6 +156,7 @@ $(document).ready(function(){
 						swfPath: "js",
 						supplied: "mp3"
 				});
+				$.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js")
 				$('#content').activity(false);
 			}
 		}

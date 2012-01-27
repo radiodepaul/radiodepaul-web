@@ -13,7 +13,6 @@
 </head>
 <body title="schedule">
 	<div id="categories">
-		<a id="all" onclick="showAllSections()"><span>Full Schedule</span></a>
 		<a onclick="navSelect()" title="monday"><span>Monday</span></a>
 		<a onclick="navSelect()" title="tuesday"><span>Tuesday</span></a>
 		<a onclick="navSelect()" title="wednesday"><span>Wednesday</span></a>
@@ -36,47 +35,6 @@
 		<div id="content">
 			<div id="schedule">
 				<div class="bar">Winter 2012</div>
-				<div class="panel" id="monday">
-					<h1>Monday</h1>
-					<ul>
-					</ul>
-				</div>
-				<div class="panel" id="tuesday">
-					<h1>Tuesday</h1>
-					<ul>
-
-					</ul>
-				</div>
-				<div class="panel" id="wednesday">
-					<h1>Wednesday</h1>
-					<ul>
-
-					</ul>
-				</div>
-				<div class="panel" id="thursday">
-					<h1>Thursday</h1>
-					<ul>
-
-					</ul>
-				</div>
-				<div class="panel" id="friday">
-					<h1>Friday</h1>
-					<ul>
-
-					</ul>
-				</div>
-				<div class="panel" id="saturday">
-					<h1>Saturday</h1>
-					<ul>
-
-					</ul>
-				</div>
-				<div class="panel" id="sunday">
-					<h1>Sunday</h1>
-					<ul>
-
-					</ul>
-				</div>
 			</div>
 		</div>
 		<%Server.Execute("/includes/sidebar.aspx");%>
@@ -85,12 +43,6 @@
 	<%Server.Execute("/includes/footer.aspx");%>
 	<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" src="/js/navSwitch.js"></script>
 <script type="text/javascript" src="schedule.js"></script>
-<script>
-	var d = new Date();
-	var weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
-	navSelectN(weekday[d.getDay()]);
-</script>
 </body>
 </html>
