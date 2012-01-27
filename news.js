@@ -32,25 +32,15 @@ $('#events').closest('div').activity(false);
 
 $(document).ready(function(){
 	$.ajax({
-		url: "http://radiodepaul.herokuapp.com/shows.js",
+		url: "http://radiodepaul.herokuapp.com/shows/random.js",
 		dataType: "jsonp",
 		type: "GET",
 		processData: false,
 		contentType: "application/json",
 		success: function(data) {
 			var html = "";
-			var displayed = new Array();
-			for (var i=0; i < 6; i++) {
-				var duplicate = false;
-				var randomNum = Math.ceil( Math.random()* (data.length - 1) );
-				for (var j = 0; j < displayed.length; j++) {
-					if (displayed[j] == randumNum) {
-						duplicate = true;
-					}
-				}
-				if (duplicate == false) {
-					html += '<a href="/show/?id=' + data[randomNum]['id'] + '"><span>' + data[randomNum]['title'] + '</span></a>';
-				}
+			for (var i=0; i < data.length; i++) {
+					html += '<a href="/show/?id=' + data[i]['id'] + '"><span>' + data[i]['title'] + '</span></a>';
 			}
 			$(html).appendTo('#categories');
 		}

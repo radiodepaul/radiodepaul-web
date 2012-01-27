@@ -1,5 +1,5 @@
 $('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
-var disqus_title = "", disqus_url = "", disqus_identifier = "", disqus_shortname = "radiodepaul";
+var disqus_title = "", disqus_identifier = "", disqus_url = "", disqus_shortname = 'radiodepaul';
 $(document).ready(function(){
 	personId = $.url().param('id');
 	$.ajax({
@@ -16,8 +16,8 @@ $(document).ready(function(){
 			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 			    
 				disqus_title = 'Radio DePaul | ' + data['name'];
+				disqus_identifier = 'Radio DePaul | ' + data['name'];
 				disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'];
-				disqus_identifier = disqus_title;
 
 				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>'
 				var twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "";
@@ -41,7 +41,7 @@ $(document).ready(function(){
 					}
 					stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>' + major + hometown + class_year + '<ul></div>';
 				}
-				if (data['shows'] != null) {
+				if (data['shows'].length > 0) {
 					shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>'
 					for (var i = 0; i < data['shows'].length; i++) {
 							shows += '<a href="/show/?id=' + data['shows'][i]['show_id'] + '"><li style="height:50px;background: url(' + data['shows'][i]['show_photo_thumb'] + ') top right no-repeat;"><p>' + data['shows'][i]['show_title'] + '</p></li></a>';
@@ -76,16 +76,24 @@ $(document).ready(function(){
 				html = name + photo + social + stats + shows + influences + bio + disqus_embed;	
 				
 				$(html).appendTo('#content');
+				$.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js")
 				$('#content').activity(false);
 			}
 
 		}
 	});
+	$.ajax({
+		url: "http://radiodepaul.herokuapp.com/people/random.js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			var html = "";
+			for (var i=0; i < data.length; i++) {
+				html += '<a href="/person/?id=' + data[i]['id'] + '"><span>' + data[i]['name'] + '</span></a>';
+			}
+			$(html).appendTo('#categories');
+		}
+	});
 });
-
-
-//for (var i=0; i < 6; i++) {
-//	var randomNum = Math.ceil( Math.random()* peopleParse.length);
-//	html = '<a href="/person/?id=' + peopleParse[randomNum]._id.$oid + '"><span>' + peopleParse[randomNum].fname + ' ' + peopleParse[randomNum].lname + '</span></a>'
-//	$(html).appendTo('#categories');
-//};

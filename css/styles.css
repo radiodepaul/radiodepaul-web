@@ -482,7 +482,12 @@ nav a:link, nav a:visited {
 	font-size:14px;
 }
 nav a{border-top:solid 4px #000;}
-nav a:hover, nav a:last-child:hover{color:#5e87a8;border-top:solid 4px #4289a9;}
+nav a:hover {
+	color:#5e87a8;border-top:solid 4px #4289a9;
+}
+nav a:last-child:hover {
+	border-top:solid 4px #4289a9;
+}
 nav a{ -webkit-transition:border-top .4s ease-out;}
 nav a:last-child {
 	border-right:none;
@@ -607,9 +612,9 @@ header h1 {
 	line-height:20px;
 }
 .contentBox p {
-	line-height:20px;
+	line-height:24px;
 	font-size:16px;
-	padding:0 4px;
+	padding:10px;
 }
 .contentBox a:hover  {
 	text-decoration:underline;
@@ -629,6 +634,7 @@ header h1 {
 	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
+	margin-left:4px;
 }
 div.bar {
 	width:100%;
@@ -646,14 +652,16 @@ div.bar a:link, div.bar a:visited {
 	border-bottom:;
 }
 div.bar a:hover {
-	color:#CF671C;
+	color:#272123;
 	text-decoration:none;
 }
 div.smallBar {
-	width:100%;
-	padding:4px 0;
-	text-indent:2px;
-	clear:both;
+	border-bottom: 1px dashed #CF671C;
+    clear: both;
+    font-weight: bold;
+    padding: 6px 0;
+    text-indent: 10px;
+    width: 100%;
 }
 div.smallBar span {
 	font-weight:bold;
@@ -745,7 +753,7 @@ footer a:link, footer a:visited {
 	color:#F2F2F2;
 }
 footer a:hover {
-	color:#CF671C;
+	color:#000;
 }
 footer #desc {
 	width:400px;
@@ -851,10 +859,13 @@ footer .bar {
 	border-bottom:2px solid #999;
 }
 #schedule ul li img {
-	height:80px;
+	height:110px;
 	position:absolute;
 	right:0;
 	bottom:0;
+}
+#schedule h1 {
+	text-transform:capitalize;
 }
 #schedule ul li p {
 	font-size:16px;
@@ -1025,11 +1036,27 @@ ul#gallery li img {
 	overflow:hidden;
 	float:left;
 	width:290px;
+	line-height:14px;
+}
+.box:hover {
+	border:solid 1px #CF671C;
 }
 
-.box p { width:180px;}
-.box p:first-child {font-weight:bold}
+.box p { 
+	width:100%;
+	font-size:14px;
+	line-height:24px;
+	text-indent:2px;
+	padding:0;
+}
+.box p:first-child {
+	font-weight:bold;
+	font-size:24px;
+}
 .box a:link, a:visited, a:hover {text-decoration:none}
+a:hover {
+	color:#5e87a8;
+}
 
 #mission_statment {clear:both}
 

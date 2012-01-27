@@ -24,9 +24,11 @@ $(document).ready(function(){
 			for (var i = 0; i < sorted.length; i++) {
 				html += '<div class="box">\
 							<a href="/person/?id=' + sorted[i]['id'] + '"><p>' + sorted[i]['name'] + '</p></a>\
-							<p>' + sorted[i]['position'] + '</p>\
-							<p><a href="mailto:' + sorted[i]['email'] + '">' + sorted[i]['email'] + '</a></p>\
-							<p>' + sorted[i]['phone'] + '</p>\
+							<p>' + sorted[i]['position'] + '</p>';
+				if ( sorted[i]['email'] != null ) {
+					html += '<p><a href="mailto:' + sorted[i]['email'] + '">' + sorted[i]['email'] + '</a></p>'
+				}
+				html += '<p>' + sorted[i]['phone'] + '</p>\
 							<img style="width:290px;" src="' + sorted[i]['photo'] + '" />\
 							</div>';
 			}

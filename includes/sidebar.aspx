@@ -5,7 +5,7 @@
 			<ul>
 				<li><p>Station Phone</p><p>(773) 325-7308</p></li>
 				<li><p>Station Fax</p><p>(773) 325-4133</p></li>
-				<li><p>Mailing Address</p><p>Radio DePaul<br />2250 N. Sheffield Avenue Suite 317<br />Box #640<br />Chicago, IL 60614</p></li>
+				<li><p>Mailing Address</p><p>Radio DePaul<br />2250 N. Sheffield Avenue Suite 317<br />Chicago, IL 60614</p></li>
 			</ul>
 		</div>
 	<div class="contentBox">
