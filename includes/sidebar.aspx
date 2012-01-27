@@ -1,5 +1,9 @@
 <%@ Language="C#" AutoEventWireup="true"  CodeFile="../Default.aspx.cs" Inherits="_Default" %>
 <div id="sidebar">
+		<div id="now_playing" class="contentBox">
+			<div class="bar">Now Playing</div>
+			<ul></ul>
+		</div>
 		<div class="contentBox">
 			<div class="bar">Contact Us</div>
 			<ul>
