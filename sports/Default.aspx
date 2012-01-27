@@ -149,7 +149,7 @@
 <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
 <script src="/js/slides.min.jquery.js"></script>
 <script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>
-<script src="sports.js"></script>
+<script src="sports.js?v=1.0.0"></script>
 <script type="text/javascript" language="javascript">
 	$(function(){
 		$('#slides').slides({

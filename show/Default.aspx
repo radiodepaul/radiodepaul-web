@@ -44,6 +44,6 @@
 <script type="text/javascript" src="/js/jquery.url.js"></script>
 <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="/js/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="show.js"></script>
+<script type="text/javascript" src="show.js?v=1.0.0"></script>
 </body>
 </html>

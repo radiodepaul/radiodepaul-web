@@ -115,7 +115,7 @@
 <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="/js/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="/js/swfobject.js"></script>
-<script type="text/javascript" src="media.js"></script>
+<script type="text/javascript" src="media.js?v=1.0.0"></script>
 <script type="text/javascript">
     var params = { allowScriptAccess: "always" };
     var atts = { id: "myytplayer" };
