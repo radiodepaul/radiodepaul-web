@@ -83,27 +83,17 @@ $(document).ready(function(){
 		}
 	});
 	$.ajax({
-			url: "http://radiodepaul.herokuapp.com/people.js",
-			dataType: "jsonp",
-			type: "GET",
-			processData: false,
-			contentType: "application/json",
-			success: function(data) {
-				var html = "";
-				var displayed = new Array();
-				for (var i=0; i < 6; i++) {
-					var duplicate = false;
-					var randomNum = Math.ceil( Math.random()* (data.length - 1) );
-					for (var j = 0; j < displayed.length; j++) {
-						if (displayed[j] == randumNum) {
-							duplicate = true;
-						}
-					}
-					if (duplicate == false) {
-						html += '<a href="/person/?id=' + data[randomNum]['id'] + '"><span>' + data[randomNum]['name'] + '</span></a>';
-					}
-				}
-				$(html).appendTo('#categories');
+		url: "http://radiodepaul.herokuapp.com/people/random.js",
+		dataType: "jsonp",
+		type: "GET",
+		processData: false,
+		contentType: "application/json",
+		success: function(data) {
+			var html = "";
+			for (var i=0; i < data.length; i++) {
+				html += '<a href="/person/?id=' + data[i]['id'] + '"><span>' + data[i]['name'] + '</span></a>';
 			}
-		});
+			$(html).appendTo('#categories');
+		}
+	});
 });

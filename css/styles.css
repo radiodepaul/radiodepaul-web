@@ -652,7 +652,7 @@ div.bar a:link, div.bar a:visited {
 	border-bottom:;
 }
 div.bar a:hover {
-	color:#CF671C;
+	color:#272123;
 	text-decoration:none;
 }
 div.smallBar {
@@ -753,7 +753,7 @@ footer a:link, footer a:visited {
 	color:#F2F2F2;
 }
 footer a:hover {
-	color:#CF671C;
+	color:#000;
 }
 footer #desc {
 	width:400px;
@@ -1036,11 +1036,27 @@ ul#gallery li img {
 	overflow:hidden;
 	float:left;
 	width:290px;
+	line-height:14px;
+}
+.box:hover {
+	border:solid 1px #CF671C;
 }
 
-.box p { width:180px;}
-.box p:first-child {font-weight:bold}
+.box p { 
+	width:100%;
+	font-size:14px;
+	line-height:24px;
+	text-indent:2px;
+	padding:0;
+}
+.box p:first-child {
+	font-weight:bold;
+	font-size:24px;
+}
 .box a:link, a:visited, a:hover {text-decoration:none}
+a:hover {
+	color:#5e87a8;
+}
 
 #mission_statment {clear:both}
 

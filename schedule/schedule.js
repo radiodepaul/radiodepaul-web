@@ -47,9 +47,9 @@ $(document).ready(function(){
 	            }
 	            for (var j = 0; j < data[i]['show']['hosts'].length; j++) {
 	                if (j != data[i]['show']['hosts'].length - 1) {
-	                    hosts += '<a href="' + data[i]['show']['hosts'][j]['id'] + '">' + data[i]['show']['hosts'][j]['name'] + '</a>, ';
+	                    hosts += '<a href="/person/?id=' + data[i]['show']['hosts'][j]['id'] + '">' + data[i]['show']['hosts'][j]['name'] + '</a>, ';
 	                } else {
-	                    hosts += '<a href="' + data[i]['show']['hosts'][j]['id'] + '">' + data[i]['show']['hosts'][j]['name'] + '</a>';
+	                    hosts += '<a href="/person/?id=' + data[i]['show']['hosts'][j]['id'] + '">' + data[i]['show']['hosts'][j]['name'] + '</a>';
 	                }
 	            }
 	            for (var k = 0; k < data[i]['days'].length; k++) {

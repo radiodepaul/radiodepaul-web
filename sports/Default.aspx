@@ -15,6 +15,8 @@
 </head>
 <body title="sports">
 	<div id="categories">
+		<a href="" class="selected"><span>Main</span></a>
+		<a href="/show/?id=19"><span>Blue Demon Weekly</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
@@ -94,7 +96,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="left contentBox">
+			<!--<div class="left contentBox">
 				<div class="bar">DePaul Athletics Feed</div>
 				<ul id="athletics_feed"></ul>
 			</div>
@@ -132,7 +134,7 @@
 				<div class="bar">Softball</div>
 				<ul id="softball">
 				</ul>
-			</div>
+			</div>-->
 		</div>
 		<%Server.Execute("/includes/sidebar.aspx");%>
 	</div>
