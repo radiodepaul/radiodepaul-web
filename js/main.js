@@ -42,8 +42,8 @@ $(document).ready(function(){
 			success: function(data) {
 				if ( data != null ) {
 					var html = '<div class="contentBox"><div class="bar">Now Playing</div><ul>'
-					var name = '<li><a href="' + data[0]['show']['id'] + '"><p>' + data[0]['show']['title'] + '</p></a></li>';
-					var photo = '<li><a href="' + data[0]['show']['id'] + '"><img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></a></li>';
+					var name = '<li><a href="/show/?id="' + data[0]['show']['id'] + '"><p>' + data[0]['show']['title'] + '</p></a></li>';
+					var photo = '<li><a href=/show/?id="' + data[0]['show']['id'] + '"><img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></a></li>';
 					if (data[0]['show']['genre'] != null) {
 						genre = '<li><p>Genre<p>' + data[0]['show']['genre'] + '</p></li>';
 					}
