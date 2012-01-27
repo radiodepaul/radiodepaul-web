@@ -602,6 +602,12 @@ header h1 {
 	display:inline;
 	padding:10px 10px 0 10px;
 }
+#sidebar .contentBox img {
+	border:dotted 1px #5e87a8;
+}
+#sidebar .contentBox img:hover {
+	border:solid 1px #CF671C;
+}
 .contentBox li p:first-child {
 	font-weight:bold;
 }
@@ -1041,6 +1047,7 @@ ul#gallery li img {
 .box:hover {
 	border:solid 1px #CF671C;
 }
+
 
 .box p { 
 	width:100%;

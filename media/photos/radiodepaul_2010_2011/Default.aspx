@@ -42,21 +42,9 @@
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>
-	<%Server.Execute("/includes/footer.aspx");%>
-	<%Server.Execute("/includes/googleAnalytics.aspx");%>
+<%Server.Execute("/includes/footer.aspx");%>
+<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>	
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627556017792&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
-<script>
-$("a.fancybox").fancybox({
-		'transitionIn'	:	'fade',
-		'transitionOut'	:	'fade',
-		'speedIn'		:	600, 
-		'speedOut'		:	600, 
-		'overlayShow'	:	true,
-		'hideOnContentClick' : true,
-		'titlePosition' : 'inside',
-		'height' : '95%',
-	});
-</script>
 </body>
 </html>

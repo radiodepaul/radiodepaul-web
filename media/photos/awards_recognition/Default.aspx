@@ -6,7 +6,6 @@
 	<title>Radio DePaul</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -46,17 +45,5 @@
 <%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627431238035&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
-<script>
-$("a.fancybox").fancybox({
-		'transitionIn'	:	'fade',
-		'transitionOut'	:	'fade',
-		'speedIn'		:	600, 
-		'speedOut'		:	600, 
-		'overlayShow'	:	true,
-		'hideOnContentClick' : true,
-		'titlePosition' : 'inside',
-		'height' : '95%',
-	});
-</script>
 </body>
 </html>

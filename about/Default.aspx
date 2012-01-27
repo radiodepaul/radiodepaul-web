@@ -109,55 +109,9 @@
 <script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
 <script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157628024483658&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
 <script type="text/javascript" src="/js/jquery.scrollTo-min.js"></script>
-<script type="text/javascript" src="about.js?v=1.0.0"></script>
+<script src="/js/slides.min.jquery.js"></script>
 <script type="text/javascript" src="/js/navSwitch.js"></script>
 <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
-<script src="/js/slides.min.jquery.js"></script>
-<script type="text/javascript" language="javascript">
-	$(function(){
-		$('#slides').slides({
-			preload: true,
-			preloadImage: '/img/slides/loading.gif',
-			play: 5000,
-			pause: 2500,
-			hoverPause: true,
-			animationStart: function(current){
-								$('.caption').animate({
-									bottom:-35
-								},100);
-								if (window.console && console.log) {
-									// example return of current slide number
-									console.log('animationStart on slide: ', current);
-								};
-							},
-							animationComplete: function(current){
-								$('.caption').animate({
-									bottom:0
-								},200);
-								if (window.console && console.log) {
-									// example return of current slide number
-									console.log('animationComplete on slide: ', current);
-								};
-							},
-							slidesLoaded: function() {
-								$('.caption').animate({
-									bottom:0
-								},200);
-							},
-		});
-		$("a.fancybox").fancybox({
-				'transitionIn'	:	'fade',
-				'transitionOut'	:	'fade',
-				'speedIn'		:	600, 
-				'speedOut'		:	600, 
-				'overlayShow'	:	true,
-				'hideOnContentClick' : true,
-				'titlePosition' : 'inside',
-				'height' : '95%',
-			});
-	});
-	clearAllSections();
-	navSelectN('staff');
-</script>
+<script type="text/javascript" src="about.js?v=1.0.0"></script>
 </body>
 </html>
