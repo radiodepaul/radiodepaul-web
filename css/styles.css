@@ -461,13 +461,12 @@ form#search input {
 }
 nav {
 	height:30px;
-	left:140px;
+	left:160px;
 	top:70px;
 	padding-bottom:10px;
-	padding-left:10px;
 	text-transform:uppercase;
 	line-height:24px;
-	width:830px;
+	width:840px;
 }
 nav a:link, nav a:visited {
 	color:#000;

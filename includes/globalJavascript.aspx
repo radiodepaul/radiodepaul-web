@@ -7,4 +7,4 @@
 <script type="text/javascript" language="javascript" src="/js/jquery.fancybox-1.3.4.pack.js"></script>
 <script type="text/javascript" language="javascript" src="/js/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" language="javascript" src="/js/activity-indicator.js"></script>
-<script type="text/javascript" src="/js/main.js?v=1.0.0"></script>
+<script type="text/javascript" src="/js/main.js?v=1.0.2"></script>
