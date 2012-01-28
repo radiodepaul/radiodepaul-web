@@ -36,6 +36,6 @@
 	<%Server.Execute("/includes/footer.aspx");%>
 	<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" src="shows.js?v=1.0.0"></script>
+<script type="text/javascript" src="shows.js?v=1.0.1"></script>
 </body>
 </html>
