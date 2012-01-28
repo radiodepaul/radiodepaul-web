@@ -1,3 +1,9 @@
+function playerPopUp(url){
+	newwindow=window.open(url,'name','height=371,width=600,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');
+}
+function podcastPlayerPopUp(url) {
+	newwindow = window.open(url, 'name', 'height=340,width=500,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');
+}
 $('#sidebar #now_playing').closest('div').activity({segments: 8, steps: 4, width: 2, align: 'right', valign: 'top', space: 0, length: 3, color: '#0b0b0b', speed: 1.5, padding: 5});
 $(document).ready(function(){
 	$("div#clock").clock({"calendar":"false"});
@@ -12,12 +18,6 @@ $(document).ready(function(){
 	        $("#weather").html('<p>'+error+'</p>');
 	    }
 	});
-	function playerPopUp(url){
-		newwindow=window.open(url,'name','height=371,width=600,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');
-	}
-	function podcastPlayerPopUp(url) {
-		newwindow = window.open(url, 'name', 'height=340,width=500,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');
-	}
 	var current = $('body').attr('title');
 	$('a[title="' + current + '"]').addClass('selected');
 	var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
