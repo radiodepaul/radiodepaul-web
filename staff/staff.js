@@ -22,7 +22,20 @@ $(document).ready(function(){
 	 		};
 			var sorted = $(data).sort(sortNameDesc);
 			for (var i = 0; i < sorted.length; i++) {
-				html += '<a class="big" href="/person/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  <span>' + sorted[i]['name'] + '</span></div></a>';
+				var shows = "";
+                if (sorted[i]['shows'].length > 0) {
+                    shows += " of "
+                }
+                for (var j = 0; j < sorted[i]['shows'].length; j++) {
+                    if (j != sorted[i]['shows'].length - 1) {
+                        if (sorted[i]['shows'].length > 2) {
+                            shows += " " + sorted[i]['shows'][j]['show_title'] + ',';
+                        } else { shows += sorted[i]['shows'][j]['show_title']; }
+                    } else if ( sorted[i]['shows'].length == 1) {
+                        shows += sorted[i]['shows'][j]['show_title'];
+                    } else { shows += ' and ' + sorted[i]['shows'][j]['show_title']; }
+                }
+				html += '<a class="big" href="/person/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  <span>' + sorted[i]['name'] + '</span>' + shows + '</div></a>';
 			}
 			$(html).appendTo('#staff_list');
 			$('#staff_list').activity(false);
