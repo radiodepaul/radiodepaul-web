@@ -10,7 +10,6 @@ $(document).ready(function(){
 		contentType: "application/json",
 		success: function(data) {
 			if ( data != null ) {
-				
 				document.title = 'Radio DePaul | ' + data['name'];
 			
 			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

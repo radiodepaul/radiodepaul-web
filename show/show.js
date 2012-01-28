@@ -1,5 +1,5 @@
 $('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
-var disqus_title = "", disqus_url = "", disqus_identifier = "", disqus_shortname = "radiodepaul";
+var disqus_title = "", disqus_identifier = "", disqus_url = "", disqus_shortname = 'radiodepaul';
 $(document).ready(function(){
 	var showId = $.url().param('id');
 	$.ajax({
@@ -131,7 +131,7 @@ $(document).ready(function(){
 								</div>\
 							</div>\
 						</div>\
-					</div>'
+					</div>';
 				}
 				
 				html = title + photo + social + stats + hosts + description + facebook_fanbox + podcasts + disqus_embed;	
