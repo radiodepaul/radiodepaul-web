@@ -492,7 +492,7 @@ nav a{ -webkit-transition:border-top .4s ease-out;}
 nav a:last-child {
 	border-right:none;
 	text-align:center;
-	width:290px;
+	width:300px;
 	font-size:18px;
 	color:#fff;
 	background-color:#5e87a8;
@@ -602,10 +602,10 @@ header h1 {
 	display:inline;
 	padding:10px 10px 0 10px;
 }
-#sidebar .contentBox img {
+#now_playing img {
 	border:dotted 1px #5e87a8;
 }
-#sidebar .contentBox img:hover {
+#now_playing img:hover {
 	border:solid 1px #CF671C;
 }
 .contentBox li p:first-child {
@@ -664,7 +664,6 @@ div.bar a:hover {
 div.smallBar {
 	border-bottom: 1px dashed #CF671C;
     clear: both;
-    font-weight: bold;
     padding: 6px 0;
     text-indent: 10px;
     width: 100%;

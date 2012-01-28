@@ -24,14 +24,13 @@ $(document).ready(function(){
 			var html = "";
 			for (var i = 0; i < sorted.length; i++) {
 				var hosts = "";
-				if ( sorted[i]['hosts'].length != 0 ) {
-					hosts = " with "
-				}
-				for (var j = 0; j < sorted[i]['hosts'].length; j++) {
-					if ( j != sorted[i]['hosts'].length - 1 ) {
-						hosts += sorted[i]['hosts'][j]['name'] + ', ';
-					} else { hosts += sorted[i]['hosts'][j]['name']; }
-				}
+	            for (var j = 0; j < sorted[i]['hosts'].length; j++) {
+	                if (j != sorted[i]['hosts'].length - 1) {
+	                    hosts += " with " + sorted[i]['hosts'][j]['name'] + ', ';
+	                } else if ( sorted[i]['hosts'].length == 1) {
+	                    hosts += " with " + sorted[i]['hosts'][j]['name'];
+	                } else { hosts += 'and ' + sorted[i]['hosts'][j]['name']; }
+	            }
 				html += '<a class="big" href="/show/?id=' + sorted[i]['id'] + '"><div class="smallBar"><img src="' + sorted[i]['photo_thumb'] + '" />  <span>' + sorted[i]['title'] + '</span>' + hosts + '</div></a>';
 			}
 			$(html).appendTo('#shows');
