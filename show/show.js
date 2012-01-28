@@ -34,7 +34,7 @@ $(document).ready(function(){
 						genre = '<li><p>Genre</p><p>' + data['genre'] + '</p></li>';
 					}
 					
-					if (data['hosts'] != null) {
+					if (data['hosts'].length > 0) {
 						hosts = '<div class="contentBox right"><div class="bar">Hosted By</div><ul>'
 						for (var i = 0; i < data['hosts'].length; i++) {
 								hosts += '<a href="/person/?id=' + data['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data['hosts'][i]['name'] + '</p></li></a>';
@@ -42,7 +42,7 @@ $(document).ready(function(){
 						 hosts += '</ul></div>';
 					}
 					
-					if (data['scheduled_slots'] != null) {
+					if (data['scheduled_slots'].length > 0) {
 						slots = '<li><p>Scheduled At:</p>'
 						for (var i = 0; i < data['scheduled_slots'].length; i++) {
 								slots += '<p>' + data['scheduled_slots'][i]['slot'] + '</p>';

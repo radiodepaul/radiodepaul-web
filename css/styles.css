@@ -680,7 +680,7 @@ div.smallBar a:hover {
 a:link.big div, a:visited.big div, a:link.big li, a:visited.big li {
 	background-color:none;
 	color:#000;
-	font-size:18px;
+	font-size:16px;
 	height:50px;
 }
 a:hover.big div, a:hover.big li {

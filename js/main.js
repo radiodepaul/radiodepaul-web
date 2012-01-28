@@ -50,17 +50,19 @@ $(document).ready(function(){
 					genre = '<li><p>Genre<p>' + data[0]['show']['genre'] + '</p></li>';
 				}
 				var hosts = "";
-	            if (data[0]['show']['hosts'].length != 0) {
-	                hosts = "<li><p>Hosts</p><p>"
-	            }
-	            for (var j = 0; j < data[0]['show']['hosts'].length; j++) {
-	                if (j != data[0]['show']['hosts'].length - 1) {
-	                    hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>, ';
-	                } else if ( data[0]['show']['hosts'].length == 1) {
-	                    hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>';
-	                } else { hosts += 'and <a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
-	            }
-				hosts += '</p>';
+                if (data[0]['show']['hosts'].length > 0) {
+					hosts = "<li><p>Hosts</p><p>"
+                }
+                for (var j = 0; j < data[0]['show']['hosts'].length; j++) {
+                    if (j != data[0]['show']['hosts'].length - 1) {
+                        if (data[0]['show']['hosts'].length > 2) {
+                            hosts += " " + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>,';
+                        } else { hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
+                    } else if ( data[0]['show']['hosts'].length == 1) {
+                        hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>';
+                    } else { hosts += ' and ' + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
+                }
+				hosts += '</p></li>';
 
 				html += name + photo + genre + hosts + '</ul>';	
 				$('#sidebar #now_playing').activity(false);

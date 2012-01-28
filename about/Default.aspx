@@ -56,12 +56,12 @@
 				</div>
 				<div class="panel contentBox" id="join">
 					<div class="bar">Join Radio DePaul</div>
-					<div class="smallBar">Eligibility for Participation</div>
+					<div class="smallBar"><span>Eligibility for Participation</span></div>
                 		<p>Only full-time students in good academic standing (2.5 GPA or higher) at DePaul are eligible for FULL membership in Radio DePaul.</p>
                 	   	<p>University faculty members, staff and members of the community also shall be eligible for ASSOCIATE membership through petition to the Student Advisory Committee.</p>
                	   	    <p>Membership constitutes active participation in the organization.</p>
                	   	    <p>Radio DePaul shall not discriminate against any person on the basis of race, color, sex, sexual preference, disabilities, national origin, religious affiliation, or beliefs.</p>
-					<div class="smallBar">Rights and Privileges of Membership</div>
+					<div class="smallBar"><span>Rights and Privileges of Membership</span></div>
                			<p>The number of persons who may be members of Radio DePaul may be limited depending on the availability of on or off-air positions.</p>
                			<p>Only FULL members of the organization shall be eligible to hold management positions.</p>
 				</div>
