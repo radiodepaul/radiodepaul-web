@@ -36,7 +36,7 @@ $(document).ready(function(){
 		});
 	$.ajax({
 		//url: "http://radiodepaul.herokuapp.com/slots/now_playing.js",
-		url: "http://0.0.0.0:3000/slots/now_playing.js",
+		url: "http://radiodepaul.herokuapp.com/slots/now_playing.js",
 		dataType: "jsonp",
 		type: "GET",
 		processData: false,
