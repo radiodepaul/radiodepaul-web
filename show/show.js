@@ -1,6 +1,6 @@
 $('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 30});
 var disqus_title = "", disqus_identifier = "", disqus_url = "", disqus_shortname = 'radiodepaul';
-$(document).ready(function(){
+$(document).ready(function() {
 	var showId = $.url().param('id');
 	$.ajax({
 		url: "http://radiodepaul.herokuapp.com/shows/" + showId + ".js",
@@ -20,7 +20,7 @@ $(document).ready(function(){
 				
 					var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>'
 					var photo = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "";
-					var disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Comments</div><div id="disqus_thread" class="dsq-widget"></div></div>'
+					var disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>'
 				
 					title = '<h2 id="name">' + data['title'] + '</h2>';
 				
