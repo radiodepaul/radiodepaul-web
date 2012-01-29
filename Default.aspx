@@ -52,8 +52,8 @@
 					<ul id="depaulia_feed"></ul>
 			</div>
 			<div class="contentBox clear">
-				<div class="bar">Recent Comments</div>
-				<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=24&excerpt_length=200"></script></div>
+				<div class="bar">Recent Posts</div>
+				<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=32&excerpt_length=100"></script></div>
 			</div>
 		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
