@@ -7,7 +7,6 @@
 	<title>Radio DePaul | Schedule</title>
 	<%Server.Execute("/includes/globalCSS.aspx");%>
 	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -27,16 +26,11 @@
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
-
 			<h1 id="title">Schedule</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
-		<div id="content">
-			<div id="schedule">
-				<div class="bar">Winter 2012</div>
-			</div>
-		</div>
+		<div id="content"></div>
 		<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>

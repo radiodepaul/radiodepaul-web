@@ -13,11 +13,11 @@
 <body title="media">
 	<div id="categories">
 		<!--<a href="" ><span>All Albums</span></a>-->
-		<a href="photos/radiodepaul_2010_2011/" ><span>Radio DePaul 2010-2011</span></a>
-		<a href="photos/visiting_dignitaries/" ><span>Visiting Dignitaries</span></a>
-		<a href="photos/awards_recognition/" ><span>Awards &amp; Recognition</span></a>
-		<a href="photos/radiodepaul_2009_2010/" ><span>Radio DePaul 2009-2010</span></a>
-		<a href="photos/timeless/" ><span>Timeless</span></a>
+		<a href="photos/radiodepaul_2010_2011/"><span>Radio DePaul 2010-2011</span></a>
+		<a href="photos/visiting_dignitaries/"><span>Visiting Dignitaries</span></a>
+		<a href="photos/awards_recognition/"><span>Awards &amp; Recognition</span></a>
+		<a href="photos/radiodepaul_2009_2010/"><span>Radio DePaul 2009-2010</span></a>
+		<a href="photos/timeless/"><span>Timeless</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>
@@ -25,7 +25,6 @@
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
-			
 			<h1 id="title">Media</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
@@ -116,11 +115,5 @@
 <script type="text/javascript" src="/js/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="/js/swfobject.js"></script>
 <script type="text/javascript" src="media.js?v=1.0.0"></script>
-<script type="text/javascript">
-    var params = { allowScriptAccess: "always" };
-    var atts = { id: "myytplayer" };
-    swfobject.embedSWF("http://www.youtube.com/e/vbbgtoTs-fM?version=3&autohide=1&enablejsapi=1&modestbranding=1&playerapiid=ytplayer&rel=0&showinfo=0&theme=light",
-                       "ytapiplayer", "660", "356", "8", null, null, params, atts);
-  </script>
 </body>
 </html>

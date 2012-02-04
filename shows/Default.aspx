@@ -13,7 +13,6 @@
 </head>
 <body title="shows">
 	<div id="categories">
-		<a href="" ><span>All Shows</span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>

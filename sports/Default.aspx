@@ -96,11 +96,11 @@
 					</div>
 				</div>
 			</div>
-			<!--<div class="left contentBox">
+			<div class="contentBox">
 				<div class="bar">DePaul Athletics Feed</div>
 				<ul id="athletics_feed"></ul>
 			</div>
-			<div class="right contentBox">
+			<!--<div class="right contentBox">
 				<div class="bar">Events</div>
 				<ul id="events">
 				</ul>
@@ -150,47 +150,5 @@
 <script src="/js/slides.min.jquery.js"></script>
 <script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>
 <script src="sports.js?v=1.0.0"></script>
-<script type="text/javascript" language="javascript">
-	$(function(){
-		$('#slides').slides({
-			preload: true,
-			play: 5000,
-			pause: 2500,
-			hoverPause: true,
-			animationStart: function(current){
-								$('.caption').animate({
-									bottom:-35
-								},100);
-								if (window.console && console.log) {
-									// example return of current slide number
-									console.log('animationStart on slide: ', current);
-								};
-							},
-							animationComplete: function(current){
-								$('.caption').animate({
-									bottom:0
-								},200);
-								if (window.console && console.log) {
-									// example return of current slide number
-									console.log('animationComplete on slide: ', current);
-								};
-							},
-							slidesLoaded: function() {
-								$('.caption').animate({
-									bottom:0
-								},200);
-							},
-		});
-		$("a.fancybox").fancybox({
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'fade',
-				'speedIn'		:	600, 
-				'speedOut'		:	400, 
-				'hideOnContentClick' : true,
-				'titlePosition' : 'inside',
-			});
-			$('div.caption p').append(' | Courtesy of DePaul Athletics');
-	});
-</script>
 </body>
 </html>
