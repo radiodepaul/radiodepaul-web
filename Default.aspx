@@ -4,13 +4,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Radio DePaul</title>
-	<%Server.Execute("/includes/globalCSS.aspx");%>
-	<link rel="stylesheet" href="/css/slides.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="/css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<title>Radio DePaul | Home</title>
+	<%Server.Execute("/includes/head.aspx");%>
 </head>
 <body title="home">
 	<a class="banner fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0">
@@ -24,50 +19,20 @@
 		<div id="weather"></div>
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
- 			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
+ 			<a href="/"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
 			<h1 class="tk-futura-pt" id="title">Chicago's College Connection</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
 		<div id="content">
-			<div id="featured">
-				<div id="slides">
-					<div class="slides_container">
-					</div>
-					<a href="#" class="prev"><img src="/img/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-					<a href="#" class="next"><img src="/img/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
-				</div>
-				<img src="/img/slides/example-frame.png" alt="Frame" id="frame" />
-			</div>
-			<div class="left contentBox">
-				<div class="bar"><a href="/station_news/">Radio DePaul News</a></div>
-				<ul id="news"></ul>
-			</div>
-			<div class="right contentBox">
-				<div class="bar">Coming Up</div>
-				<ul id="events"></ul>
-			</div>
-			<div class="contentBox clear">
-				<div class="bar"><a href="http://www.depauliaonline.com/">The DePaulia</a> Feed</div>
-					<ul id="depaulia_feed"></ul>
-			</div>
-			<div class="contentBox clear">
+			<div id="recentcomments" style="display:none;" class="contentBox clear">
 				<div class="bar">Recent Posts</div>
-				<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=32&excerpt_length=100"></script></div>
+				<div class="dsq-widget"><script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=32&excerpt_length=100"></script></div>
 			</div>
 		</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
-<%Server.Execute("/includes/googleAnalytics.aspx");%>
-<%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" src="/js/jquery.url.js"></script>
-<script type="text/javascript" src="/js/iphoneredirect.js" language="javascript"></script>
-<script src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg" type="text/javascript"></script>
-<script src="/js/slides.min.jquery.js"></script>
-<script type="text/javascript" language="javascript" src="/js/flickr.api.grab.slider.js"></script>
-<script type="text/javascript" language="javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=72157627533487017&api_key=8ba7f50062d534406009b45aeb73eb90"></script>
-<script type="text/javascript" language="javascript" src="home.js"></script>
 </body>
 </html>

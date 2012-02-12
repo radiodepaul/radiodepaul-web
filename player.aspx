@@ -4,13 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Radio DePaul | Player</title> 
-<link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
+	<link rel="stylesheet" type="text/css" href="/css/player.css" media="screen" /> <%-- MAIN CSS --%>
     <meta name="description" content="Desktop Player for Radio DePaul" />
     <meta http-equiv="Content-Script-Type" content="text/javascript">
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi?callback=loadGoogleAPIs&key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg"></script>
 </head>
-<body>
+<body title="player">
 	<header>
 		<nav>                                     
 			<a title="player" href="#">Player</a>
@@ -47,16 +49,5 @@
 				</div>
            </div>
 	</div>
-<%--Google Analytics--%>
-<%Server.Execute("/includes/googleAnalytics.aspx");%>
-<%--Google Analytics END--%>
-<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhR-EnhHLF3hzeP_zC0f88vxrVBDJxQ5trNtm-WIavFyDmaveoDjiQ2JeQ"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-<script type="text/javascript" src="/js/jqclock_201.js"></script>
-<script type="text/javascript" src="/js/jquery.simpleWeather-1.8.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/navSwitchplayer.js?v=001"></script>	
 </body>
 </html>

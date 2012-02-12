@@ -23,7 +23,7 @@
 		<div id="weather"></div>
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
- 			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
+ 			<a href="/"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
 			
 			<h1 class="tk-futura-pt" id="title">Home</h1>
 			<%Server.Execute("/includes/nav.aspx");%>

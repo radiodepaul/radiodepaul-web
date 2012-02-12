@@ -6,13 +6,9 @@
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
 	<link rel="stylesheet" type="text/css" href="/css/blue.monday/jplayer.blue.monday.css" />
-	<%Server.Execute("/includes/globalCSS.aspx");%>
-	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	
-	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<%Server.Execute("/includes/head.aspx");%>
 </head>
-<body title="shows">
+<body title="show">
 	<div id="fb-root"></div>
 	<div id="categories">
 	</div>
@@ -21,7 +17,7 @@
 		<div id="weather"></div>
 		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
- 			<a href="/"><img id="logo" src="/img/logo.png" alt ="" /></a>
+ 			<a href="/"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
 			<h1 id="title">Shows</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
@@ -31,11 +27,5 @@
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
-	<%Server.Execute("/includes/googleAnalytics.aspx");%>
-<%Server.Execute("/includes/globalJavascript.aspx");%>
-<script type="text/javascript" src="/js/jquery.url.js"></script>
-<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="/js/jplayer.playlist.min.js"></script>
-<script type="text/javascript" src="show.js?v=1.0.0"></script>
 </body>
 </html>
