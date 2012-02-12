@@ -5,17 +5,9 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Radio DePaul</title>
-	<%Server.Execute("/includes/globalCSS.aspx");%>
-	<meta name="Description" content="Radio DePaul is DePaul University's award-winning student radio station. Featuring a vibrant blend of music, talk, news, and sports, Radio DePaul is Chicago's College Connection!" />
-	
-	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<%Server.Execute("/includes/head.aspx");%>
 </head>
-<body title="home">
-	<a class="banner fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0">
-	  <span>Work For Us</span>
-	  <span>Apply Now</span>
-	</a>
+<body title="404">
 	<div id="categories">
 	</div>
 	<div id="page">
@@ -36,7 +28,5 @@
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
-	<%Server.Execute("/includes/googleAnalytics.aspx");%>
-	<%Server.Execute("/includes/globalJavascript.aspx");%>
 </body>
 </html>
