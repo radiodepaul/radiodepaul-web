@@ -8,11 +8,12 @@
 #frame {
 	position:absolute;
 	z-index:0;
-	width:474px;
-	height:177px;
+	width:774px;
+	height:377px;
 	top:-3px;
 	left:-80px;
 }
+
 /*
 	Slideshow
 */
@@ -24,8 +25,8 @@
 	z-index:100;
 }
 .slides_container div.slide {
-	width:400px;
-	height:100px;
+	width:600px;
+	height:300px;
 	display:block;
 	background-color:#fff;
 }
@@ -99,7 +100,7 @@
 	width:12px;
 	height:0;
 	padding-top:12px;
-	background-image:url(../img/slides/pagination.png);
+	background-image:url('https://s3.amazonaws.com/radiodepaul/css/slides/pagination.png');
 	background-position:0 0;
 	float:left;
 	overflow:hidden;
@@ -121,7 +122,7 @@
 	padding:5px 20px 0 20px;
 	background:#000;
 	background:rgba(0,0,0,.5);
-	width:340px;
+	width:540px;
 	font-size:1.3em;
 	line-height:1.33;
 	color:#fff;
@@ -131,7 +132,7 @@
 
 #footer {
 	text-align:center;
-	width:400px;
+	width:600px;
 	margin-top:9px;
 	padding:4.5px 0 18px;
 	border-top:1px solid #dfdfdf;

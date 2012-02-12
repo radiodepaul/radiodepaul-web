@@ -35,7 +35,7 @@
 	left: 0;
 	width: 40px;
 	height: 480px;
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 }
 
 #fancybox-overlay {
@@ -99,7 +99,7 @@
 	right: -15px;
 	width: 30px;
 	height: 30px;
-	background: transparent url('/img/fancybox/fancybox.png') -40px 0px;
+	background: transparent url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png') -40px 0px;
 	cursor: pointer;
 	z-index: 1103;
 	display: none;
@@ -137,7 +137,7 @@
 	width: 35%;
 	cursor: pointer;
 	outline: none;
-	background: transparent url('/img/fancybox/blank.gif');
+	background: transparent url('https://s3.amazonaws.com/radiodepaul/css/fancybox/blank.gif');
 	z-index: 1102;
 	display: none;
 }
@@ -163,12 +163,12 @@
 }
 
 #fancybox-left-ico {
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 	background-position: -40px -30px;
 }
 
 #fancybox-right-ico {
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 	background-position: -40px -60px;
 }
 
@@ -199,13 +199,13 @@
 	top: -20px;
 	left: 0;
 	width: 100%;
-	background-image: url('/img/fancybox/fancybox-x.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox-x.png');
 }
 
 #fancybox-bg-ne {
 	top: -20px;
 	right: -20px;
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 	background-position: -40px -164px;
 }
 
@@ -213,14 +213,14 @@
 	top: 0;
 	right: -20px;
 	height: 100%;
-	background-image: url('/img/fancybox/fancybox-y.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox-y.png');
 	background-position: -20px 0px;
 }
 
 #fancybox-bg-se {
 	bottom: -20px;
 	right: -20px;
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 	background-position: -40px -184px; 
 }
 
@@ -228,14 +228,14 @@
 	bottom: -20px;
 	left: 0;
 	width: 100%;
-	background-image: url('/img/fancybox/fancybox-x.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox-x.png');
 	background-position: 0px -20px;
 }
 
 #fancybox-bg-sw {
 	bottom: -20px;
 	left: -20px;
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 	background-position: -40px -144px;
 }
 
@@ -243,13 +243,13 @@
 	top: 0;
 	left: -20px;
 	height: 100%;
-	background-image: url('/img/fancybox/fancybox-y.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox-y.png');
 }
 
 #fancybox-bg-nw {
 	top: -20px;
 	left: -20px;
-	background-image: url('/img/fancybox/fancybox.png');
+	background-image: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png');
 	background-position: -40px -124px;
 }
 
@@ -282,7 +282,7 @@
 
 #fancybox-title-over {
 	padding: 10px;
-	background-image: url('/img/fancybox/fancy_title_over.png');
+	background-image: url('/css/fancybox/fancy_title_over.png');
 	display: block;
 }
 
@@ -306,7 +306,7 @@
 
 #fancybox-title-float-left {
 	padding: 0 0 0 15px;
-	background: url('/img/fancybox/fancybox.png') -40px -90px no-repeat;
+	background: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png') -40px -90px no-repeat;
 }
 
 #fancybox-title-float-main {
@@ -314,25 +314,25 @@
 	line-height: 29px;
 	font-weight: bold;
 	padding: 0 0 3px 0;
-	background: url('/img/fancybox/fancybox-x.png') 0px -40px;
+	background: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox-x.png') 0px -40px;
 }
 
 #fancybox-title-float-right {
 	padding: 0 0 0 15px;
-	background: url('/img/fancybox/fancybox.png') -55px -90px no-repeat;
+	background: url('https://s3.amazonaws.com/radiodepaul/css/fancybox/fancybox.png') -55px -90px no-repeat;
 }
 
 /* IE6 */
 
 .fancybox-ie6 #fancybox-close { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_close.png', sizingMethod='scale'); }
 
-.fancybox-ie6 #fancybox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_nav_left.png', sizingMethod='scale'); }
-.fancybox-ie6 #fancybox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_nav_right.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_nav_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_nav_right.png', sizingMethod='scale'); }
 
-.fancybox-ie6 #fancybox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
-.fancybox-ie6 #fancybox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_title_left.png', sizingMethod='scale'); }
-.fancybox-ie6 #fancybox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_title_main.png', sizingMethod='scale'); }
-.fancybox-ie6 #fancybox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_title_right.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie6 #fancybox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_main.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_right.png', sizingMethod='scale'); }
 
 .fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
 	height: expression(this.parentNode.clientHeight + "px");
@@ -349,14 +349,14 @@
 
 .fancybox-ie .fancybox-bg { background: transparent !important; }
 
-.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_n.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_e.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_se.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_s.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_w.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_n.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_e.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_se.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_s.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_w.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
 
 html {
 	/* fallback */
@@ -410,11 +410,14 @@ a, a:link, a:visited {
 	font-size:14px;
 	line-height:25px;
 }
-#superBar a {
+#superBar a, #superbar a:visited {
 	color:#F2F2F2;
 	padding:0 5px;
 	font-size:14px;
 	ine-height:25px;
+}
+#superBar a:hover {
+	color:#5E87A8;
 }
 img#logo {
 	height:110px;
@@ -466,7 +469,6 @@ nav {
 	padding-bottom:10px;
 	text-transform:uppercase;
 	line-height:24px;
-	width:840px;
 }
 nav a:link, nav a:visited {
 	color:#272123;
@@ -491,7 +493,7 @@ nav a{ -webkit-transition:border-top .4s ease-out;}
 nav a:last-child {
 	border-right:none;
 	text-align:center;
-	width:300px;
+	width:274px;
 	font-size:18px;
 	color:#fff;
 	background-color:#5e87a8;
@@ -567,7 +569,6 @@ header h1 {
 	display:block;
 }
 #content {
-	background-color:#e9e9e3;
 	border-top:solid 8px #272123;
 	min-height:1000px;
 	width:674px;
@@ -599,7 +600,7 @@ header h1 {
 	position:absolute;
 	right:0;
 	display:inline;
-	padding:10px 10px 0 10px;
+	padding:10px 0 0 20px;
 }
 #now_playing img {
 	border:dotted 1px #5e87a8;
@@ -609,10 +610,11 @@ header h1 {
 }
 .contentBox li p:first-child {
 	font-weight:bold;
+	font-size:16px;
 }
 .contentBox li p {
 	list-style:none;
-	font-size:16px;
+	font-size:14px;
 	padding: 4px 10px;
 	line-height:20px;
 }
@@ -694,8 +696,12 @@ a:hover.big div, a:hover.big li {
 	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
 }
-img#friend {
-	width:248px;
+a#friend img {
+	width:250px;
+	margin-top:4px;
+}
+a#friend {
+	background-color:#fff;
 }
 img.ad {
 	height:100px;
@@ -705,44 +711,19 @@ img.ad {
 	top:0;
 }
 #nowPlaying img {
+	min-height:300px;;
+}
+#nowPlaying img {
 	height:100px;
+}
+#nowPlaying a:link, a:visited {
+	font-size:16px;
 }
 .showInfo {
 	position:absolute;
 	left:70px;
 	top:30px;
 	width:230px;
-}
-#nowPlaying p.showName, #nowPlaying p.showDJs, #nowPlaying p.showGenre {
-	width:auto;
-	position:absolute;
-}
-#nowPlaying p.showName {
-	top:20px;
-	font-weight:bold;
-	font-size:16px;
-	border-bottom:dotted 1px #272123;
-}
-#nowPlaying p.showDJs {
-	top:38px;
-	margin-left:10px;
-}
-#nowPlaying p.showGenre {
-	position:absolute;
-	top:4px;
-	right:0;
-}
-#nowPlaying a:link, #nowPlaying a:visited {
-	position:absolute;
-	top:80px;
-	right:0;
-	border-left:1px dotted #272123;
-	border-right:1px dotted #272123;
-	padding:5px 10px;
-}
-#nowPlaying a:hover {
-	top:78px;
-	border-top:4px solid #272123;
 }
 footer {
 	width:100%;
@@ -757,7 +738,7 @@ footer a:link, footer a:visited {
 	color:#F2F2F2;
 }
 footer a:hover {
-	color:#272123;
+	color:#5E87A8;
 }
 footer #desc {
 	width:400px;
@@ -837,7 +818,7 @@ footer .bar {
 }
 #schedule h1 {
 	font-size:24px;
-	padding:5px 0;
+	padding:10px 0 5px 0;
 	width:100%;
 	border-bottom:1px solid #272123;
 	font-weight:bold;
@@ -846,7 +827,7 @@ footer .bar {
 #schedule ul {
 	width:100%;
 }
-#schedule, #shows, #staff_list {
+#schedule, #shows {
 	background-color:#F6F2F5;
 	border:1px solid #999;
 	min-height:140px;
@@ -874,27 +855,31 @@ footer .bar {
 #schedule ul li p {
 	font-size:16px;
 }
+#schedule ul li a {
+	font-size:14px;
+}
+#schedule ul li a:hover {
+	color:#5e87a8;
+}
 #schedule ul li div.time {
 	width:100px;
 }
 #schedule ul li p.startTime {
-	top:40px;
-	width:100px;
-	left:0;
+	top:34px;
+	left:2px;
 	position:absolute;
 	text-align:center;
 }
 #schedule ul li p.endTime {
-	bottom:10px;
-	width:100px;
-	left:0;
+	bottom:4px;
+	left:2px;
 	position:absolute;
 	text-align:center;
 }
 #schedule ul li p.showName {
 	top:0;
 	height:30px;
-	line-height:30px;
+	line-height:34px;
 	font-size:16px;
 	width:530px;
 	left:0;
@@ -910,8 +895,9 @@ footer .bar {
 	top:40px;
 	height:30px;
 	width:390px;
-	left:120px;
+	left:130px;
 	position:absolute;
+	font-size:12px;
 }
 #schedule ul li p.showGenre {
 	position:absolute;
@@ -920,24 +906,18 @@ footer .bar {
 	font-size:18px;
 	line-height:30px;
 }
-#schedule ul li a {
-	font-size:16px;
-}
-#schedule ul li a:hover {
-	color:#5e87a8;
-}
 #schedule ul li p.showBio {
 	position:absolute;
-	left:120px;
+	left:130px;
 	bottom:10px;
 	font-size:14px;
 	width:400px;
 	line-height:14px;
 }
 p.scheduleBar {
-	width:100%;
+	width:110px;
 	color:#F2F2F2;
-	padding:5px;
+	padding:8px 5px;
 	background-color:#cf671c;
 }
 #stats {
@@ -969,16 +949,16 @@ ul#personshowSocial a:hover {
 }
 /*--Assign an image and width to each link--*/
 ul#personshowSocial li.twitter a {
-	background-image: url(/img/social/twitter.png);
+	background-image: url('https://s3.amazonaws.com/radiodepaul/img/social/twitter.png');
 }
 ul#personshowSocial li.facebook a {
-	background-image: url(/img/social/facebook.png);
+	background-image: url('https://s3.amazonaws.com/radiodepaul/img/social/facebook.png');
 }
 ul#personshowSocial li.email a {
-	background-image: url(/img/social/mail.png);
+	background-image: url('https://s3.amazonaws.com/radiodepaul/img/social/mail.png');
 }
 ul#personshowSocial li.linkedin a {
-	background-image: url(/img/social/linkedin.png);
+	background-image: url('https://s3.amazonaws.com/radiodepaul/img/social/linkedin.png');
 }
 #name {
 	font-size:28px;
@@ -994,13 +974,13 @@ ul#personshowSocial li.linkedin a {
 	width:100%;
 	right:0;
 }
-ul#gallery li:hover {
+div#gallery ul li:hover {
 	opacity:1.0;
 }
-ul#gallery li img:hover {
+div#gallery ul li img:hover {
 	border:4px #474348 solid;
 }
-ul#gallery li {
+div#gallery ul li {
 	height:160px;
 	width:180px;
 	opacity:0.85;
@@ -1010,11 +990,11 @@ ul#gallery li {
 	margin:10px;
 	border:none;
 }
-ul#gallery li p {
+div#gallery ul li p {
 	font-size:14px;
 	line-height:14px;
 }
-ul#gallery li img {
+div#gallery ul li img {
 	height:100px;
 	border:4px #999 solid;
 	border-radius: 4px;
@@ -1034,19 +1014,28 @@ ul#gallery li img {
 	position:relative;
 	background-color:#fff;
 	border:dotted 1px #444;
-	margin:10px;
+	margin:12px;
 	padding:5px;
-	opacity:.8;
 	overflow:hidden;
 	float:left;
-	width:290px;
+	width:300px;
 	line-height:14px;
+	min-height:400px
 }
 .box:hover {
 	border:solid 1px #CF671C;
 }
-
-
+#ajax-status {
+  position: absolute;
+  top: 30px;
+  right: 300px;
+  background-color: #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 5px 10px;
+  margin: 4px;
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, sans-serif;
+  display: none; }
 .box p { 
 	width:100%;
 	font-size:14px;

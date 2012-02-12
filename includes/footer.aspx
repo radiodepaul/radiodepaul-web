@@ -4,6 +4,7 @@
 		<div id="desc" class="left">
 			<div class="bar">Who We Are</div>
 			<p>Located in the heart of Chicago, DePaul University's Radio DePaul is an award-winning student radio station that features a vibrant blend of music, talk, news, and sports programming.</p>
+			<p><a class="banner fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0"></a></p>
 		</div>
 		<div id="studentMedia" class="right">
 			<div class="bar">Other Student Media Channels</div>
@@ -13,6 +14,6 @@
 				<li><a href="http://communication.depaul.edu/Student Work/Good Day DePaul/">Good Day DePaul</a></li>
 			</ul>
 		</div>
-		<p id="copy"><a href="http://www.depaul.edu/Pages/copyright.aspx">&copy; 2001-2012</a> DePaul University | <a href="http://www.depaul.edu/Pages/disclaimer.aspx">Disclaimer</a> | <a href="http://www.depaul.edu/Pages/contact-us.aspx">Contact DePaul University</a> | <a href="http://emergencyplan.depaul.edu/Pages/default.aspx">Emergency Plan</a></p>
+		<p id="copy"><a href="http://www.depaul.edu/Pages/copyright.aspx">&copy; 2001-2012</a> <a href="http://depaul.edu/">DePaul University</a> | <a href="http://www.depaul.edu/Pages/disclaimer.aspx">Disclaimer</a> | <a href="http://www.depaul.edu/Pages/contact-us.aspx">Contact DePaul University</a> | <a href="http://emergencyplan.depaul.edu/Pages/default.aspx">Emergency Plan</a></p>
 	</div>
 </footer>
