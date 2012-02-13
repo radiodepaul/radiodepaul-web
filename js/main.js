@@ -12,8 +12,8 @@ var people = {
             success: function(data) {
                 if ( data != null ) {
                     document.title = 'Radio DePaul | ' + data['name'];
-                    var disqus_title = 'Radio DePaul | ' + data['name'], disqus_identifier = 'Radio DePaul | ' + data['name'], disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'], disqus_shortname = 'radiodepaul', html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
-
+                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
+					window.disqus_title = 'Radio DePaul | ' + data['name'], window.disqus_identifier = 'Radio DePaul | ' + data['name'], window.disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
                     name = '<h2 id="name">' + data['name'] + '</h2>';
 
                     photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
@@ -64,9 +64,10 @@ var people = {
 
                     html = name + photo + social + stats + shows + influences + bio + disqus_embed;    
                     
-                    $(html).appendTo('#content');
-                    $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js");
-					
+                    $(html).prependTo('#content');
+                    $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js").done(function() {
+						console.log('Disqus Script Received');
+					});
                 }
             }
         });
@@ -143,7 +144,6 @@ var people = {
                 }
                 $(html).appendTo('#staff');
 				$('#staff').fadeIn();
-				
             }
         });
     }
@@ -233,13 +233,9 @@ var shows = {
             success: function(data) {
                 if ( data != null ) {
                         document.title = 'Radio DePaul | ' + data['title'];
-                        var disqus_title = 'Radio DePaul | ' + data['name'], disqus_identifier = 'Radio DePaul | ' + data['name'], disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'], disqus_shortname = 'radiodepaul';
-
-                        var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>'
-                        var photo = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "";
-                        var disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>'
-
+                        var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>';
                         title = '<h2 id="name">' + data['title'] + '</h2>';
+						window.disqus_title = 'Radio DePaul | ' + data['title'], window.disqus_identifier = 'Radio DePaul | ' + data['title'], window.disqus_url = 'http://radio.depaul.edu/show/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
 
                         var photo_url = "'" + data['photo_medium'] + "'";
 
@@ -373,7 +369,9 @@ var shows = {
                             swfPath: "/js",
                             supplied: "mp3"
                     });
-                    $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js")
+                    $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js").done(function() {
+						console.log('Disqus Script Received');
+					});
 					
                 }
             }
@@ -479,7 +477,7 @@ var app = {
 				app.loadFlickrPhotoset('72157627533487017', 'slider');
 				function feedLoaded(result) {
 					if (!result.error) {
-						var feed = '<div id="depaulia_feed" class="contentBox"><div class="bar">DePaul Athletics Feed</div><ul>';
+						var feed = '<div id="depaulia_feed" class="contentBox"><div class="bar"><a href="http://www.depauliaonline.com" alt="The DePaulia">The DePaulia</a> Feed</div><ul>';
 						$.each(result.feed.entries, function(i, item) {
 								feed += '<li>\
 								<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
@@ -965,10 +963,10 @@ var app = {
 	loadFlickrPhotoset: function(photoset_id, type) {
 		$.ajaxSetup({async: false, cache: false});
 		if (type == 'slider') {
-        	$.getScript('/js/flickr.api.grab.slider.js');
+        	$.getScript('https://s3.amazonaws.com/radiodepaul/js/flickr.api.grab.slider.js');
         	$.getScript('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=' + photoset_id + '&api_key=8ba7f50062d534406009b45aeb73eb90').done(function() { app.loadSlides();app.setupFancyBox(); });
 		} else if (type == 'gallery') {
-			$.getScript('/js/flickr.api.grab.js');
+			$.getScript('https://s3.amazonaws.com/radiodepaul/js/flickr.api.grab.js');
         	$.getScript('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=' + photoset_id + '&api_key=8ba7f50062d534406009b45aeb73eb90').done(function() { app.setupFancyBox(); });
 		}
 		$.ajaxSetup({async: true, cache: false});
