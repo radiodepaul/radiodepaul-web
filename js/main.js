@@ -475,36 +475,8 @@ var app = {
 				app.loadStationEvents();
 				shows.displayRandomShows();
 				app.loadFlickrPhotoset('72157627533487017', 'slider');
-				function feedLoaded(result) {
-					if (!result.error) {
-						var feed = '<div id="depaulia_feed" class="contentBox"><div class="bar"><a href="http://www.depauliaonline.com" alt="The DePaulia">The DePaulia</a> Feed</div><ul>';
-						$.each(result.feed.entries, function(i, item) {
-								feed += '<li>\
-								<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
-								<p>' + item.contentSnippet + '</p>\
-								</li>';
-							});
-						feed += '</ul></div>';
-						$(feed).prependTo('#content');
-						$('#depaulia_feed').closest('div').activity(false);
-					}
-				}
-				function feedLoaded(result) {
-					if (!result.error) {
-						var feed = '<div id="depaulia_feed" class="contentBox"><div class="bar"><a href="http://www.depauliaonline.com/">The DePaulia</a>Feed</div><ul >';
-						$.each(result.feed.entries, function(i, item) {
-							feed += '<li>\
-							<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
-							<p>' + item.contentSnippet + '</p>\
-							</li>';
-						});
-						feed += '</ul></div>';
-						$(feed).appendTo('#content');
-					}
-				}
-				var feed = new google.feeds.Feed("http://www.depauliaonline.com/se/the-depaulia-rss-1.2124399");
-				feed.load(feedLoaded);
 				$(slider_html).prependTo('#content');
+				app.loadDePauliaFeed();
 				$('#recentcomments').fadeIn();
             	break;
             case "schedule":
@@ -533,21 +505,7 @@ var app = {
 					$(html).appendTo('#content');
 					app.loadFlickrPhotoset('72157627899861179', 'slider');
                     app.loadPodcasts('sports');
-                    function feedLoaded(result) {
-						if (!result.error) {
-							var feed = '<div class="contentBox"><div class="bar">DePaul Athletics Feed</div><ul id="athletics_feed"><ul>';
-							$.each(result.feed.entries, function(i, item) {
-								feed += '<li>\
-								<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
-								<p>' + item.contentSnippet + '</p>\
-								</li>';
-							});
-							feed += '</ul></div>';
-							$(feed).appendTo('#content');
-						}
-					}
-					var feed = new google.feeds.Feed("http://www.depaulbluedemons.com/headline-rss.xml");
-					feed.load(feedLoaded);
+					app.loadSportsFeed();
             		break;
             case "media":
 				var video = '<div class="contentBox">\
@@ -678,6 +636,40 @@ var app = {
 		
         $.ajaxSetup({async: true, cache: false});
     },
+	loadDePauliaFeed: function() {
+		function feedLoaded(result) {
+			if (!result.error) {
+				var feed = '<div class="contentBox"><div class="bar">The DePaulia Feed</div><ul>';
+				$.each(result.feed.entries, function(i, item) {
+					feed += '<li>\
+					<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
+					<p>' + item.contentSnippet + '</p>\
+					</li>';
+				});
+				feed += '</ul></div>';
+				$(feed).appendTo('#content');
+			}
+		}
+		var feed = new google.feeds.Feed("http://www.depaulbluedemons.com/headline-rss.xml");
+		feed.load(feedLoaded);
+	},
+	loadSportsFeed: function() {
+		function feedLoaded(result) {
+			if (!result.error) {
+				var feed = '<div class="contentBox"><div class="bar">DePaul Athletics Feed</div><ul>';
+				$.each(result.feed.entries, function(i, item) {
+					feed += '<li>\
+					<a href="' + item.link + '" target="_blank"><p>' + item.title + '</p></a>\
+					<p>' + item.contentSnippet + '</p>\
+					</li>';
+				});
+				feed += '</ul></div>';
+				$(feed).appendTo('#content');
+			}
+		}
+		var feed = new google.feeds.Feed("http://www.depaulbluedemons.com/headline-rss.xml");
+		feed.load(feedLoaded);
+	},
 	panelNav: {
 		clearAllNavElements: function() {
 			$('#categories a').each( 

@@ -88,8 +88,6 @@
             </ul>
 		</section>
 		<footer><a href="/?s=full">Switch to Full Site</a></footer>
-		
-<%Server.Execute("/includes/googleAnalytics.aspx");%>
 <script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="nav.js"></script>
 <script type="text/javascript" src="bookmark_bubble.js"></script>
