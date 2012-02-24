@@ -8,6 +8,7 @@
 	<%Server.Execute("/includes/head.aspx");%>
 </head>
 <body title="media">
+	<div id="superBar"><div style="padding:12px;">DePaul Media Network <a href="http://communication.depaul.edu/">College of Communication</a><a href="http://depaul.edu/">DePaul University</a><div style="float:right;">Follow Us <a href="http://facebook.com/radiodepaul/">Facebook</a><a href="http://twitter.com/radiodepauldjs/">Twitter</a></div></div></div>
 	<div id="categories">
 		<a title="Radio DePaul 2011-2012" href="/media/gallery/?id=72157627638190531"><span>Radio DePaul 2011-2012</span></a>
 		<a title="Radio DePaul 2010-2011" href="/media/gallery/?id=72157627556017792"><span>Radio DePaul 2010-2011</span></a>
@@ -19,15 +20,14 @@
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
-		<div id="superBar"><p><a href="http://communication.depaul.edu/">College of Communication</a> | <a href="http://depaul.edu/">DePaul University</a></p></div>
 		<header>
  			<a href="/"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
 			<h1 id="title">Media</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
-			<div id="content"></div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
+			<div id="content"></div>
 		</div>
 	</div>
 	<%Server.Execute("/includes/footer.aspx");%>
