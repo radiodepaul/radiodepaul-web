@@ -689,7 +689,7 @@ a:hover.big div, a:hover.big li {
 }
 #showPersonTweet, #tweet {
 	padding:30px 0 20px 0;
-	background:#F6F2F5 url('/img/twitter.png') no-repeat 4px 4px;
+	background:#F6F2F5 url('https://s3.amazonaws.com/radiodepaul/img/twitter.png') no-repeat 4px 4px;
 }
 #tweet p, #tweet a:link, #tweet a:visited, #showPersonTweet p, #showPersonTweet a:link, #showPersonTweet a:visited {
 	font-weight:normal;

@@ -42,7 +42,7 @@ var people = {
 	                }
 	                if ( data['twitter'] != null ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
-						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
+						tweet = '<div id="showPersonTweet" class="contentBox right clear"><p>Loading tweet...</p></div>';
 	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
 	                if ( data['facebook'] != null ) {
