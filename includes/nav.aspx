@@ -6,5 +6,5 @@
 	<a title="sports"  href="/sports/" >Sports</a>
 	<a title="media"  href="/media/" >Media</a>
 	<a title="about"  href="/about/" >About</a>
-	<a title="player"  href="" onClick="app.launchPlayer()">Listen Now</a>
+	<a title="player" id="launchPlayer" href="javascript:void(0);">Listen Now</a>
 </nav>

@@ -1,78 +1,77 @@
 var people = {
     loadPerson: function() {
-        $('#content').append('<div id="show" style="display:none;"></div>');
-        $('#show').fadeIn();
-        var personId = $.url().param('id');
-        $.ajax({
-            url: "http://radiodepaul.herokuapp.com/people/" + personId + ".js",
-            dataType: "jsonp",
-            type: "GET",
-            processData: false,
-            contentType: "application/json",
-            success: function(data) {
-                if ( data != null ) {
-                    document.title = 'Radio DePaul | ' + data['name'];
-                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
+	    $('#content').append('<div id="person" style="display:none;"></div>');
+	    $('#person').fadeIn();
+	    var personId = $.url().param('id');
+	    $.ajax({
+	        url: "http://radiodepaul.herokuapp.com/people/" + personId + ".js",
+	        dataType: "jsonp",
+	        type: "GET",
+	        processData: false,
+	        contentType: "application/json",
+	        success: function(data) {
+	            if ( data != null ) {
+	                document.title = 'Radio DePaul | ' + data['name'];
+	                var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", tweet = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
 					window.disqus_title = 'Radio DePaul | ' + data['name'], window.disqus_identifier = 'Radio DePaul | ' + data['name'], window.disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
-                    name = '<h2 id="name">' + data['name'] + '</h2>';
+	                name = '<h2 id="name">' + data['name'] + '</h2>';
 
-                    photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
+	                photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
 
-                    if ( data['major'] && data['hometown'] && data['class_year'] != null ) {
-                        if (data['major'] != null) {
-                            major = '<li><p>Major</p><p>' + data['major'] + '</p></li>';
-                        }
-                        if (data['hometown'] != null) {
-                            hometown = '<li><p>Hometown</p><p>' + data['hometown'] + '</p></li>';
-                        }
-                        if (data['class_year'] != null) {
-                            class_year = '<li><p>Class Year</p><p>' + data['class_year'] + '</p></li>';
-                        }
-                        stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>' + major + hometown + class_year + '<ul></div>';
-                    }
-                    if (data['shows'].length > 0) {
-                        shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>';
-                        for (var i = 0; i < data['shows'].length; i++) {
-                                shows += '<a href="/show/?id=' + data['shows'][i]['show_id'] + '"><li style="height:50px;background: url(' + data['shows'][i]['show_photo_thumb'] + ') top right no-repeat;"><p>' + data['shows'][i]['show_title'] + '</p></li></a>';
-                        }
-                         shows += '</div>';
-                    }
-                    if (data['influences'] != null) {
-                        influences = '<div class="clear contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
-                    }
-                    if ( data['twitter'] != null ) {
-                        twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
-                    } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
+	                if ( data['major'] && data['hometown'] && data['class_year'] != null ) {
+	                    if (data['major'] != null) {
+	                        major = '<li><p>Major</p><p>' + data['major'] + '</p></li>';
+	                    }
+	                    if (data['hometown'] != null) {
+	                        hometown = '<li><p>Hometown</p><p>' + data['hometown'] + '</p></li>';
+	                    }
+	                    if (data['class_year'] != null) {
+	                        class_year = '<li><p>Class Year</p><p>' + data['class_year'] + '</p></li>';
+	                    }
+	                    stats = '<div class="right contentBox"><ul>' + major + hometown + class_year + '<ul></div>';
+	                }
+	                if (data['shows'].length > 0) {
+	                    shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>';
+	                    for (var i = 0; i < data['shows'].length; i++) {
+	                            shows += '<a href="/show/?id=' + data['shows'][i]['show_id'] + '"><li style="height:50px;background: url(' + data['shows'][i]['show_photo_thumb'] + ') top right no-repeat;"><p>' + data['shows'][i]['show_title'] + '</p></li></a>';
+	                    }
+	                     shows += '</div>';
+	                }
+	                if (data['influences'] != null) {
+	                    influences = '<div class="clear contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
+	                }
+	                if ( data['twitter'] != null ) {
+	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
+						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
+	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
-                    if ( data['facebook'] != null ) {
-                        facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
-                    } else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"></a></li>'; }
+	                if ( data['facebook'] != null ) {
+	                    facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
+	                } else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"></a></li>'; }
 
-                    if ( data['linkedin'] != null ) {
-                        linkedin = '<li class="linkedin"><a href="http://linkedin.com/' + data['linkedin'] + '" target="_blank"></a></li>';
-                    }
+	                if ( data['linkedin'] != null ) {
+	                    linkedin = '<li class="linkedin"><a href="http://linkedin.com/' + data['linkedin'] + '" target="_blank"></a></li>';
+	                }
 
-                    if ( data['email'] != null ) {
-                        email = '<li class="email"><a href="mailto:' + data['email'] + '"></a></li>';
-                    }
+	                if ( data['email'] != null ) {
+	                    email = '<li class="email"><a href="mailto:' + data['email'] + '"></a></li>';
+	                }
 
-                    social = '<div class="right contentBox"><div class="bar">Follow ' + data['name'] + '</div><ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul></div>';
+	                social = '<div class="right contentBox"><div class="bar">Follow ' + data['name'] + '</div><ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul></div>';
 
-                    if (data['bio'] != null) {
-                        bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
-                    }
+	                if (data['bio'] != null) {
+	                    bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
+	                }
 
-                    html = name + photo + social + stats + shows + influences + bio + disqus_embed;    
-                    
-                    $(html).prependTo('#content');
-                    $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js").done(function() {
-						console.log('Disqus Script Received');
-					});
-                }
-            }
-        });
-        
-    },
+	                html = name + photo + social + stats + tweet + shows + influences + bio + disqus_embed;    
+
+	                $(html).prependTo('#content');
+	                $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js");
+					app.loadTweets(data['twitter'],'showPersonTweet');
+	            }
+	        }
+	    });
+	},
     displayRandomPeople: function() {
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/people/random.js",
@@ -83,7 +82,7 @@ var people = {
             success: function(data) {
                 var html = "";
                 for (var i=0; i < data.length; i++) {
-                    html += '<a href="/person/?id=' + data[i]['id'] + '"><span>' + data[i]['name'] + '</span></a>';
+                    html += '<a href="/person/?id=' + data[i]['id'] + '"><span><p>' + data[i]['name'] + '</p></span></a>';
                 }
                 $(html).appendTo('#categories');
             }
@@ -97,7 +96,7 @@ var people = {
             processData: false,
             contentType: "application/json",
             success: function(data) {
-                var html = "";
+                var html = '<div class="contentBox"><div class="bar">Managers</div>';
                 for (var i = 0; i < data.length; i++) {
                     html += '<div class="box">\
                                 <a href="/person/?id=' + data[i]['id'] + '"><p>' + data[i]['name'] + '</p></a>\
@@ -109,7 +108,8 @@ var people = {
                                 <img src="' + data[i]['photo'] + '" />\
                                 </div>';
                 }
-                $(html).appendTo('#managers_list');
+				html += '</div>';
+                $(html).appendTo('#managers');
                 $('<div class="clear"></div>').appendTo('#managers_list');
             }
         });
@@ -143,6 +143,8 @@ var people = {
                     html += '<a class="big" href="/person/?id=' + data[i]['id'] + '"><div class="smallBar"><img src="' + data[i]['photo_thumb'] + '" />  <span>' + data[i]['name'] + '</span>' + shows + '</div></a>';
                 }
                 $(html).appendTo('#staff');
+				$("#staff a:odd div").css("background-color", "#F7FCFF");
+				$("#staff a:odd div").hover(function() {$(this).css("background-color", "#5e87a8").css("color", "#fff")}, function() {$(this).css("background-color", "#F7FCFF").css("color", "#272123")});
 				$('#staff').fadeIn();
             }
         });
@@ -156,6 +158,7 @@ var player = {
 		$('nav a').click(function() {
 		  player.navSelect($(this).attr('title'))
 		});
+		player.loadNowPlaying();
 	},
 	generateWebcam: function() {
 		var webcam_output = '';
@@ -185,6 +188,43 @@ var player = {
 			output = player.generateWebcam();
 			$('#webcam_embed').html(output);
 		}
+	},
+	loadNowPlaying: function() {
+		$.ajax({
+	        url: "http://radiodepaul.herokuapp.com/slots/now_playing.js",
+	        dataType: "jsonp",
+	        type: "GET",
+	        processData: false,
+	        contentType: "application/json",
+	        success: function(data) {		
+				var html = '';
+	            if ( data.length > 0 ) {
+	                var player = '<iframe src="http://p1.radiocdn.com/files/html/70f3d50f0e6f1273fab48fe82d29d7d24f7a91bc.html" frameborder="0" scrolling="no" height="40px" width="100px;"></iframe>', name = '<a href="/show/?id=' + data[0]['show']['id'] + '" target="_blank">' + data[0]['show']['title'] + '</a>', hosts = "", logo = '<img src="https://s3.amazonaws.com/radiodepaul/img/logo.png" />', photo = '<a href="/show/?id=' + data[0]['show']['id'] + '" target="_blank"><img src="' + data[0]['show']['photo'] + '" /></a>';
+	                if (data[0]['show']['genre'] != null) {
+	                    genre = '<p>Genre<p>' + data[0]['show']['genre'] + '</p>	';
+	                }
+	                if (data[0]['show']['hosts'].length > 0) {
+	                    hosts = "<p>Hosts</p>"
+	                }
+	                for (var j = 0; j < data[0]['show']['hosts'].length; j++) {
+	                    if (j != data[0]['show']['hosts'].length - 1) {
+	                        if (data[0]['show']['hosts'].length > 2) {
+	                            hosts += " " + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>,';
+	                        } else { hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
+	                    } else if ( data[0]['show']['hosts'].length == 1) {
+	                        hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>';
+	                    } else { hosts += ' and ' + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
+	                }
+					html += '<div id="player_control" class="contentBox"><div class="bar">You&#39;re Listening to ' + name + ' on Radio DePaul</div>';
+	                html += photo + logo + player + '<div id="stats">' + genre + hosts + '</div></div>';
+	                $(html).prependTo('#player');
+	            }
+	            else { 
+	                $("<p>Data Unavailable</p>").prependTo('#player'); 
+	            }
+	        }
+	    });
+		
 	}
 };
 var shows = {
@@ -215,168 +255,166 @@ var shows = {
                     html += '<a class="big" href="/show/?id=' + data[i]['id'] + '"><div class="smallBar"><img src="' + data[i]['photo_thumb'] + '" />  <span>' + data[i]['title'] + '</span>' + hosts + '</div></a>';
                 }
                 $(html).appendTo('#shows');
+				$("#shows a:odd div").css("background-color", "#F7FCFF");
+				$("#shows a:odd div").hover(function() {$(this).css("background-color", "#5e87a8").css("color", "#fff")}, function() {$(this).css("background-color", "#F7FCFF").css("color", "#272123")});
                 $('#shows').fadeIn();
 				
             }
         });
     },
     loadShow: function() {
-        $('#content').append('<div id="show" style="display:none;"></div>');
-        $('#show').fadeIn();
-        var showId = $.url().param('id');
-        $.ajax({
-            url: "http://radiodepaul.herokuapp.com/shows/" + showId + ".js",
-            dataType: "jsonp",
-            type: "GET",
-            processData: false,
-            contentType: "application/json",
-            success: function(data) {
-                if ( data != null ) {
-                        document.title = 'Radio DePaul | ' + data['title'];
-                        var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>';
-                        title = '<h2 id="name">' + data['title'] + '</h2>';
+	    $('#content').append('<div id="show" style="display:none;"></div>');
+	    $('#show').fadeIn();
+	    var showId = $.url().param('id');
+	    $.ajax({
+	        url: "http://radiodepaul.herokuapp.com/shows/" + showId + ".js",
+	        dataType: "jsonp",
+	        type: "GET",
+	        processData: false,
+	        contentType: "application/json",
+	        success: function(data) {
+	            if ( data != null ) {
+	                    document.title = 'Radio DePaul | ' + data['title'];
+	                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", tweet = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
 						window.disqus_title = 'Radio DePaul | ' + data['title'], window.disqus_identifier = 'Radio DePaul | ' + data['title'], window.disqus_url = 'http://radio.depaul.edu/show/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
+						title = '<h2 id="name">' + data['title'] + '</h2>';
 
-                        var photo_url = "'" + data['photo_medium'] + "'";
+	                    photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
 
-                        photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
+	                    stats = '<div class="right contentBox"><ul>';
 
-                        stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>';
+	                    if (data['genre'] != null) {
+	                        genre = '<li><p>Genre</p><p>' + data['genre'] + '</p></li>';
+	                    }
 
-                        if (data['genre'] != null) {
-                            genre = '<li><p>Genre</p><p>' + data['genre'] + '</p></li>';
-                        }
+	                    if (data['hosts'].length > 0) {
+	                        hosts = '<div class="contentBox right"><div class="bar">Hosted By</div><ul>';
+	                        for (var i = 0; i < data['hosts'].length; i++) {
+	                                hosts += '<a href="/person/?id=' + data['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data['hosts'][i]['name'] + '</p></li></a>';
+	                        }
+	                         hosts += '</ul></div>';
+	                    }
 
-                        if (data['hosts'].length > 0) {
-                            hosts = '<div class="contentBox right"><div class="bar">Hosted By</div><ul>'
-                            for (var i = 0; i < data['hosts'].length; i++) {
-                                    hosts += '<a href="/person/?id=' + data['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data['hosts'][i]['name'] + '</p></li></a>';
-                            }
-                             hosts += '</ul></div>';
-                        }
+	                    if (data['scheduled_slots'].length > 0) {
+	                        slots = '<li><p>Scheduled At</p>'
+	                        for (var i = 0; i < data['scheduled_slots'].length; i++) {
+	                                slots += '<p>' + data['scheduled_slots'][i]['slot'] + '</p>';
+	                        }
+	                         slots += '</li>';
+	                    }
+	                    stats += genre + slots + '</ul></div>';
 
-                        if (data['scheduled_slots'].length > 0) {
-                            slots = '<li><p>Scheduled At:</p>'
-                            for (var i = 0; i < data['scheduled_slots'].length; i++) {
-                                    slots += '<p>' + data['scheduled_slots'][i]['slot'] + '</p>';
-                            }
-                             slots += '</li></div>';
-                        }
+	                if ( data['twitter'] != null ) {
+	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
+						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
+	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepauldjs" target="_blank"></a></li>'; }
 
-                        stats += genre + slots + '</ul></div>';
+	                if ( data['facebook'] != null ) {
+	                    facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
+	                    facebook_fanbox = '<div class="right contentBox"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="340" height="272" show_faces="true" border_color="#F6F2F5" stream="true" header="false"></fb:like-box></div>';
+	                } else { 
+	                        facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>';
+	                        facebook_fanbox = '<div class="right contentBox" style="height:320px"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="330" height="290" show_faces="true" border_color="#F6F2F5" stream="false" header="false"></fb:like-box></div>';
+	                    }
 
-                    if ( data['twitter'] != null ) {
-                        twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
-                    } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepauldjs" target="_blank"></a></li>'; }
+	                if ( data['email'] != null ) {
+	                    email = '<li class="email"><a href="mailto:' + data['email'] + '" target="_blank"></a></li>';
+	                }
 
-                    if ( data['facebook'] != null ) {
-                        facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
-                        facebook_fanbox = '<div class="right contentBox" style="height:300px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="320" height="272" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
-                    } else { 
-                            facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>';
-                            facebook_fanbox = '<div class="right contentBox" style="height:320px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="320" height="290" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
-                        }
+	                social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
-                    if ( data['email'] != null ) {
-                        email = '<li class="email"><a href="mailto:' + data['email'] + '" target="_blank"></a></li>';
-                    }
+	                if (data['long_description'] != null) {
+	                    description = '<div class="contentBox left clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
+	                }
 
-                    social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
+	                if (data['podcasts'].length > 0) {
+	                    podcasts = '<div class="contentBox clear">\
+	                        <div class="bar">Podcasts</div>\
+	                        <div id="jp_container_N" class="jp-audio">\
+	                            <div class="jp-type-playlist">\
+	                                <div id="jquery_jplayer_N" class="jp-jplayer"></div>\
+	                                <div class="jp-gui">\
+	                                    <div class="jp-interface">\
+	                                        <div class="jp-progress">\
+	                                            <div class="jp-seek-bar">\
+	                                                <div class="jp-play-bar"></div>\
+	                                            </div>\
+	                                        </div>\
+	                                        <div class="jp-current-time"></div>\
+	                                        <div class="jp-duration"></div>\
+	                                        <div class="jp-controls-holder">\
+	                                            <ul class="jp-controls">\
+	                                                <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>\
+	                                                <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>\
+	                                                <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>\
+	                                                <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>\
+	                                                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>\
+	                                                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>\
+	                                                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>\
+	                                                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>\
+	                                            </ul>\
+	                                            <div class="jp-volume-bar">\
+	                                                <div class="jp-volume-bar-value"></div>\
+	                                            </div>\
+	                                            <ul class="jp-toggles">\
+	                                                <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>\
+	                                                <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>\
+	                                                <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>\
+	                                                <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>\
+	                                                <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>\
+	                                                <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>\
+	                                            </ul>\
+	                                        </div>\
+	                                        <div class="jp-title">\
+	                                            <ul>\
+	                                                <li></li>\
+	                                            </ul>\
+	                                        </div>\
+	                                    </div>\
+	                                </div>\
+	                                <div class="jp-playlist">\
+	                                    <ul>\
+	                                        <!-- The method Playlist.displayPlaylist() uses this unordered list -->\
+	                                        <li></li>\
+	                                    </ul>\
+	                                </div>\
+	                                <div class="jp-no-solution">\
+	                                    <span>Update Required</span>\
+	                                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.\
+	                                </div>\
+	                            </div>\
+	                        </div>\
+	                    </div>';
+	                }
 
-                    if (data['long_description'] != null) {
-                        description = '<div class="contentBox left clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
-                    }
+	                html = title + photo + social + stats + tweet + hosts + description + facebook_fanbox + podcasts + disqus_embed;    
+	                $(html).appendTo('#content');
+					app.loadTweets(data['twitter'],'showPersonTweet');
+	                var get_playlist = new Array();
+	                for (var i = 0; i < data['podcasts'].length; i++) {
+	                    var x = {};
+	                    x['title'] = data['podcasts'][i]['title'];
+	                    x['artist'] = data['podcasts'][i]['contributors'];
+	                    x['mp3'] = data['podcasts'][i]['file_url'];
+	                    get_playlist.push(x);
+	                }
 
-                    if (data['podcasts'].length > 0) {
-                        podcasts = '<div class="contentBox clear">\
-                            <div class="bar">Podcasts</div>\
-                            <div id="jp_container_N" class="jp-audio">\
-                                <div class="jp-type-playlist">\
-                                    <div id="jquery_jplayer_N" class="jp-jplayer"></div>\
-                                    <div class="jp-gui">\
-                                        <div class="jp-interface">\
-                                            <div class="jp-progress">\
-                                                <div class="jp-seek-bar">\
-                                                    <div class="jp-play-bar"></div>\
-                                                </div>\
-                                            </div>\
-                                            <div class="jp-current-time"></div>\
-                                            <div class="jp-duration"></div>\
-                                            <div class="jp-controls-holder">\
-                                                <ul class="jp-controls">\
-                                                    <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>\
-                                                    <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>\
-                                                    <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>\
-                                                    <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>\
-                                                    <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>\
-                                                    <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>\
-                                                    <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>\
-                                                    <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>\
-                                                </ul>\
-                                                <div class="jp-volume-bar">\
-                                                    <div class="jp-volume-bar-value"></div>\
-                                                </div>\
-                                                <ul class="jp-toggles">\
-                                                    <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>\
-                                                    <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>\
-                                                    <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>\
-                                                    <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>\
-                                                    <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>\
-                                                    <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>\
-                                                </ul>\
-                                            </div>\
-                                            <div class="jp-title">\
-                                                <ul>\
-                                                    <li></li>\
-                                                </ul>\
-                                            </div>\
-                                        </div>\
-                                    </div>\
-                                    <div class="jp-playlist">\
-                                        <ul>\
-                                            <!-- The method Playlist.displayPlaylist() uses this unordered list -->\
-                                            <li></li>\
-                                        </ul>\
-                                    </div>\
-                                    <div class="jp-no-solution">\
-                                        <span>Update Required</span>\
-                                        To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.\
-                                    </div>\
-                                </div>\
-                            </div>\
-                        </div>';
-                    }
+	                var myPlaylist = new jPlayerPlaylist({
+	                    jPlayer: "#jquery_jplayer_N",
+	                    cssSelectorAncestor: "#jp_container_N"
+	                }, get_playlist, {
+	                        playlistOptions: {
+	                        enableRemoveControls: false
+	                    },
+	                        swfPath: "/js",
+		                    supplied: "mp3"
+	                });
+	                $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js");
 
-                    html = title + photo + social + stats + hosts + description + facebook_fanbox + podcasts + disqus_embed;    
-                    $(html).appendTo('#content');
-
-                    var get_playlist = new Array();
-                    for (var i = 0; i < data['podcasts'].length; i++) {
-                        var x = {};
-                        x['title'] = data['podcasts'][i]['title'];
-                        x['artist'] = data['podcasts'][i]['contributors'];
-                        x['mp3'] = data['podcasts'][i]['file_url'];
-                        get_playlist.push(x)
-                    }
-
-                    var myPlaylist = new jPlayerPlaylist({
-                        jPlayer: "#jquery_jplayer_N",
-                        cssSelectorAncestor: "#jp_container_N"
-                    }, get_playlist, {
-                            playlistOptions: {
-                            enableRemoveControls: false
-                        },
-                            swfPath: "/js",
-                            supplied: "mp3"
-                    });
-                    $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js").done(function() {
-						console.log('Disqus Script Received');
-					});
-					
-                }
-            }
-        });
-    },
+	            }
+	        }
+	    });
+	},
     displayRandomShows: function() {
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/shows/random.js",
@@ -387,14 +425,14 @@ var shows = {
             success: function(data) {
                 var html = "";
                 for (var i=0; i < data.length; i++) {
-                    html += '<a href="/show/?id=' + data[i]['id'] + '"><span>' + data[i]['title'] + '</span></a>';
+                    html += '<a href="/show/?id=' + data[i]['id'] + '"><span><p>' + data[i]['title'] + '</p></span></a>';
                 }
                 $(html).appendTo('#categories');
             }
         });
     },
     loadSchedule: function() {
-        $('#content').append('<div id="schedule" style="display:none;"><div class="bar">Winter 2012</div></div>');
+        $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Winter 2012</div></div>');
         $('#schedule').fadeIn();
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/slots/current.js",
@@ -453,9 +491,8 @@ var app = {
     loadPageContent : function() {
         var currentPage = $('body').attr('title'), w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight, padding = $('header').height();
         $('nav a[title="' + currentPage + '"]').addClass('selected');
-        $('#main').css('min-height', y - padding);
-        $('html').css('html', 'background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e9e9e3), to(#dadad0));background: -webkit-linear-gradient(top, #e9e9e3, #dadad0);background: -moz-linear-gradient(top, #e9e9e3, #dadad0);background: -ms-linear-gradient(top, #e9e9e3, #dadad0);background: -o-linear-gradient(top, #e9e9e3, #dadad0);');
 		$('#categories a').click(app.panelNav.navSelect);
+		app.setupLaunchPlayer();
         switch (currentPage) {
             case "home":
 				var siteRequested = $.url().param('s');
@@ -471,8 +508,8 @@ var app = {
 					</div>\
 					<img src="https://s3.amazonaws.com/radiodepaul/css/slides/example-frame.png" alt="Frame" id="frame" />\
 				</div>';
-				app.loadStationNews();
-				app.loadStationEvents();
+				if ($.browser.msie  && parseInt($.browser.version, 10) === 8) {
+				} else { app.loadStationEvents();app.loadStationNews(); }
 				shows.displayRandomShows();
 				app.loadFlickrPhotoset('72157627533487017', 'slider');
 				$(slider_html).prependTo('#content');
@@ -587,42 +624,37 @@ var app = {
 				$(html).appendTo('#content');
 			break;
 			case "player":
-				newsPostsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-				newsPostsParse = $.parseJSON(newsPostsGet);
-				for (var i = 0; i < 1; i++) {
-					var news_post = newsPostsParse[i];
-					var html = '<li>\
-									<a href="/station_news/post/?id=' + news_post._id.$oid + '" target="_blank"><p>' + news_post.headline + '</p></a>\
-									<p>' + news_post.introduction + '</p>\
-								</li>';
-					$(html).appendTo('#news');
-				}
 				player.setupPlayer();
 			break;
             default:
         }
     },
-    launchPlayer : function(){
-        newwindow = window.open('/player.aspx','Radio DePaul Player','height=371,width=600,toolbar=no,scrollbars=no,location=no,status=no,menubar=no,resizeable=no');
+    setupLaunchPlayer : function() {
+		$('nav #launchPlayer').click(function() { $.popupWindow('/player.aspx', { height: 371,width: 600,toolbar: false,scrollbars: false,status: false,resizable: false,left: 100,top: 100,center: false,createNew: true,location: false,menubar: false });});
     },
     loadGlobalScripts: function() {
         $.ajaxSetup({async: false, cache: false});
         $.getScript('https://s3.amazonaws.com/radiodepaul/js/activity-indicator.js').done(function() {
 			app.startActivityIndicator('#content');
 			$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.url.js').done(function() {
-				$.getScript('https://s3.amazonaws.com/radiodepaul/js/slides.min.jquery.js').done(function() {
-					$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.easing-1.3.pack.js').done(function() {
-						$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.jplayer.min.js').done(function() {
-							$.getScript('https://s3.amazonaws.com/radiodepaul/js/jplayer.playlist.min.js').done(function() {
-			               	 	$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.simpleWeather-1.8.min.js').done(function() {
-									$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.fancybox-1.3.4.pack.js').done(function() {
-						                $.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.ga.js').done(function() {
-											$.getScript('https://s3.amazonaws.com/radiodepaul/js/jqclock_201.js').done(function() {
-												app.setupAjaxCallbacks();
-												app.loadPageContent();
-												app.loadNowPlaying();
-												app.loadClockAndWeather();
-												app.loadGoogleAnalytics();
+				$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.popupwindow.js').done(function() {
+					$.getScript('https://s3.amazonaws.com/radiodepaul/js/slides.min.jquery.js').done(function() {
+						$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.easing-1.3.pack.js').done(function() {
+							$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.jplayer.min.js').done(function() {
+								$.getScript('https://s3.amazonaws.com/radiodepaul/js/jplayer.playlist.min.js').done(function() {
+				               	 	$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.simpleWeather-1.8.min.js').done(function() {
+										$.getScript('http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js').done(function() {
+											$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.fancybox-1.3.4.pack.js').done(function() {
+								                $.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.ga.js').done(function() {
+													$.getScript('https://s3.amazonaws.com/radiodepaul/js/jqclock_201.js').done(function() {
+														app.setupAjaxCallbacks();
+														app.loadPageContent();
+														app.loadNowPlaying();
+														app.loadClockAndWeather();
+														app.loadTweets('radiodepauldjs','tweet');
+														app.loadGoogleAnalytics();
+													});
+												});
 											});
 										});
 									});
@@ -650,7 +682,7 @@ var app = {
 				$(feed).appendTo('#content');
 			}
 		}
-		var feed = new google.feeds.Feed("http://www.depaulbluedemons.com/headline-rss.xml");
+		var feed = new google.feeds.Feed("http://www.depauliaonline.com/se/the-depaulia-rss-1.2124399");
 		feed.load(feedLoaded);
 	},
 	loadSportsFeed: function() {
@@ -688,6 +720,7 @@ var app = {
 			navItem = $(this).attr('title');
 			$('#' + navItem).show();
 			$('.' + navItem).show();
+			$('#content div h1:first').text(navItem);
 			scroll(0,0);
 			//rightColumnHeight = $('#' + navItem).outerHeight();
 			//$('#wrapper').css("height", rightColumnHeight);
@@ -698,6 +731,7 @@ var app = {
 		    $('div#categories a[title="' + n +'"]').addClass('selected'); 
 			$('#' + n).show();
 			$('.' + n).show();
+			$('#content div h1:first').text(n);
 			scroll(0,0);
 			//rightColumnHeight = $('#' + navItem).outerHeight();
 			//$('#wrapper').css("height", rightColumnHeight);
@@ -708,22 +742,19 @@ var app = {
     },
     setupAjaxCallbacks: function () {
         $('body').ajaxStart(function () {
-            //console.log('Ajax started');
             $('#ajax-status').show().text("Loading...");
           });
           $('body').ajaxStop(function () {
             $('#ajax-status').fadeOut();
-            //console.log('Ajax stopped');
           });
           $('body').ajaxError(function (event, xhr, ajaxOptions, thrownError) {
             if (xhr.status === 401) {
               alert("Sorry, " + xhr.responseText.toLowerCase());
             }
-            console.log("XHR Response: " + JSON.stringify(xhr));
           });
     },
     startActivityIndicator: function(location){
-        $('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 50});
+        $('#content').activity({segments: 12, steps: 3, width: 10, align: 'center', valign: 'top', space: 6, length: 30, color: '#5E87A8', speed: 1.5, padding: 50});
     },
     stopActivityIndicator: function(location){
         $(location).activity(false);
@@ -765,27 +796,18 @@ var app = {
             success: function(data) {
 				var html = '<div id="now_playing" class="contentBox"><div class="bar">On Air Now</div><ul>';
                 if ( data.length > 0 ) {
-                    var name = '<a href="/show/?id=' + data[0]['show']['id'] + '"><li><p style="text-align:center;">' + data[0]['show']['title'] + '</p></li>';
-                    var photo = '<li><img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></li></a>';
+                    var name = '<a href="/show/?id=' + data[0]['show']['id'] + '"><p style="text-align:center;">' + data[0]['show']['title'] + '</p>';
+                    var photo = '<img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></a>';
                     if (data[0]['show']['genre'] != null) {
-                        genre = '<li><p>Genre<p>' + data[0]['show']['genre'] + '</p></li>';
+                        genre = '<p>' + data[0]['show']['genre'] + '</p>';
                     }
-                    var hosts = "";
-                    if (data[0]['show']['hosts'].length > 0) {
-                        hosts = "<li><p>Hosts</p><p>"
+                    var hosts = "<ul>";
+                    for (var i = 0; i < data[0]['show']['hosts'].length; i++) {
+						hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data[0]['show']['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data[0]['show']['hosts'][i]['name'] + '</p></li></a>';
                     }
-                    for (var j = 0; j < data[0]['show']['hosts'].length; j++) {
-                        if (j != data[0]['show']['hosts'].length - 1) {
-                            if (data[0]['show']['hosts'].length > 2) {
-                                hosts += " " + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>,';
-                            } else { hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
-                        } else if ( data[0]['show']['hosts'].length == 1) {
-                            hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>';
-                        } else { hosts += ' and ' + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
-                    }
-                    hosts += '</p></li>';
+                    hosts += '</ul>';
 
-                    html += name + photo + genre + hosts + '</ul>';    
+                    html += name + photo + genre + hosts + '</ul></div>';    
                     $(html).prependTo('#sidebar');
                 }
                 else { 
@@ -824,6 +846,16 @@ var app = {
 		$(html).prependTo('#content');
 			
     },
+	loadTweets: function(username,id){
+		getTwitters(id, { 
+			id: username, 
+			enableLinks: true, 
+			ignoreReplies: true, 
+			clearContents: true,
+			newwindow: true,
+			template: '<p>"%text%"</p><a class="tweetTime" href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
+		});
+	},
     loadSlides: function(){
         $('#slides').slides({
             preload: true,
@@ -935,7 +967,7 @@ var app = {
 	                        x['title'] = data[i]['title'];
 	                        x['artist'] = data[i]['contributors'];
 	                        x['mp3'] = data[i]['file_url']
-	                        get_playlist.push(x)
+	                        get_playlist.push(x);
 	                    }
 	                }
 	                var myPlaylist = new jPlayerPlaylist({
@@ -955,11 +987,14 @@ var app = {
 	loadFlickrPhotoset: function(photoset_id, type) {
 		$.ajaxSetup({async: false, cache: false});
 		if (type == 'slider') {
-        	$.getScript('https://s3.amazonaws.com/radiodepaul/js/flickr.api.grab.slider.js');
-        	$.getScript('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=' + photoset_id + '&api_key=8ba7f50062d534406009b45aeb73eb90').done(function() { app.loadSlides();app.setupFancyBox(); });
+        	$.getScript('https://s3.amazonaws.com/radiodepaul/js/flickr.api.grab.slider.js').done(function(){
+				$.getScript('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=' + photoset_id + '&api_key=8ba7f50062d534406009b45aeb73eb90').done(function() { app.loadSlides();app.setupFancyBox(); });
+			});
+        	
 		} else if (type == 'gallery') {
-			$.getScript('https://s3.amazonaws.com/radiodepaul/js/flickr.api.grab.js');
-        	$.getScript('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=' + photoset_id + '&api_key=8ba7f50062d534406009b45aeb73eb90').done(function() { app.setupFancyBox(); });
+			$.getScript('https://s3.amazonaws.com/radiodepaul/js/flickr.api.grab.js').done(function(){
+				$.getScript('http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=' + photoset_id + '&api_key=8ba7f50062d534406009b45aeb73eb90').done(function() { app.setupFancyBox(); });
+			});
 		}
 		$.ajaxSetup({async: true, cache: false});
 	}
@@ -971,7 +1006,7 @@ function googleAPIsLoaded() {
     });
 }
 function loadGoogleAPIs() {
-    google.load("jquery", "1");
+    google.load("jquery", "1", {uncompressed:true} );
 	google.load("swfobject", "2");
 	google.load("feeds", "1");
     google.setOnLoadCallback(googleAPIsLoaded);

@@ -5,7 +5,6 @@ function jsonFlickrApi(rsp) {
  if (rsp.stat != "ok"){
   return;
  }
- 
  var s = "";
  
  for (var i=0; i < rsp.photoset.photo.length; i++) {
@@ -28,6 +27,5 @@ function jsonFlickrApi(rsp) {
   
   //s +=  '<li><a href="' + p_url + '">' + '<img alt="'+ photo.title + '"src="' + t_url + '"/>' + '</a><p>Untitled</p><p>2007</p></li>';
   $('div.slides_container').append('<div class="slide"><a title="' + photo.title + '" href="' + b_url + '" class="fancybox" rel="gallery" ><img src="' + z_url + '" alt="' + photo.title + '" title="' + photo.title + '" width="600px "/></a><div class="caption"><p>' + photo.title + '</p></div></div>');
-
  }
 }
