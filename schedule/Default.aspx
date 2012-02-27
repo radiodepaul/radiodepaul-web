@@ -8,15 +8,15 @@
 	<%Server.Execute("/includes/head.aspx");%>
 </head>
 <body title="schedule">
-	<div id="superBar"><div style="padding:12px;">DePaul Media Network <a href="http://communication.depaul.edu/">College of Communication</a><a href="http://depaul.edu/">DePaul University</a><div style="float:right;">Follow Us <a href="http://facebook.com/radiodepaul/">Facebook</a><a href="http://twitter.com/radiodepauldjs/">Twitter</a></div></div></div>
+	<div id="superBar"><div style="padding:12px;">DePaul Media Network <a href="http://dab.depaul.edu/">DePaul Activities Board (DAB)</a><a href="http://www.depauliaonline.com/">The DePaulia</a><a href="http://communication.depaul.edu/Student Work/Good Day DePaul/">Good Day DePaul</a><div style="float:right;">Follow Us <a href="http://facebook.com/radiodepaul/">Facebook</a><a href="http://twitter.com/radiodepauldjs/">Twitter</a></div></div></div>
 	<div id="categories">
-		<a title="monday"><span>Monday</span></a>
-		<a title="tuesday"><span>Tuesday</span></a>
-		<a title="wednesday"><span>Wednesday</span></a>
-		<a title="thursday"><span>Thursday</span></a>
-		<a title="friday"><span>Friday</span></a>
-		<a title="saturday"><span>Saturday</span></a>
-		<a title="sunday"><span>Sunday</span></a>
+		<a title="monday"><span><p>Monday</p></span></a>
+		<a title="tuesday"><span><p>Tuesday</p></span></a>
+		<a title="wednesday"><span><p>Wednesday</p></span></a>
+		<a title="thursday"><span><p>Thursday</p></span></a>
+		<a title="friday"><span><p>Friday</p></span></a>
+		<a title="saturday"><span><p>Saturday</p></span></a>
+		<a title="sunday"><span><p>Sunday</p></span></a>
 	</div>
 	<div id="page">
 		<div id="clock"></div>

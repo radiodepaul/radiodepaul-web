@@ -507,7 +507,6 @@ header h1 {
 }
 #page {
 	margin:0 auto;
-	padding-left: 112.75px;
 	z-index:1;
 	position:relative;
 }
@@ -526,8 +525,11 @@ header h1 {
 #categories a, #categories span {
 	display:block;
 	height:30px;
-	line-height:30px;
 	-webkit-transition:background-color .6s ease-out;
+}
+#categories a span p {
+	line-height:30px;
+	margin-right:60px;
 }
 #categories span {
 	width:1082.75px;
@@ -562,9 +564,11 @@ header h1 {
 }
 #content {
 	border-top:solid 8px #272123;
-	width:674px;
+	width:700px;
 	position:relative;
-	padding:10px;
+	padding:10px 0;
+	min-height:1000px;
+	bottom:0;
 }
 .contentLeft, .contentRight {
 	width:300px;
@@ -588,8 +592,7 @@ header h1 {
 	width:250px;
 	position:absolute;
 	right:0;
-	float:right;
-	padding:10px 0 0 20px;
+	padding:10px 0;
 }
 #now_playing img {
 	border:dotted 1px #5e87a8;
@@ -599,7 +602,7 @@ header h1 {
 }
 .contentBox li p:first-child {
 	font-weight:bold;
-	font-size:16px;
+	font-size:14px;
 }
 .contentBox li p {
 	list-style:none;
@@ -609,7 +612,7 @@ header h1 {
 }
 .contentBox p {
 	line-height:24px;
-	font-size:16px;
+	font-size:12px;
 	padding:10px;
 }
 .contentBox a:hover  {
@@ -668,9 +671,8 @@ div.smallBar a:hover {
 	color:#5e87a8;
 }
 a:link.big div, a:visited.big div, a:link.big li, a:visited.big li {
-	background-color:none;
 	color:#272123;
-	font-size:16px;
+	font-size:14px;
 	height:50px;
 }
 a:hover.big div, a:hover.big li {
@@ -685,9 +687,21 @@ a:hover.big div, a:hover.big li {
 	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
 }
+#showPersonTweet, #tweet {
+	padding:30px 0 20px 0;
+	background:#F6F2F5 url('/img/twitter.png') no-repeat 4px 4px;
+}
+#tweet p, #tweet a:link, #tweet a:visited, #showPersonTweet p, #showPersonTweet a:link, #showPersonTweet a:visited {
+	font-weight:normal;
+	font-size:10px;
+	line-height:1.6em;
+}
+#tweet a.tweetTime, #showPersonTweet a.tweetTime {
+	position:absolute;
+	right:20px;
+}
 a#friend img {
 	width:250px;
-	margin-top:4px;
 }
 a#friend {
 	background-color:#fff;
@@ -745,6 +759,18 @@ footer #desc {
 	width:400px;
 	border-top:1px solid #fff;
 }
+footer a:link#apply, footer a:visited#apply {
+	padding:10px;
+	position:absolute;
+	bottom:20px;
+	left:20px;
+	background-color:#cf671c;
+	color:#000;
+}
+footer a#apply:hover {
+	background-color:#5e87a8;
+	color:#fff;
+}
 footer #desc p {
 	padding-left:20px;
 }
@@ -796,7 +822,7 @@ footer .bar {
 .jqclock {
 	position:absolute;
 	right:40px;
-	top:20px;
+	top:30px;
 }
 .clocktime {
 	font-size:14px;
@@ -806,7 +832,7 @@ footer .bar {
 #weather {
 	position:absolute;
 	right:40px;
-	top:-20px;
+	top:-10px;
 	width:200px;
 }
 #weather p {
@@ -828,14 +854,7 @@ footer .bar {
 	width:100%;
 }
 #schedule, #shows {
-	background-color:#F6F2F5;
-	border:1px solid #999;
-	min-height:140px;
 	width:100%;
-	-o-box-shadow: 0 3px 4px rgba(0,0,0,.5);
-	-moz-box-shadow: 0 3px 4px rgba(0,0,0,.5);
-	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
-	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 }
 #schedule ul li {
 	width:100%;
@@ -867,32 +886,33 @@ footer .bar {
 #schedule ul li p.startTime {
 	top:34px;
 	left:2px;
+	font-weight:bold;
 	position:absolute;
 	text-align:center;
 }
 #schedule ul li p.endTime {
 	bottom:4px;
+	font-weight:bold;
 	left:2px;
 	position:absolute;
 	text-align:center;
 }
 #schedule ul li p.showName {
 	top:0;
-	height:30px;
-	line-height:34px;
-	font-size:16px;
-	width:530px;
+	height:22px;
+	line-height:28px;
+	font-size:12px;
+	width:560px;
 	left:0;
 	position:absolute;
 	border-bottom:1px dotted #272123;
 	font-weight:bold;
-	text-indent:5px;
 }
 #schedule ul li p.showName span {
 	font-weight:normal;
 }
 #schedule ul li p.showDJs {
-	top:40px;
+	top:30px;
 	height:30px;
 	width:390px;
 	left:130px;
@@ -909,8 +929,8 @@ footer .bar {
 #schedule ul li p.showBio {
 	position:absolute;
 	left:130px;
-	bottom:10px;
-	font-size:14px;
+	bottom:0;
+	font-size:12px;
 	width:400px;
 	line-height:14px;
 }

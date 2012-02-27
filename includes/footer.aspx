@@ -1,11 +1,12 @@
 <footer>
 	<div class="bar">This site was created with love and care by <a href="http://devonblandin.com/">Devon Blandin</a></div>
+	
 	<div>
 		<div id="desc" class="left">
 			<div class="bar">Who We Are</div>
 			<p>Located in the heart of Chicago, DePaul University's Radio DePaul is an award-winning student radio station that features a vibrant blend of music, talk, news, and sports programming.</p>
-			<p><a class="banner fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0"></a></p>
 		</div>
+		<a id="apply" class="fancybox iframe" href="https://docs.google.com/spreadsheet/viewform?hl=en_US&formkey=dGFIeFNRMGNkbTRDMjBPX1RyOEQwd0E6MA..#gid=0"><p>Radio DePaul Application</p></a>
 		<div id="studentMedia" class="right">
 			<div class="bar">Other Student Media Channels</div>
 			<ul>

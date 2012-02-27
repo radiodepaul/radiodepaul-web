@@ -12,7 +12,7 @@ var people = {
 	        success: function(data) {
 	            if ( data != null ) {
 	                document.title = 'Radio DePaul | ' + data['name'];
-	                var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
+	                var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", tweet = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
 					window.disqus_title = 'Radio DePaul | ' + data['name'], window.disqus_identifier = 'Radio DePaul | ' + data['name'], window.disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
 	                name = '<h2 id="name">' + data['name'] + '</h2>';
 
@@ -28,7 +28,7 @@ var people = {
 	                    if (data['class_year'] != null) {
 	                        class_year = '<li><p>Class Year</p><p>' + data['class_year'] + '</p></li>';
 	                    }
-	                    stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>' + major + hometown + class_year + '<ul></div>';
+	                    stats = '<div class="right contentBox"><ul>' + major + hometown + class_year + '<ul></div>';
 	                }
 	                if (data['shows'].length > 0) {
 	                    shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>';
@@ -42,6 +42,7 @@ var people = {
 	                }
 	                if ( data['twitter'] != null ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
+						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
 	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
 	                if ( data['facebook'] != null ) {
@@ -62,10 +63,11 @@ var people = {
 	                    bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
 	                }
 
-	                html = name + photo + social + stats + shows + influences + bio + disqus_embed;    
+	                html = name + photo + social + stats + tweet + shows + influences + bio + disqus_embed;    
 
 	                $(html).prependTo('#content');
 	                $.getScript("http://disqus.com/forums/" + disqus_shortname + "/embed.js");
+					app.loadTweets(data['twitter'],'showPersonTweet');
 	            }
 	        }
 	    });
@@ -80,7 +82,7 @@ var people = {
             success: function(data) {
                 var html = "";
                 for (var i=0; i < data.length; i++) {
-                    html += '<a href="/person/?id=' + data[i]['id'] + '"><span>' + data[i]['name'] + '</span></a>';
+                    html += '<a href="/person/?id=' + data[i]['id'] + '"><span><p>' + data[i]['name'] + '</p></span></a>';
                 }
                 $(html).appendTo('#categories');
             }
@@ -94,7 +96,7 @@ var people = {
             processData: false,
             contentType: "application/json",
             success: function(data) {
-                var html = "";
+                var html = '<div class="contentBox"><div class="bar">Managers</div>';
                 for (var i = 0; i < data.length; i++) {
                     html += '<div class="box">\
                                 <a href="/person/?id=' + data[i]['id'] + '"><p>' + data[i]['name'] + '</p></a>\
@@ -106,7 +108,8 @@ var people = {
                                 <img src="' + data[i]['photo'] + '" />\
                                 </div>';
                 }
-                $(html).appendTo('#managers_list');
+				html += '</div>';
+                $(html).appendTo('#managers');
                 $('<div class="clear"></div>').appendTo('#managers_list');
             }
         });
@@ -140,6 +143,8 @@ var people = {
                     html += '<a class="big" href="/person/?id=' + data[i]['id'] + '"><div class="smallBar"><img src="' + data[i]['photo_thumb'] + '" />  <span>' + data[i]['name'] + '</span>' + shows + '</div></a>';
                 }
                 $(html).appendTo('#staff');
+				$("#staff a:odd div").css("background-color", "#F7FCFF");
+				$("#staff a:odd div").hover(function() {$(this).css("background-color", "#5e87a8").css("color", "#fff")}, function() {$(this).css("background-color", "#F7FCFF").css("color", "#272123")});
 				$('#staff').fadeIn();
             }
         });
@@ -250,6 +255,8 @@ var shows = {
                     html += '<a class="big" href="/show/?id=' + data[i]['id'] + '"><div class="smallBar"><img src="' + data[i]['photo_thumb'] + '" />  <span>' + data[i]['title'] + '</span>' + hosts + '</div></a>';
                 }
                 $(html).appendTo('#shows');
+				$("#shows a:odd div").css("background-color", "#F7FCFF");
+				$("#shows a:odd div").hover(function() {$(this).css("background-color", "#5e87a8").css("color", "#fff")}, function() {$(this).css("background-color", "#F7FCFF").css("color", "#272123")});
                 $('#shows').fadeIn();
 				
             }
@@ -268,13 +275,13 @@ var shows = {
 	        success: function(data) {
 	            if ( data != null ) {
 	                    document.title = 'Radio DePaul | ' + data['title'];
-	                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
+	                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", tweet = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
 						window.disqus_title = 'Radio DePaul | ' + data['title'], window.disqus_identifier = 'Radio DePaul | ' + data['title'], window.disqus_url = 'http://radio.depaul.edu/show/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
 						title = '<h2 id="name">' + data['title'] + '</h2>';
 
 	                    photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
 
-	                    stats = '<div class="right contentBox"><div class="bar">Stats</div><ul>';
+	                    stats = '<div class="right contentBox"><ul>';
 
 	                    if (data['genre'] != null) {
 	                        genre = '<li><p>Genre</p><p>' + data['genre'] + '</p></li>';
@@ -295,19 +302,19 @@ var shows = {
 	                        }
 	                         slots += '</li>';
 	                    }
-
 	                    stats += genre + slots + '</ul></div>';
 
 	                if ( data['twitter'] != null ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
+						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
 	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepauldjs" target="_blank"></a></li>'; }
 
 	                if ( data['facebook'] != null ) {
 	                    facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
-	                    facebook_fanbox = '<div class="right contentBox" style="height:300px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="320" height="272" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
+	                    facebook_fanbox = '<div class="right contentBox"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="340" height="272" show_faces="true" border_color="#F6F2F5" stream="true" header="false"></fb:like-box></div>';
 	                } else { 
 	                        facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>';
-	                        facebook_fanbox = '<div class="right contentBox" style="height:320px"><div class="bar">Become A Fan!</div><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="320" height="290" show_faces="true" border_color="#fff" stream="false" header="false"></fb:like-box></div>';
+	                        facebook_fanbox = '<div class="right contentBox" style="height:320px"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="330" height="290" show_faces="true" border_color="#F6F2F5" stream="false" header="false"></fb:like-box></div>';
 	                    }
 
 	                if ( data['email'] != null ) {
@@ -380,8 +387,9 @@ var shows = {
 	                    </div>';
 	                }
 
-	                html = title + photo + social + stats + hosts + description + facebook_fanbox + podcasts + disqus_embed;    
+	                html = title + photo + social + stats + tweet + hosts + description + facebook_fanbox + podcasts + disqus_embed;    
 	                $(html).appendTo('#content');
+					app.loadTweets(data['twitter'],'showPersonTweet');
 	                var get_playlist = new Array();
 	                for (var i = 0; i < data['podcasts'].length; i++) {
 	                    var x = {};
@@ -417,14 +425,14 @@ var shows = {
             success: function(data) {
                 var html = "";
                 for (var i=0; i < data.length; i++) {
-                    html += '<a href="/show/?id=' + data[i]['id'] + '"><span>' + data[i]['title'] + '</span></a>';
+                    html += '<a href="/show/?id=' + data[i]['id'] + '"><span><p>' + data[i]['title'] + '</p></span></a>';
                 }
                 $(html).appendTo('#categories');
             }
         });
     },
     loadSchedule: function() {
-        $('#content').append('<div id="schedule" style="display:none;"><div class="bar">Winter 2012</div></div>');
+        $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Winter 2012</div></div>');
         $('#schedule').fadeIn();
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/slots/current.js",
@@ -635,14 +643,17 @@ var app = {
 							$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.jplayer.min.js').done(function() {
 								$.getScript('https://s3.amazonaws.com/radiodepaul/js/jplayer.playlist.min.js').done(function() {
 				               	 	$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.simpleWeather-1.8.min.js').done(function() {
-										$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.fancybox-1.3.4.pack.js').done(function() {
-							                $.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.ga.js').done(function() {
-												$.getScript('https://s3.amazonaws.com/radiodepaul/js/jqclock_201.js').done(function() {
-													app.setupAjaxCallbacks();
-													app.loadPageContent();
-													app.loadNowPlaying();
-													app.loadClockAndWeather();
-													app.loadGoogleAnalytics();
+										$.getScript('http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js').done(function() {
+											$.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.fancybox-1.3.4.pack.js').done(function() {
+								                $.getScript('https://s3.amazonaws.com/radiodepaul/js/jquery.ga.js').done(function() {
+													$.getScript('https://s3.amazonaws.com/radiodepaul/js/jqclock_201.js').done(function() {
+														app.setupAjaxCallbacks();
+														app.loadPageContent();
+														app.loadNowPlaying();
+														app.loadClockAndWeather();
+														app.loadTweets('radiodepauldjs','tweet');
+														app.loadGoogleAnalytics();
+													});
 												});
 											});
 										});
@@ -743,7 +754,7 @@ var app = {
           });
     },
     startActivityIndicator: function(location){
-        $('#content').activity({segments: 8, steps: 4, width: 10, align: 'center', valign: 'top', space: 0, length: 10, color: '#0b0b0b', speed: 1.5, padding: 50});
+        $('#content').activity({segments: 12, steps: 3, width: 10, align: 'center', valign: 'top', space: 6, length: 30, color: '#5E87A8', speed: 1.5, padding: 50});
     },
     stopActivityIndicator: function(location){
         $(location).activity(false);
@@ -785,25 +796,16 @@ var app = {
             success: function(data) {
 				var html = '<div id="now_playing" class="contentBox"><div class="bar">On Air Now</div><ul>';
                 if ( data.length > 0 ) {
-                    var name = '<a href="/show/?id=' + data[0]['show']['id'] + '"><li><p style="text-align:center;">' + data[0]['show']['title'] + '</p></li>';
-                    var photo = '<li><img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></li></a>';
+                    var name = '<a href="/show/?id=' + data[0]['show']['id'] + '"><p style="text-align:center;">' + data[0]['show']['title'] + '</p>';
+                    var photo = '<img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></a>';
                     if (data[0]['show']['genre'] != null) {
-                        genre = '<li><p>Genre<p>' + data[0]['show']['genre'] + '</p></li>';
+                        genre = '<p>' + data[0]['show']['genre'] + '</p>';
                     }
-                    var hosts = "";
-                    if (data[0]['show']['hosts'].length > 0) {
-                        hosts = "<li><p>Hosts</p><p>"
+                    var hosts = "<ul>";
+                    for (var i = 0; i < data[0]['show']['hosts'].length; i++) {
+						hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data[0]['show']['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data[0]['show']['hosts'][i]['name'] + '</p></li></a>';
                     }
-                    for (var j = 0; j < data[0]['show']['hosts'].length; j++) {
-                        if (j != data[0]['show']['hosts'].length - 1) {
-                            if (data[0]['show']['hosts'].length > 2) {
-                                hosts += " " + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>,';
-                            } else { hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
-                        } else if ( data[0]['show']['hosts'].length == 1) {
-                            hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>';
-                        } else { hosts += ' and ' + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
-                    }
-                    hosts += '</p></li>';
+                    hosts += '</ul>';
 
                     html += name + photo + genre + hosts + '</ul></div>';    
                     $(html).prependTo('#sidebar');
@@ -844,6 +846,16 @@ var app = {
 		$(html).prependTo('#content');
 			
     },
+	loadTweets: function(username,id){
+		getTwitters(id, { 
+			id: username, 
+			enableLinks: true, 
+			ignoreReplies: true, 
+			clearContents: true,
+			newwindow: true,
+			template: '<p>"%text%"</p><a class="tweetTime" href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">%time%</a>'
+		});
+	},
     loadSlides: function(){
         $('#slides').slides({
             preload: true,
