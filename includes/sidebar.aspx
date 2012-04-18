@@ -1,7 +1,7 @@
 <%@ Language="C#" AutoEventWireup="true"  CodeFile="../Default.aspx.cs" Inherits="_Default" %>
 <div id="sidebar">
 		<div id="tweet" class ="contentBox">
-			<p>Loading tweets...</p>
+			<p>Loading tweet...</p>
 		</div>
 		<div class="contentBox">
 			<ul>
