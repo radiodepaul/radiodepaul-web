@@ -4,7 +4,7 @@ var people = {
 	    $('#person').fadeIn();
 	    var personId = $.url().param('id');
 	    $.ajax({
-	        url: "http://radiodepaul.herokuapp.com/people/" + personId + ".js",
+	        url: "http://radiodepaul.herokuapp.com/api/people/getPerson.js?id=" + personId,
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -31,7 +31,7 @@ var people = {
 	                    stats = '<div class="right contentBox"><ul>' + major + hometown + class_year + '<ul></div>';
 	                }
 	                if (data['shows'].length > 0) {
-	                    shows = '<div class="contentBox right"><div class="bar">Shows Hosted:</div><ul>';
+	                    shows = '<div class="contentBox right clear"><div class="bar">Shows Hosted:</div><ul>';
 	                    for (var i = 0; i < data['shows'].length; i++) {
 	                            shows += '<a href="/show/?id=' + data['shows'][i]['show_id'] + '"><li style="height:50px;background: url(' + data['shows'][i]['show_photo_thumb'] + ') top right no-repeat;"><p>' + data['shows'][i]['show_title'] + '</p></li></a>';
 	                    }
@@ -42,7 +42,7 @@ var people = {
 	                }
 	                if ( data['twitter'] != null ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
-						tweet = '<div id="showPersonTweet" class="contentBox right clear"><p>Loading tweet...</p></div>';
+						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
 	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
 	                if ( data['facebook'] != null ) {
@@ -74,7 +74,7 @@ var people = {
 	},
     displayRandomPeople: function() {
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/people/random.js",
+            url: "http://radiodepaul.herokuapp.com/api/people/getRandom.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -90,7 +90,7 @@ var people = {
     },
     loadManagers: function() {
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/managers/random.js",
+            url: "http://radiodepaul.herokuapp.com/api/people/getManagers.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -110,7 +110,7 @@ var people = {
                 }
 				html += '</div>';
                 $(html).appendTo('#managers');
-                $('<div class="clear"></div>').appendTo('#managers_list');
+                $('<div class="clear"></div>').appendTo('#managers div.contentBox');
             }
         });
 		$('#staff').fadeIn();
@@ -119,7 +119,7 @@ var people = {
     loadStaff: function() {
         $('#content').append('<div id="staff" class="contentBox" style="display:none;"><div class="bar">Radio DePaul Staff</div></div>');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/people.js",
+            url: "http://radiodepaul.herokuapp.com/api/people/getList.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -158,7 +158,6 @@ var player = {
 		$('nav a').click(function() {
 		  player.navSelect($(this).attr('title'))
 		});
-		player.loadNowPlaying();
 	},
 	generateWebcam: function() {
 		var webcam_output = '';
@@ -191,7 +190,7 @@ var player = {
 	},
 	loadNowPlaying: function() {
 		$.ajax({
-	        url: "http://radiodepaul.herokuapp.com/slots/now_playing.js",
+	        url: "http://radiodepaul.herokuapp.com/api/getOnAir.js",
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -229,9 +228,9 @@ var player = {
 };
 var shows = {
     loadShows: function() {
-        $('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Winter 2012</div></div>');
+        $('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Spring 2012</div></div>');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/shows.js",
+            url: "http://radiodepaul.herokuapp.com/api/shows/getList.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -267,7 +266,7 @@ var shows = {
 	    $('#show').fadeIn();
 	    var showId = $.url().param('id');
 	    $.ajax({
-	        url: "http://radiodepaul.herokuapp.com/shows/" + showId + ".js",
+	        url: "http://radiodepaul.herokuapp.com/api/shows/getShow.js?=" + showId,
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -288,7 +287,7 @@ var shows = {
 	                    }
 
 	                    if (data['hosts'].length > 0) {
-	                        hosts = '<div class="contentBox right"><div class="bar">Hosted By</div><ul>';
+	                        hosts = '<div class="contentBox right clear"><div class="bar">Hosted By</div><ul>';
 	                        for (var i = 0; i < data['hosts'].length; i++) {
 	                                hosts += '<a href="/person/?id=' + data['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data['hosts'][i]['name'] + '</p></li></a>';
 	                        }
@@ -311,10 +310,10 @@ var shows = {
 
 	                if ( data['facebook'] != null ) {
 	                    facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
-	                    facebook_fanbox = '<div class="right contentBox"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="340" height="272" show_faces="true" border_color="#F6F2F5" stream="true" header="false"></fb:like-box></div>';
+	                    facebook_fanbox = '<div class="right contentBox clear"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="340" height="272" show_faces="true" border_color="#F6F2F5" stream="true" header="false"></fb:like-box></div>';
 	                } else { 
 	                        facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"><img src="/img/social/facebook.png" /></a></li>';
-	                        facebook_fanbox = '<div class="right contentBox" style="height:320px"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="330" height="290" show_faces="true" border_color="#F6F2F5" stream="false" header="false"></fb:like-box></div>';
+	                        facebook_fanbox = '<div class="right contentBox clear" style="height:320px"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="330" height="290" show_faces="true" border_color="#F6F2F5" stream="false" header="false"></fb:like-box></div>';
 	                    }
 
 	                if ( data['email'] != null ) {
@@ -324,7 +323,7 @@ var shows = {
 	                social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
 	                if (data['long_description'] != null) {
-	                    description = '<div class="contentBox left clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
+	                    description = '<div class="contentBox left"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
 	                }
 
 	                if (data['podcasts'].length > 0) {
@@ -417,7 +416,7 @@ var shows = {
 	},
     displayRandomShows: function() {
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/shows/random.js",
+            url: "http://radiodepaul.herokuapp.com/api/shows/getRandom.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -432,10 +431,10 @@ var shows = {
         });
     },
     loadSchedule: function() {
-        $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Winter 2012</div></div>');
+        $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Spring 2012</div></div>');
         $('#schedule').fadeIn();
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/slots/current.js",
+            url: "http://radiodepaul.herokuapp.com/api/getSchedule.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -513,7 +512,7 @@ var app = {
 				shows.displayRandomShows();
 				app.loadFlickrPhotoset('72157627533487017', 'slider');
 				$(slider_html).prependTo('#content');
-				app.loadDePauliaFeed();
+				//app.loadDePauliaFeed();
 				$('#recentcomments').fadeIn();
             	break;
             case "schedule":
@@ -591,37 +590,40 @@ var app = {
 				people.displayRandomPeople();
 			break;
 			case "station_news":
-				newsPostsGet= $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts?apiKey=4e442bac737dc3fba1ef102c", {async: false}).responseText;
-				newsPostsParse= $.parseJSON(newsPostsGet);
-				var html = '<div class="contentBox" id="news_posts"><div class="bar">News Posts</div><ul>';
-				$.each(newsPostsParse, function(i, news_post) {
-					html += '<li>\
-								<a href="/station_news/post/?id=' + news_post._id.$oid + '"><p>' + news_post.headline + '</p></a>\
-								<p>' + news_post.introduction + '</p>\
-							</li>';
-				});
-				html += '</ul></div>';
-				$(html).appendTo('#content');
+	        	$.ajax({
+		            url: "http://radiodepaul.herokuapp.com/api/news_posts/getList.js",
+		            dataType: "jsonp",
+		            type: "GET",
+		            processData: false,
+		            contentType: "application/json",
+		            success: function(data) {
+		                var html = '<div class="contentBox" id="news_posts"><div class="bar">News Posts</div><ul>';
+		                $.each(data, function(i, news_post) {
+		            			html += '<li>\
+		                        <a class="news_headline" href="/station_news/post/?id=' + news_post.id + '"><p>' + news_post.headline + '<span class="news_time">' + news_post.published_at + '</span></p></a>\
+		                        <div class="post_content">' + news_post.snippet + '</div>\
+		                        <a class="read_more" href="/station_news/post/?id=' + news_post.id + '">Read more ...</a></li>';
+		        		});
+		                html += '</ul></div>';
+						$(html).appendTo('#content');
+	            	}
+        		});
 			break;
 			case "station_news_post":
-				newsPostId = $.url().param('id');
-				newsPostGet = $.ajax( "https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts/" + newsPostId + "?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-				news_post = $.parseJSON(newsPostGet);
-				var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The post you requested cannot be found.</p></div>';
-				if ( news_post != null ) {
-					document.title =  document.title + ' | ' + news_post.headline;
-
-					date = news_post.created_at.$date;
-					var parts = date.match(/(\d+)/g);
-					// new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
-					date = new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
-					date = date.toDateString();
-
-					var html = '<div class="contentBox" id="post"><div class="bar">' + news_post.headline + ' by ' + news_post.author + ' // ' + date + '</div>\
-									<p>' + news_post.content + '</p>\
-								</div></div>';
-				}
-				$(html).appendTo('#content');
+				var postId = $.url().param('id');
+				$.ajax({
+		            url: "http://radiodepaul.herokuapp.com/api/news_posts/getPost.js?id=" + postId,
+		            dataType: "jsonp",
+		            type: "GET",
+		            processData: false,
+		            contentType: "application/json",
+		            success: function(data) {
+		                var html = '<div class="contentBox" id="news_post"><a class="news_headline" href="/station_news/post/?id=' + data.id + '"><p>' + data.headline + '<span class="news_time">' + data.published_at + '</span><br/>by ' + data.author.name + '</p></a>';
+		            			html += '<div class="post_content">' + data.content + '</div>';
+		                html += '</div>';
+						$(html).appendTo('#content');
+	            	}
+        		});
 			break;
 			case "player":
 				player.setupPlayer();
@@ -788,7 +790,7 @@ var app = {
     loadNowPlaying: function() {
         app.startActivityIndicator('#now_playing');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/slots/now_playing.js",
+            url: "http://radiodepaul.herokuapp.com/api/getOnAir.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -818,17 +820,26 @@ var app = {
         });
     },
     loadStationNews: function() {
-        newsPostsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/news_posts?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-        newsPostsParse = $.parseJSON(newsPostsGet);
-		var html = '<div id="news" class="left contentBox"><div class="bar"><a href="/station_news/">Radio DePaul News</a></div><ul>';
-        $.each(newsPostsParse, function(i, news_post) {
-            html += '<li>\
-                        <a href="/station_news/post/?id=' + news_post._id.$oid + '"><p>' + news_post.headline + '</p></a>\
-                        <p>' + news_post.introduction + '</p>\
+    	$('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Spring 2012</div></div>');
+        $.ajax({
+            url: "http://radiodepaul.herokuapp.com/api/news_posts/getList.js",
+            dataType: "jsonp",
+            type: "GET",
+            processData: false,
+            contentType: "application/json",
+            success: function(data) {
+                var html = '<div id="news_widget" class="left contentBox"><div class="bar"><a href="/station_news/">Radio DePaul News</a></div><ul>';
+                $.each(data, function(i, news_post) {
+            			html += '<li>\
+                        <a class="news_headline" href="/station_news/post/?id=' + news_post.id + '"><p>' + news_post.headline + '<span class="news_time">' + news_post.published_at + '</span></p></a>\
+                        <div class="post_content">' + news_post.snippet + '</div><a class="read_more" href="/station_news/post/?id=' + news_post.id + '">Read more ..</a>\
                         </li>';
+        		});
+                html += '</ul></div>';
+				$('#featured').after(html);
+				
+            }
         });
-		html += '</ul></div>';
-		$(html).prependTo('#content');
     },
     loadStationEvents: function() {
         stationEventsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/station_events?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
@@ -882,7 +893,7 @@ var app = {
     },
     loadPodcasts: function(type){
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/podcasts.js",
+            url: "http://radiodepaul.herokuapp.com/api/getPodcasts.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,

@@ -19,6 +19,7 @@
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
+			<a class="back_button" href="/station_news/">&larr; Back to Station News</a>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 			<div id="content"></div>
 		</div>

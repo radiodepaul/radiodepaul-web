@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript">
 	<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<script type="text/javascript" src="/js/main.js?v=0.0.2"></script>
+	<script type="text/javascript" src="https://s3.amazonaws.com/radiodepaul/js/main.js?v=0.0.2"></script>
 	<script type="text/javascript" src="https://www.google.com/jsapi?callback=loadGoogleAPIs&key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg"></script>
 </head>
 <body title="player">

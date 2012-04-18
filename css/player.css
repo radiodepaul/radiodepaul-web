@@ -5,26 +5,20 @@
      outline: 0pt none;
      padding: 0pt;
      vertical-align: baseline;
-
 }
-
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
      display: block;
 }
-
 body {
      line-height: 1;
 	overflow:hidden;
 }
-
 ol, ul {
      list-style: none outside none;
 }
-
 blockquote, q {
      quotes: none;
 }
-
 blockquote:before, blockquote:after, q:before, q:after {
      content: none;
 }
@@ -83,7 +77,9 @@ nav a:link, nav a:visited {
 nav a{border-top:solid 4px #000;}
 nav a:hover{border-top:solid 4px #4289a9;}
 nav a.selected{border-top:solid 4px #4289a9;}
-nav a{-webkit-transition:border-top .4s ease-out;}
+nav a{
+	-webkit-transition:border-top .4s ease-out;
+}
 div.bar {
 	width:340px;
 	background-color:#5e87a8;
