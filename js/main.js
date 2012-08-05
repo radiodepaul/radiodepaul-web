@@ -266,7 +266,7 @@ var shows = {
 	    $('#show').fadeIn();
 	    var showId = $.url().param('id');
 	    $.ajax({
-	        url: "http://radiodepaul.herokuapp.com/api/shows/getShow.js?=" + showId,
+	        url: "http://radiodepaul.herokuapp.com/api/shows/getShow.js?id=" + showId,
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -386,7 +386,8 @@ var shows = {
 	                    </div>';
 	                }
 
-	                html = title + photo + social + stats + tweet + hosts + description + facebook_fanbox + podcasts + disqus_embed;    
+	                //html = title + photo + social + stats + tweet + hosts + description + facebook_fanbox + podcasts + disqus_embed;
+	                html = title + photo + social + stats + tweet + hosts + description + podcasts + disqus_embed;        
 	                $(html).appendTo('#content');
 					app.loadTweets(data['twitter'],'showPersonTweet');
 	                var get_playlist = new Array();
