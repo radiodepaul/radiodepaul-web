@@ -778,14 +778,15 @@ var app = {
     },
     setupFancyBox: function() {
         $("a.fancybox").fancybox({
-                'transitionIn'    :    'fade',
-                'transitionOut'    :    'fade',
-                'speedIn'        :    600, 
-                'speedOut'        :    600, 
-                'overlayShow'    :    true,
-                'hideOnContentClick' : true,
-                'titlePosition' : 'inside',
-                'height' : '95%',
+                transitionIn    :    'fade',
+                transitionOut    :    'fade',
+                speedIn        :    600, 
+                speedOut        :    600, 
+                overlayShow    :    true,
+                hideOnContentClick : true,
+                titlePosition : 'inside',
+                height : '95%',
+                width : 800
         });
     },
     loadNowPlaying: function() {
