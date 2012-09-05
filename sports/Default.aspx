@@ -20,7 +20,7 @@
 		<div id="weather"></div>
 		<header>
  			<a href="/"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
-			<h1 id="title">The Student Voice</h1>
+			<h1 id="title">Student Voice of the Blue Demons</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
