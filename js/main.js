@@ -228,7 +228,7 @@ var player = {
 };
 var shows = {
     loadShows: function() {
-        $('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Spring 2012</div></div>');
+        $('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Active Shows</div></div>');
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/api/shows/getList.js",
             dataType: "jsonp",
@@ -432,7 +432,7 @@ var shows = {
         });
     },
     loadSchedule: function() {
-        $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Spring 2012</div></div>');
+        $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Current Schedule</div></div>');
         $('#schedule').fadeIn();
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/api/getSchedule.js",
@@ -822,7 +822,7 @@ var app = {
         });
     },
     loadStationNews: function() {
-    	$('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Spring 2012</div></div>');
+    	$('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Latest News</div></div>');
         $.ajax({
             url: "http://radiodepaul.herokuapp.com/api/news_posts/getList.js",
             dataType: "jsonp",
@@ -890,7 +890,7 @@ var app = {
                 $('.caption').animate({
                     bottom:0
                 },200);
-            },
+            }
         });
     },
     loadPodcasts: function(type){
