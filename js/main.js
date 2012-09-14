@@ -323,7 +323,7 @@ var shows = {
 	                social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
 	                if (data['long_description'] != null) {
-	                    description = '<div class="contentBox left"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
+	                    description = '<div class="contentBox clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
 	                }
 
 	                if (data['podcasts'].length > 0) {
