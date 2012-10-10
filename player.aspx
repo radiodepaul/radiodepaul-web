@@ -36,7 +36,7 @@
            <div class="panel" id="chat">
 				<div class="contentBox">
 					<div class="bar">Radio DePaul Chat</div>
-					<object width="578" height="270"><param name="movie" value="http://widget.meebo.com/mm.swf?hSrJxxCkSb"/><embed src="http://widget.meebo.com/mm.swf?hSrJxxCkSb" type="application/x-shockwave-flash" width="578" height="270"></embed></object>
+                                        <embed src="http://w.digsby.com/dw.swf?c=8wmzu67xedoev6tp" wmode="transparent" type="application/x-shockwave-flash" width="578" height="270"></embed>
 				</div>
            </div>
 	</div>
