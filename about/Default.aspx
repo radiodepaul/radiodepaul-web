@@ -57,7 +57,7 @@
           </div>
           <div class="panel contentBox" id="sponsor" style="display:none;">
             <div class="bar">Sponsor Radio DePaul</div>
-            <p>Sponsoring Radio DePaul is easy and affordable. We have a number of packages that may be right for your organization or business. It is also possible to design your own custom sponsorship package. Please check out our <a href="/depaul_media_kit.pdf">media kit</a> and contact us with any questions you have. Keep in mind that in addition to being heard on our site, Radio DePaul is one of handful of college stations that is available on the very popular iHeartRadio app and website. In other words, your organization or businesses name is going to reach a lot of people. Thanks for considering Radio DePaul, Chicago’s College Connection!</p>
+            <p>Sponsoring Radio DePaul is easy and affordable. We have a number of packages that may be right for your organization or business. It is also possible to design your own custom sponsorship package. Please check out our <a href="/depaul_media_kit.pdf">media kit</a> and contact us with any questions you have. Keep in mind that in addition to being heard on our site, Radio DePaul is one of handful of college stations that is available on the very popular iHeartRadio app and website. In other words, your organization or businesses name is going to reach a lot of people. Thanks for considering Radio DePaul, Chicago's College Connection!</p>
             <p><a href="/depaul_media_kit.pdf">View/Download Media Kit</a></p>
             <p>
             <ul>
