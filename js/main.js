@@ -160,18 +160,17 @@ var player = {
 		});
 	},
 	generateWebcam: function() {
-		var webcam_output = '';
-		if ((navigator.appName == "Microsoft Internet Explorer") && (navigator.platform != "MacPPC") && (navigator.platform != "Mac68k")) {
-		    webcam_output = '<object id="AxisCamControl" classid="CLSID:917623D1-D8E5-11D2-BE8B-00104B06BDE3" CODEBASE="http://140.192.109.189/activex/AxisCamControl.cab#Version=2,23,0,0">\
-			<param name=DisplaySoundPanel value=0>\
-		    <param name=URL value="http://140.192.109.189/axis-cgi/mjpg/video.cgi?camera=&resolution=640x480">\
-		    </object>';
-		} else {
-		    theDate = new Date();
-		    webcam_output = '<img src="http://140.192.109.189/axis-cgi/mjpg/video.cgi?resolution=640x480&' + theDate.getTime() + '" height=270 />';
-		}
+          document.theTimer;
+		var webcam_output = '<img src="http://dblandin-web.dyndns.org/readImage.asp" width=578 height=270 />';
+          theTimer = setTimeout("player.refreshWebcam()", 1);
 		return webcam_output;
 	},
+        refreshWebcam: function() {
+          theTimer = setTimeout("player.refreshWebcam()", 1000);
+          theDate = new Date();
+          var current = $('#webcam_embed img').attr('src');
+          $('#webcam_embed img').attr('src', current + '?dummy=' + theDate.getTime().toString(10));
+        },
 	clearAllNavElements: function() {
 		$('nav a').each(function(){$(this).removeClass('selected')});
 	},
