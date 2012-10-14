@@ -160,13 +160,12 @@ var player = {
 		});
 	},
 	generateWebcam: function() {
-          document.theTimer;
 		var webcam_output = '<img src="http://dblandin-web.dyndns.org/readImage.asp" width=578 height=270 />';
-          theTimer = setTimeout("player.refreshWebcam()", 1);
+          window.theTimer = setTimeout("player.refreshWebcam()", 1);
 		return webcam_output;
 	},
         refreshWebcam: function() {
-          theTimer = setTimeout("player.refreshWebcam()", 1000);
+          window.theTimer = setTimeout("player.refreshWebcam()", 1000);
           theDate = new Date();
           var current = $('#webcam_embed img').attr('src');
           $('#webcam_embed img').attr('src', current + '?dummy=' + theDate.getTime().toString(10));
@@ -177,6 +176,7 @@ var player = {
 	clearAllSections: function() {
 		$('.panel').css('margin-left','-99999px');
 		$('#webcam_embed').empty();
+                window.clearTimeout(window.theTimer);
 	},
 	navSelect: function(item) {
 		player.clearAllNavElements();
