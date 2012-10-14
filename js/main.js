@@ -160,31 +160,37 @@ var player = {
 		});
 	},
 	generateWebcam: function() {
-		var webcam_output = '<img src="http://dblandin-web.dyndns.org/readImage.asp" width=578 height=270 />';
-          window.theTimer = setTimeout("player.refreshWebcam()", 1);
-		return webcam_output;
+                jwplayer('webcam_embed').setup({
+                'id': 'webcam_embed',
+                'width': '578',
+                'height': '270',
+                'provider': 'rtmp',
+                'streamer': 'rtmp://140.192.109.228:1935/rtplive',
+                'file': 'mp4:camera.stream',
+                'modes': [
+                    {type: 'flash', src: 'https://s3.amazonaws.com/radiodepaul/js/player.swf'},
+                    {type: 'html5', config:
+                            {
+                            'file': "http://140.192.109.228:1935/rtplive/mp4:camera.stream/playlist.m3u8",
+                            provider: 'video'
+                            }
+                    }
+                ]
+              });
 	},
-        refreshWebcam: function() {
-          window.theTimer = setTimeout("player.refreshWebcam()", 250);
-          theDate = new Date();
-          var src = 'http://dblandin-web.dyndns.org/readImage.asp'
-          $('#webcam_embed img').attr('src', src + '?dummy=' + theDate.getTime().toString(10));
-        },
 	clearAllNavElements: function() {
 		$('nav a').each(function(){$(this).removeClass('selected')});
 	},
 	clearAllSections: function() {
 		$('.panel').css('margin-left','-99999px');
 		$('#webcam_embed').empty();
-                window.clearTimeout(window.theTimer);
 	},
 	navSelect: function(item) {
 		player.clearAllNavElements();
 		player.clearAllSections();
 		$('#' + item).css('margin-left','0');
 		if (item == 'webcam') { 
-			output = player.generateWebcam();
-			$('#webcam_embed').html(output);
+			player.generateWebcam();
 		}
 	},
 	loadNowPlaying: function() {

@@ -1,5 +1,6 @@
 function pageLoaded() {
 	switchToSectionWithId('home');
+        getWebcam();
 }
 function goToStreamLow(url) {
 	window.location = "/radiodepaul64kbps.m3u";
@@ -8,15 +9,23 @@ function goToStreamHigh(url) {
 	window.location = "/radiodepaul128kbps.m3u";
 }
 function getWebcam() {
-	document.getElementById('webcam').innerHTML = '<img name="webcam_img" src="http://dblandin-web.dyndns.org/readImage.asp" width     =320 height=240 />';
-        window.theTimer = setTimeout("refreshWebcam()", 1);
-}
-function refreshWebcam() {
-        window.theTimer = setTimeout("refreshWebcam()", 1000);
-        theDate = new Date();
-        var src = 'http://dblandin-web.dyndns.org/readImage.asp'
-        document.webcam_img.src = src + '?dummy=' + theDate.getTime().toString(10);
- 
+                jwplayer('webcam').setup({
+                'id': 'webcam',
+                'width': '320',
+                'height': '240',
+                'provider': 'rtmp',
+                'streamer': 'rtmp://140.192.109.228:1935/rtplive',
+                'file': 'mp4:camera.stream',
+                'modes': [
+                    {type: 'flash', src: 'https://s3.amazonaws.com/radiodepaul/js/player.swf'},
+                    {type: 'html5', config:
+                            {
+                            'file': "http://140.192.109.228:1935/rtplive/mp4:camera.stream/playlist.m3u8",
+                            provider: 'video'
+                            }
+                    }
+                ]
+              });
 }
 function navSelected() {
 	clearAllNavItems();
@@ -42,8 +51,6 @@ function navSelected() {
 	        switchToSectionWithId('contact');
 	        break;
 	}
-	var output = $('section#watch').height();
-	console.log(output);
 }
 function clearAllNavItems() {
 	var navList = document.getElementById('navList');
@@ -52,7 +59,6 @@ function clearAllNavItems() {
 	    var li = navList.children[i];
 	    li.setAttribute('class', '');
 	}
-        window.clearTimeout(window.theTimer);
 }
 function switchToSectionWithId(sectionId) {
 	hideAllSections();
