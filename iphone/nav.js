@@ -1,6 +1,5 @@
 function pageLoaded() {
 	switchToSectionWithId('home');
-        getWebcam();
 }
 function goToStreamLow(url) {
 	window.location = "/radiodepaul64kbps.m3u";
@@ -13,17 +12,9 @@ function getWebcam() {
                 'id': 'webcam',
                 'width': '320',
                 'height': '240',
-                'provider': 'rtmp',
-                'streamer': 'rtmp://140.192.109.228:1935/rtplive',
-                'file': 'mp4:camera.stream',
+                'file': "http://140.192.109.228:1935/rtplive/mp4:camera.stream/playlist.m3u8",
                 'modes': [
-                    {type: 'flash', src: 'https://s3.amazonaws.com/radiodepaul/js/player.swf'},
-                    {type: 'html5', config:
-                            {
-                            'file': "http://140.192.109.228:1935/rtplive/mp4:camera.stream/playlist.m3u8",
-                            provider: 'video'
-                            }
-                    }
+                    {type: 'html5'}
                 ]
               });
 }
@@ -42,7 +33,7 @@ function navSelected() {
 	        break;
 	    case 'liWatch':
 	        switchToSectionWithId('watch');
-	        getWebcam();
+                getWebcam();
 	        break;
 	    case 'liSchedule':
 	        switchToSectionWithId('schedule');
