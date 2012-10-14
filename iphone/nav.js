@@ -14,8 +14,8 @@ function getWebcam() {
 function refreshWebcam() {
         window.theTimer = setTimeout("refreshWebcam()", 1000);
         theDate = new Date();
-        current = document.webcam_img.src;
-        document.webcam_img.src = current + '?dummy=' + theDate.getTime().toString(10);
+        var src = 'http://dblandin-web.dyndns.org/readImage.asp'
+        document.webcam_img.src = src + '?dummy=' + theDate.getTime().toString(10);
  
 }
 function navSelected() {

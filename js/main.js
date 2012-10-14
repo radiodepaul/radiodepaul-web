@@ -165,10 +165,10 @@ var player = {
 		return webcam_output;
 	},
         refreshWebcam: function() {
-          window.theTimer = setTimeout("player.refreshWebcam()", 1000);
+          window.theTimer = setTimeout("player.refreshWebcam()", 250);
           theDate = new Date();
-          var current = $('#webcam_embed img').attr('src');
-          $('#webcam_embed img').attr('src', current + '?dummy=' + theDate.getTime().toString(10));
+          var src = 'http://dblandin-web.dyndns.org/readImage.asp'
+          $('#webcam_embed img').attr('src', src + '?dummy=' + theDate.getTime().toString(10));
         },
 	clearAllNavElements: function() {
 		$('nav a').each(function(){$(this).removeClass('selected')});
