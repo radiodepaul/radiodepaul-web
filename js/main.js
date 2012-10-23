@@ -1,5 +1,5 @@
-//var domain = 'http://radiodepaul.herokuapp.com';
-var domain = 'http://127.0.0.1:4002';
+var domain = 'http://radiodepaul.herokuapp.com';
+//var domain = 'http://127.0.0.1:4002';
 var people = {
     loadPerson: function() {
 	    $('#content').append('<div id="person" style="display:none;"></div>');
@@ -164,7 +164,7 @@ var awards = {
         var html = "";
         for (var i = 0; i < data.length; i++) {
           html += '<div class="awards_iba smallBar">';
-          html += data[i].year + ' :: ' + data[i].name + " for " + data[i].for + " from " + data[i].award_organization.name;
+          html += data[i].year + ' :: ' + data[i].name + " for " + data[i]['for'] + " from " + data[i].award_organization.name;
           html += '</div>';
         }
         $('#awards').append(html);

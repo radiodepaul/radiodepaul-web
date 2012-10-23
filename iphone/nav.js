@@ -10,8 +10,8 @@ function goToStreamHigh(url) {
 function getWebcam() {
                 jwplayer('webcam_embed').setup({
                 'id': 'webcam_embed',
-                'width': '578',
-                'height': '270',
+                'width': '320',
+                'height': '240',
                 'provider': 'rtmp',
                 'streamer': 'rtmp://140.192.109.228:1935/rtplive',
                 'file': 'mp4:camera.stream',

@@ -43,7 +43,7 @@
         </section>
 		<section id="watch">
 			<h1>Webcam</h1>
-			<div id="webcam"></div>
+			<div id="webcam_embed"></div>
 		</section>
 		<section id="schedule">
 			<div id="schedule_list">
