@@ -1,10 +1,12 @@
+//var domain = 'http://radiodepaul.herokuapp.com';
+var domain = 'http://127.0.0.1:4002';
 var people = {
     loadPerson: function() {
 	    $('#content').append('<div id="person" style="display:none;"></div>');
 	    $('#person').fadeIn();
 	    var personId = $.url().param('id');
 	    $.ajax({
-	        url: "http://radiodepaul.herokuapp.com/api/people/getPerson.js?id=" + personId,
+	        url: domain + "/api/people/getPerson.js?id=" + personId,
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -74,7 +76,7 @@ var people = {
 	},
     displayRandomPeople: function() {
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/people/getRandom.js",
+            url: domain + "/api/people/getRandom.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -90,7 +92,7 @@ var people = {
     },
     loadManagers: function() {
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/people/getManagers.js",
+            url: domain + "/api/people/getManagers.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -119,7 +121,7 @@ var people = {
     loadStaff: function() {
         $('#content').append('<div id="staff" class="contentBox" style="display:none;"><div class="bar">Radio DePaul Staff</div></div>');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/people/getList.js",
+            url: domain + "/api/people/getList.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -149,6 +151,28 @@ var people = {
             }
         });
     }
+};
+var awards = {
+  loadAwards: function() {
+    $.ajax({
+      url: domain + "/api/awards/getList.js",
+      dataType: "jsonp",
+      type: "GET",
+      processData: false,
+      contentType: "application/json",
+      success: function(data) {
+        var html = "";
+        for (var i = 0; i < data.length; i++) {
+          html += '<div class="awards_iba smallBar">';
+          html += data[i].year + ' :: ' + data[i].name + " for " + data[i].for + " from " + data[i].award_organization.name;
+          html += '</div>';
+        }
+        $('#awards').append(html);
+      }
+    });
+
+  }
+
 };
 var player = {
 	setupPlayer: function(attribute){
@@ -195,7 +219,7 @@ var player = {
 	},
 	loadNowPlaying: function() {
 		$.ajax({
-	        url: "http://radiodepaul.herokuapp.com/api/getOnAir.js",
+	        url: domain + "/api/getOnAir.js",
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -235,7 +259,7 @@ var shows = {
     loadShows: function() {
         $('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Active Shows</div></div>');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/shows/getList.js",
+            url: domain + "/api/shows/getList.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -271,7 +295,7 @@ var shows = {
 	    $('#show').fadeIn();
 	    var showId = $.url().param('id');
 	    $.ajax({
-	        url: "http://radiodepaul.herokuapp.com/api/shows/getShow.js?id=" + showId,
+	        url: domain + "/api/shows/getShow.js?id=" + showId,
 	        dataType: "jsonp",
 	        type: "GET",
 	        processData: false,
@@ -422,7 +446,7 @@ var shows = {
 	},
     displayRandomShows: function() {
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/shows/getRandom.js",
+            url: domain + "/api/shows/getRandom.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -440,7 +464,7 @@ var shows = {
         $('#content').append('<div id="schedule" class="contentBox" style="display:none;"><div class="bar">Current Schedule</div></div>');
         $('#schedule').fadeIn();
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/getSchedule.js",
+            url: domain + "/api/getSchedule.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -582,6 +606,7 @@ var app = {
 			break;
             case "about":
 				people.loadManagers();
+                                awards.loadAwards();
 				app.loadFlickrPhotoset('72157628024483658', 'slider');
 				app.panelNav.navSelectN('managers');
             break;
@@ -597,7 +622,7 @@ var app = {
 			break;
 			case "station_news":
 	        	$.ajax({
-		            url: "http://radiodepaul.herokuapp.com/api/news_posts/getList.js",
+		            url: domain + "/api/news_posts/getList.js",
 		            dataType: "jsonp",
 		            type: "GET",
 		            processData: false,
@@ -618,7 +643,7 @@ var app = {
 			case "station_news_post":
 				var postId = $.url().param('id');
 				$.ajax({
-		            url: "http://radiodepaul.herokuapp.com/api/news_posts/getPost.js?id=" + postId,
+		            url: domain + "/api/news_posts/getPost.js?id=" + postId,
 		            dataType: "jsonp",
 		            type: "GET",
 		            processData: false,
@@ -797,7 +822,7 @@ var app = {
     loadNowPlaying: function() {
         app.startActivityIndicator('#now_playing');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/getOnAir.js",
+            url: domain + "/api/getOnAir.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -829,7 +854,7 @@ var app = {
     loadStationNews: function() {
     	$('#content').append('<div id="shows" class="contentBox" style="display:none;"><div class="bar">Latest News</div></div>');
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/news_posts/getList.js",
+            url: domain + "/api/news_posts/getList.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
@@ -849,20 +874,28 @@ var app = {
         });
     },
     loadStationEvents: function() {
-        stationEventsGet = $.ajax("https://mongolab.com:443/api/1/databases/radiodepaul/collections/station_events?apiKey=4e442bac737dc3fba1ef102c", { async: false } ).responseText;
-        stationEventsParse = $.parseJSON(stationEventsGet);
+        $.ajax({
+            url: domain + "/api/events/getList.js",
+            dataType: "jsonp",
+            type: "GET",
+            processData: false,
+            contentType: "application/json",
+            success: function(data) {
+              console.log(data);
 		var html = '<div id="events" class="right contentBox"><div class="bar">Coming Up</div><ul>';
-        $.each(stationEventsParse, function(i, event) {
-            html += '<li>\
-                            <p>' + event.title + '</p>\
-                            <p>' + event.start + ' - ' + event.end + '</p>\
-                            <p>' + event.location + '</p>\
-                            <p>' + event.description + '</p>\
-                        </li>';
-        });
+                for (var i=0;i<data.length;i++)
+                {
+                  html += '<li>' +
+                            '<p>' + data[i].title + '</p>' +
+                            '<p>' + data[i].first_line + ' - ' + data[i].second_line + '</p>' +
+                            '<p>' + data[i].location + '</p>' +
+                            '<p>' + data[i].description + '</p></li>';
+                }
 		html += '</ul></div>';
-		$(html).prependTo('#content');
-			
+                $('#featured').after(html);
+				
+            }
+        });
     },
 	loadTweets: function(username,id){
 		getTwitters(id, { 
@@ -900,7 +933,7 @@ var app = {
     },
     loadPodcasts: function(type){
         $.ajax({
-            url: "http://radiodepaul.herokuapp.com/api/getPodcasts.js",
+            url: domain + "/api/getPodcasts.js",
             dataType: "jsonp",
             type: "GET",
             processData: false,
