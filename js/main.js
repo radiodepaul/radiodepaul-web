@@ -225,26 +225,27 @@ var player = {
 	        processData: false,
 	        contentType: "application/json",
 	        success: function(data) {		
+                  console.log(data);
 				var html = '';
-	            if ( data.length > 0 ) {
-	                var player = '<iframe src="http://p1.radiocdn.com/files/html/70f3d50f0e6f1273fab48fe82d29d7d24f7a91bc.html" frameborder="0" scrolling="no" height="40px" width="100px;"></iframe>', name = '<a href="/show/?id=' + data[0]['show']['id'] + '" target="_blank">' + data[0]['show']['title'] + '</a>', hosts = "", logo = '<img src="https://s3.amazonaws.com/radiodepaul/img/logo.png" />', photo = '<a href="/show/?id=' + data[0]['show']['id'] + '" target="_blank"><img src="' + data[0]['show']['photo'] + '" /></a>';
-	                if (data[0]['show']['genre'] != null) {
-	                    genre = '<p>Genre<p>' + data[0]['show']['genre'] + '</p>	';
+	            if ( data !== null ) {
+	                var player = '<iframe src="http://p1.radiocdn.com/files/html/70f3d50f0e6f1273fab48fe82d29d7d24f7a91bc.html" frameborder="0" scrolling="no" height="40px" width="100px;"></iframe>', name = '<a href="/show/?id=' + data['id'] + '" target="_blank">' + data['title'] + '</a>', hosts = "", logo = '<img src="https://s3.amazonaws.com/radiodepaul/img/logo.png" />', photo = '<a href="/show/?id=' + data['id'] + '" target="_blank"><img src="' + data['photo'] + '" /></a>';
+	                if (data['genres'] != null) {
+	                    genres = '<p>Genre<p>' + data['genres'] + '</p>	';
 	                }
-	                if (data[0]['show']['hosts'].length > 0) {
+	                if (data['hosts'].length > 0) {
 	                    hosts = "<p>Hosts</p>"
 	                }
-	                for (var j = 0; j < data[0]['show']['hosts'].length; j++) {
-	                    if (j != data[0]['show']['hosts'].length - 1) {
-	                        if (data[0]['show']['hosts'].length > 2) {
-	                            hosts += " " + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>,';
-	                        } else { hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
-	                    } else if ( data[0]['show']['hosts'].length == 1) {
-	                        hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>';
-	                    } else { hosts += ' and ' + '<a href="/person/?id=' + data[0]['show']['hosts'][j]['id'] + '">' + data[0]['show']['hosts'][j]['name'] + '</a>'; }
+	                for (var j = 0; j < data['hosts'].length; j++) {
+	                    if (j != data['hosts'].length - 1) {
+	                        if (data['hosts'].length > 2) {
+	                            hosts += " " + '<a href="/person/?id=' + data['hosts'][j]['id'] + '">' + data['hosts'][j]['name'] + '</a>,';
+	                        } else { hosts += '<a href="/person/?id=' + data['hosts'][j]['id'] + '">' + data['hosts'][j]['name'] + '</a>'; }
+	                    } else if ( data['hosts'].length == 1) {
+	                        hosts += '<a href="/person/?id=' + data['hosts'][j]['id'] + '">' + data['hosts'][j]['name'] + '</a>';
+	                    } else { hosts += ' and ' + '<a href="/person/?id=' + data['hosts'][j]['id'] + '">' + data['hosts'][j]['name'] + '</a>'; }
 	                }
 					html += '<div id="player_control" class="contentBox"><div class="bar">You&#39;re Listening to ' + name + ' on Radio DePaul</div>';
-	                html += photo + logo + player + '<div id="stats">' + genre + hosts + '</div></div>';
+	                html += photo + logo + player + '<div id="stats">' + genres + hosts + '</div></div>';
 	                $(html).prependTo('#player');
 	            }
 	            else { 
@@ -303,7 +304,7 @@ var shows = {
 	        success: function(data) {
 	            if ( data != null ) {
 	                    document.title = 'Radio DePaul | ' + data['title'];
-	                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", tweet = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genre = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
+	                    var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The show you requested cannot be found.</p></div>', photo = "", tweet = "", twitter = "", podcasts = "", title = "", facebook = "", email = "", description = "", stats = "", slots = "", social = "", facebook_fanbox = "", genres = "", hosts = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
 						window.disqus_title = 'Radio DePaul | ' + data['title'], window.disqus_identifier = 'Radio DePaul | ' + data['title'], window.disqus_url = 'http://radio.depaul.edu/show/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
 						title = '<h2 id="name">' + data['title'] + '</h2>';
 
@@ -311,8 +312,8 @@ var shows = {
 
 	                    stats = '<div class="right contentBox"><ul>';
 
-	                    if (data['genre'] != null) {
-	                        genre = '<li><p>Genre</p><p>' + data['genre'] + '</p></li>';
+	                    if (data['genres'] != null) {
+	                        genres = '<li><p>Genre</p><p>' + data['genres'] + '</p></li>';
 	                    }
 
 	                    if (data['hosts'].length > 0) {
@@ -330,7 +331,7 @@ var shows = {
 	                        }
 	                         slots += '</li>';
 	                    }
-	                    stats += genre + slots + '</ul></div>';
+	                    stats += genres + slots + '</ul></div>';
 
 	                if ( data['twitter'] != null ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
@@ -489,8 +490,8 @@ var shows = {
                                         <p class="scheduleBar startTime">' + data[i]['start_time'] + '</p>\
                                         <p class="scheduleBar endTime">' + data[i]['end_time'] + '</p>\
                                     </div>\
-                                    <a href="/show/?id=' + data[i]['show']['id'] + '"><img src="' + data[i]['show']['photo'] + '" /></a>\
-                                    <p class="showName"><a href="/show/?id=' + data[i]['show']['id'] + '">' + data[i]['show']['title'] + '</a><span> | ' + data[i]['show']['genre'] + '</span></p>\
+                                    <a href="/show/?id=' + data[i]['show']['id'] + '"><img src="' + data[i]['show']['photo_small'] + '" /></a>\
+                                    <p class="showName"><a href="/show/?id=' + data[i]['show']['id'] + '">' + data[i]['show']['title'] + '</a><span> | ' + data[i]['show']['genres'] + '</span></p>\
                                     <p class="showDJs">' + hosts + '</p>';
                         if ( data[i]['show']['short_description'] != null ) {
                             html += '<p class="showBio">' + data[i]['show']['short_description'] + '</p>';
@@ -829,19 +830,19 @@ var app = {
             contentType: "application/json",
             success: function(data) {
 				var html = '<div id="now_playing" class="contentBox"><div class="bar">On Air Now</div><ul>';
-                if ( data.length > 0 ) {
-                    var name = '<a href="/show/?id=' + data[0]['show']['id'] + '"><p style="text-align:center;">' + data[0]['show']['title'] + '</p>';
-                    var photo = '<img style="margin-left:50px" src="' + data[0]['show']['photo'] + '" /></a>';
-                    if (data[0]['show']['genre'] != null) {
-                        genre = '<p>' + data[0]['show']['genre'] + '</p>';
+                if ( data != null ) {
+                    var name = '<a href="/show/?id=' + data['show']['id'] + '"><p style="text-align:center;">' + data['show']['title'] + '</p>';
+                    var photo = '<img style="margin-left:50px" src="' + data['show']['photo_small'] + '" /></a>';
+                    if (data['show']['genres'] != null) {
+                        genres = '<p>' + data['show']['genres'] + '</p>';
                     }
                     var hosts = "<ul>";
-                    for (var i = 0; i < data[0]['show']['hosts'].length; i++) {
-						hosts += '<a href="/person/?id=' + data[0]['show']['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data[0]['show']['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data[0]['show']['hosts'][i]['name'] + '</p></li></a>';
+                    for (var i = 0; i < data['show']['hosts'].length; i++) {
+						hosts += '<a href="/person/?id=' + data['show']['hosts'][i]['id'] + '"><li style="height:50px;background: url(' + data['show']['hosts'][i]['photo_thumb'] + ') top right no-repeat;"><p>' + data['show']['hosts'][i]['name'] + '</p></li></a>';
                     }
                     hosts += '</ul>';
 
-                    html += name + photo + genre + hosts + '</ul></div>';    
+                    html += name + photo + genres + hosts + '</ul></div>';    
                     $(html).prependTo('#sidebar');
                 }
                 else { 
