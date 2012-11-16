@@ -28,6 +28,7 @@
 				<ul><li><p>Studio Line</p><p>(773) 325-7341</p></li></ul>
 			</div>
                 <script src="http://player.wavepanel.net/embed/basic/64c829446c484becd92959d9b08a8fab7c2f9c67"></script>
+                <div class="bar" style="width:68%">Rather download the stream file? <a href="http://rock.radio.depaul.edu:8000/listen.pls?sid=1">Click here!</a></div>
         </div>
           <div class="panel" id="webcam">
 				<div class="contentBox">
