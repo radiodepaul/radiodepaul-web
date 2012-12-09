@@ -12,7 +12,7 @@ var people = {
 	        processData: false,
 	        contentType: "application/json",
 	        success: function(data) {
-	            if ( data != null ) {
+	            if ( data != '' ) {
 	                document.title = 'Radio DePaul | ' + data['name'];
 	                var html = '<div class="contentBox"><div class="bar">Error</div><p>Sorry. The person you requested cannot be found.</p></div>', twitter = "", tweet = "", name = "", shows = "", photo = "", linkedin = "", facebook = "", email = "", bio = "", hometown = "", major = "", class_year = "", stats = "", social = "", influences = "", disqus_embed = '<div id="comments" class="contentBox clear"><div class="bar">Posts</div><div id="disqus_thread" class="dsq-widget"></div></div>', photo_url = "'" + data['photo_medium'] + "'";
 					window.disqus_title = 'Radio DePaul | ' + data['name'], window.disqus_identifier = 'Radio DePaul | ' + data['name'], window.disqus_url = 'http://radio.depaul.edu/person/?id=' + data['id'], window.disqus_shortname = 'radiodepaul';
@@ -20,14 +20,14 @@ var people = {
 
 	                photo = '<div class="left photoBox" style="background: url(' + photo_url + ');"></div>';
 
-	                if ( data['major'] && data['hometown'] && data['class_year'] != null ) {
-	                    if (data['major'] != null) {
+	                if ( data['major'] && data['hometown'] && data['class_year'] != '' ) {
+	                    if (data['major'] != '') {
 	                        major = '<li><p>Major</p><p>' + data['major'] + '</p></li>';
 	                    }
-	                    if (data['hometown'] != null) {
+	                    if (data['hometown'] != '') {
 	                        hometown = '<li><p>Hometown</p><p>' + data['hometown'] + '</p></li>';
 	                    }
-	                    if (data['class_year'] != null) {
+	                    if (data['class_year'] != '') {
 	                        class_year = '<li><p>Class Year</p><p>' + data['class_year'] + '</p></li>';
 	                    }
 	                    stats = '<div class="right contentBox"><ul>' + major + hometown + class_year + '<ul></div>';
@@ -39,29 +39,29 @@ var people = {
 	                    }
 	                     shows += '</div>';
 	                }
-	                if (data['influences'] != null) {
+	                if (data['influences'] != '') {
 	                    influences = '<div class="clear contentBox"><div class="bar">Influences</div><p>' + data['influences'] + '</p></div>';
 	                }
-	                if ( data['twitter'] != null ) {
+	                if ( data['twitter'] != '' ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
 						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
 	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepaul" target="_blank"></a></li>'; }
 
-	                if ( data['facebook'] != null ) {
+	                if ( data['facebook'] != '' ) {
 	                    facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
 	                } else { facebook = '<li class="facebook"><a href="http://facebook.com/radiodepaul" target="_blank"></a></li>'; }
 
-	                if ( data['linkedin'] != null ) {
+	                if ( data['linkedin'] != '' ) {
 	                    linkedin = '<li class="linkedin"><a href="http://linkedin.com/' + data['linkedin'] + '" target="_blank"></a></li>';
 	                }
 
-	                if ( data['email'] != null ) {
+	                if ( data['email'] != '' ) {
 	                    email = '<li class="email"><a href="mailto:' + data['email'] + '"></a></li>';
 	                }
 
 	                social = '<div class="right contentBox"><div class="bar">Follow ' + data['name'] + '</div><ul id="personshowSocial">' + twitter + facebook + linkedin + email + '</ul></div>';
 
-	                if (data['bio'] != null) {
+	                if (data['bio'] != '') {
 	                    bio = '<div class="contentBox clear"><div class="bar">Bio</div><p>' + data['bio'] + '</p></div>';
 	                }
 
@@ -103,7 +103,7 @@ var people = {
                     html += '<div class="box">\
                                 <a href="/person/?id=' + data[i]['id'] + '"><p>' + data[i]['name'] + '</p></a>\
                                 <p>' + data[i]['position'] + '</p>';
-                    if ( data[i]['email'] != null ) {
+                    if ( data[i]['email'] != '' ) {
                         html += '<p><a href="mailto:' + data[i]['email'] + '">' + data[i]['email'] + '</a></p>'
                     }
                     html += '<p>' + data[i]['phone'] + '</p>\
@@ -229,7 +229,7 @@ var player = {
 				var html = '';
 	            if ( data !== null ) {
 	                var player = '<iframe src="http://p1.radiocdn.com/files/html/70f3d50f0e6f1273fab48fe82d29d7d24f7a91bc.html" frameborder="0" scrolling="no" height="40px" width="100px;"></iframe>', name = '<a href="/show/?id=' + data['id'] + '" target="_blank">' + data['title'] + '</a>', hosts = "", logo = '<img src="https://s3.amazonaws.com/radiodepaul/img/logo.png" />', photo = '<a href="/show/?id=' + data['id'] + '" target="_blank"><img src="' + data['photo'] + '" /></a>';
-	                if (data['genres'] != null) {
+	                if (data['genres'] != '') {
 	                    genres = '<p>Genre<p>' + data['genres'] + '</p>	';
 	                }
 	                if (data['hosts'].length > 0) {
@@ -312,7 +312,7 @@ var shows = {
 
 	                    stats = '<div class="right contentBox"><ul>';
 
-	                    if (data['genres'] != null) {
+	                    if (data['genres'] != '') {
 	                        genres = '<li><p>Genre</p><p>' + data['genres'] + '</p></li>';
 	                    }
 
@@ -333,12 +333,12 @@ var shows = {
 	                    }
 	                    stats += genres + slots + '</ul></div>';
 
-	                if ( data['twitter'] != null ) {
+	                if ( data['twitter'] != '' ) {
 	                    twitter = '<li class="twitter"><a href="http://twitter.com/' + data['twitter'] + '" target="_blank"></a></li>';
 						tweet = '<div id="showPersonTweet" class="contentBox right"><p>Loading tweet...</p></div>';
 	                } else { twitter = '<li class="twitter"><a href="http://twitter.com/radiodepauldjs" target="_blank"></a></li>'; }
 
-	                if ( data['facebook'] != null ) {
+	                if ( data['facebook'] != '' ) {
 	                    facebook = '<li class="facebook"><a href="http://facebook.com/' + data['facebook'] + '" target="_blank"></a></li>';
 	                    facebook_fanbox = '<div class="right contentBox clear"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/' + data['facebook'] + '" width="340" height="272" show_faces="true" border_color="#F6F2F5" stream="true" header="false"></fb:like-box></div>';
 	                } else { 
@@ -346,13 +346,13 @@ var shows = {
 	                        facebook_fanbox = '<div class="right contentBox clear" style="height:320px"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/radiodepaul" width="330" height="290" show_faces="true" border_color="#F6F2F5" stream="false" header="false"></fb:like-box></div>';
 	                    }
 
-	                if ( data['email'] != null ) {
+	                if ( data['email'] != '' ) {
 	                    email = '<li class="email"><a href="mailto:' + data['email'] + '" target="_blank"></a></li>';
 	                }
 
 	                social = '<div class="right contentBox"><div class="bar">Follow ' + data['title'] + '</div><ul id="personshowSocial">' + twitter + facebook + email + '</ul></div>';
 
-	                if (data['long_description'] != null) {
+	                if (data['long_description'] != '') {
 	                    description = '<div class="contentBox clear"><div class="bar">Description</div><p>' + data['long_description'] + '</p></div>';
 	                }
 
@@ -493,7 +493,7 @@ var shows = {
                                     <a href="/show/?id=' + data[i]['show']['id'] + '"><img src="' + data[i]['show']['photo_small'] + '" /></a>\
                                     <p class="showName"><a href="/show/?id=' + data[i]['show']['id'] + '">' + data[i]['show']['title'] + '</a><span> | ' + data[i]['show']['genres'] + '</span></p>\
                                     <p class="showDJs">' + hosts + '</p>';
-                        if ( data[i]['show']['short_description'] != null ) {
+                        if ( data[i]['show']['short_description'] != '' ) {
                             html += '<p class="showBio">' + data[i]['show']['short_description'] + '</p>';
                         }
                         html += '</li>';
@@ -833,7 +833,7 @@ var app = {
                 if ( data != null ) {
                     var name = '<a href="/show/?id=' + data['show']['id'] + '"><p style="text-align:center;">' + data['show']['title'] + '</p>';
                     var photo = '<img style="margin-left:50px" src="' + data['show']['photo_small'] + '" /></a>';
-                    if (data['show']['genres'] != null) {
+                    if (data['show']['genres'] != '') {
                         genres = '<p>' + data['show']['genres'] + '</p>';
                     }
                     var hosts = "<ul>";
