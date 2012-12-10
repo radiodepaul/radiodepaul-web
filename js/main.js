@@ -189,13 +189,13 @@ var player = {
                 'width': '578',
                 'height': '270',
                 'provider': 'rtmp',
-                'streamer': 'rtmp://140.192.109.228:1935/rtplive',
+                'streamer': 'rtmp://ec2-67-202-3-106.compute-1.amazonaws.com/rtplive',
                 'file': 'mp4:camera.stream',
                 'modes': [
                     {type: 'flash', src: 'https://s3.amazonaws.com/radiodepaul/js/player.swf'},
                     {type: 'html5', config:
                             {
-                            'file': "http://140.192.109.228:1935/rtplive/mp4:camera.stream/playlist.m3u8",
+                            'file': "http://ec2-67-202-3-106.compute-1.amazonaws.com/rtplive/mp4:camera.stream/playlist.m3u8",
                             provider: 'video'
                             }
                     }
