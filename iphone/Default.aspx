@@ -14,6 +14,9 @@
 		<link rel="stylesheet" href="style.css?v=001" type="text/css" media="screen" charset="utf-8" />
 		<script type="text/javascript" src="http://use.typekit.com/kng1gpc.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+                <script type="text/javascript" src="https://s3.amazonaws.com/radiodepaul/js/jwplayer.js"></script>
+                <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
 	</head>
 	<body onload='pageLoaded()'>
 		<header>
@@ -24,7 +27,7 @@
 				<li id='liHome' onclick='navSelected()' class='selected'></li>
 				<li id='liListen' onclick='goToStreamHigh()'></li>
 				<li id='liWatch' onclick='navSelected()'></li>
-				<li id='liSchedule' onclick='navSelected()'></li>
+				<!--<li id='liSchedule' onclick='navSelected()'></li>-->
 				<!--<li id='liContact' onclick='navSelected()'></li>-->
 			</ul>
 		</nav>
@@ -40,7 +43,7 @@
         </section>
 		<section id="watch">
 			<h1>Webcam</h1>
-			<div id="webcam"></div>
+			<div id="webcam_embed"></div>
 		</section>
 		<section id="schedule">
 			<div id="schedule_list">
@@ -88,8 +91,7 @@
             </ul>
 		</section>
 		<footer><a href="/?s=full">Switch to Full Site</a></footer>
-<script type="text/javascript" src="/js/jquery-1.6.4.min.js"></script>
-<script type="text/javascript" src="nav.js"></script>
+<script type="text/javascript" src="nav.js?v=1.0.4"></script>
 <script type="text/javascript" src="bookmark_bubble.js"></script>
 <script type="text/javascript" src="bookmark_bubble_control.js"></script>
 </body>
