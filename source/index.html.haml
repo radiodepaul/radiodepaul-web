@@ -1,0 +1,11 @@
+---
+page_title: 'Home'
+body_title: 'home'
+---
+
+#sidebar= partial 'partials/sidebar'
+#content
+  #recentcomments.contentBox.clear{style: 'display:none;'}
+    .bar Recent Posts
+    .dsq-widget
+      %script{src: 'http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=32&excerpt_length=100', type: 'text/javascript'}
