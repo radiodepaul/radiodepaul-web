@@ -1,0 +1,31 @@
+---
+page_title: 'Player'
+body_title: 'player'
+layout: player
+---
+
+%header
+  %nav
+    %a{:href => "#", :title => "player"} Player
+    %a{:href => "#", :title => "webcam"} Webcam
+    %a{:href => "#", :title => "chat"} Chat
+#content
+  #player.panel
+    .left.contentBox.bottom
+      .bar Contact Us
+      %ul
+        %li
+          %p Studio Line
+          %p (773) 325-7341
+    %script{:src => "http://player.wavepanel.net/embed/basic/64c829446c484becd92959d9b08a8fab7c2f9c67"}
+    .bar{:style => "width:68%"}
+      Rather download the stream file?
+      %a{:href => "http://rock.radio.depaul.edu:8000/listen.pls?sid=1"} Click here!
+  #webcam.panel
+    .contentBox
+      .bar Radio DePaul Webcam
+      #webcam_embed{:style => "text-align:center;width:578px;height:270px;overflow:hidden;"}
+  #chat.panel
+    .contentBox
+      .bar Radio DePaul Chat
+      %embed{:height => "270", :src => "http://w.digsby.com/dw.swf?c=8wmzu67xedoev6tp", :type => "application/x-shockwave-flash", :width => "578", :wmode => "transparent"}
