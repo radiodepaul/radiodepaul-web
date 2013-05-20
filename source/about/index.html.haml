@@ -1,0 +1,70 @@
+---
+page_title: 'About'
+body_title: 'about'
+---
+
+- content_for :categories do
+  %a{:title => "managers"}
+    %span
+      %p Managers
+  %a{:title => "mission_statement"}
+    %span
+      %p Mission Statement
+  %a{:title => "join"}
+    %span
+      %p Join Radio DePaul
+  %a{:title => "sponsor"}
+    %span
+      %p Sponsor Radio DePaul
+  %a{:title => "awards"}
+    %span
+      %p Awards & Recognition
+
+#sidebar= partial 'partials/sidebar'
+#content
+  #managers.panel
+    #featured
+      #slides
+        .slides_container
+        %a.prev{:href => "#"}
+          %img{:alt => "Arrow Prev", :height => "43", :src => "https://s3.amazonaws.com/radiodepaul/css/slides/arrow-prev.png", :width => "24"}/
+        %a.next{:href => "#"}
+          %img{:alt => "Arrow Next", :height => "43", :src => "https://s3.amazonaws.com/radiodepaul/css/slides/arrow-next.png", :width => "24"}/
+      %img#frame{:alt => "Frame", :src => "https://s3.amazonaws.com/radiodepaul/css/slides/example-frame.png"}/
+  #mission_statement.panel.contentBox{:style => "display:none;"}
+    .bar Mission Statement
+    %p Act as an educational and practical training ground for those students who are interested in pursuing radio as a career.
+    %p Entertain and Inform our audience through innovative and consistent music and non-music programming.
+    %p Serve the DePaul community by promoting University services, events, and activities.
+    %p Work cooperatively with other campus groups and organizations to promote and support a varied and exciting collegiate experience for students.
+  #join.panel.contentBox{:style => "display:none;"}
+    .bar Join Radio DePaul
+    .smallBar
+      %span Eligibility for Participation
+    %p Only full-time students in good academic standing (2.5 GPA or higher) at DePaul are eligible for FULL membership in Radio DePaul.
+    %p University faculty members, staff and members of the community also shall be eligible for ASSOCIATE membership through petition to the Student Advisory Committee.
+    %p Membership constitutes active participation in the organization.
+    %p Radio DePaul shall not discriminate against any person on the basis of race, color, sex, sexual preference, disabilities, national origin, religious affiliation, or beliefs.
+    .smallBar
+      %span Rights and Privileges of Membership
+    %p The number of persons who may be members of Radio DePaul may be limited depending on the availability of on or off-air positions.
+    %p Only FULL members of the organization shall be eligible to hold management positions.
+  #sponsor.panel.contentBox{:style => "display:none;"}
+    .bar Sponsor Radio DePaul
+    %p
+      Sponsoring Radio DePaul is easy and affordable. We have a number of packages that may be right for your organization or business. It is also possible to design your own custom sponsorship package. Please check out our
+      %a{:href => "/depaul_media_kit.pdf"} media kit
+      and contact us with any questions you have. Keep in mind that in addition to being heard on our site, Radio DePaul is one of handful of college stations that is available on the very popular iHeartRadio app and website. In other words, your organization or businesses name is going to reach a lot of people. Thanks for considering Radio DePaul, Chicago's College Connection!
+    %p
+      %a{:href => "/depaul_media_kit.pdf"} View/Download Media Kit
+    %p
+    %ul
+      %li Contact Information
+      %li Scott Vyverman, General Manager
+      %li
+        Email:
+        %a{:href => "mailto:radiodepaulmanagement@gmail.com"} radiodepaulmanagement@gmail.com
+      %li Phone: (773) 325-7399
+      %li Fax: (773) 325-4133
+  #awards.panel.contentBox{:style => "display:none;"}
+    .bar Awards & Recognition

@@ -1,5 +1,0 @@
-/img/random_images/schubas.jpg	http://schubas.com/	Schubas Tavern
-/img/random_images/lincolnhall.jpg	http://lincolnhallchicago.com/	Lincoln Hall
-/img/random_images/reckless.jpg	http://reckless.com/	Reckless Records
-/img/random_images/826chicago.jpg	http://826chi.org/	826 Chicago
-/img/random_images/crowdnoize.jpg	http://crowdnoize.com/	CrowdNoize
