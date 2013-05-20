@@ -33,7 +33,7 @@
 		</nav>
 		<section id="home">
 			<h1>Chicago's College Connection</h1>
-            <div id="logo" onclick="goToStreamHigh()"><img src="../img/logo.png" alt="" /><p>Click the logo to listen!</p></div>
+            <div id="logo" onclick="goToStreamHigh()"><img src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt="" /><p>Click the logo to listen!</p></div>
 		</section>
         <section id="listen">
             <h1>Listen Live!</h1>
