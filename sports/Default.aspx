@@ -10,7 +10,6 @@
 	<%Server.Execute("/includes/head.aspx");%>
 </head>
 <body title="sports">
-	<div id="superBar"><div style="padding:12px;">DePaul Media Network <a href="http://dab.depaul.edu/">DePaul Activities Board (DAB)</a><a href="http://www.depauliaonline.com/">The DePaulia</a><a href="http://communication.depaul.edu/Student Work/Good Day DePaul/">Good Day DePaul</a><div style="float:right;">Follow Us <a href="http://facebook.com/radiodepaul/">Facebook</a><a href="http://twitter.com/radiodepauldjs/">Twitter</a></div></div></div>
 	<div id="categories">
 		<a href="" class="selected"><span><p>Main</p></span></a>
 		<a href="/show/?id=19"><span><p>Blue Demon Weekly</p></span></a>

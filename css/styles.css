@@ -14,6 +14,7 @@
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  */
+@import url(http://fonts.googleapis.com/css?family=Cabin|Roboto+Slab);
 
 #fancybox-loading {
 	position: fixed;
@@ -359,9 +360,10 @@
 .fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
 
 body {
-	background-color: #e9e9e3;
+	background-image: url(../img/cream_pixels.png);
 	position:relative;
-	font-family: futura-tk;
+	font-family: 'Cabin', sans-serif;
+	line-height: 1.3;
 	font-size:12px;
 }
 header {
@@ -370,9 +372,11 @@ header {
 }
 nav, header h1, #search {
 	position:absolute;
+	font-family: 'Roboto Slab', serif;
 }
 header h1 {
 	font-weight:bold;
+	font-family: 'Roboto Slab', serif;
 }
 
 h2, h3 {
@@ -410,18 +414,19 @@ a, a:link, a:visited {
 	margin-left:10px;
 }
 #superBar a:hover {
-	color:#5E87A8;
+	color:#0f7cc0;
 }
 img#logo {
 	height:110px;
 }
 @-webkit-keyframes rotate {
 	0%     { -webkit-transform: rotate(0deg);}
-    25%    { -webkit-transform: rotate(90deg); }
+    /* 25%    { -webkit-transform: rotate(90deg); }
     50%    { -webkit-transform: rotate(180deg); }
-    75%    { -webkit-transform: rotate(270deg); }
+    75%    { -webkit-transform: rotate(270deg); }  Omitting this makes logo spin 360 with no glitching */
     100%   { -webkit-transform: rotate(360deg); }
 }
+
 img#logo:hover {
 	-moz-transform: rotate(-5deg);
 	-webkit-animation-name: rotate; 
@@ -461,21 +466,21 @@ nav {
 }
 nav a:link, nav a:visited {
 	color:#272123;
-	border-top:solid 4px #272123;
-	border-right:dotted 1px #272123;
+	border-top:solid 4px #FFF;
 	float:left;
 	height:18px;
-	border-bottom:dotted 1px #272123;
-	padding:10px 10px;
+	border-bottom:solid 1px #FFF;
+	padding:8px 8px 12px;
 	font-weight:bold;
-	font-size:14px;
+	font-size:12px;
 }
 nav a{
-	border-top:solid 4px #272123;
+	border-top:solid 4px #FFF;
 }
 nav a:hover {
-	color:#5e87a8;
-	border-top:solid 4px #4289a9;
+	color:#0f7cc0;
+	border-top:solid 4px #0f7cc0;
+	border-bottom:solid 1px #0f7cc0;
 }
 nav a:last-child:hover {
 	border-top:solid 4px #cf671c;
@@ -489,16 +494,16 @@ nav a:last-child {
 	width:274px;
 	font-size:18px;
 	color:#fff;
-	background-color:#5e87a8;
+	background-color:#0f7cc0;
 }
 nav a.selected {
-	border-top:solid 4px #4289a9;
-	border-bottom:none;
-	color:#5e87a8;
+	border-top:solid 4px #0f7cc0;
+	border-bottom:solid 1px #0f7cc0;
+	color:#0f7cc0;
 }
 header h1 {
 	left:140px;
-	top:35px;
+	top:25px;
 	font-size:28px;
 }
 #page, header {
@@ -507,6 +512,8 @@ header h1 {
 #page {
 	margin:0 auto;
 	z-index:1;
+	padding: 10px;
+	background-color: rgba(0,0,0, .08);
 	position:relative;
 }
 #categories {
@@ -538,12 +545,10 @@ header h1 {
 	font-size:14px;
 }
 #categories a:hover {
-	background-color:#333;
-	color:#F2F2F2;
+	color:#0f7cc0;
 }
 #categories a.selected {
-	background-color:#222;
-	color:#F2F2F2;
+	color:#0f7cc0;
 }
 #main {
 	display:block;
@@ -562,7 +567,6 @@ header h1 {
 	display:block;
 }
 #content {
-	border-top:solid 8px #272123;
 	width:700px;
 	position:relative;
 	padding:10px 0;
@@ -576,6 +580,14 @@ header h1 {
 	float:left;
 	width:48%;
 }
+.left2{
+	float:left;
+	width:100%;
+}
+.right2{
+	float: right;
+	width: 100%;
+}
 .right {
 	float:right;
 	width:48%;
@@ -587,14 +599,18 @@ header h1 {
 	clear:left;
 }
 #sidebar {
-	border-top:solid 8px #272123;
 	width:250px;
 	position:absolute;
 	right:0;
 	padding:10px 0;
 }
+#slider_placeholder{
+	border: solid 4px #FFF;
+	position: relative;
+	right: 4px;
+}
 #now_playing img {
-	border:dotted 1px #5e87a8;
+	border:dotted 1px #0f7cc0;
 }
 #now_playing img:hover {
 	border:solid 1px #CF671C;
@@ -614,7 +630,7 @@ header h1 {
 }
 .contentBox a:hover  {
 	text-decoration:underline;
-	color:#5e87a8;
+	color:#0f7cc0;
 }
 #news_widget li, #news_posts li {
 	position:relative;
@@ -638,11 +654,12 @@ header h1 {
 #news_widget .news_headline p span, #news_posts .news_headline p span, #news_post .news_headline p span {
     float:right;
     font-weight:normal;
+    line-height: 1.8;
     font-size:14px;
 }
 
 a:link.back_button, a:visited.back_button {
-	background-color:#5E87A8;
+	background-color:#0f7cc0;
 	border:2px solid #777;
 	color:#fff;
 	padding:5px;
@@ -674,7 +691,7 @@ a:link.back_button, a:visited.back_button {
 	width:300px;
 	height:300px;
 	text-align:center;
-	border: 2px solid #5e87a8;
+	border: 2px solid #0f7cc0;
     border-radius: 30px;
     -moz-border-radius: 30px;
     -khtml-border-radius: 30px;
@@ -688,17 +705,17 @@ a:link.back_button, a:visited.back_button {
 }
 div.bar {
 	width:100%;
-	font-size:16px;
+	font-size:20px;
 	color:#F2F2F2;
 	padding:6px 0;
-	background-color:#5e87a8;
+	background-color:#0f7cc0;
 	font-weight:bold;
 	text-indent:5px;
 	clear:both;
 }
 div.bar a:link, div.bar a:visited {
 	color:#F2F2F2;
-	font-size:14px;
+	font-size:20px;
 	border-bottom:;
 }
 div.bar a:hover {
@@ -719,7 +736,7 @@ div.smallBar a:link, div.smallBar a:visited {
 	color:#272123;
 }
 div.smallBar a:hover {
-	color:#5e87a8;
+	color:#0f7cc0;
 }
 a:link.big div, a:visited.big div, a:link.big li, a:visited.big li {
 	color:#272123;
@@ -727,7 +744,7 @@ a:link.big div, a:visited.big div, a:link.big li, a:visited.big li {
 	height:50px;
 }
 a:hover.big div, a:hover.big li {
-	background-color:#5e87a8;
+	background-color:#0f7cc0;
 	color:#fff;
 }
 .contentBox {
@@ -739,7 +756,7 @@ a:hover.big div, a:hover.big li {
 	margin-bottom:10px;
 }
 #showPersonTweet, #tweet {
-	padding:30px 0 20px 0;
+	padding:30px 0 40px 0;
 	background:#F6F2F5 url('https://s3.amazonaws.com/radiodepaul/img/twitter.png') no-repeat 4px 4px;
 }
 #tweet p, #tweet a:link, #tweet a:visited, #showPersonTweet p, #showPersonTweet a:link, #showPersonTweet a:visited {
@@ -749,6 +766,7 @@ a:hover.big div, a:hover.big li {
 #tweet a.tweetTime, #showPersonTweet a.tweetTime {
 	position:absolute;
 	right:20px;
+	margin-top: 15px;
 }
 a#friend img {
 	width:250px;
@@ -772,38 +790,29 @@ img.ad {
 #nowPlaying a:link, a:visited, p {
 	font-size:14px;
 }
+#on_air_bar{
+	background-color: #ee3942;
+}
 .showInfo {
 	position:absolute;
 	left:70px;
 	top:30px;
 	width:230px;
 }
+#footer_bar, a#footer_bar{
+	font-size: 12px !important;
+}
 footer {
 	width:100%;
 	color:#F2F2F2;
-	height:200px;
+	height:100px;
 	background-color:#34332e;
-	clear:both;
-	-webkit-border-top-left-radius: 20px;
-	-webkit-border-top-right-radius: 20px;
-	-moz-border-radius-topleft: 20px;
-	-moz-border-radius-topright: 20px;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-}
-footer > div.bar {
-	-webkit-border-top-left-radius: 20px;
-	-webkit-border-top-right-radius: 20px;
-	-moz-border-radius-topleft: 20px;
-	-moz-border-radius-topright: 20px;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
 }
 footer a:link, footer a:visited {
 	color:#F2F2F2;
 }
 footer a:hover {
-	color:#5E87A8;
+	color:#0f7cc0;
 }
 footer #desc {
 	width:400px;
@@ -814,11 +823,11 @@ footer a:link#apply, footer a:visited#apply {
 	position:absolute;
 	bottom:20px;
 	left:20px;
-	background-color:#cf671c;
+	background-color:#ee3942;
 	color:#000;
 }
 footer a#apply:hover {
-	background-color:#5e87a8;
+	background-color:#0f7cc0;
 	color:#fff;
 }
 footer #desc p {
@@ -928,7 +937,7 @@ footer .bar {
 	font-size:14px;
 }
 #schedule ul li a:hover {
-	color:#5e87a8;
+	color:#0f7cc0;
 }
 #schedule ul li div.time {
 	width:100px;
@@ -1116,7 +1125,7 @@ div#gallery ul li img {
 }
 .box a:link, a:visited, a:hover {text-decoration:none}
 a:hover {
-	color:#5e87a8;
+	color:#0f7cc0;
 }
 
 #mission_statment {clear:both}
@@ -1136,7 +1145,7 @@ a:hover {
 }
 .banner span {
 	opacity:.8;
-    background: #5E87A8;
+    background: #0f7cc0;
     color: white;
     font-size: 14px;
     left: 0;

@@ -8,23 +8,36 @@
 	<%Server.Execute("/includes/head.aspx");%>
 </head>
 <body title="home">
-	<div id="superBar"><div style="padding:12px;">DePaul Media Network <a href="http://dab.depaul.edu/">DePaul Activities Board (DAB)</a><a href="http://www.depauliaonline.com/">The DePaulia</a><a href="http://communication.depaul.edu/Student Work/Good Day DePaul/">Good Day DePaul</a><div style="float:right;">Follow Us <a href="http://facebook.com/radiodepaul/">Facebook</a><a href="http://twitter.com/radiodepauldjs/">Twitter</a></div></div></div>
+	<!-- REMOVE TOP BLACK SUPERBAR AND CATEGORIES
+	<div id="superBar"><div style="padding:12px;">DePaul Media Network <a href="http://dab.depaul.edu/">DePaul Activities Board (DAB)</a><a href="http://www.depauliaonline.com/">The DePaulia</a><a href="http://communication.depaul.edu/Student Work/Good Day DePaul/">Good Day DePaul</a>
+
+	<div style="float:right;">Follow Us <a href="http://facebook.com/radiodepaul/">Facebook</a><a href="http://twitter.com/radiodepauldjs/">Twitter</a></div></div></div>
+
+
 	<div id="categories"></div>
+	-->
 	<div id="page">
 		<div id="clock"></div>
 		<div id="weather"></div>
 		<header>
- 			<a href="/"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
+ 			<a href="#"><img id="logo" src="https://s3.amazonaws.com/radiodepaul/img/logo.png" alt ="" /></a>
 			<h1 class="tk-futura-pt" id="title">Chicago's College Connection</h1>
 			<%Server.Execute("/includes/nav.aspx");%>
 		</header>
 		<div id="main">
+			<div >
+				<img src="img/station.png" width="970px" height="400px" id="slider_placeholder">
+			</div>
 			<%Server.Execute("/includes/sidebar.aspx");%>
 			<div id="content">
 				<div id="recentcomments" style="display:none;" class="contentBox clear">
 					<div class="bar">Recent Posts</div>
-					<div class="dsq-widget"><script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=32&excerpt_length=100"></script></div>
+					<div class="dsq-widget">
+						<script type="text/javascript" src="http://radiodepaul.disqus.com/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=32&excerpt_length=100"></script>
+					</div>
 				</div>
+					<a href="http://www.costellosandwich.com/"><img src="img/costellos.png" style="margin-left: 12%; margin-top: 20px; position: relative; top: 10px;" width="250px"/></a>
+					<a href="http://www.redmangousa.com/"><img src="img/red_mango.jpg" width="250px" style="margin-top:10px;"/></a>
 			</div>
 		</div>
 	</div>
