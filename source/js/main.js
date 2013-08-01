@@ -656,7 +656,7 @@ var app = {
         }
     },
     setupLaunchPlayer : function() {
-		$('nav #launchPlayer').click(function() { $.popupWindow('/player/', { height: 371,width: 600,toolbar: false,scrollbars: false,status: false,resizable: false,left: 100,top: 100,center: false,createNew: true,location: false,menubar: false });});
+		$('nav #launchPlayer').click(function() { $.popupWindow('/player/', { height: 500,width: 800,toolbar: false,scrollbars: false,status: false,resizable: false,left: 100,top: 100,center: false,createNew: true,location: false,menubar: false });});
     },
     loadGlobalScripts: function() {
         $.ajaxSetup({async: false, cache: false});
@@ -878,8 +878,8 @@ var app = {
 		var html = '<div id="events" class="right2 contentBox"><div class="bar">Coming Up</div><ul>';
                 for (var i=0;i<data.length;i++)
                 {
-                  html += '<li>' +
-                            '<p>' + data[i].title + '</p>' +
+                  html += '<li class="comingup-list">' +
+                            '<p class="comingup-title">' + data[i].title + '</p>' +
                             '<p>' + data[i].first_line + ' - ' + data[i].second_line + '</p>' +
                             '<p>' + data[i].location + '</p>' +
                             '<p>' + data[i].description + '</p></li>';

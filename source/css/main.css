@@ -14,7 +14,7 @@
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  */
-@import url(http://fonts.googleapis.com/css?family=Cabin|Roboto+Slab);
+@import url(http://fonts.googleapis.com/css?family=Cabin);
 
 #fancybox-loading {
 	position: fixed;
@@ -484,9 +484,11 @@ nav a:hover {
 }
 nav a:last-child:hover {
 	border-top:solid 4px #cf671c;
+	border-bottom:solid 4px #cf671c;
 }
-nav a { 
-	-webkit-transition:border-top .4s ease-out;
+nav a {
+	transition:border .4s ease-in ; 
+	-webkit-transition:border .4s ease-in;
 }
 nav a:last-child {
 	border-right:none;
@@ -1210,4 +1212,9 @@ a:hover {
 .home_image{
 	width: 100%;
 }
-
+.comingup-list{
+	border-bottom: 1px solid black;
+}
+.comingup-title{
+	font-size: 1.4em !important;
+}
