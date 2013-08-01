@@ -2,8 +2,11 @@
 page_title: 'Home'
 body_title: 'home'
 ---
+#home_image
+  #banner_img= image_tag 'station.png', :class => "home_image"
 
 #sidebar= partial 'partials/sidebar'
+
 #content
   #recentcomments.contentBox.clear{style: 'display:none;'}
     .bar Recent Posts

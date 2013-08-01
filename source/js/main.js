@@ -529,20 +529,12 @@ var app = {
 				if ( ( navigator.userAgent.indexOf("iPhone") !=-1 || navigator.userAgent.indexOf("iPod") !=-1 ) &&  siteRequested != 'full' ) {
 					window.location="/iphone/";
 				}
-				var slider_html = '<div id="featured">\
-					<div id="slides">\
-						<div class="slides_container">\
-						</div>\
-						<a href="#" class="prev"><img src="https://s3.amazonaws.com/radiodepaul/css/slides/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>\
-						<a href="#" class="next"><img src="https://s3.amazonaws.com/radiodepaul/css/slides/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>\
-					</div>\
-					<img src="https://s3.amazonaws.com/radiodepaul/css/slides/example-frame.png" alt="Frame" id="frame" />\
-				</div>';
+				
+				
 				if ($.browser.msie  && parseInt($.browser.version, 10) === 8) {
 				} else { app.loadStationEvents();app.loadStationNews(); }
 				shows.displayRandomShows();
-				app.loadFlickrPhotoset('72157627533487017', 'slider');
-				$(slider_html).prependTo('#content');
+
 				//app.loadDePauliaFeed();
 				$('#recentcomments').fadeIn();
             	break;
@@ -829,7 +821,7 @@ var app = {
             processData: false,
             contentType: "application/json",
             success: function(data) {
-				var html = '<div id="now_playing" class="contentBox"><div class="bar">On Air Now</div><ul>';
+				var html = '<div id="now_playing" class="contentBox"><div class="bar" id="on_air_bar">On Air Now</div><ul>';
                 if ( data != null ) {
                     var name = '<a href="/show/?id=' + data['show']['id'] + '"><p style="text-align:center;">' + data['show']['title'] + '</p>';
                     var photo = '<img style="margin-left:50px" src="' + data['show']['photo_small'] + '" /></a>';
@@ -861,7 +853,7 @@ var app = {
             processData: false,
             contentType: "application/json",
             success: function(data) {
-                var html = '<div id="news_widget" class="left contentBox"><div class="bar"><a href="/station_news/">Radio DePaul News</a></div><ul>';
+                var html = '<div id="news_widget" class="left2 contentBox"><div class="bar"><a href="/station_news/">Radio DePaul News</a></div><ul>';
                 $.each(data, function(i, news_post) {
             			html += '<li>\
                         <a class="news_headline" href="/station_news/post/?id=' + news_post.id + '"><p>' + news_post.headline + '<span class="news_time">' + news_post.published_at + '</span></p></a>\
@@ -869,7 +861,7 @@ var app = {
                         </li>';
         		});
                 html += '</ul></div>';
-				$('#featured').after(html);
+				$(html).prependTo('#content');
 				
             }
         });
@@ -883,7 +875,7 @@ var app = {
             contentType: "application/json",
             success: function(data) {
               console.log(data);
-		var html = '<div id="events" class="right contentBox"><div class="bar">Coming Up</div><ul>';
+		var html = '<div id="events" class="right2 contentBox"><div class="bar">Coming Up</div><ul>';
                 for (var i=0;i<data.length;i++)
                 {
                   html += '<li>' +
@@ -893,7 +885,7 @@ var app = {
                             '<p>' + data[i].description + '</p></li>';
                 }
 		html += '</ul></div>';
-                $('#featured').after(html);
+                $(html).prependTo('#content');
 				
             }
         });
