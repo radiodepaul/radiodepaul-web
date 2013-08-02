@@ -17,10 +17,9 @@
       #weather
 
       %header
-        - link_to '/' do
-          #logo= image_tag 'logo.png'
-
-        %h1#title.tk-futura-pt Chicago's College Connection
+        %center
+          - link_to '/' do
+            #logo= image_tag 'logo.png', :class => "rd-logo"
 
         %nav= partial 'partials/nav'
 
