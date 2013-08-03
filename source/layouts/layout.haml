@@ -12,10 +12,7 @@
   %body{title: current_page.data.body_title }
 
 
-    #page
-      #clock
-      #weather
-
+    .container
       %header
         %center
           - link_to '/' do
@@ -23,9 +20,13 @@
 
         %nav= partial 'partials/nav'
 
-      #main= yield
+    #main= yield
 
     %footer= partial 'partials/footer'
-
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     = javascript_include_tag 'application'
-    = javascript_include_tag 'https://www.google.com/jsapi?callback=loadGoogleAPIs&key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg'
+    = javascript_include_tag 'sidebar'
+    = yield_content :js
+    /= javascript_include_tag 'old'
+
+    /= javascript_include_tag 'https://www.google.com/jsapi?callback=loadGoogleAPIs&key=ABQIAAAA-HgkQ3h85RC9grgGQsrSnhSP5c0xxhF7kkwus1Uc2hzPhLJBLxTWfP5nbXo7i4gExC2Q7K1TO0kBJg'

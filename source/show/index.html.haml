@@ -3,5 +3,10 @@ page_title: 'Show'
 body_title: 'show'
 ---
 
-#sidebar= partial 'partials/sidebar'
-#content
+- content_for(:js) do
+  = javascript_include_tag 'show'
+
+.container
+  #sidebar= partial 'partials/sidebar'
+  #content
+  

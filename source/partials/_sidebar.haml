@@ -1,5 +1,18 @@
-#tweet.contentBox
-  %p Loading tweet...
+#now_playing.contentBox
+  #on_air_bar.bar On Air Now
+  =image_tag "ajax-loader.gif", :class => "loader-img"
+
+
+.contentBox
+  %a.twitter-timeline{:href => "https://twitter.com/radiodepauldjs", :data => {:'widget-id' => 363308094438133760}, :height => "300px"} Tweets by @radiodepauldjs
+
+  %script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+.contentBox
+  #fb-root
+  %script{src: 'http://connect.facebook.net/en_US/all.js#xfbml=1'}
+  %fb:like-box{border_color: '#fff', header: 'false', height: '228', href: 'http://www.facebook.com/radiodepaul', show_faces: 'true', stream: 'false', width: '240'}
+
 .contentBox
   %ul
     %li
@@ -12,16 +25,9 @@
       %p Mailing Address
       %p
         Radio DePaul
-        %br>
+        %br
         2250 N. Sheffield Avenue
-        %br>
+        %br
         Suite 317
-        %br>
+        %br
         Chicago, IL 60614
-.contentBox
-  #fb-root
-  %script{src: 'http://connect.facebook.net/en_US/all.js#xfbml=1'}
-  %fb:like-box{border_color: '#fff', header: 'false', height: '228', href: 'http://www.facebook.com/radiodepaul', show_faces: 'true', stream: 'false', width: '240'}
-.contentBox
-  %a
-    %img

@@ -368,7 +368,6 @@ body {
 }
 header {
 	position:relative;
-	margin-top:30px;
 }
 nav, header h1, #search {
 	position:absolute;
@@ -385,13 +384,12 @@ h2, h3 {
 p {line-height:18px}
 h2 {font-size:22px;}
 h3 {font-size:20px;}
-a, a:link, a:visited, p {
+p {
 	font-size:12px;
 }
-a, a:link, a:visited {
+a, a:visited {
 	text-decoration:none;
 	cursor:pointer;
-	color:#272123;
 }
 #superBar {
 	background-color:#000;
@@ -418,20 +416,26 @@ a, a:link, a:visited {
 }
 img#logo {
 	height:110px;
+	z-index: -1;
 }
-@-webkit-keyframes rotate {
-	0%     { -webkit-transform: rotate(0deg);}
-    /* 25%    { -webkit-transform: rotate(90deg); }
-    50%    { -webkit-transform: rotate(180deg); }
-    75%    { -webkit-transform: rotate(270deg); }  Omitting this makes logo spin 360 with no glitching */
-    100%   { -webkit-transform: rotate(360deg); }
+.rd-logo{
+	z-index: 1;
+	-webkit-transition-duration: 1.2s;
+    -moz-transition-duration: 1.2s;
+    -o-transition-duration: 1.2s;
+    transition-duration: 1.2s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+     
+    overflow:hidden;
 }
-
-img#logo:hover {
-	-moz-transform: rotate(-5deg);
-	-webkit-animation-name: rotate; 
-	-webkit-animation-duration: 1.5s;
-	-o-transform: rotate (-5deg); 
+img.rd-logo:hover{
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
 }
 #search {
 	top:0;
@@ -459,78 +463,57 @@ form#search input {
 nav {
 	height:30px;
 	left:160px;
-	top:30px;
+	top:34px;
 	padding-bottom:10px;
 	text-transform:uppercase;
-	line-height:24px;
+	line-height:20px;
+	z-index: 1;
 }
-nav a:link, nav a:visited {
-	color:#272123;
-	border-top:solid 4px #FFF;
+nav a:link {
 	float:left;
-	height:18px;
-	border-bottom:solid 4px #FFF;
+	height:14px;
 	padding:8px 8px 12px;
 	font-weight:bold;
 	font-size:12px;
 }
-nav a{
+nav a:active{
+	color:#FFF;
 	border-top:solid 4px #FFF;
+	border-bottom:solid 4px #FFF;
+}
+.right-side-nav{
+	color: #0f7cc0;
+	border-top:solid 4px #0f7cc0;
+	border-bottom:solid 4px #0f7cc0;
+}
+.left-side-nav:hover{
+	color: #C9111A;
+	border-top:solid 4px #C9111A;
+	border-bottom:solid 4px #C9111A;
+}
+.left-side-nav{
+	color: #ee3942;
+	border-top:solid 4px #ee3942;
+	border-bottom:solid 4px #ee3942;
+}
+.right-side-nav:hover{
+	color: #094e79;
+	border-top:solid 4px #094e79;
+	border-bottom:solid 4px #094e79;
 }
 header h1 {
 	top:-20px;
 	font-size:28px;
 }
-#page, header {
-	width:970px;
-}
-#page {
+.container{
 	margin:0 auto;
 	z-index:1;
 	padding: 10px;
-	background-color: rgba(0,0,0, .08);
 	position:relative;
+	max-width: 970px;
 }
-#categories {
-	text-align:right;
-	text-transform:uppercase;
-	left:0;
-	position:fixed;
-	top:180px;
-	z-index:0;
-	right:0;
-}
-#categories a, #categories a:link, #categories a:visited {
-	color:#666;
-}
-#categories a, #categories span {
-	display:block;
-	height:30px;
-	-webkit-transition:background-color .6s ease-out;
-}
-#categories a span p {
-	line-height:30px;
-	margin-right:60px;
-}
-#categories span {
-	width:1082.75px;
-	left:-984px;
-	margin:0 auto;
-	position:relative;
-	font-size:14px;
-}
-#categories a:hover {
-	color:#0f7cc0;
-}
-#categories a.selected {
-	color:#0f7cc0;
-}
-#main {
-	display:block;
-	width:970px;
-	position:relative;
-	margin-top:10px;
-}
+
+
 #featured {
 	margin:0 auto;
 	height:360px;
@@ -545,8 +528,7 @@ header h1 {
 	width:700px;
 	position:relative;
 	padding:10px 0;
-	min-height:1100px;
-	bottom:0;
+	float:left;	
 }
 .contentLeft, .contentRight {
 	width:300px;
@@ -575,8 +557,8 @@ header h1 {
 }
 #sidebar {
 	width:250px;
-	position:absolute;
-	right:0;
+	position:relative;
+	float:right;
 	padding:10px 0;
 }
 #slider_placeholder{
@@ -729,6 +711,7 @@ a:hover.big div, a:hover.big li {
 	-webkit-box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	box-shadow: 0 3px 4px rgba(0,0,0,.5);
 	margin-bottom:10px;
+	min-height: 200px;
 }
 #showPersonTweet, #tweet {
 	padding:30px 0 40px 0;
@@ -782,6 +765,9 @@ footer {
 	color:#F2F2F2;
 	height:100px;
 	background-color:#34332e;
+	margin-top: 20px;
+	position: relative;
+	float:left;
 }
 footer a:link, footer a:visited {
 	color:#F2F2F2;
@@ -883,55 +869,69 @@ footer .bar {
 	border-bottom:1px solid #272123;
 	font-weight:bold;
 	text-indent:5px;
+	text-transform:capitalize;
+
 }
-#schedule ul {
-	width:100%;
+.tabs{
+	margin-top: 7px;
+	font-size: 16px !important;
 }
-#schedule, #shows {
-	width:100%;
+#schedule .tabs li{
+	margin-top: 2px;
+	display: inline;
+	list-style-type: none;
+	position: relative;
+	left: 320px;
+	bottom: 28px;
+	padding: 10px;
+	border-left: 1px solid white;
 }
-#schedule ul li {
+.schedulebar .tabs li a.selected{
+	color: black;
+}
+#schedule .tabs li:first-child{
+	border-left: none;
+}
+.schedulebar{
+	height: 30px;
+}
+.schedule-days li {
 	width:100%;
 	position:relative;
 	height:110px;
 	border-bottom:2px solid #999;
 }
-#schedule ul li img {
+.schedule-days li img {
 	height:110px;
 	position:absolute;
 	right:0;
 	bottom:0;
 }
-#schedule h1 {
-	text-transform:capitalize;
-}
-#schedule ul li p {
+.schedule-days li p, .schedule-days li a {
 	font-size:14px;
 }
-#schedule ul li a {
-	font-size:14px;
-}
-#schedule ul li a:hover {
+
+.schedule-days li a:hover {
 	color:#0f7cc0;
 }
-#schedule ul li div.time {
+.schedule-days li div.time {
 	width:100px;
 }
-#schedule ul li p.startTime {
+.schedule-days li p.startTime {
 	top:34px;
 	left:2px;
 	font-weight:bold;
 	position:absolute;
 	text-align:center;
 }
-#schedule ul li p.endTime {
+.schedule-days li p.endTime {
 	bottom:4px;
 	font-weight:bold;
 	left:2px;
 	position:absolute;
 	text-align:center;
 }
-#schedule ul li p.showName {
+.schedule-days li p.showName {
 	top:0;
 	height:22px;
 	line-height:28px;
@@ -941,24 +941,24 @@ footer .bar {
 	border-bottom:1px dotted #272123;
 	font-weight:bold;
 }
-#schedule ul li p.showName span {
+.schedule-days li p.showName span {
 	font-weight:normal;
 }
-#schedule ul li p.showDJs {
+.schedule-days li p.showDJs {
 	top:30px;
 	height:30px;
 	width:390px;
 	left:130px;
 	position:absolute;
 }
-#schedule ul li p.showGenre {
+.schedule-days li p.showGenre {
 	position:absolute;
 	right:10px;
 	top:0;
 	font-size:14px;
 	line-height:30px;
 }
-#schedule ul li p.showBio {
+.schedule-days li p.showBio {
 	position:absolute;
 	left:130px;
 	bottom:0;
@@ -1025,6 +1025,11 @@ ul#personshowSocial li.linkedin a {
 	width:100%;
 	right:0;
 }
+
+#shows ul li:nth-child(odd){
+background-color: #F7FCFF;
+}
+
 div#gallery ul li:hover {
 	opacity:1.0;
 }
@@ -1185,6 +1190,19 @@ a:hover {
 .home_image{
 	width: 100%;
 }
+.search{
+	-moz-border-radius: 15px;
+     border-radius: 15px;
+     width: 200px;
+     float: right;
+     margin-right: 10px;
+}
+.search-icon{
+	width: 12px;
+	position: relative;
+	left: 350px;
+    bottom: 1px;
+}
 .comingup-list{
 	border-bottom: 1px solid black;
 }
@@ -1194,31 +1212,9 @@ a:hover {
 .staff-nav{
 	margin-right: 150px;
 }
-.right-side-nav:hover {
-	color:#0f7cc0;
-	border-top:solid 4px #0f7cc0;
-	border-bottom:solid 4px #0f7cc0;
-}
-.right-side-nav {
-	transition:border .4s ease-in ; 
-	-webkit-transition:border .4s ease-in;
-}
-.right-side-nav.selected {
-	border-top:solid 4px #0f7cc0;
-	border-bottom:solid 4px #0f7cc0;
-	color:#0f7cc0;
-}
-.left-side-nav:hover {
-	color: #ee3942;
-	border-top:solid 4px #ee3942;
-	border-bottom:solid 4px #ee3942;
-}
-.left-side-nav {
-	transition:border .4s ease-in ; 
-	-webkit-transition:border .4s ease-in;
-}
-.left-side-nav.selected {
-	border-top:solid 4px #ee3942;
-	border-bottom:solid 4px #ee3942;
-	color:#ee3942;
+.loader-img{
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top:60px;
 }
