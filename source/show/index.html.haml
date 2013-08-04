@@ -4,9 +4,9 @@ body_title: 'show'
 ---
 
 - content_for(:js) do
-  = javascript_include_tag 'show'
+  = javascript_include_tag 'shows'
+  = javascript_include_tag 'old' #FIX THE JAVASCRIOT IN SHOWS.JS INSTEAD OF OLD.JS
 
 .container
   #sidebar= partial 'partials/sidebar'
   #content
-  

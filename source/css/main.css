@@ -750,6 +750,7 @@ img.ad {
 }
 #on_air_bar{
 	background-color: #ee3942;
+	text-align: center;
 }
 .showInfo {
 	position:absolute;
@@ -1189,6 +1190,7 @@ a:hover {
 }
 .home_image{
 	width: 100%;
+	box-shadow: 0px 3px 10px #888, 0px -3px 10px #888;
 }
 .search{
 	-moz-border-radius: 15px;
@@ -1196,12 +1198,34 @@ a:hover {
      width: 200px;
      float: right;
      margin-right: 10px;
+     padding-left: 18px;
 }
 .search-icon{
 	width: 12px;
 	position: relative;
-	left: 350px;
+	left: 332px;
     bottom: 1px;
+}
+.paging{
+	height: 40px;
+	margin-top: 20px;
+}
+.paging li{
+	list-style-type: none;
+	display: inline;
+	padding: 10px;
+	margin-right: 135px;
+	font-size: 16px;
+}
+.paging li:first-child{
+	margin-left: 10px;
+}
+.page a.active {
+	font-weight: bold;
+	color: red;
+}
+div.page{
+	display: inline;
 }
 .comingup-list{
 	border-bottom: 1px solid black;
